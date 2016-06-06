@@ -1,0 +1,17 @@
+ignore everything
+*
+
+# But not these files...
+!.atom
+!.gitignore
+!.vimrc
+!.bashrc
+!.bash_profile
+!.tmux.conf
+!.vagrant.d
+!.rvm
+
+# etc...
+
+# ...even if they are in subdirectories
+
