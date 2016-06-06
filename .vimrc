@@ -1,1 +1,2 @@
+set nowrap
 syntax on
