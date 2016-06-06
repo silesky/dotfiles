@@ -4,6 +4,7 @@ ignore everything
 # But not these files...
 !.atom
 !.gitignore
+!.gitignore_global
 !.vimrc
 !.bashrc
 !.bash_profile
