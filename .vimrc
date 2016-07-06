@@ -36,4 +36,5 @@ filetype plugin indent on
 syntax on
 set nowrap
 set nu
-syntax off
+" save when you hit escape twice
+map <Esc><Esc> :w<CR>

@@ -11,7 +11,7 @@ ignore everything
 !.tmux.conf
 !.vagrant.d
 !.rvm
-
+!.zshrc
 # etc...
 
 # ...even if they are in subdirectories
