@@ -37,4 +37,5 @@ syntax on
 set nowrap
 set nu
 " save when you hit escape twice
+set backspace=indent,eol,start
 map <Esc><Esc> :w<CR>
