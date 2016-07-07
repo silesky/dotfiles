@@ -36,6 +36,10 @@ filetype plugin indent on
 syntax on
 set nowrap
 set nu
+
 " save when you hit escape twice
-set backspace=indent,eol,start
 map <Esc><Esc> :w<CR>
+" make backapsace work like normal
+set backspace=indent,eol,start
+" make system clipboard work
+set clipboard=unnamed
