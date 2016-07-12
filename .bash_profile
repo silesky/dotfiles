@@ -19,18 +19,15 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 alias desk='cd ~/Desktop'
 
 alias browser-syncit='browser-sync start --server --proxy --files . &'
-alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server . &"
 
 alias srv="live-server"
-alias pract="cd '/Users/ssilesky/projects/practicetimer'"
 alias check='git checkout'
 alias log='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias killc="kill -9 `pgrep -f 'Google Chrome'`"
-alias blog="cd '/Users/ssilesky/projects/blog'"
 alias short="vim ~/shortcuts.txt"
 alias catshort="cat ~/shortcuts.txt"
 alias pb="pbpaste | pbcopy"
-alias proj="cd '/Users/ssilesky/projects/'"
+
 alias temp="cd '/Users/ssilesky/Desktop/temp/'"
 alias drupalcamp="cd '/Users/ssilesky/drupalcampnola.com/'"
 alias mr-dev="ssh tumrweb1d01.tulane.edu"
@@ -44,11 +41,20 @@ alias sub="sublime"
 alias sourcebash="source ~/.bash_profile"
 alias bs-port="browser-sync start --proxy portfolio.dd:8083 --files '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio/templates' --no-inject-changes"
 
-# Coop Louisiana
-alias vagrant-coop="cd /Users/ssilesky/projects/drupal-vm-master && vagrant up"
-alias coop="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/custom/coop"
+# Projects
+alias coop.ssh="cd /Users/ssilesky/projects/drupal-vm-master/ && vagrant ssh"
+alias coop.up="cd /Users/ssilesky/projects/drupal-vm-master/ && vagrant up"
+alias coop.1="cd /Users/ssilesky/projects/drupal-vm-master/"
+alias coop.2="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/"
+alias coop.themes="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/"
+
+alias pract="cd '/Users/ssilesky/projects/practicetimer'"
+alias proj="cd '/Users/ssilesky/projects/'"
+alias blog="cd '/Users/ssilesky/projects/blog'"
+alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server . &"
+
+
 alias coopla="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/custom/coopla"
-alias coopla-watch="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/custom/coopla && sass --watch assets/_sass:assets/css &"
 alias v2="cd ~/projects/CooperationLouisiana.github.io/v2"
 
 
