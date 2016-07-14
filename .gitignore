@@ -12,6 +12,7 @@ ignore everything
 !.vagrant.d
 !.rvm
 !.zshrc
+!.autopush
 # etc...
 
 # ...even if they are in subdirectories
