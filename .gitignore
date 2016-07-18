@@ -13,6 +13,9 @@ ignore everything
 !.rvm
 !.zshrc
 !.autopush
+!/.vim/
+!/.vim/*
+!/.vim/*/*
 # etc...
 
 # ...even if they are in subdirectories
