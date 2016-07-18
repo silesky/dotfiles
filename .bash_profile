@@ -1,9 +1,9 @@
+source ~/.bash_private
 
 # Paths
-alias crontab='VIM_CRONTAB=true EDITOR=vim crontab'
-export PATH=~/Library/Android/sdk/tools:$PATH
+export PATH=/Users/ssilesky/Library/Android/sdk/tools:$PATH
 export PATH=$HOME/bin:$PATH
-export ANDROID_HOME=~/Library/Android/sdk
+export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk
 export PATH=~/.composer/vendor/bin:$PATH
 export PATH=/opt/bin:$PATH
 export PATH=/usr/local/bin:$PATH
@@ -25,10 +25,11 @@ alias killc="kill -9 `pgrep -f 'Google Chrome'`"
 alias short="vim ~/shortcuts.txt"
 alias catshort="cat ~/shortcuts.txt"
 alias pb="pbpaste | pbcopy"
+alias play='vim ~/Desktop/temp/play.js'
 
 
 alias temp="cd '/Users/ssilesky/Desktop/temp/'"
-alias sub="sublime"
+alias sub="open -a '/Applications/Sublime Text.app'"
 
 alias sourcebash="source ~/.bash_profile"
 alias desk='cd ~/Desktop'
@@ -36,6 +37,12 @@ alias sublimesettings="cd '/Users/ssilesky/Library/Application Support/Sublime T
 
 # Projects
 
+alias proj="cd '/Users/ssilesky/projects/'"
+
+# ... practdroid
+alias pcd="cd ~/projects/practdroid"
+alias pcd.run="cd ~/projects/practdroid && react-native run-android"
+alias pcd.emu="emulator -avd mydevice"
 
 # ... coop
 
@@ -52,7 +59,7 @@ alias wedding="cd ~/projects/wedding"
 #...
 alias pract="cd '/Users/ssilesky/projects/practicetimer'"
 alias pract.app="cd /Users/ssilesky/projects/practicetimer/app"
-alias proj="cd '/Users/ssilesky/projects/'"
+
 alias blog="cd '/Users/ssilesky/projects/blog'"
 alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server . &"
 alias drupalcamp="cd '/Users/ssilesky/drupalcampnola.com/'"

@@ -1,12 +1,9 @@
 " vundle {{{1
-
 " needed to run vundle (but i want this anyways)
 set nocompatible
 
 " vundle needs filtype plugins off
 " i turn it on later
-filetype plugin indent off
-syntax off
 
 " set the runtime path for vundle
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -32,14 +29,14 @@ Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
 
 " now (after vundle finished) it is save to turn filetype plugins on
+
 filetype plugin indent on
 syntax on
 set nowrap
 set nu
-
-" save when you hit escape twice
 map <Esc><Esc> :w<CR>
-" make backapsace work like normal
 set backspace=indent,eol,start
-" make system clipboard work
 set clipboard=unnamed
+set backupcopy=yes
+filetype plugin indent off
+
