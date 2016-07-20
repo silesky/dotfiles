@@ -1,3 +1,4 @@
+# Sources
 source ~/.bash_private
 
 # Paths
@@ -11,7 +12,8 @@ export PATH=/usr/local/mysql/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load
 
-# apps
+# Apps and Misc
+alias autopush='bash ~/.autopush.sh'
 alias vim='/usr/local/bin/vim'
 
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
