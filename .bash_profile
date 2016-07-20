@@ -1,4 +1,7 @@
+
 # Sources
+
+
 source ~/.bash_private
 
 # Paths
