@@ -13,7 +13,7 @@ ignore everything
 !.vagrant.d
 !.rvm
 !.zshrc
-!.autopush
+!autopush.sh
 !/.vim/
 !/.vim/*
 !/.vim/*/*
