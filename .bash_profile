@@ -1,9 +1,6 @@
 
 # Sources
-
-
 source ~/.bash_private
-
 # Paths
 export PATH=/Users/ssilesky/Library/Android/sdk/tools:$PATH
 export PATH=$HOME/bin:$PATH

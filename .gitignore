@@ -2,6 +2,7 @@ ignore everything
 *
 
 # But not these files...
+!cron_test.txt
 !.atom
 !.gitignore
 !.gitignore_global
