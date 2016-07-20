@@ -14,6 +14,8 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # apps
 alias vim='/usr/local/bin/vim'
 
+alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
+
 alias git="/usr/local/Cellar/git/2.8.4/bin/git"
 alias bashprof="vim ~/.bash_profile"
 alias browser-syncit='browser-sync start --server --proxy --files . &'
@@ -32,12 +34,16 @@ alias temp="cd '/Users/ssilesky/Desktop/temp/'"
 alias sub="open -a '/Applications/Sublime Text.app'"
 
 alias sourcebash="source ~/.bash_profile"
+alias reprof="source ~/.bash_profile"
 alias desk='cd ~/Desktop'
 alias sublimesettings="cd '/Users/ssilesky/Library/Application Support/Sublime Text 3/Packages/User'"
 
 # Projects
 
 alias proj="cd '/Users/ssilesky/projects/'"
+
+# ... devt-eslint
+alias dvt="cd ~/projects/devt-eslint"
 
 # ... practdroid
 alias pcd="cd ~/projects/practdroid"
@@ -52,6 +58,12 @@ alias coop.1="cd /Users/ssilesky/projects/drupal-vm-master/"
 alias coop.2="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/"
 alias coop.themes="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/"
 alias coopla="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/custom/coopla"
+
+
+alias coop2.ssh="cd /Users/ssilesky/projects/drupal-vm-2/ && vagrant ssh"
+alias coop2.up="cd /Users/ssilesky/projects/drupal-vm-2/ && vagrant up"
+alias coop2.1="cd /Users/ssilesky/projects/drupal-vm-2/"
+alias coop2.2="cd /Users/ssilesky/projects/coop-2/drupal/"
 
 # ... wedding
 alias wedding="cd ~/projects/wedding"
