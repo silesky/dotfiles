@@ -14,10 +14,9 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Apps and Misc
 alias autopush='bash ~/.autopush.sh'
-alias vim='/usr/local/bin/vim'
-
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
 
+alias vim='/usr/local/bin/vim'
 alias git="/usr/local/Cellar/git/2.8.4/bin/git"
 alias bashprof="vim ~/.bash_profile"
 alias browser-syncit='browser-sync start --server --proxy --files . &'
