@@ -64,6 +64,8 @@ alias pcd.run="cd ~/projects/practdroid && react-native run-android"
 alias pcd.emu="emulator -avd mydevice"
 alias pcd.runall="source ~/.bash_profile && pcd.emu & sleep 20s; pcd.run &" 
 alias pcd.kill="kill -9 `pgrep -f /Users/ssilesky/Library/Android/sdk/`"
+alias pcd.sync="rsync -ar ~/projects/practicetimer/ ~/projects/practdroid/webapp/"
+
 
 # ... coop
 
