@@ -2,6 +2,7 @@
 
 # Sources
 source ~/.bash_private
+source ~/.bashrc
 # Paths
 export PATH=/Users/ssilesky/Library/Android/sdk/tools:$PATH
 export PATH=$HOME/bin:$PATH
@@ -61,6 +62,8 @@ alias dvt="cd ~/projects/devt-eslint"
 alias pcd="cd ~/projects/practdroid"
 alias pcd.run="cd ~/projects/practdroid && react-native run-android"
 alias pcd.emu="emulator -avd mydevice"
+alias pcd.runall="source ~/.bash_profile && pcd.emu & sleep 20s; pcd.run &" 
+alias pcd.kill="kill -9 `pgrep -f /Users/ssilesky/Library/Android/sdk/`"
 
 # ... coop
 
@@ -111,4 +114,3 @@ alias bashprof="sudo vim ~/.bash_profile"
 alias catbash="ccat ~/.bash_profile"
 
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-source ~/.bashrc
