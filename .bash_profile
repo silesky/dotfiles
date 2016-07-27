@@ -1,4 +1,5 @@
 
+
 # Sources
 source ~/.bash_private
 # Paths
@@ -18,7 +19,14 @@ alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read
 
 
 alias vim='/usr/local/bin/vim'
+# ... git
 alias git="/usr/local/Cellar/git/2.8.4/bin/git"
+alias st="git status"
+# git config --global color.ui auto
+# git config --global color.branch auto
+# git config --global color.status auto
+
+
 alias bashprof="vim ~/.bash_profile"
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
@@ -43,6 +51,8 @@ alias sublimesettings="cd '/Users/ssilesky/Library/Application Support/Sublime T
 # Projects
 
 alias proj="cd '/Users/ssilesky/projects/'"
+
+
 
 # ... devt-eslint
 alias dvt="cd ~/projects/devt-eslint"
@@ -77,8 +87,13 @@ alias pract.app="cd /Users/ssilesky/projects/practicetimer/app"
 alias blog="cd '/Users/ssilesky/projects/blog'"
 alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server . &"
 alias drupalcamp="cd '/Users/ssilesky/drupalcampnola.com/'"
+
+#... Music Rising
 alias mr-dev="ssh tumrweb1d01.tulane.edu"
 alias mr-prod="ssh tumrweb1p01.tulane.edu"
+alias mrdiff="diff -rq ~/projects/mr-prod ~/projects/mr-dev"
+alias mrdiff-view="colordiff -r ~/projects/mr-dev/application/views ~/projects/mr-prod/application/views"
+
 alias portfolio="cd '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio'"
 alias port-features="cd '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/modules/features'"
 alias sf-features="cd '/Users/ssilesky/projects/site-factory/docroot/sites/all/modules/features'"
@@ -93,7 +108,7 @@ alias v2="cd ~/projects/CooperationLouisiana.github.io/v2"
 
 
 alias bashprof="sudo vim ~/.bash_profile"
-alias catbash="cat ~/.bash_profile"
+alias catbash="ccat ~/.bash_profile"
 
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 source ~/.bashrc

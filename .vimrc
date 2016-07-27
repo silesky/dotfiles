@@ -34,9 +34,16 @@ filetype plugin indent on
 syntax on
 set nowrap
 set nu
-map <Esc><Esc> :w<CR>
+map <Esc><Esc> :w<CR> " double escape to save
 set backspace=indent,eol,start
 set clipboard=unnamed
 set backupcopy=yes
 filetype plugin indent off
-
+set noswapfile " no swap file
+set expandtab " insert space characters whenever the tab key is pressed
+set tabstop=2 " number of spaces when you press tab 
+set shiftwidth=2 " number of spaces for indentation
+" for command mode
+nnoremap <S-Tab> <<
+" for insert mode
+inoremap <S-Tab> <C-d>
