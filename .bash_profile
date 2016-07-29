@@ -17,7 +17,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # Apps and Misc
 alias autopush='sh ~/autopush.sh'
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
-
+alias lynda="cd ~/Lynda/"
 
 alias vim='/usr/local/bin/vim'
 # ... git

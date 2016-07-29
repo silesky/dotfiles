@@ -1,3 +1,6 @@
+" pathogen
+execute pathogen#infect()
+
 " vundle {{{1
 " needed to run vundle (but i want this anyways)
 set nocompatible
@@ -25,16 +28,19 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'rizzatti/dash.vim'
 " add plugins before this
 call vundle#end()
 
 " now (after vundle finished) it is save to turn filetype plugins on
 
 filetype plugin indent on
+
+
 syntax on
-set nowrap
-set nu
-map <Esc><Esc> :w<CR> " double escape to save
+set nu " line numbers
+set nowrap " disable wrapping
+map <Esc><Esc> :w<CR>  " double escape to save
 set backspace=indent,eol,start
 set clipboard=unnamed
 set backupcopy=yes
@@ -46,4 +52,15 @@ set shiftwidth=2 " number of spaces for indentation
 " for command mode
 nnoremap <S-Tab> <<
 " for insert mode
-inoremap <S-Tab> <C-d>
+inoremap <S-Tab> <C-d> 
+set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
+
+" syntastic (for eslint)... pathogen is a dep
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

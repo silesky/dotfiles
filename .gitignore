@@ -17,6 +17,7 @@ ignore everything
 !/.vim/
 !/.vim/*
 !/.vim/*/*
+!.tern-config
 # etc...
 
 # ...even if they are in subdirectories
