@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/ssilesky/.vim/bundle/nerdtree'
 let g:netrw_dirhist_2='/Users/ssilesky/.vim/bundle/nerdtree/autoload'
 let g:netrw_dirhist_3='/Users/ssilesky/projects/wedding'
 let g:netrw_dirhist_4='/Users/ssilesky/Desktop/temp'
+let g:netrw_dirhist_5='/Users/ssilesky/projects/coopla-static'
+let g:netrw_dirhist_6='/Users/ssilesky/projects/coopla-static/v2'

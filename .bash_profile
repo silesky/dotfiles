@@ -54,7 +54,8 @@ alias sublimesettings="cd '/Users/ssilesky/Library/Application Support/Sublime T
 alias proj="cd '/Users/ssilesky/projects/'"
 
 
-
+#... dan
+alias dan="cd ~/projects/dan"
 # ... devt-eslint
 alias dvt="cd ~/projects/devt-eslint"
 

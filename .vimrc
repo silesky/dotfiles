@@ -40,6 +40,8 @@ filetype plugin indent on
 syntax on
 set nu " line numbers
 set nowrap " disable wrapping
+map <F3> :lnext<CR>
+map <F2> :lprevious<CR>
 map <Esc><Esc> :w<CR>  " double escape to save
 set backspace=indent,eol,start
 set clipboard=unnamed
