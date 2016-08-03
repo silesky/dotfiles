@@ -1,14 +1,15 @@
 " pathogen
-execute pathogen#infect()
+  execute pathogen#infect()
 
-" vundle {{{1
+           " vundle {{{1
 " needed to run vundle (but i want this anyways)
-set nocompatible
+        set nocompatible
 
 " vundle needs filtype plugins off
 " i turn it on later
 
 " set the runtime path for vundle
+
 set rtp+=~/.vim/bundle/Vundle.vim
 
 " start vundle environment
@@ -40,9 +41,12 @@ filetype plugin indent on
 syntax on
 set nu " line numbers
 set nowrap " disable wrapping
-map <F3> :lnext<CR>
+
+" keybindings
+map <F3> :lnext<CR> "syntastic skip to error
 map <F2> :lprevious<CR>
 map <Esc><Esc> :w<CR>  " double escape to save
+
 set backspace=indent,eol,start
 set clipboard=unnamed
 set backupcopy=yes
@@ -52,9 +56,6 @@ set expandtab " insert space characters whenever the tab key is pressed
 set tabstop=2 " number of spaces when you press tab 
 set shiftwidth=2 " number of spaces for indentation
 " for command mode
-nnoremap <S-Tab> <<
-" for insert mode
-inoremap <S-Tab> <C-d> 
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 
 " syntastic (for eslint)... pathogen is a dep
@@ -77,7 +78,8 @@ let g:syntastic_style_warning_symbol = '💩'
 highlight link SyntasticErrorSign SignColumn
 highlight link SyntasticWarningSign SignColumn
 highlight link SyntasticStyleErrorSign SignColumn
-highlight link SyntasticStyleWarningSign SignColumn
+
+      highlight link SyntasticStyleWarningSign SignColumn
 
 let g:syntastic_javascript_checkers = ['eslint']
 

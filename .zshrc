@@ -1,5 +1,5 @@
 source ~/.bash_profile
-
+# colored completion - use my LS_COLORS
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/ssilesky/.oh-my-zsh
 
@@ -9,7 +9,9 @@ export ZSH=/Users/ssilesky/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="maran" #not a fan of the macbook.local prompt
 # ZSH_THEME="robbyrussell" #default
- ZSH_THEME="afowler" 
+# ZSH_THEME="afowler" 
+# ZSH_THEME="arrow" 
+ ZSH_THEME="josh" 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -52,7 +54,7 @@ export ZSH=/Users/ssilesky/.oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git, zsh-syntax-highlighting)
 
 # User configuration
 

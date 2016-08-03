@@ -28,6 +28,7 @@ alias st="git status"
 # git config --global color.status auto
 
 
+alias prof="vim ~/.bash_profile"
 alias bashprof="vim ~/.bash_profile"
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
@@ -70,18 +71,21 @@ alias pcd.sync="rsync -ar ~/projects/practicetimer/ ~/projects/practdroid/webapp
 
 # ... coop
 
-alias coop.ssh="cd /Users/ssilesky/projects/drupal-vm-master/ && vagrant ssh"
-alias coop.up="cd /Users/ssilesky/projects/drupal-vm-master/ && vagrant up"
-alias coop.1="cd /Users/ssilesky/projects/drupal-vm-master/"
-alias coop.2="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/"
-alias coop.themes="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/"
-alias coopla="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/custom/coopla"
+alias coop.ssh="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/ && vagrant ssh && coop.1"
+alias coop.up="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/ && vagrant up && coop.2"
+alias coop.reload="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/ && vagrant reload"
+alias coop.vm="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/"
+alias coop.root="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/"
+alias coop="cd /Users/ssilesky/projects/cooperationlouisiana.com/"
+alias coop.coop="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/coop"
+
 
 
 alias coop2.ssh="cd /Users/ssilesky/projects/drupal-vm-2/ && vagrant ssh"
 alias coop2.up="cd /Users/ssilesky/projects/drupal-vm-2/ && vagrant up"
-alias coop2.1="cd /Users/ssilesky/projects/drupal-vm-2/"
-alias coop2.2="cd /Users/ssilesky/projects/coop-2/drupal/"
+alias coop2.vm="cd /Users/ssilesky/projects/drupal-vm-2/"
+alias coop2="cd /Users/ssilesky/projects/coop-2"
+alias coop2.root="cd /Users/ssilesky/projects/coop-2/drupal/"
 
 # ... wedding
 alias wedding="cd ~/projects/wedding"
