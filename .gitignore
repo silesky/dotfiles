@@ -18,6 +18,7 @@ ignore everything
 !/.vim/*
 !/.vim/*/*
 !.tern-config
+!/.alfred-sync/
 # etc...
 
 # ...even if they are in subdirectories
