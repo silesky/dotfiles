@@ -11,7 +11,9 @@ export ZSH=/Users/ssilesky/.oh-my-zsh
 # ZSH_THEME="robbyrussell" #default
 # ZSH_THEME="afowler" 
 # ZSH_THEME="arrow" 
- ZSH_THEME="josh" 
+# ZSH_THEME="josh" #lightning bolt is cool, but extra space on top 
+ ZSH_THEME="lambda" 
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
