@@ -12,6 +12,7 @@ export PATH=/opt/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=/usr/local/share/dotnet:$PATH
  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load
 
 # Apps and Misc
@@ -20,6 +21,7 @@ alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read
 alias lynda="cd ~/Lynda/"
 
 alias vim='/usr/local/bin/vim'
+
 # ... git
 alias git="/usr/local/Cellar/git/2.8.4/bin/git"
 alias st="git status"
@@ -27,6 +29,8 @@ alias st="git status"
 # git config --global color.branch auto
 # git config --global color.status auto
 
+# ... tmux
+alias tm.ks="tmux kill-session -t"
 
 alias prof="vim ~/.bash_profile"
 alias bashprof="vim ~/.bash_profile"
@@ -59,6 +63,10 @@ alias proj="cd '/Users/ssilesky/projects/'"
 alias dan="cd ~/projects/dan"
 # ... devt-eslint
 alias dvt="cd ~/projects/devt-eslint"
+
+# ... pract-net
+alias pcn="cd ~/projects/pract-net"
+alias pcn.run="cd ~/projects/pract-net/WebApplication && dotnet run"
 
 # ... practdroid
 alias pcd="cd ~/projects/practdroid"
