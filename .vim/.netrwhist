@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/ssilesky/projects/pract-net/WebApplication'
 let g:netrw_dirhist_2='/Users/ssilesky/projects/pract-net/WebApplication/Controllers'
 let g:netrw_dirhist_3='/Users/ssilesky/Lynda/06_05/finished'
 let g:netrw_dirhist_4='/Users/ssilesky/Lynda/06_05/finished/public'
+let g:netrw_dirhist_5='/Users/ssilesky/.vim'
+let g:netrw_dirhist_6='/Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/coop/bootstrap/less'
+let g:netrw_dirhist_7='/Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/coop/less'
