@@ -1,9 +1,10 @@
-
-
 # Sources
 source ~/.bash_private
 source ~/.bashrc
 # Paths
+
+
+
 export PATH=/Users/ssilesky/Library/Android/sdk/tools:$PATH
 export PATH=$HOME/bin:$PATH
 export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk
@@ -16,11 +17,15 @@ export PATH=/usr/local/share/dotnet:$PATH
  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load
 
 # Apps and Misc
+alias prof="vim ~/.bash_profile"
+alias bashprof="vim ~/.bash_profile"
 alias autopush='sh ~/autopush.sh'
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
 alias lynda="cd ~/Lynda/"
-
+alias dash="open dash://"
 alias vim='/usr/local/bin/vim'
+alias g='googler'
+
 
 # ... git
 alias git="/usr/local/Cellar/git/2.8.4/bin/git"
@@ -31,9 +36,9 @@ alias st="git status"
 
 # ... tmux
 alias tm.ks="tmux kill-session -t"
+alias tm="tmux"
 
-alias prof="vim ~/.bash_profile"
-alias bashprof="vim ~/.bash_profile"
+
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
 alias srv="live-server"
@@ -43,7 +48,7 @@ alias killc="kill -9 `pgrep -f 'Google Chrome'`"
 alias short="vim ~/shortcuts.txt"
 alias catshort="cat ~/shortcuts.txt"
 alias pb="pbpaste | pbcopy"
-alias play='vim ~/Desktop/temp/play.js'
+alias play='cd ~/Desktop/temp/ && vim play.js'
 
 
 alias temp="cd '/Users/ssilesky/Desktop/temp/'"
@@ -129,4 +134,6 @@ alias bashprof="sudo vim ~/.bash_profile"
 alias catbash="ccat ~/.bash_profile"
 
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# mdless, googler
 

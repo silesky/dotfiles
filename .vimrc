@@ -38,14 +38,18 @@ call vundle#end()
 
 filetype plugin indent on
 
-
 syntax on
+syntax enable
+set t_Co=256 "otherwise you'll only see  8bits
+let g:solarized_termcolors=256
+colorscheme monokai
+
 set nu " line numbers
 set nowrap " disable wrapping
 
 " keybindings
-map <F3> :lnext<CR> "syntastic skip to error
-map <F2> :lprevious<CR>
+map <F2> :lnext<CR> "syntastic skip to error
+map <F3> :lprevious<CR>
 map <Esc><Esc> :w<CR>  " double escape to save
 
 set backspace=indent,eol,start
@@ -66,14 +70,9 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
-let g:syntastic_warning_symbol = "⚠"
-let g:syntastic_error_symbol = '❌'
-
-
-let g:syntastic_javascript_checkers = ['eslint']
 
 " change cursor shapase based on insert mode
 " http://blog.terriblelabs.com/blog/2013/02/09/stupid-vim-tricks-how-to-change-insert-mode-cursor-shape-with-tmux/
