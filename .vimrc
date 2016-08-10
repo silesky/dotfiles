@@ -24,7 +24,7 @@ Plugin 'VundleVim/Vundle.vim'
 " to install a plugin add it here and run :PluginInstall.
 " to update the plugins run :PluginInstall! or :PluginUpdate
 " to delete a plugin remove it here and run :PluginClean
-" 
+"
 
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
 Plugin 'bling/vim-airline'
@@ -58,7 +58,7 @@ set backupcopy=yes
 filetype plugin indent off
 set noswapfile " no swap file
 set expandtab " insert space characters whenever the tab key is pressed
-set tabstop=2 " number of spaces when you press tab 
+set tabstop=2 " number of spaces when you press tab
 set shiftwidth=2 " number of spaces for indentation
 " for command mode
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
@@ -70,9 +70,8 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
-
 
 " change cursor shapase based on insert mode
 " http://blog.terriblelabs.com/blog/2013/02/09/stupid-vim-tricks-how-to-change-insert-mode-cursor-shape-with-tmux/
@@ -94,3 +93,13 @@ map! <F9> ^[:call ToggleWrap()<CR>
 
 " load  vimrc while editing--> :so %
 " reload vimrc from any file--> :so $MYVIMRC
+
+" get rid of trailing whitespace
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
