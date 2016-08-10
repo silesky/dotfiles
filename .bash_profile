@@ -1,10 +1,11 @@
-# Sources
+### .bash_profile
+
 source ~/.bash_private
-source ~/.bashrc
+
+# make readline behave like vim
+# set -o vi
+
 # Paths
-
-
-
 export PATH=/Users/ssilesky/Library/Android/sdk/tools:$PATH
 export PATH=$HOME/bin:$PATH
 export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk
@@ -19,13 +20,19 @@ export PATH=/usr/local/share/dotnet:$PATH
 # Apps and Misc
 alias prof="vim ~/.bash_profile"
 alias bashprof="vim ~/.bash_profile"
+alias vimrc="vim ~/.vimrc"
+
+
 alias autopush='sh ~/autopush.sh'
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
 alias lynda="cd ~/Lynda/"
 alias dash="open dash://"
 alias vim='/usr/local/bin/vim'
-alias g='googler'
+alias goog='googler'
 
+
+#... chrome
+alias chrome="open -a /Applications/Google\ Chrome.app"
 
 # ... git
 alias git="/usr/local/Cellar/git/2.8.4/bin/git"
@@ -37,8 +44,9 @@ alias st="git status"
 # ... tmux
 alias tm.ks="tmux kill-session -t"
 alias tm="tmux"
+alias tmuxconf="vim ~/.tmux.conf"
 
-
+# ... misc 
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
 alias srv="live-server"
@@ -46,11 +54,11 @@ alias check='git checkout'
 alias log='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias killc="kill -9 `pgrep -f 'Google Chrome'`"
 alias short="vim ~/shortcuts.txt"
+
 alias catshort="cat ~/shortcuts.txt"
 alias pb="pbpaste | pbcopy"
 alias play='cd ~/Desktop/temp/ && vim play.js'
-
-
+cdls() { cd "$@" && ls; } #
 alias temp="cd '/Users/ssilesky/Desktop/temp/'"
 alias sub="open -a '/Applications/Sublime Text.app'"
 
@@ -136,4 +144,5 @@ alias catbash="ccat ~/.bash_profile"
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # mdless, googler
+
 

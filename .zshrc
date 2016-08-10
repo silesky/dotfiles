@@ -1,4 +1,6 @@
-source ~/.bash_profile
+### .zshrc
+source ~/.bashrc
+
 
 # colored completion - use my LS_COLORS
 # Path to your oh-my-zsh installation.

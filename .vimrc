@@ -79,3 +79,18 @@ let g:syntastic_javascript_checkers = ['eslint']
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
+
+" wrap toggle
+function ToggleWrap()
+ if (&wrap == 1)
+   set nowrap
+ else
+   set wrap
+ endif
+endfunction
+
+map <F9> :call ToggleWrap()<CR>
+map! <F9> ^[:call ToggleWrap()<CR>
+
+" load  vimrc while editing--> :so %
+" reload vimrc from any file--> :so $MYVIMRC
