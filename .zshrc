@@ -1,8 +1,48 @@
 ### .zshrc
-source ~/.bash_profile
+set -o vi
+# bind -v
+# get rid of lag
+export KEYTIMEOUT=1
+
+# Modal cursor color for vi's insert/normal modes.
+# http://stackoverflow.com/questions/30985436/
+# https://bbs.archlinux.org/viewtopic.php?id=95078
+# http://unix.stackexchange.com/questions/115009/
 
 
-# colored completion - use my LS_COLORS
+zle-line-init () {
+  zle -K viins
+  #echo -ne "\033]12;Grey\007"
+  #echo -n 'grayline1'
+  echo -ne "\033]12;Gray\007"
+  echo -ne "\033[4 q"
+  #print 'did init' >/dev/pts/16
+}
+zle -N zle-line-init
+zle-keymap-select () {
+  if [[ $KEYMAP == vicmd ]]; then
+    if [[ -z $TMUX ]]; then
+      printf "\033]12;Green\007"
+      printf "\033[2 q"
+    else
+      printf "\033Ptmux;\033\033]12;red\007\033\\"
+      printf "\033Ptmux;\033\033[2 q\033\\"
+    fi
+  else
+    if [[ -z $TMUX ]]; then
+      printf "\033]12;Grey\007"
+      printf "\033[4 q"
+    else
+      printf "\033Ptmux;\033\033]12;grey\007\033\\"
+      printf "\033Ptmux;\033\033[4 q\033\\"
+    fi
+  fi
+  #print 'did select' >/dev/pts/16
+}
+zle -N zle-keymap-select
+
+
+# Updates editor information when the keymap changes.
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/ssilesky/.oh-my-zsh
 
@@ -62,7 +102,7 @@ export ZSH=/Users/ssilesky/.oh-my-zsh
 plugins=(git)
 
 # User configuration
-
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/mysql/bin:/usr/local/mysql/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -93,6 +133,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+source ~/.bash_profile

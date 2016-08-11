@@ -3,7 +3,7 @@
 source ~/.bash_private
 
 # make readline behave like vim
-# set -o vi
+ set -o vi
 
 # Paths
 export PATH=/Users/ssilesky/Library/Android/sdk/tools:$PATH
