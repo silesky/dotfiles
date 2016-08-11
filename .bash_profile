@@ -46,7 +46,7 @@ alias tm.ks="tmux kill-session -t"
 alias tm="tmux"
 alias tmuxconf="vim ~/.tmux.conf"
 
-# ... misc 
+# ... misc
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
 alias srv="live-server"
@@ -84,9 +84,11 @@ alias pcn.run="cd ~/projects/pract-net/WebApplication && dotnet run"
 # ... practdroid
 alias pcd="cd ~/projects/practdroid"
 alias pcd.run="cd ~/projects/practdroid && react-native run-android"
-alias pcd.emu="emulator -avd mydevice"
-alias pcd.runall="source ~/.bash_profile && pcd.emu & sleep 20s; pcd.run &" 
-alias pcd.kill="kill -9 `pgrep -f /Users/ssilesky/Library/Android/sdk/`"
+#alias pcd.emu="emulator -avd mydevice"
+alias pcd.emu="/Applications/Genymotion.app/Contents/MacOS/genymotion"
+alias pcd.runall="source ~/.bash_profile && cd ~/projects/practdroid
+&& pcd.emu & sleep 20s; pcd.run &"
+alias pcd.kill="kill -9 `pgrep -f /Users/ssilesky/Library/Android/sdk/` && kill -9 `pgrep -f genymotion`"
 alias pcd.sync="rsync -ar ~/projects/practicetimer/ ~/projects/practdroid/webapp/"
 
 
@@ -145,4 +147,4 @@ alias catbash="ccat ~/.bash_profile"
 
 # mdless, googler
 
-
+source ~/.bashrc
