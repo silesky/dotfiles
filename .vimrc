@@ -43,6 +43,7 @@ filetype plugin indent on
 
 syntax on
 syntax enable
+
 set t_Co=256 "otherwise you'll only see  8bits
 let g:solarized_termcolors=256
 colorscheme monokai
