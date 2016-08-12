@@ -36,6 +36,9 @@ call vundle#end()
 
 " now (after vundle finished) it is save to turn filetype plugins on
 
+" get html indenting working
+let g:html_indent_inctags = "html,body,head,tbody"
+filetype indent on " html auto indent working
 filetype plugin indent on
 
 syntax on
@@ -55,7 +58,7 @@ map <Esc><Esc> :w<CR>  " double escape to save
 set backspace=indent,eol,start
 set clipboard=unnamed
 set backupcopy=yes
-filetype plugin indent off
+
 set noswapfile " no swap file
 set expandtab " insert space characters whenever the tab key is pressed
 set tabstop=2 " number of spaces when you press tab
@@ -67,6 +70,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
@@ -103,3 +107,4 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+
