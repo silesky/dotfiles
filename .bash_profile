@@ -4,20 +4,26 @@ source ~/.bash_private
 
 # make readline behave like vim
  set -o vi
-
 # Paths (general)
+# It seems placing the $PATH at the end of the statement (export PATH=/usr/local/git/bin:$PATH)
+# assures that the system looks in this custom place **before** searching default places
+# (that is, the specified path is appended before the standard places contained within $PATH).
 
+# path goes at the end in the default places, because I want the default places to go first.
 export PATH=$HOME/bin:$PATH
 export PATH=/opt/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-export PATH=/Users/ssilesky/Library/Android/sdk/tools:$PATH
-export PATH=~/.composer/vendor/bin:$PATH
-export PATH=/usr/local/share/dotnet:$PATH
- [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load
-export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk:$PATH
+# path goes at the beginning in the regular places, because I want them to go last
+export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk
+export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/tools
+export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/platform-tools #adb is here
+export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH=$PATH:/usr/local/share/dotnet
+
+
 # Apps and Misc
 alias prof="vim ~/.bash_profile"
 alias bashprof="vim ~/.bash_profile"
