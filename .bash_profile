@@ -1,9 +1,14 @@
 ### .bash_profile
+set -o vi
+# ... mac
+# https://github.com/seebi/dircolors-solarized/issues/10
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
-source ~/.bash_private
+# ... linux/bash
+LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
+export LS_COLORS
 
-# make readline behave like vim
- set -o vi
+
 # Paths (general)
 # It seems placing the $PATH at the end of the statement (export PATH=/usr/local/git/bin:$PATH)
 # assures that the system looks in this custom place **before** searching default places
@@ -23,60 +28,74 @@ export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/platform-tools #adb is her
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:/usr/local/share/dotnet
 
+# misc folder shortcuts
+alias desk='cd ~/Desktop'
+
+
+# ......
+
+# scripts
+alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 
 # Apps and Misc
+alias seth="cd /Users/ssilesky/"
+alias c="clear"
+alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
+alias reprof="source ~/.bash_profile && echo 'bash reloaded.'"
+# ... text files
+alias eslintrc="vim ~/.eslintrc"
+alias nodemod="vim ~/.nodemodules.txt"
 alias prof="vim ~/.bash_profile"
+alias zshrc="vim ~/.zshrc"
+alias inputrc="vim ~/.inputrc"
 alias bashprof="vim ~/.bash_profile"
+alias bashrc="vim ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
-
-
-alias autopush='sh ~/autopush.sh'
+alias cat="ccat"
+alias autopush='sh ~/scripts/autopush.sh'
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
 alias lynda="cd ~/Lynda/"
-alias dash="open dash://"
 alias vim='/usr/local/bin/vim'
-alias goog='googler'
+# ...
 
+alias googler='googler'
+alias google="sh ~/scripts/google.sh"
 
 #... chrome
 alias chrome="open -a /Applications/Google\ Chrome.app"
 
 # ... git
 alias git="/usr/local/Cellar/git/2.8.4/bin/git"
-alias st="git status"
+alias git.s="git status"
+alias git.log='git log --graph --decorate --pretty=oneline --abbrev-commit'
+
 # git config --global color.ui auto
 # git config --global color.branch auto
 # git config --global color.status auto
 
 # ... tmux
 alias tm.ks="tmux kill-session -t"
+alias tm.a="tmux attach -t"
 alias tm="tmux"
 alias tmux.conf="vim ~/.tmux.conf"
-
+alias tm.killme="kill -9 `pgrep -f tmux`"
 # ... misc
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
+
 alias srv="live-server"
 alias check='git checkout'
-alias log='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias killc="kill -9 `pgrep -f 'Google Chrome'`"
-alias short="vim ~/shortcuts.txt"
 
-alias catshort="cat ~/shortcuts.txt"
-alias pb="pbpaste | pbcopy"
 alias play='cd ~/Desktop/temp/ && vim play.js'
 cdls() { cd "$@" && ls; } #
-alias temp="cd '/Users/ssilesky/Desktop/temp/'"
 alias sub="open -a '/Applications/Sublime Text.app'"
 
-alias sourcebash="source ~/.bash_profile"
-alias reprof="source ~/.bash_profile"
-alias desk='cd ~/Desktop'
-alias sublimesettings="cd '/Users/ssilesky/Library/Application Support/Sublime Text 3/Packages/User'"
 
+alias timeshark="ssh root@timeshark.sytes.net"
 # Projects
 
-alias proj="cd '/Users/ssilesky/projects/'"
+alias proj="cd ~/proj/"
 
 
 #... dan
@@ -129,10 +148,12 @@ alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server
 alias drupalcamp="cd '/Users/ssilesky/drupalcampnola.com/'"
 
 #... Music Rising
-alias mr-dev="ssh tumrweb1d01.tulane.edu"
-alias mr-prod="ssh tumrweb1p01.tulane.edu"
+alias mr-dev="cd ~/projects/mr-dev"
+alias mr-prod="cd ~/projects/mr-prod"
 alias mrdiff="diff -rq ~/projects/mr-prod ~/projects/mr-dev"
 alias mrdiff-view="colordiff -r ~/projects/mr-dev/application/views ~/projects/mr-prod/application/views"
+alias mr-bs="browser-sync start --proxy='musicrisingdev.tulane.edu' --files ."
+
 
 alias portfolio="cd '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio'"
 alias port-features="cd '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/modules/features'"
@@ -145,13 +166,28 @@ alias bs-port="browser-sync start --proxy portfolio.dd:8083 --files '/Users/ssil
 
 alias v2="cd ~/projects/CooperationLouisiana.github.io/v2"
 
+# colorized man pages
+# https://gist.github.com/cocoalabs/2fb7dc2199b0d4bf160364b8e557eb66
+man() {
+    LESS_TERMCAP_mb=$'\e'"[1;31m" \
+        LESS_TERMCAP_md=$'\e'"[1;31m" \
+        LESS_TERMCAP_me=$'\e'"[0m" \
+        LESS_TERMCAP_se=$'\e'"[0m" \
+        LESS_TERMCAP_so=$'\e'"[1;44;33m" \
+        LESS_TERMCAP_ue=$'\e'"[0m" \
+        LESS_TERMCAP_us=$'\e'"[1;32m" \
+        command man "$@"
 
+}
 
+# https://www.reddit.com/r/vim/comments/4xkyah/til_builtin_man_pager_in_vim/
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 alias bashprof="sudo vim ~/.bash_profile"
 alias catbash="ccat ~/.bash_profile"
 
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# mdless, googler
 
-source ~/.bashrc
+# mdless, googler
+# source ~/.bash_private
+# source ~/.bashrc
