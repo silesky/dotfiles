@@ -38,6 +38,7 @@ alias desk='cd ~/Desktop'
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 
 # Apps and Misc
+alias mail.delete="sudo rm /var/mail/$USER"
 alias seth="cd /Users/ssilesky/"
 alias c="clear"
 alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
