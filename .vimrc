@@ -30,7 +30,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'rizzatti/dash.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 " add plugins before this
 call vundle#end()
 
