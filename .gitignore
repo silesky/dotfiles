@@ -17,11 +17,11 @@ ignore everything
 !autopush.sh
 !/.vim/
 !/.vim/*
-!/.vim/*/*
+!/.vim/**/*
 !.tern-config
 !/.alfred_sync
-!/.alfred_sync/*
-/.alfred_sync/.DS_Store*
+!/.alfred_sync/**/*
+
 !/scripts/*
 !scripts
 
