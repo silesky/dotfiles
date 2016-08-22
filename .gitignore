@@ -21,7 +21,7 @@ ignore everything
 !.tern-config
 !/.alfred_sync
 !/.alfred_sync/*
-!/.alfred_sync/.DS_Store*
+/.alfred_sync/.DS_Store*
 !/scripts/*
 !scripts
 
