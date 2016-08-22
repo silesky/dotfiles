@@ -18,8 +18,10 @@ ignore everything
 !/.vim/*
 !/.vim/*/*
 !.tern-config
+!/alfred-sync
 !/alfred-sync/*
 !/scripts/*
+!scripts
 # A
 # etc...
 
