@@ -1,6 +1,13 @@
-### .bash_profile
+# .bash_profile
 set -o vi
 # ... mac
+
+# if tmux isn't open, attach
+tmux attach &> /dev/null
+
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
 # https://github.com/seebi/dircolors-solarized/issues/10
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
@@ -75,11 +82,12 @@ alias git.log='git log --graph --decorate --pretty=oneline --abbrev-commit'
 # git config --global color.status auto
 
 # ... tmux
-alias tm.ks="tmux kill-session -t"
-alias tm.a="tmux attach -t"
 alias tm="tmux"
+alias tm.ks="tmux kill-session -t"
+alias tm.kw="tmux kill-window -t"
+alias tm.a="tmux attach -t"
 alias tmux.conf="vim ~/.tmux.conf"
-alias tm.killme="kill -9 `pgrep -f tmux`"
+alias tm.kill="kill -9 `pgrep -f tmux`"
 # ... misc
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
@@ -190,5 +198,5 @@ alias catbash="ccat ~/.bash_profile"
 
 
 # mdless, googler
-# source ~/.bash_private
-# source ~/.bashrc
+ source ~/.bash_private
+ source ~/.bashrc

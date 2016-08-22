@@ -1,5 +1,4 @@
 ### .bashrc
-
 export VISUAL=vim
 export EDITOR="$VISUAL"
 # Include Drush bash customizations.
