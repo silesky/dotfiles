@@ -1,7 +1,9 @@
 # .bash_profile
+
+source ~/.bash_functions
+
 set -o vi
 # ... mac
-
 # if tmux isn't open, attach
 tmux attach &> /dev/null
 
@@ -27,6 +29,7 @@ export PATH=/opt/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH=$HOME/scripts:$PATH
 
 # path goes at the beginning in the regular places, because I want them to go last
 export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk
@@ -53,6 +56,7 @@ alias reprof="source ~/.bash_profile && echo 'bash reloaded.'"
 # ... text files
 alias eslintrc="vim ~/.eslintrc"
 alias nodemod="vim ~/.nodemodules.txt"
+alias bash_functions="vim ~/.bash_functions"
 alias prof="vim ~/.bash_profile"
 alias zshrc="vim ~/.zshrc"
 alias inputrc="vim ~/.inputrc"
@@ -92,7 +96,6 @@ alias tm.kill="kill -9 `pgrep -f tmux`"
 # ... misc
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
-
 alias srv="live-server"
 alias check='git checkout'
 alias killc="kill -9 `pgrep -f 'Google Chrome'`"
@@ -101,6 +104,10 @@ alias play='cd ~/Desktop/temp/ && vim play.js'
 cdls() { cd "$@" && ls; } #
 alias sub="open -a '/Applications/Sublime Text.app'"
 
+
+alias notifyDone='terminal-notifier -title "Terminal" -message "Done!"' # depends on terminal-notifier
+
+alias ttime_black="sh -c \"sleep 300 && notify-send -u critical 'The tea is ready'\" &"
 
 alias timeshark="ssh root@timeshark.sytes.net"
 # Projects
@@ -197,6 +204,5 @@ alias catbash="ccat ~/.bash_profile"
 # [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 
-# mdless, googler
  source ~/.bash_private
  source ~/.bashrc

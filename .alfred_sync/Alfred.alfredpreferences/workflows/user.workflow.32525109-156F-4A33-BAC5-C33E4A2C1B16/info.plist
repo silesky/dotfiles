@@ -60,7 +60,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>HK: iTerm</string>
+	<string>HK: Ed=Sub</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -71,11 +71,11 @@
 				<key>argument</key>
 				<integer>0</integer>
 				<key>hotkey</key>
-				<integer>-1</integer>
+				<integer>118</integer>
 				<key>hotmod</key>
-				<integer>262144</integer>
+				<integer>8519680</integer>
 				<key>hotstring</key>
-				<string>double tap</string>
+				<string>F4</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
@@ -95,7 +95,7 @@
 			<dict>
 				<key>paths</key>
 				<array>
-					<string>/Applications/iTerm.app</string>
+					<string>/Applications/Sublime Text.app</string>
 				</array>
 				<key>toggle</key>
 				<true/>
@@ -150,8 +150,6 @@
 				<integer>0</integer>
 				<key>hotmod</key>
 				<integer>0</integer>
-				<key>hotstring</key>
-				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>

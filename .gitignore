@@ -8,8 +8,10 @@ ignore everything
 !.gitignore
 !.gitignore_global
 !.vimrc
+
 !.bashrc
 !.bash_profile
+!.bash_functions
 !.tmux.conf
 !.vagrant.d
 !.rvm

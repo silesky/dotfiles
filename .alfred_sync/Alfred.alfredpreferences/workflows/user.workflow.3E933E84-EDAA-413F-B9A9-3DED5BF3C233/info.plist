@@ -60,7 +60,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>HK: Code Editor</string>
+	<string>HK: Ed=VS</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -98,7 +98,7 @@
 					<string>/Applications/Visual Studio Code.app</string>
 				</array>
 				<key>toggle</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
