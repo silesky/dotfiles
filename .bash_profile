@@ -173,7 +173,6 @@ alias port="cd '/Users/ssilesky/projects/site-factory-portfolio/'"
 alias bs-port="browser-sync start --proxy portfolio.dd:8083 --files '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio/templates' --no-inject-changes"
 
 
-
 alias v2="cd ~/projects/CooperationLouisiana.github.io/v2"
 
 # colorized man pages
