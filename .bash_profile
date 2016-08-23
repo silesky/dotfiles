@@ -93,6 +93,7 @@ alias tm.kw="tmux kill-window -t"
 alias tm.a="tmux attach -t"
 alias tmux.conf="vim ~/.tmux.conf"
 alias tm.kill="kill -9 `pgrep -f tmux`"
+alias tm.3="bash ~/scripts/tm-grid-3.sh"
 # ... misc
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
