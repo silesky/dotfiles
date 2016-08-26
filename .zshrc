@@ -7,8 +7,8 @@ export ZSH=~/.oh-my-zsh
 
 # ZSH uses the KEYTIMEOUT parameter to determine how long to wait
 #  for additional key sequences.
-KEYTIMEOUT=1
 
+KEYTIMEOUT=1
 
 ##################################
 # if tmux isn't open, attach
@@ -19,7 +19,7 @@ if [[ ! $TERM =~ screen ]]; then
 fi
 
 
-export KEYTIMEOUT=1
+
 # ...............................
 #################################
 
@@ -72,7 +72,7 @@ ZSH_THEME="lambda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, vi-mode)
+plugins=(git, vi-mode, last-working-dir)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 

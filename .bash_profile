@@ -35,6 +35,9 @@ export PATH=$PATH:/usr/local/share/dotnet
 # misc folder shortcuts
 alias desk='cd ~/Desktop'
 
+
+# history grep
+alias hg='history | grep'
 # Filesystem
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
