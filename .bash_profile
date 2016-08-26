@@ -3,19 +3,13 @@
 source ~/.bash_functions
 
 set -o vi
-# ... mac
-# if tmux isn't open, attach
-tmux attach &> /dev/null
-
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux
-fi
+# ... colors: mac only (can't use ls --colors=auto)
 # https://github.com/seebi/dircolors-solarized/issues/10
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-
+export CLICOLOR=1
 # ... linux/bash
-LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
-export LS_COLORS
+# LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
+# export LS_COLORS
 
 
 # Paths (general)
@@ -53,6 +47,7 @@ alias seth="cd /Users/ssilesky/"
 alias c="clear"
 alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
 alias reprof="source ~/.bash_profile && echo 'bash reloaded.'"
+alias reall="rezsh && reprof"
 # ... text files
 alias eslintrc="vim ~/.eslintrc"
 alias nodemod="vim ~/.nodemodules.txt"
@@ -88,12 +83,15 @@ alias git.log='git log --graph --decorate --pretty=oneline --abbrev-commit'
 
 # ... tmux
 alias tm="tmux"
+alias tm.swc="tmux switch-client -t"
 alias tm.ks="tmux kill-session -t"
 alias tm.kw="tmux kill-window -t"
 alias tm.a="tmux attach -t"
 alias tmux.conf="vim ~/.tmux.conf"
 alias tm.kill="kill -9 `pgrep -f tmux`"
 alias tm.3="bash ~/scripts/tm-grid-3.sh"
+alias tm.4="bash ~/scripts/tm-grid-4.sh"
+alias tm.kpa="tmux kill-pane -a -t . && clear"
 # ... misc
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 

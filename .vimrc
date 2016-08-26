@@ -36,6 +36,7 @@ call vundle#end()
 
 " now (after vundle finished) it is save to turn filetype plugins on
 
+""""""""""""""""""""""""""""""""""""""
 " get html indenting working
 let g:html_indent_inctags = "html,body,head,tbody"
 filetype indent on " html auto indent working
@@ -43,6 +44,11 @@ filetype plugin indent on
 
 syntax on
 syntax enable
+
+
+set ignorecase " ignore case when i search by default
+set smartcase " goes with ignorecase... it means that unless there is uppercase on the string, it's case insensive by default
+set incsearch " see searc results as I type them in
 
 set t_Co=256 "otherwise you'll only see  8bits
 let g:solarized_termcolors=256
@@ -94,7 +100,7 @@ function ToggleWrap()
 endfunction
 
 map <F9> :call ToggleWrap()<CR>
-map! <F9> ^[:call ToggleWrap()<CR>
+
 
 " load  vimrc while editing--> :so %
 " reload vimrc from any file--> :so $MYVIMRC

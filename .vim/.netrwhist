@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/ssilesky/Desktop'
 let g:netrw_dirhist_2='/Users/ssilesky'
 let g:netrw_dirhist_3='/Users/ssilesky/.vim/bundle'
 let g:netrw_dirhist_4='/Users/ssilesky/Desktop/temp/Ex_Files_Nodejs_EssT'
 let g:netrw_dirhist_5='/Users/ssilesky/Lynda/finished'
 let g:netrw_dirhist_6='/Users/ssilesky/Lynda/08_02/start'
+let g:netrw_dirhist_7='/Users/ssilesky/projects/dan'

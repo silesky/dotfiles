@@ -1,6 +1,27 @@
 # Path to your oh-my-zsh installation.
+
+
+# default
+# bindkey -M viins '^R' history-incremental-search-backward
+# bindkey -M vicmd '^R' history-incremental-search-backward
+
+
+
+
+##################################
+# if tmux isn't open, attach
+tmux attach &> /dev/null
+
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
+
 export ZSH=~/.oh-my-zsh
 export KEYTIMEOUT=1
+# ...............................
+#################################
+
+#
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -49,7 +70,7 @@ ZSH_THEME="lambda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git, vi-mode)
 
 # User configuration
 
