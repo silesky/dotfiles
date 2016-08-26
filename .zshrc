@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-
+export ZSH=~/.oh-my-zsh
 
 # default
 # bindkey -M viins '^R' history-incremental-search-backward
@@ -18,7 +18,7 @@ if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
 
-export ZSH=~/.oh-my-zsh
+
 export KEYTIMEOUT=1
 # ...............................
 #################################
@@ -73,13 +73,13 @@ ZSH_THEME="lambda"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git, vi-mode)
-
+source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
