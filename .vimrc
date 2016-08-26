@@ -68,10 +68,14 @@ set backupcopy=yes
 
 set noswapfile " no swap file
 set expandtab " insert space characters whenever the tab key is pressed
+
 set tabstop=2 " number of spaces when you press tab
 set shiftwidth=2 " number of spaces for indentation
 " for command mode
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
+
+" remove escape delay
+set timeoutlen=1000 ttimeoutlen=0
 
 " syntastic (for eslint)... pathogen is a dep
 set statusline+=%#warningmsg#

@@ -35,11 +35,21 @@ export PATH=$PATH:/usr/local/share/dotnet
 # misc folder shortcuts
 alias desk='cd ~/Desktop'
 
+# Filesystem
+alias ..='cd ..'            # Go up one directory
+alias ...='cd ../..'        # Go up two directories
+alias ....='cd ../../..'    # And for good measure
+
+alias l='ls -lah'  # Long view, show hidden
+alias la='ls -AF'   # Compact view, show hidden
+alias ll='ls -lFh'  # Long view, no hidden
 
 # ......
 
 # scripts
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
+alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
+alias hide_hidden="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder"
 
 # Apps and Misc
 alias mail.delete="sudo rm /var/mail/$USER"

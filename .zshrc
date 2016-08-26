@@ -5,7 +5,9 @@
 # bindkey -M viins '^R' history-incremental-search-backward
 # bindkey -M vicmd '^R' history-incremental-search-backward
 
-
+# ZSH uses the KEYTIMEOUT parameter to determine how long to wait
+#  for additional key sequences.
+KEYTIMEOUT=1
 
 
 ##################################
