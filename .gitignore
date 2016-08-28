@@ -23,7 +23,7 @@ ignore everything
 !.tern-config
 !/.alfred_sync
 !/.alfred_sync/**/*
-
+!/.oh-my-zsh/**/*
 !/scripts/*
 !scripts
 

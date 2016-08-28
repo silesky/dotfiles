@@ -55,7 +55,7 @@ let g:solarized_termcolors=256
 colorscheme monokai
 
 set nu " line numbers
-set nowrap " disable wrapping
+set wrap " disable wrapping
 
 " keybindings
 map <F2> :lnext<CR> "syntastic skip to error

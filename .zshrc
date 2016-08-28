@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-
+bindkey "^R" history-incremental-search-backward
 # default
 # bindkey -M viins '^R' history-incremental-search-backward
 # bindkey -M vicmd '^R' history-incremental-search-backward
@@ -72,7 +72,7 @@ ZSH_THEME="lambda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, vi-mode, last-working-dir)
+plugins=(git, vi-mode)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
