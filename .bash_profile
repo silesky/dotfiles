@@ -4,12 +4,6 @@ source ~/.bash_functions
 
 set -o vi
 # ... mac
-# if tmux isn't open, attach
-tmux attach &> /dev/null
-
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux
-fi
 # https://github.com/seebi/dircolors-solarized/issues/10
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 

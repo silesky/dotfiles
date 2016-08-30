@@ -1,4 +1,12 @@
 # Path to your oh-my-zsh installation.
+
+# if tmux isn't open, attach
+tmux attach &> /dev/null
+
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
+
 export ZSH=~/.oh-my-zsh
 export KEYTIMEOUT=1
 # Set name of the theme to load.
