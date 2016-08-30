@@ -2,7 +2,6 @@
 
 set -o vi
 
-
 # ... colors: mac only (can't use ls --colors=auto)
 # https://github.com/seebi/dircolors-solarized/issues/10
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
@@ -45,12 +44,14 @@ alias ll='ls -lFh'  # Long view, no hidden
 
 # scripts
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
-alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
-alias hide_hidden="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder"
+alias google="sh ~/scripts/google.sh"
+alias autopush='sh ~/scripts/autopush.sh'
 
 # Apps and Misc
+alias catbash="ccat ~/.bash_profile"
+alias cat="ccat"
 alias mail.delete="sudo rm /var/mail/$USER"
-alias seth="cd /Users/ssilesky/"
+alias me="cd /Users/ssilesky/"
 alias c="clear"
 alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
 alias reprof="source ~/.bash_profile && echo 'bash reloaded.'"
@@ -65,15 +66,14 @@ alias inputrc="vim ~/.inputrc"
 alias bashprof="vim ~/.bash_profile"
 alias bashrc="vim ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
-alias cat="ccat"
-alias autopush='sh ~/scripts/autopush.sh'
+
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
 alias lynda="cd ~/Lynda/"
 alias vim='/usr/local/bin/vim'
+
 # ...
 
-alias googler='googler'
-alias google="sh ~/scripts/google.sh"
+
 
 #... chrome
 alias chrome="open -a /Applications/Google\ Chrome.app"
@@ -111,14 +111,15 @@ cdls() { cd "$@" && ls; } #
 alias sub="open -a '/Applications/Sublime Text.app'"
 
 
-alias notifyDone='terminal-notifier -title "Terminal" -message "Done!"' # depends on terminal-notifier
 
-alias ttime_black="sh -c \"sleep 300 && notify-send -u critical 'The tea is ready'\" &"
+
+
 
 alias timeshark="ssh root@timeshark.sytes.net"
+
 # Projects
 
-alias proj="cd ~/proj/"
+alias proj="cd ~/projects/"
 
 
 #... dan
@@ -203,7 +204,7 @@ man() {
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
 
-alias catbash="ccat ~/.bash_profile"
+
 
 
 source ~/.bash_functions

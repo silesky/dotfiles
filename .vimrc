@@ -47,7 +47,7 @@ syntax enable
 
 
 set ignorecase " ignore case when i search by default
-set smartcase " goes with ignorecase... it means that unless there is uppercase on the string, it's case insensive by default
+set smartcase " goes with ignorecase... It means that unless there is uppercase on the string, it's case insensive by default
 set incsearch " see searc results as I type them in
 
 set t_Co=256 "otherwise you'll only see  8bits
