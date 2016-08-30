@@ -79,7 +79,7 @@ alias google="sh ~/scripts/google.sh"
 alias chrome="open -a /Applications/Google\ Chrome.app"
 
 # ... git
-alias gs="git status"
+alias gs="git status -sb"
 alias git="/usr/local/Cellar/git/2.8.4/bin/git"
 alias git.s="git status"
 alias git.log='git log --graph --decorate --pretty=oneline --abbrev-commit'
