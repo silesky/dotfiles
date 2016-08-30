@@ -31,7 +31,7 @@ alias desk='cd ~/Desktop'
 
 
 # history grep
-alias hg='history | grep'
+alias hs='history | grep'
 # Filesystem
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
