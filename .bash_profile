@@ -1,22 +1,18 @@
 # .bash_profile
 
-source ~/.bash_functions
-
 set -o vi
-# ... mac
+
+
+# ... colors: mac only (can't use ls --colors=auto)
 # https://github.com/seebi/dircolors-solarized/issues/10
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-
+export CLICOLOR=1
 # ... linux/bash
-LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
-export LS_COLORS
-
-
+# LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
 # Paths (general)
 # It seems placing the $PATH at the end of the statement (export PATH=/usr/local/git/bin:$PATH)
 # assures that the system looks in this custom place **before** searching default places
 # (that is, the specified path is appended before the standard places contained within $PATH).
-
 # path goes at the end in the default places, because I want the default places to go first.
 export PATH=$HOME/bin:$PATH
 export PATH=/opt/bin:$PATH
@@ -24,8 +20,6 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=$HOME/scripts:$PATH
-
-# path goes at the beginning in the regular places, because I want them to go last
 export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk
 export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/tools
 export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/platform-tools #adb is here
@@ -36,10 +30,23 @@ export PATH=$PATH:/usr/local/share/dotnet
 alias desk='cd ~/Desktop'
 
 
+# history grep
+alias hg='history | grep'
+# Filesystem
+alias ..='cd ..'            # Go up one directory
+alias ...='cd ../..'        # Go up two directories
+alias ....='cd ../../..'    # And for good measure
+
+alias l='ls -lah'  # Long view, show hidden
+alias la='ls -AF'   # Compact view, show hidden
+alias ll='ls -lFh'  # Long view, no hidden
+
 # ......
 
 # scripts
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
+alias show_hidden="defaults write com.apple.Finder AppleShowAllFiles YES && killall Finder"
+alias hide_hidden="defaults write com.apple.Finder AppleShowAllFiles NO && killall Finder"
 
 # Apps and Misc
 alias mail.delete="sudo rm /var/mail/$USER"
@@ -47,6 +54,7 @@ alias seth="cd /Users/ssilesky/"
 alias c="clear"
 alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
 alias reprof="source ~/.bash_profile && echo 'bash reloaded.'"
+alias reall="rezsh && reprof"
 # ... text files
 alias eslintrc="vim ~/.eslintrc"
 alias nodemod="vim ~/.nodemodules.txt"
@@ -82,12 +90,15 @@ alias git.log='git log --graph --decorate --pretty=oneline --abbrev-commit'
 
 # ... tmux
 alias tm="tmux"
+alias tm.swc="tmux switch-client -t"
 alias tm.ks="tmux kill-session -t"
 alias tm.kw="tmux kill-window -t"
 alias tm.a="tmux attach -t"
 alias tmux.conf="vim ~/.tmux.conf"
 alias tm.kill="kill -9 `pgrep -f tmux`"
 alias tm.3="bash ~/scripts/tm-grid-3.sh"
+alias tm.4="bash ~/scripts/tm-grid-4.sh"
+alias tm.kpa="tmux kill-pane -a -t . && clear"
 # ... misc
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
@@ -119,15 +130,12 @@ alias dvt="cd ~/projects/devt-eslint"
 alias pcn="cd ~/projects/pract-net"
 alias pcn.run="cd ~/projects/pract-net/WebApplication && dotnet run"
 
-# ... practdroid
-alias pcd="cd ~/projects/practdroid"
-alias pcd.run="cd ~/projects/practdroid && react-native run-android"
-alias pcd.emu="emulator -avd mydevice"
-# alias pcd.emu="/Applications/Genymotion.app/Contents/MacOS/genymotion"
-alias pcd.runall="source ~/.bash_profile && cd ~/projects/practdroid
-&& pcd.emu & sleep 20s; pcd.run &"
-alias pcd.kill="kill -9 `pgrep -f /Users/ssilesky/Library/Android/sdk/` && kill -9 `pgrep -f genymotion`"
-alias pcd.sync="rsync -ar ~/projects/practicetimer/ ~/projects/practdroid/webapp/"
+# ... jsmobile
+alias jsm="cd ~/projects/JSMobile"
+alias jsm.run="cd ~/projects/JSMobile && npm start"
+alias jsm.emu="emulator -avd mydevice"
+alias rn.kill="kill -9 `pgrep -f /Users/ssilesky/Library/Android/sdk/` && kill -9 `pgrep -f genymotion`"
+
 
 
 # ... coop
@@ -193,11 +201,11 @@ man() {
 
 # https://www.reddit.com/r/vim/comments/4xkyah/til_builtin_man_pager_in_vim/
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
-alias bashprof="sudo vim ~/.bash_profile"
+
+
 alias catbash="ccat ~/.bash_profile"
 
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-
- source ~/.bash_private
- source ~/.bashrc
+source ~/.bash_functions
+source ~/.bash_private
+source ~/.bashrc

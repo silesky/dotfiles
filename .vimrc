@@ -36,6 +36,7 @@ call vundle#end()
 
 " now (after vundle finished) it is save to turn filetype plugins on
 
+""""""""""""""""""""""""""""""""""""""
 " get html indenting working
 let g:html_indent_inctags = "html,body,head,tbody"
 filetype indent on " html auto indent working
@@ -44,12 +45,17 @@ filetype plugin indent on
 syntax on
 syntax enable
 
+
+set ignorecase " ignore case when i search by default
+set smartcase " goes with ignorecase... it means that unless there is uppercase on the string, it's case insensive by default
+set incsearch " see searc results as I type them in
+
 set t_Co=256 "otherwise you'll only see  8bits
 let g:solarized_termcolors=256
 colorscheme monokai
 
 set nu " line numbers
-set nowrap " disable wrapping
+set wrap " disable wrapping
 
 " keybindings
 map <F2> :lnext<CR> "syntastic skip to error
@@ -62,10 +68,14 @@ set backupcopy=yes
 
 set noswapfile " no swap file
 set expandtab " insert space characters whenever the tab key is pressed
+
 set tabstop=2 " number of spaces when you press tab
 set shiftwidth=2 " number of spaces for indentation
 " for command mode
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
+
+" remove escape delay
+set timeoutlen=1000 ttimeoutlen=0
 
 " syntastic (for eslint)... pathogen is a dep
 set statusline+=%#warningmsg#
@@ -94,7 +104,7 @@ function ToggleWrap()
 endfunction
 
 map <F9> :call ToggleWrap()<CR>
-map! <F9> ^[:call ToggleWrap()<CR>
+
 
 " load  vimrc while editing--> :so %
 " reload vimrc from any file--> :so $MYVIMRC

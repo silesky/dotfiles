@@ -8,7 +8,30 @@ if [[ ! $TERM =~ screen ]]; then
 fi
 
 export ZSH=~/.oh-my-zsh
-export KEYTIMEOUT=1
+bindkey "^R" history-incremental-search-backward
+# default
+# bindkey -M viins '^R' history-incremental-search-backward
+# bindkey -M vicmd '^R' history-incremental-search-backward
+
+# ZSH uses the KEYTIMEOUT parameter to determine how long to wait
+#  for additional key sequences.
+
+KEYTIMEOUT=1
+
+##################################
+# if tmux isn't open, attach
+tmux attach &> /dev/null
+
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
+
+
+
+# ...............................
+#################################
+
+#
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -57,14 +80,14 @@ ZSH_THEME="lambda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
+plugins=(git, vi-mode)
+source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
