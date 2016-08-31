@@ -17,9 +17,11 @@ ignore everything
 !.rvm
 !.zshrc
 !autopush.sh
-!/.vim/
+/.vim/.netrwhist!/
+.vim/
 !/.vim/*
 !/.vim/**/*
+
 !.tern-config
 !/.alfred_sync
 !/.alfred_sync/**/*

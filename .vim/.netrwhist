@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/ssilesky/Desktop'
 let g:netrw_dirhist_2='/Users/ssilesky'
 let g:netrw_dirhist_3='/Users/ssilesky/.vim/bundle'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/ssilesky/Lynda/finished'
 let g:netrw_dirhist_6='/Users/ssilesky/Lynda/08_02/start'
 let g:netrw_dirhist_7='/Users/ssilesky/projects/dan'
 let g:netrw_dirhist_8='/Users/ssilesky/.oh-my-zsh'
+let g:netrw_dirhist_9='/Users/ssilesky/projects/pract-net'
