@@ -99,6 +99,7 @@ alias tm.kill="kill -9 `pgrep -f tmux`"
 alias tm.3="bash ~/scripts/tm-grid-3.sh"
 alias tm.4="bash ~/scripts/tm-grid-4.sh"
 alias tm.kpa="tmux kill-pane -a -t . && clear"
+alias tm.x="killall tmux"
 # ... misc
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
