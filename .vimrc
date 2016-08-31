@@ -1,10 +1,10 @@
 
 " pathogen
-  execute pathogen#infect()
+execute pathogen#infect()
 
-           " vundle {{{1
+" vundle {{{1
 " needed to run vundle (but i want this anyways)
-        set nocompatible
+set nocompatible
 
 " vundle needs filtype plugins off
 " i turn it on later
@@ -31,6 +31,7 @@ Plugin 'bling/vim-airline'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'christoomey/vim-tmux-navigator'
+
 " add plugins before this
 call vundle#end()
 
@@ -41,6 +42,9 @@ call vundle#end()
 let g:html_indent_inctags = "html,body,head,tbody"
 filetype indent on " html auto indent working
 filetype plugin indent on
+map <F8> gg=G``:echoerr 'Auto indented.'<CR>
+" reload myvimrc with alt-r
+map ® :so $MYVIMRC<CR>:echoerr 'Auto Reloaded.'<CR>
 
 syntax on
 syntax enable
@@ -51,8 +55,8 @@ set smartcase " goes with ignorecase... It means that unless there is uppercase 
 set incsearch " see searc results as I type them in
 
 set t_Co=256 "otherwise you'll only see  8bits
-let g:solarized_termcolors=256
-colorscheme monokai
+colorscheme zenburn
+" Monokai gotham zenburn 256_noir 256_grayvim
 
 set nu " line numbers
 set wrap " disable wrapping
@@ -61,6 +65,7 @@ set wrap " disable wrapping
 map <F2> :lnext<CR> "syntastic skip to error
 map <F3> :lprevious<CR>
 map <Esc><Esc> :w<CR>  " double escape to save
+
 
 set backspace=indent,eol,start
 set clipboard=unnamed
@@ -95,14 +100,13 @@ let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 
 " wrap toggle
-function ToggleWrap()
- if (&wrap == 1)
-   set nowrap
- else
-   set wrap
- endif
+function! ToggleWrap()
+  if (&wrap == 1)
+    set nowrap
+  else
+    set wrap
+  endif
 endfunction
-
 map <F9> :call ToggleWrap()<CR>
 
 
@@ -111,10 +115,10 @@ map <F9> :call ToggleWrap()<CR>
 
 " get rid of trailing whitespace
 fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
 endfun
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()

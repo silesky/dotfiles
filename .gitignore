@@ -18,9 +18,10 @@ ignore everything
 !.zshrc
 !autopush.sh
 /.vim/.netrwhist!/
-.vim/
+!/.vim/
 !/.vim/*
 !/.vim/**/*
+
 
 !.tern-config
 !/.alfred_sync
