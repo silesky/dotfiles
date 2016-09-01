@@ -12,6 +12,7 @@ export CLICOLOR=1
 
 # ......
 
+alias estest="eslint --debug ~/Desktop/temp/TimerBox.js"
 # scripts
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 alias google="sh ~/scripts/google.sh"
