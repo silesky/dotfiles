@@ -38,3 +38,21 @@ alarm() {
   echo "Alarm set for "$total" secs..."
   sleep $total && terminal-notifier -title "Alarm" -message "$1 minute alarm up!")&
 }
+
+# colorized man pages
+# https://gist.github.com/cocoalabs/2fb7dc2199b0d4bf160364b8e557eb66
+man() {
+    LESS_TERMCAP_mb=$'\e'"[1;31m" \
+        LESS_TERMCAP_md=$'\e'"[1;31m" \
+        LESS_TERMCAP_me=$'\e'"[0m" \
+        LESS_TERMCAP_se=$'\e'"[0m" \
+        LESS_TERMCAP_so=$'\e'"[1;44;33m" \
+        LESS_TERMCAP_ue=$'\e'"[0m" \
+        LESS_TERMCAP_us=$'\e'"[1;32m" \
+        command man "$@"
+
+}
+
+# https://www.reddit.com/r/vim/comments/4xkyah/til_builtin_man_pager_in_vim/
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+
