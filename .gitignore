@@ -8,7 +8,7 @@ ignore everything
 !.gitignore
 !.gitignore_global
 !.vimrc
-
+!.paths
 !.bashrc
 !.bash_profile
 !.bash_functions

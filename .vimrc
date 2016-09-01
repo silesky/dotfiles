@@ -1,4 +1,9 @@
+" other plugins:
+" * rename -> :saveas
+" * ag -> ag -ro PATTERN .
 
+
+"""""""""""""""""""""""""""
 " pathogen
 execute pathogen#infect()
 
@@ -48,6 +53,7 @@ map ® :so $MYVIMRC<CR>:echoerr 'Auto Reloaded.'<CR>
 
 syntax on
 syntax enable
+
 
 
 set ignorecase " ignore case when i search by default

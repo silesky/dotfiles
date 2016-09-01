@@ -8,37 +8,7 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export CLICOLOR=1
 # ... linux/bash
 # LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
-# Paths (general)
-# It seems placing the $PATH at the end of the statement (export PATH=/usr/local/git/bin:$PATH)
-# assures that the system looks in this custom place **before** searching default places
-# (that is, the specified path is appended before the standard places contained within $PATH).
-# path goes at the end in the default places, because I want the default places to go first.
-export PATH=$HOME/bin:$PATH
-export PATH=/opt/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export PATH=$HOME/scripts:$PATH
-export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk
-export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/tools
-export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/platform-tools #adb is here
-export PATH=$PATH:$HOME/.composer/vendor/bin
-export PATH=$PATH:/usr/local/share/dotnet
 
-# misc folder shortcuts
-alias desk='cd ~/Desktop'
-
-
-# history grep
-alias hs='history | grep'
-# Filesystem
-alias ..='cd ..'            # Go up one directory
-alias ...='cd ../..'        # Go up two directories
-alias ....='cd ../../..'    # And for good measure
-
-alias l='ls -lah'  # Long view, show hidden
-alias la='ls -AF'   # Compact view, show hidden
-alias ll='ls -lFh'  # Long view, no hidden
 
 # ......
 
@@ -47,7 +17,18 @@ alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 alias google="sh ~/scripts/google.sh"
 alias autopush='sh ~/scripts/autopush.sh'
 
+
+# misc folder shortcuts
+alias desk='cd ~/Desktop'
+
 # Apps and Misc
+alias hs='history | grep'
+alias ..='cd ..'            # Go up one directory
+alias ...='cd ../..'        # Go up two directories
+alias ....='cd ../../..'    # And for good measure
+alias l='ls -lah'  # Long view, show hidden
+alias la='ls -AF'   # Compact view, show hidden
+alias ll='ls -lFh'  # Long view, no hidden
 alias catbash="ccat ~/.bash_profile"
 alias cat="ccat"
 alias mail.delete="sudo rm /var/mail/$USER"
@@ -60,6 +41,7 @@ alias reall="rezsh && reprof"
 alias eslintrc="vim ~/.eslintrc"
 alias nodemod="vim ~/.nodemodules.txt"
 alias bash_functions="vim ~/.bash_functions"
+alias paths="vim ~/.paths"
 alias prof="vim ~/.bash_profile"
 alias zshrc="vim ~/.zshrc"
 alias inputrc="vim ~/.inputrc"
@@ -191,7 +173,7 @@ alias v2="cd ~/projects/CooperationLouisiana.github.io/v2"
 
 
 
-
+source ~/.paths
 source ~/.bash_functions
 source ~/.bash_private
 source ~/.bashrc
