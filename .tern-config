@@ -1,6 +1,11 @@
 {
-    "plugins": {
-        "node": {}
-    }
+  "libs": [
+    "browser"
+  ],
+  "plugins": {
+     "node": {},
+     "modules": {},
+     "es_modules": {},
+     "jasmine": {}
+  }
 }
-
