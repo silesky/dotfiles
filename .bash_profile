@@ -23,6 +23,7 @@ alias autopush='sh ~/scripts/autopush.sh'
 alias desk='cd ~/Desktop'
 
 # Apps and Misc
+alias ed='ed -p" 🔥> "'
 alias hs='history | grep'
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories

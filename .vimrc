@@ -135,3 +135,9 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 if &diff
     colorscheme Monokai
 endif
+
+" rebind arrow keys to do nothing
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
