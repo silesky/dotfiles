@@ -47,9 +47,10 @@ call vundle#end()
 let g:html_indent_inctags = "html,body,head,tbody"
 filetype indent on " html auto indent working
 filetype plugin indent on
+set autoindent " o goes down and then matches the indentation of the prev line
 map <F8> gg=G``:echoerr 'Auto indented.'<CR>
 " reload myvimrc with alt-r
-map ® :so $MYVIMRC<CR>:echoerr 'Auto Reloaded.'<CR>
+map ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 
 syntax on
 syntax enable
@@ -129,3 +130,8 @@ endfun
 
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+"vimdiff loafs another theme
+" http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
+if &diff
+    colorscheme Monokai
+endif
