@@ -109,10 +109,9 @@ alias proj="cd ~/projects/"
 
 
 #... dan
-alias dan="cd ~/projects/dan"
+alias dan="cd ~/projects/danrico87.github.io"
 # ... devt-eslint
 alias dvt="cd ~/projects/devt-eslint"
-
 # ... pract-net
 alias pcn="cd ~/projects/pract-net"
 alias pcn.run="cd ~/projects/pract-net/WebApplication && dotnet run"
