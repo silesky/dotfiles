@@ -4,9 +4,11 @@
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
+    "plugin:react/recommended", //paired with plugins: ["react"]
   ],
-  "parser": "babel-eslint",
+
+
+  "parser": "babel-eslint", // without parser specified, I just get import is not defined
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -18,10 +20,10 @@
     "mocha": true,
     "node": true,
     "es6": true,
+    "browser": true,
   },
   "rules": {
     "no-console": 0,
-     "no-var": 1,
-    "prefer-const": 1
+    "no-var": 1,
   }
 }
