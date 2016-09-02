@@ -3,6 +3,7 @@ ignore everything
 
 # But not these files...
 
+!.eslintrc
 !cron_test.txt
 !.atom
 !.gitignore
