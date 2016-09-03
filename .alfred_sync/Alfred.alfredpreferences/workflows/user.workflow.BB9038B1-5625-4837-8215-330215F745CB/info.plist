@@ -90,7 +90,7 @@
 				<key>hotkey</key>
 				<integer>-1</integer>
 				<key>hotmod</key>
-				<integer>262144</integer>
+				<integer>1048576</integer>
 				<key>hotstring</key>
 				<string>double tap</string>
 				<key>leftcursor</key>
