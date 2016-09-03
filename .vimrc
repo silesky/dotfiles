@@ -10,7 +10,7 @@ execute pathogen#infect()
 " vundle {{{1
 " needed to run vundle (but i want this anyways)
 set nocompatible
-
+filetype off
 " vundle needs filtype plugins off
 " i turn it on later
 
@@ -32,6 +32,7 @@ Plugin 'VundleVim/Vundle.vim'
 "
 
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
+
 Plugin 'bling/vim-airline'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
@@ -158,3 +159,8 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
