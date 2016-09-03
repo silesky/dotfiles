@@ -57,22 +57,32 @@ syntax enable
 
 
 
+set hlsearch " search highlighting.
 set ignorecase " ignore case when i search by default
 set smartcase " goes with ignorecase... It means that unless there is uppercase on the string, it's case insensive by default
 set incsearch " see searc results as I type them in
 
 set t_Co=256 "otherwise you'll only see  8bits
-colorscheme zenburn
 " Monokai gotham zenburn 256_noir 256_grayvim
+colorscheme zenburn
+" line numbers
+set nu
 
-set nu " line numbers
-set wrap " disable wrapping
-
+"wrap lines by default
+"https://github.com/sheerun/vimrc
+set wrap linebreak
+set showbreak=" "
+"display line next to cursor
+set cursorline
+"common mistake of q: instead of :q
+map q: :q
 " keybindings
 map <F2> :lnext<CR> "syntastic skip to error
 map <F3> :lprevious<CR>
 map <Esc><Esc> :w<CR>  " double escape to save
 
+" mouse for scrolling and window resizing
+set mouse=a
 
 set backspace=indent,eol,start
 set clipboard=unnamed
@@ -127,7 +137,6 @@ fun! <SID>StripTrailingWhitespaces()
   %s/\s\+$//e
   call cursor(l, c)
 endfun
-
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 "vimdiff loafs another theme

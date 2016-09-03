@@ -6,9 +6,6 @@ set -o vi
 # https://github.com/seebi/dircolors-solarized/issues/10
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export CLICOLOR=1
-# ... linux/bash
-# LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
-
 
 # ......
 
@@ -64,9 +61,9 @@ alias chrome="open -a /Applications/Google\ Chrome.app"
 
 # ... git
 alias gs="git status -sb"
-alias git="/usr/local/Cellar/git/2.8.4/bin/git"
-alias git.s="git status"
+alias git="/usr/local/bin/git"
 alias git.log='git log --graph --decorate --pretty=oneline --abbrev-commit'
+
 
 # git config --global color.ui auto
 # git config --global color.branch auto

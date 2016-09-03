@@ -9,6 +9,7 @@
 	excludesfile = /Users/ssilesky/.gitignore_global
 	autocrlf = input
 	editor = vim
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path =
@@ -36,6 +37,6 @@
 	status = auto
 [difftool]
 	prompt = false
-[color "diff"]
-	old = red strike
-	new = green italic
+
+
+
