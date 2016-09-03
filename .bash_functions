@@ -32,6 +32,9 @@ fi
 }
 
 
+w3g() {
+ w3m 'google.com/search?q="'$1'"'
+}
 alarm() {
   (let secs=$((${1:-5}*60))
   let extrasecs=${2:-0}
