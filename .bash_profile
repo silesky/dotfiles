@@ -165,7 +165,7 @@ alias portfolio="cd '/Users/ssilesky/projects/site-factory-portfolio/docroot/sit
 alias port-features="cd '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/modules/features'"
 alias sf-features="cd '/Users/ssilesky/projects/site-factory/docroot/sites/all/modules/features'"
 alias rsync-port="rsync -azvh /Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio/ /Users/ssilesky/projects/site-factory/docroot/sites/all/themes/portfolio/"
-alias port="cd '/Users/ssilesky/projects/site-factory-portfolio/'"
+
 alias bs-port="browser-sync start --proxy portfolio.dd:8083 --files '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio/templates' --no-inject-changes"
 
 
@@ -179,3 +179,12 @@ source ~/.paths
 source ~/.bash_functions
 source ~/.bash_private
 source ~/.bashrc
+
+##
+# Your previous /Users/ssilesky/.bash_profile file was backed up as /Users/ssilesky/.bash_profile.macports-saved_2016-09-03_at_13:43:41
+##
+
+# MacPorts Installer addition on 2016-09-03_at_13:43:41: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+

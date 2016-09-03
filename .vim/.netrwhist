@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/ssilesky/projects/pract-net'
 let g:netrw_dirhist_2='/Users/ssilesky/projects/pract-net/Data'
 let g:netrw_dirhist_3='/Users/ssilesky/projects/pract-net'
@@ -7,3 +7,4 @@ let g:netrw_dirhist_4='/Users/ssilesky/projects/danrico87.github.io'
 let g:netrw_dirhist_5='/Users/ssilesky/projects'
 let g:netrw_dirhist_6='/Users/ssilesky/projects/danrico87.github.io'
 let g:netrw_dirhist_7='/Users/ssilesky/scripts'
+let g:netrw_dirhist_8='/Users/ssilesky/projects/JSMobile'
