@@ -68,7 +68,14 @@ colorscheme zenburn
 " line numbers
 set nu
 
+"Keep 8 lines above or below the cursor when scrolling.
+set scrolloff=8
+
+
+" for autocompletion, complete as much as possible
+set wildmode=longest,full
 "wrap lines by default
+
 "https://github.com/sheerun/vimrc
 set wrap linebreak
 set showbreak=" "
@@ -80,8 +87,8 @@ map q: :q
 map <F2> :lnext<CR> "syntastic skip to error
 map <F3> :lprevious<CR>
 map <Esc><Esc> :w<CR>  " double escape to save
-
 " mouse for scrolling and window resizing
+
 set mouse=a
 
 set backspace=indent,eol,start
@@ -150,3 +157,4 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
