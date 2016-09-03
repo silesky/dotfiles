@@ -1,3 +1,4 @@
+#!/bin/sh
 function extract {
  if [ -z "$1" ]; then
     # display usage if no parameters given
