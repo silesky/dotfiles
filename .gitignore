@@ -2,7 +2,7 @@ ignore everything
 *
 
 # But not these files...
-
+!.gitconfig
 !.eslintrc
 !cron_test.txt
 !.atom
