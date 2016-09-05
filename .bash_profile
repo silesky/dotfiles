@@ -47,7 +47,7 @@ alias inputrc="vim ~/.inputrc"
 alias bashprof="vim ~/.bash_profile"
 alias bashrc="vim ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
-
+alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
 alias lynda="cd ~/Lynda/"
 alias vim='/usr/local/bin/vim'
