@@ -81,7 +81,7 @@ set wildmode=longest,full
 set wrap linebreak
 set showbreak=" "
 "display line next to cursor
-set cursorline
+" set cursorline
 "common mistake of q: instead of :q
 map q: :q
 " keybindings
