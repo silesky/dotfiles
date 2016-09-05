@@ -25,5 +25,23 @@
   "rules": {
     "no-console": 0,
     "no-var": 1,
+    "react/prop-types": 1,
   }
 }
+
+/*
+// 1 = off, 2=warn, 3=error
+react/display-name
+react/jsx-no-duplicate-props
+react/jsx-no-undef
+react/jsx-uses-react
+react/jsx-uses-vars
+react/no-deprecated
+react/no-direct-mutation-state
+react/no-find-dom-node
+react/no-is-mounted
+react/no-unknown-property
+react/prop-types
+react/react-in-jsx-scope
+react/require-render-return
+*/
