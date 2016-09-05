@@ -21,9 +21,6 @@ tmux attach &> /dev/null
 if [[ ! $TERM =~ screen ]]; then
     exec tmux
 fi
-
-
-
 # ...............................
 #################################
 
@@ -114,3 +111,4 @@ source $ZSH/oh-my-zsh.sh
 
 #
 source ~/.bash_profile
+
