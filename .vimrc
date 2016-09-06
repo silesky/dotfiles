@@ -86,8 +86,7 @@ set showbreak=" "
 "common mistake of q: instead of :q
 map q: :q
 " keybindings
-map <F2> :lnext<CR> "syntastic skip to error
-map <F3> :lprevious<CR>
+nnoremap <F2> :lnext<CR> "syntastic skip to error
 map <Esc><Esc> :w<CR>  " double escape to save
 " mouse for scrolling and window resizing
 
@@ -153,6 +152,7 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 if &diff
     colorscheme Monokai
 endif
+
 " Always show window statuses
 set laststatus=2
 
