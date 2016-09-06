@@ -37,6 +37,7 @@ Plugin 'bling/vim-airline'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'maksimr/vim-jsbeautify'
 
 " add plugins before this
 call vundle#end()
@@ -152,6 +153,8 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 if &diff
     colorscheme Monokai
 endif
+" Always show window statuses
+set laststatus=2
 
 " rebind arrow keys to do nothing
 noremap <Up> <Nop>
@@ -164,3 +167,16 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$\|node_modules$',
     \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
+
+"https://github.com/maksimr/vim-jsbeautify
+map <c-f> :call JsBeautify()<cr>
+" or
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for json
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+" for jsx
+autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
