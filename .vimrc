@@ -87,6 +87,7 @@ set showbreak=" "
 map q: :q
 " keybindings
 nnoremap <F2> :lnext<CR> "syntastic skip to error
+
 map <Esc><Esc> :w<CR>  " double escape to save
 " mouse for scrolling and window resizing
 
@@ -169,14 +170,14 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 "https://github.com/maksimr/vim-jsbeautify
-map <c-f> :call JsBeautify()<cr>
+map <F3> :call JsBeautify()<cr>
 " or
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <F3> :call JsBeautify()<cr>
 " for json
-autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+autocmd FileType json noremap <buffer> <F3> :call JsonBeautify()<cr>
 " for jsx
-autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <F3> :call JsxBeautify()<cr>
 " for html
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType html noremap <buffer> <F3> :call HtmlBeautify()<cr>
 " for css or scss
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+autocmd FileType css noremap <buffer> <F3> :call CSSBeautify()<cr>
