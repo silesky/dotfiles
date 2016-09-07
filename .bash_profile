@@ -11,6 +11,7 @@ set -o vi
 # https://github.com/seebi/dircolors-solarized/issues/10
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export CLICOLOR=1
+
 # ......
 alias estest="eslint --debug ~/Desktop/temp/TimerBox.js"
 # scripts
