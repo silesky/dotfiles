@@ -68,7 +68,6 @@ alias cc="clear"
 # git config --global color.status auto
 
 # ... tmux
-alias tmux="tmux attach || tmux new"
 alias tm="tmux"
 alias tm.swc="tmux switch-client -t"
 alias tm.ks="tmux kill-session -t"
