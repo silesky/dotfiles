@@ -30,8 +30,9 @@ alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
 alias l='ls -lah'  # Long view, show hidden
+alias ll='clear && ls -Ag' # Long view, show hidden + clear
 alias la='ls -AF'   # Compact view, show hidden
-alias ll='ls -lFh'  # Long view, no hidden
+
 alias catbash="ccat ~/.bash_profile"
 alias cat="ccat"
 alias mail.delete="sudo rm /var/mail/$USER"
@@ -87,7 +88,7 @@ alias check='git checkout'
 alias killc="kill -9 `pgrep -f 'Google Chrome'`"
 
 alias play='cd ~/Desktop/temp/ && vim play.js'
-cdl() { cd "$@" && ls -al; } #
+cl() { clear && cd "$@" && ls -al; } #
 alias sub="open -a '/Applications/Sublime Text.app'"
 
 # Projects
