@@ -12,31 +12,27 @@ set -o vi
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 export CLICOLOR=1
 # ......
-
 alias estest="eslint --debug ~/Desktop/temp/TimerBox.js"
 # scripts
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 alias google="sh ~/scripts/google.sh"
 alias autopush='sh ~/scripts/autopush.sh'
-
-
-# misc folder shortcuts
+# Misc Folders
 alias desk='cd ~/Desktop'
-
-# Apps and Misc
-alias ed='ed -p" 🔥> "'
-alias hs='history | grep'
+alias me="cd /Users/ssilesky/"
+# Apps and Navigation, Misc
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
 alias l='ls -lah'  # Long view, show hidden
 alias ll='clear && ls -Ag' # Long view, show hidden + clear
 alias la='ls -AF'   # Compact view, show hidden
-
+cl() { clear && cd "$@" && ls -al; } #cdls
+alias ed='ed -p" 🔥> "'
+alias hs='history | grep'
 alias catbash="ccat ~/.bash_profile"
 alias cat="ccat"
 alias mail.delete="sudo rm /var/mail/$USER"
-alias me="cd /Users/ssilesky/"
 alias c="clear"
 alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
 alias reprof="source ~/.bash_profile && echo 'bash reloaded.'"
@@ -88,7 +84,6 @@ alias check='git checkout'
 alias killc="kill -9 `pgrep -f 'Google Chrome'`"
 
 alias play='cd ~/Desktop/temp/ && vim play.js'
-cl() { clear && cd "$@" && ls -al; } #
 alias sub="open -a '/Applications/Sublime Text.app'"
 
 # Projects
