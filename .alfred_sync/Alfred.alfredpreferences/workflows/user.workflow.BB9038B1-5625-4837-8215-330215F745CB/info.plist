@@ -71,7 +71,7 @@
 					<string>/Applications/iTerm.app</string>
 				</array>
 				<key>toggle</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
@@ -90,7 +90,7 @@
 				<key>hotkey</key>
 				<integer>-1</integer>
 				<key>hotmod</key>
-				<integer>1048576</integer>
+				<integer>262144</integer>
 				<key>hotstring</key>
 				<string>double tap</string>
 				<key>leftcursor</key>

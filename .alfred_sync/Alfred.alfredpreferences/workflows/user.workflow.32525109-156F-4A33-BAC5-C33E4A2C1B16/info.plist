@@ -98,7 +98,7 @@
 					<string>/Applications/Sublime Text.app</string>
 				</array>
 				<key>toggle</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
