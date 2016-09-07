@@ -87,7 +87,7 @@ alias check='git checkout'
 alias killc="kill -9 `pgrep -f 'Google Chrome'`"
 
 alias play='cd ~/Desktop/temp/ && vim play.js'
-cdls() { cd "$@" && ls; } #
+cdl() { cd "$@" && ls -al; } #
 alias sub="open -a '/Applications/Sublime Text.app'"
 
 # Projects
