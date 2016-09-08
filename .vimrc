@@ -1,8 +1,3 @@
-" other plugins:
-" * rename -> :saveas
-" * ag -> ag -ro PATTERN .
-
-
 """""""""""""""""""""""""""
 " pathogen
 execute pathogen#infect()
@@ -40,8 +35,13 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'maksimr/vim-jsbeautify'
 " Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'suan/vim-instant-markdown'
+
 " instant-markdown":
 "   sudo npm -g install instant-markdown-d
+" rename
+"    :saveas
+" ag
+"   ag -ro PATTERN .
 
 
 " add plugins before this
@@ -186,3 +186,8 @@ autocmd FileType jsx noremap <buffer> <F3> :call JsxBeautify()<cr>
 autocmd FileType html noremap <buffer> <F3> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <F3> :call CSSBeautify()<cr>
+
+" instant markdown
+" https://github.com/suan/vim-instant-markdown
+let g:instant_markdown_autostart = 0
+noremap :InstantMarkdownPreview µ <CR>
