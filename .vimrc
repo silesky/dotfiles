@@ -38,9 +38,11 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'maksimr/vim-jsbeautify'
+" Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'suan/vim-instant-markdown'
-"install instant markdown
-"VundleSearch instant markdown
+" instant-markdown":
+"   sudo npm -g install instant-markdown-d
+
 
 " add plugins before this
 call vundle#end()
