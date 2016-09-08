@@ -1,40 +1,29 @@
-"""""""""""""""""""""""""""
-" pathogen
+""""""PATHOGEN""""""""""
 execute pathogen#infect()
+"..........................
 
-" vundle {{{1
-" needed to run vundle (but i want this anyways)
-set nocompatible
-filetype off
-filetype plugin indent off
-" vundle needs filtype plugins off
-" i turn it on later
+""""""VIM PLUG""""""""""""""""""""""""
+if empty(glob("~/.vim/autoload/plug.vim"))
+    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+endif
 
-" set the runtime path for vundle
-
-set rtp+=~/.vim/bundle/Vundle.vim
-
-" start vundle environment
-call vundle#begin()
-
-" list of plugins {{{2
-" let Vundle manage Vundle (this is required)
-"old: Plugin 'gmarik/Vundle.vim'
-Plugin 'VundleVim/Vundle.vim'
-
-" to install a plugin add it here and run :PluginInstall.
-" to update the plugins run :PluginInstall! or :PluginUpdate
-" to delete a plugin remove it here and run :PluginClean
-"
-
+call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
-Plugin 'bling/vim-airline'
-Plugin 'marijnh/tern_for_vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'maksimr/vim-jsbeautify'
-" Plugin 'JamshedVesuna/vim-markdown-preview'
-Plugin 'suan/vim-instant-markdown'
+
+Plug 'Valloric/YouCompleteMe'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'kien/ctrlp.vim'
+Plug 'flazz/vim-colorschemes'
+Plug 'suan/vim-instant-markdown'
+Plug 'rking/ag.vim'
+Plug 'marijnh/tern_for_vim'
+Plug 'scrooloose/syntastic'
+
+" Plug 'JamshedVesuna/vim-markdown-preview'
+
+
+call plug#end()
 
 " instant-markdown":
 "   sudo npm -g install instant-markdown-d
@@ -42,14 +31,8 @@ Plugin 'suan/vim-instant-markdown'
 "    :saveas
 " ag
 "   ag -ro PATTERN .
+" ............................................
 
-
-" add plugins before this
-call vundle#end()
-
-" now (after vundle finished) it is save to turn filetype plugins on
-
-""""""""""""""""""""""""""""""""""""""
 " get html indenting working
 let g:html_indent_inctags = "html,body,head,tbody"
 filetype indent on " html auto indent working
