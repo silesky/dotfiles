@@ -11,6 +11,7 @@ execute pathogen#infect()
 " needed to run vundle (but i want this anyways)
 set nocompatible
 filetype off
+filetype plugin indent off
 " vundle needs filtype plugins off
 " i turn it on later
 
@@ -32,12 +33,14 @@ Plugin 'VundleVim/Vundle.vim'
 "
 
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
-
 Plugin 'bling/vim-airline'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'suan/vim-instant-markdown'
+"install instant markdown
+"VundleSearch instant markdown
 
 " add plugins before this
 call vundle#end()
