@@ -39,18 +39,16 @@ Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 call plug#end()
 " DIRECTIONS:
 " YouCompleteMe--
-" cd ~/YouCompleteMe/third_party/ycmd/third_party/
+" cd /YouCompleteMe/third_party/ycmd/third_party/
 "     git submodule update --init --recursive
 "  cd ~/YouCompleteMe/ && ./install.py
+"
+" Tern--
+" cd /tern_for_vim/ && npm install
 "
 " InstantMarkdown--
 "  sudo npm -g install instant-markdown-d
 "
-
-" rename
-"    :saveas
-" ag
-"   ag -ro PATTERN .
 " ............................................
 
 " get html indenting working
