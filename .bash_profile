@@ -88,6 +88,8 @@ alias play='cd ~/Desktop/temp/ && vim play.js'
 alias sub="open -a '/Applications/Sublime Text.app'"
 
 # Projects
+# ... site-factory
+alias sf='cd "~/projects/sf/sf"'
 # ... misc
 alias blog="cd '/Users/ssilesky/projects/blog'"
 alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server . &"
