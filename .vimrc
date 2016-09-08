@@ -86,7 +86,7 @@ set showbreak=" "
 "common mistake of q: instead of :q
 map q: :q
 " keybindings
-nnoremap <F2> :lnext<CR> "syntastic skip to error
+noremap <F2> :lnext<CR> "syntastic skip to error
 
 map <Esc><Esc> :w<CR>  " double escape to save
 " mouse for scrolling and window resizing
