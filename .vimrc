@@ -79,10 +79,13 @@ set nu
 set scrolloff=8
 
 
+" Always show window statuses
+set laststatus=2
+set wildmenu
 " for autocompletion, complete as much as possible
 set wildmode=longest,full
-"wrap lines by default
 
+"wrap lines by default
 "https://github.com/sheerun/vimrc
 set wrap linebreak
 set showbreak=" "
@@ -159,8 +162,6 @@ if &diff
     colorscheme Monokai
 endif
 
-" Always show window statuses
-set laststatus=2
 
 " rebind arrow keys to do nothing
 noremap <Up> <Nop>
@@ -190,4 +191,4 @@ autocmd FileType css noremap <buffer> <F3> :call CSSBeautify()<cr>
 " instant markdown
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
-noremap :InstantMarkdownPreview µ <CR>
+noremap µ :InstantMarkdownPreview<CR>
