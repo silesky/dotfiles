@@ -26,7 +26,7 @@ alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
 alias l='ls -lah'  # Long view, show hidden
-alias ll='clear && ls -Ag' # Long view, show hidden + clear
+alias ll='clear && ls -Agh' # Long view, show hidden + clear
 alias la='ls -AF'   # Compact view, show hidden
 cl() { clear && cd "$@" && ls -al; } #cdls
 alias ed='ed -p" 🔥> "'
