@@ -9,24 +9,44 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
-
-Plug 'Valloric/YouCompleteMe'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'maksimr/vim-jsbeautify'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
+" sudo npm -g install instant-markdown-d
 Plug 'suan/vim-instant-markdown'
 Plug 'rking/ag.vim'
-Plug 'marijnh/tern_for_vim'
 Plug 'scrooloose/syntastic'
+Plug 'marijnh/tern_for_vim'
+":MOVE etc
+Plug 'tpope/vim-eunuch'
+" busy statusline on the bottom
+Plug 'vim-airline/vim-airline' "status bar
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.sh
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
-" Plug 'JamshedVesuna/vim-markdown-preview'
-
+function! BuildTern(info)
+  if a:info.status == 'installed' || a:info.force
+    !npm install
+  endif
+endfunction
+Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 
 call plug#end()
+" DIRECTIONS:
+" YouCompleteMe--
+" cd ~/YouCompleteMe/third_party/ycmd/third_party/
+"     git submodule update --init --recursive
+"  cd ~/YouCompleteMe/ && ./install.py
+"
+" InstantMarkdown--
+"  sudo npm -g install instant-markdown-d
+"
 
-" instant-markdown":
-"   sudo npm -g install instant-markdown-d
 " rename
 "    :saveas
 " ag
