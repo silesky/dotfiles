@@ -90,6 +90,7 @@ alias sub="open -a '/Applications/Sublime Text.app'" #osx
 # Projects
 # ... site-factory
 alias sf='cd "/Users/ssilesky/projects/sf/sf"'
+alias sf.dropdown='cd ~/projects/sf/sf/docroot/sites/all/modules/custom/sla_dropdown'
 # ... misc
 alias blog="cd '/Users/ssilesky/projects/blog'"
 alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server . &"
