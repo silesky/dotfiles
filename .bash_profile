@@ -7,7 +7,7 @@ source ~/.bashrc
 
 set -o vi
 
-# ... colors: mac only (can't use ls --colors=auto)
+
 # https://github.com/seebi/dircolors-solarized/issues/10
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #osx
 export CLICOLOR=1 #osx
@@ -52,12 +52,12 @@ alias vimrc="vim ~/.vimrc"
 alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
 alias lynda="cd ~/Lynda/"
-alias vim='/usr/local/bin/vim'
+alias vim='/usr/local/bin/vim' #osx
 #... chrome
-alias chrome="open -a /Applications/Google\ Chrome.app"
+alias chrome="open -a /Applications/Google\ Chrome.app" #osx
 # ... git
 alias gs="git status -sb"
-alias git="/usr/local/bin/git"
+alias git="/usr/local/bin/git" #osx
 alias git.log='git log --graph --decorate --pretty=oneline --abbrev-commit'
 alias cc="clear"
 
@@ -82,10 +82,10 @@ alias browser-syncit='browser-sync start --server --proxy --files . &'
 
 alias srv="live-server"
 alias check='git checkout'
-alias killc="kill -9 `pgrep -f 'Google Chrome'`"
+alias killc="kill -9 `pgrep -f 'Google Chrome'`" #osx
 
 alias play='cd ~/Desktop/temp/ && vim play.js'
-alias sub="open -a '/Applications/Sublime Text.app'"
+alias sub="open -a '/Applications/Sublime Text.app'" #osx
 
 # Projects
 # ... site-factory
