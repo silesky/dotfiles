@@ -9,8 +9,8 @@ set -o vi
 
 # ... colors: mac only (can't use ls --colors=auto)
 # https://github.com/seebi/dircolors-solarized/issues/10
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
-export CLICOLOR=1
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #osx
+export CLICOLOR=1 #osx
 
 # ......
 alias estest="eslint --debug ~/Desktop/temp/TimerBox.js"
