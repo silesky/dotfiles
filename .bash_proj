@@ -1,0 +1,56 @@
+
+# Projects
+# ... site-factory
+alias sf='cd /Users/ssilesky/projects/sf/sf'
+alias sf.tulane='cd ~/projects/sf/sf/docroot/sites/all/themes/tulane-omega/'
+alias sf.custom='cd ~/projects/sf/sf/docroot/sites/all/modules/custom'
+alias sf.dropdown='cd ~/projects/sf/sf/docroot/sites/all/modules/custom/sla_dropdown'
+# ... misc
+alias blog="cd '/Users/ssilesky/projects/blog'"
+alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server . &"
+alias drupalcamp="cd '/Users/ssilesky/drupalcampnola.com/'"
+alias timeshark="ssh root@timeshark.sytes.net"
+alias proj="cd ~/projects/"
+#... dan
+alias dan="cd ~/projects/danrico87.github.io"
+# ... devt-eslint
+alias dvt="cd ~/projects/devt-eslint"
+# ... pract-net
+alias pcn="cd ~/projects/pract-net"
+alias pcn.run="cd ~/projects/pract-net/WebApplication && dotnet run"
+# ... jsmobile
+alias jsm="cd ~/projects/JSMobile"
+alias jsm.run="cd ~/projects/JSMobile && npm start"
+alias jsm.emu="emulator -avd mydevice"
+alias rn.kill="kill -9 `pgrep -f /Users/ssilesky/Library/Android/sdk/` && kill -9 `pgrep -f genymotion`"
+# ... coop
+alias coop.ssh="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/ && vagrant ssh && coop.1"
+alias coop.up="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/ && vagrant up && coop.2"
+alias coop.reload="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/ && vagrant reload"
+alias coop.vm="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/"
+alias coop.root="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/"
+alias coop="cd /Users/ssilesky/projects/cooperationlouisiana.com/"
+alias coop.coop="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/coop"
+alias coop2.ssh="cd /Users/ssilesky/projects/drupal-vm-2/ && vagrant ssh"
+alias coop2.up="cd /Users/ssilesky/projects/drupal-vm-2/ && vagrant up"
+alias coop2.vm="cd /Users/ssilesky/projects/drupal-vm-2/"
+alias coop2="cd /Users/ssilesky/projects/coop-2"
+alias coop2.root="cd /Users/ssilesky/projects/coop-2/drupal/"
+# ... wedding
+alias wedding="cd ~/projects/wedding"
+#... pct
+alias pract="cd '/Users/ssilesky/projects/practicetimer'"
+alias pract.app="cd /Users/ssilesky/projects/practicetimer/app"
+#... Music Rising
+alias mr-dev="cd ~/projects/mr-dev"
+alias mr-prod="cd ~/projects/mr-prod"
+alias mrdiff="diff -rq ~/projects/mr-prod ~/projects/mr-dev"
+alias mrdiff-view="colordiff -r ~/projects/mr-dev/application/views ~/projects/mr-prod/application/views"
+alias mr-bs="browser-sync start --proxy='musicrisingdev.tulane.edu' --files ."
+#... portfolio
+alias portfolio="cd '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio'"
+alias port-features="cd '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/modules/features'"
+alias sf-features="cd '/Users/ssilesky/projects/site-factory/docroot/sites/all/modules/features'"
+alias rsync-port="rsync -azvh /Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio/ /Users/ssilesky/projects/site-factory/docroot/sites/all/themes/portfolio/"
+alias bs-port="browser-sync start --proxy portfolio.dd:8083 --files '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio/templates' --no-inject-changes"
+alias v2="cd ~/projects/CooperationLouisiana.github.io/v2"

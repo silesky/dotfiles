@@ -4,6 +4,7 @@
 # (that is, the specified path is appended before the standard places contained within $PATH).
 # path goes at the end in the default places, because I want the default places to go first.
 export PATH=$HOME/bin:$PATH
+export PATH=$PATH:/usr/bin/compass
 export PATH=/opt/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH

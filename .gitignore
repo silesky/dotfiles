@@ -1,4 +1,4 @@
-ignore everything
+# ignore everything
 *
 
 # But not these files...
@@ -9,10 +9,14 @@ ignore everything
 !.gitignore
 !.gitignore_global
 !.vimrc
+
+# bash stuff
 !.paths
 !.bashrc
 !.bash_profile
+!.bash_proj
 !.bash_functions
+
 !.tmux.conf
 !.vagrant.d
 !.rvm
@@ -23,13 +27,14 @@ ignore everything
 !/.vim/*
 !/.vim/**/*
 
-
 !.tern-config
 !/.alfred_sync
 !/.alfred_sync/**/*
+.alfred_sync/Alfred.alfredpreferences/workflows/*
 !/.oh-my-zsh/**/*
 !/scripts/*
 !scripts
+
 
 # A
 # etc...

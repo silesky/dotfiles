@@ -2,42 +2,39 @@
   graph = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate
   chk = checkout
   st = status
-  stat = log --since=1.weeks --author='Seth Silesky' --oneline
-  diff = diff --color-words
+  stat = log --graph --author='silesky' --oneline
+
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
 [user]
-	name = Seth Silesky
+	name = silesky
 	email = seth.silesky@gmail.com
 [core]
 	excludesfile = /Users/ssilesky/.gitignore_global
 	autocrlf = input
 	editor = vim
 	pager = less -F -X
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+[color]
+	branch = auto
+	status = auto
+[diff]
+	tool = vimdiff
+        guitool = meld
+[difftool "diffmerge"]
+	cmd = /Applications/DiffMerge.app/Contents/MacOS/diffmerge $LOCAL $REMOTE
+[difftool]
+	prompt = false
 [merge]
 	tool = diffmerge
 [mergetool "diffmerge"]
 	cmd = /Applications/DiffMerge.app/Contents/MacOS/diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
 [mergetool]
 	keepBackup = false
-[color]
-	branch = auto
-	status = auto
-[diff]
-	tool = vimdiff
-[difftool "diffmerge"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/diffmerge $LOCAL $REMOTE
-[difftool]
-	prompt = false
 [push]
 	default = upstream
 [rebase]
 	autosquash = true
+[log]
+	decorate = full

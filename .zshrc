@@ -73,7 +73,7 @@ ZSH_THEME="lambda"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # git clone git@github.com:l4u/zsh-output-highlighting.git
-plugins=(git, tmux, vi-mode)
+plugins=(git, tmux, vi-mode, grunt)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
