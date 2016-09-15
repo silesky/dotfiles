@@ -64,6 +64,7 @@ alias gac="git add -A && git commit"
 alias ga="git add"
 alias gc="git commit"
 alias gs="git status -sb"
+alias glo='git log --oneline'
 alias gl='git log --graph --name-status --branches --decorate --abbrev-commit'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
 
