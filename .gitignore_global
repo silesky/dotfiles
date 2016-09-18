@@ -1,5 +1,4 @@
 *~
-.DS_Store
 .idea
 node_modules
 .DS_Store
@@ -7,9 +6,9 @@ tmp
 dist
 *.swp
 *log
-.DS_Store?
 ._*
 .Spotlight-V100
 .Trashes
 ehthumbs.db
 Thumbs.db
+.vscode

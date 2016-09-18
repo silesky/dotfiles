@@ -20,7 +20,8 @@ alias pcn="cd ~/projects/pract-net"
 alias pcn.run="cd ~/projects/pract-net/WebApplication && dotnet run"
 # ... jsmobile
 alias jsm="cd ~/projects/JSMobile"
-alias jsm.run="cd ~/projects/JSMobile && npm start"
+alias jsm.run="cd ~/projects/JSMobile && sh start.sh"
+alias jsm.kill="~/projects/JSMobile/kill.sh"
 alias jsm.emu="emulator -avd mydevice"
 alias rn.kill="kill -9 `pgrep -f /Users/ssilesky/Library/Android/sdk/` && kill -9 `pgrep -f genymotion`"
 # ... coop

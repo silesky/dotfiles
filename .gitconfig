@@ -3,7 +3,6 @@
   chk = checkout
   st = status
   stat = log --graph --author='silesky' --oneline
-
 [filter "lfs"]
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
@@ -19,9 +18,10 @@
 [color]
 	branch = auto
 	status = auto
+  ui = auto
 [diff]
 	tool = vimdiff
-        guitool = meld
+  guitool = meld
 [difftool "diffmerge"]
 	cmd = /Applications/DiffMerge.app/Contents/MacOS/diffmerge $LOCAL $REMOTE
 [difftool]
@@ -38,3 +38,4 @@
 	autosquash = true
 [log]
 	decorate = full
+

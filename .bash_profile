@@ -68,13 +68,9 @@ alias gs="git status -sb"
 alias glo='git log --oneline'
 alias gl='git log --graph --name-status --branches --decorate --abbrev-commit'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
-
-alias cc="clear"
 alias gd="git difftool --gui &"
+gb() { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
 
-# git config --global color.ui auto
-# git config --global color.branch auto
-# git config --global color.status auto
 
 # ... tmux
 alias tm="tmux"
