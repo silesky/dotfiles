@@ -18,6 +18,8 @@ Plug 'suan/vim-instant-markdown'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
 Plug 'marijnh/tern_for_vim'
+"makes (V)im play nicely with (i)Term 2 and (t)mux.
+Plug 'sjl/vitality.vim'
 ":MOVE etc
 Plug 'tpope/vim-eunuch'
 " busy statusline on the bottom
