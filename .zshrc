@@ -6,11 +6,6 @@ export ZSH=~/.oh-my-zsh
 # VI MODE #######
 #################
 source ~/partials/.zsh_vi
-# http://unix.stackexchange.com/questions/97843/how-can-i-search-history-with-what-is-already-entered-at-the-prompt-in-zsh
-# ctrl up and down
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
-bindkey "^R" history-incremental-search-backward
 #..................
 
 ##################################
