@@ -1,5 +1,5 @@
 # http://stackoverflow.com/questions/10735574/include-source-script-if-it-exists-in-bash
-include () {
+include() {
     [[ -f "$1" ]] && source "$1"
 }
 # .bash_profile
@@ -9,7 +9,6 @@ include ~/.bash_proj
 include ~/.bash_private
 include ~/.bashrc
 include ~/.bash_osx
-include ~/.paths
 
 # Vi mode
 set -o vi
@@ -102,4 +101,3 @@ alias play='cd ~/Desktop/temp/ && vim play.js'
 # https://github.com/seebi/dircolors-solarized/issues/10
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #osx
 export CLICOLOR=1 #osx
-
