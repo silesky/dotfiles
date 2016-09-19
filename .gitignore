@@ -26,7 +26,8 @@
 !/.vim/
 !/.vim/*
 !/.vim/**/*
-
+!/partials/*
+!/partials/
 !.tern-config
 !/.alfred_sync
 !/.alfred_sync/**/*
