@@ -71,11 +71,11 @@
 				<key>argument</key>
 				<integer>0</integer>
 				<key>hotkey</key>
-				<integer>118</integer>
+				<integer>0</integer>
 				<key>hotmod</key>
-				<integer>8519680</integer>
+				<integer>0</integer>
 				<key>hotstring</key>
-				<string>F4</string>
+				<string></string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>

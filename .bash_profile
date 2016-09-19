@@ -64,10 +64,12 @@ alias gac="git add -A && git commit"
 alias ga="git add"
 alias gc="git commit"
 alias gs="git status -sb"
+alias gst="git status"
 alias glo='git log --oneline'
 alias gl='git log --graph --name-status --branches --decorate --abbrev-commit'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
 alias gd="git difftool --gui &"
+
 gb() { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
 
 
