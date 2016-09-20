@@ -1,5 +1,5 @@
 # http://stackoverflow.com/questions/10735574/include-source-script-if-it-exists-in-bash
-include() {
+include () {
     [[ -f "$1" ]] && source "$1"
 }
 # .bash_profile
@@ -70,7 +70,9 @@ alias gl='git log --graph --name-status --branches --decorate --abbrev-commit'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
 alias gd="git difftool --gui &"
 
-gb() { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
+gb () {
+        ruby ~/scripts/git-blame-colored.sh $1 | less -R
+}
 
 
 # ... tmux

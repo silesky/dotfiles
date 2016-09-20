@@ -1,9 +1,14 @@
+so ~/.vimrc_osx.vim
+so ~/.vimrc_linux.vim
+
 """"""PATHOGEN""""""""""
 execute pathogen#infect()
 "..........................
 
 """"""VIM PLUG""""""""""""""""""""""""
 if empty(glob("~/.vim/autoload/plug.vim"))
+    execute '!mkdir -p ~/.vim/ ~/.vim/autoload ~/.vim/bundle'
+    execute '!curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
     execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
 
@@ -130,10 +135,6 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 
-" change cursor shapase based on insert mode
-" http://blog.terriblelabs.com/blog/2013/02/09/stupid-vim-tricks-how-to-change-insert-mode-cursor-shape-with-tmux/
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 
 " wrap toggle
