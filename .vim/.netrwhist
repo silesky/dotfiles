@@ -1,8 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/ssilesky/.oh-my-zsh/plugins'
-let g:netrw_dirhist_2='/Users/ssilesky/.oh-my-zsh'
-let g:netrw_dirhist_3='/Users/ssilesky/.oh-my-zsh/custom'
-let g:netrw_dirhist_4='/Users/ssilesky/.oh-my-zsh/custom/plugins'
-let g:netrw_dirhist_5='/Users/ssilesky/.oh-my-zsh/custom/plugins/zsh-vim-mode'
-let g:netrw_dirhist_6='/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/tulane-omega/sass'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/ssilesky/projects/JSMobile/node_modules/babel-standalone'
+let g:netrw_dirhist_2='/Users/ssilesky/projects/JSMobile/node_modules'
+let g:netrw_dirhist_3='/Users/ssilesky/projects/JSMobile/node_modules/babel-standalone'
