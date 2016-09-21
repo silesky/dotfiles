@@ -5,6 +5,7 @@ alias sf='cd /Users/ssilesky/projects/sf/sf'
 alias sf.tulane='cd ~/projects/sf/sf/docroot/sites/all/themes/tulane-omega/'
 alias sf.custom='cd ~/projects/sf/sf/docroot/sites/all/modules/custom'
 alias sf.dropdown='cd ~/projects/sf/sf/docroot/sites/all/modules/custom/sla_dropdown'
+alias sf.bm='vim ~/projects/sf/sf/docroot/sites/all/themes/tulane-omega/bm.md'
 # ... misc
 alias blog="cd '/Users/ssilesky/projects/blog'"
 alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server . &"

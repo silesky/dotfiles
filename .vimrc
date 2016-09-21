@@ -80,6 +80,9 @@ set incsearch " see searc results as I type them in
 set t_Co=256 "otherwise you'll only see  8bits
 " Monokai gotham zenburn 256_noir 256_grayvim
 colorscheme zenburn
+" tab colors
+hi TabLineFill ctermfg=DarkGray
+
 " line numbers
 set nu
 
@@ -200,7 +203,9 @@ autocmd FileType html noremap <buffer> <F3> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <F3> :call CSSBeautify()<cr>
 
-" instant markdown
+" Instant Markdown
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
 noremap µ :InstantMarkdownPreview<CR>
+" YCM YouCompleteMe (so it will complete markdown files)
+let g:ycm_filetype_blacklist = {}
