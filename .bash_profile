@@ -39,6 +39,7 @@ alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
 alias reprof="source ~/.bash_profile && echo 'bash reloaded.'"
 alias reall="rezsh && reprof"
 # ... text files
+alias .sass-lint="vim ~/.sass-lint.yml"
 alias eslintrc="vim ~/.eslintrc"
 alias nodemod="vim ~/.nodemodules.txt"
 alias bash_proj="vim ~/.bash_proj"

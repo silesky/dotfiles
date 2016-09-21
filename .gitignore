@@ -18,6 +18,7 @@
 .bash_history
 .bash_logout
 
+!.sass-lint*
 !.tmux.conf
 !.vagrant.d
 !.rvm
