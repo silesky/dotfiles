@@ -30,16 +30,16 @@ Plug 'tpope/vim-eunuch'
 " busy statusline on the bottom
 Plug 'vim-airline/vim-airline' "status bar
 function! BuildYCM(info)
-  if a:info.status == 'installed' || a:info.force
-    !./install.sh
-  endif
+    if a:info.status == 'installed' || a:info.force
+        !./install.sh
+    endif
 endfunction
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 function! BuildTern(info)
-  if a:info.status == 'installed' || a:info.force
-    !npm install
-  endif
+    if a:info.status == 'installed' || a:info.force
+        !npm install
+    endif
 endfunction
 Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 
@@ -111,18 +111,20 @@ map <Esc><Esc> :w<CR>  " double escape to save
 " mouse for scrolling and window resizing
 
 set mouse=a
-
 set backspace=indent,eol,start
 set clipboard=unnamed
 set backupcopy=yes
-
 set noswapfile " no swap file
-set expandtab " insert space characters whenever the tab key is pressed
-" For indents that consist of 4 space characters but are entered with the tab
-set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
-set tabstop=4 " number of spaces when you press tab
-" for command mode
-set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
+set tabstop=4       " The width of a TAB is set to 4.
+" Still it is a \t. It is just that
+" Vim will interpret it to be having
+" a width of 4.
+set shiftwidth=4    " Indents will have a width of 4
+set softtabstop=4   " Sets the number of columns for a TAB
+set expandtab     " Expand TABs to spaces
+set smarttab      "Enabling this will make the tab key (in insert mode) insert spaces or tabs to
+"go to the next indent of the next tabstop when the cursor is at the beginning
+"of a line (ie: the only preceding characters are whitespace)
 
 " remove escape delay
 set timeoutlen=1000 ttimeoutlen=0
@@ -131,43 +133,34 @@ set timeoutlen=1000 ttimeoutlen=0
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 
-
-
 " wrap toggle
 function! ToggleWrap()
-  if (&wrap == 1)
-    set nowrap
-  else
-    set wrap
-  endif
+    if (&wrap == 1)
+        set nowrap
+    else
+        set wrap
+    endif
 endfunction
 map <F9> :call ToggleWrap()<CR>
 
 
-" load  vimrc while editing--> :so %
-" reload vimrc from any file--> :so $MYVIMRC
-
 " get rid of trailing whitespace
 fun! <SID>StripTrailingWhitespaces()
-  let l = line(".")
-  let c = col(".")
-  %s/\s\+$//e
-  call cursor(l, c)
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 "vimdiff loafs another theme
 " http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
 if &diff
-
-    hi TabLineFill ctermfg=DarkGray
     colorscheme Monokai
 endif
 
@@ -188,10 +181,10 @@ inoremap <Left> <C-o>:echo "No left for you!"<CR>
 
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$\|node_modules$',
-    \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
-
+            \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$\|node_modules$',
+            \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+            \ }
+set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 "https://github.com/maksimr/vim-jsbeautify
 map <F3> :call JsBeautify()<cr>
 " or
@@ -204,7 +197,6 @@ autocmd FileType jsx noremap <buffer> <F3> :call JsxBeautify()<cr>
 autocmd FileType html noremap <buffer> <F3> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <F3> :call CSSBeautify()<cr>
-
 " Instant Markdown
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
