@@ -31,6 +31,7 @@ alias la='ls -AF'   # Compact view, show hidden
 cl() { clear && cd "$@" && ls -al; } #cdls
 alias ed='ed -p" 🔥> "'
 alias hs='history | grep'
+alias as='alias | grep'
 alias catbash="ccat ~/.bash_profile"
 alias cat="ccat"
 alias mail.delete="sudo rm /var/mail/$USER"
@@ -78,12 +79,13 @@ gb () {
 
 # ... tmux
 alias tm="tmux"
-alias tm.swc="tmux switch-client -t"
+alias tm.sw="tmux splitw -d"
 alias tm.ks="tmux kill-session -t"
 alias tm.kw="tmux kill-window -t"
 alias tm.a="tmux attach -t"
 alias tmux.conf="vim ~/.tmux.conf"
 alias tm.kill="kill -9 `pgrep -f tmux`"
+alias tm.2="tmux splitw -d -h && clear"
 alias tm.3="bash ~/scripts/tm-grid-3.sh"
 alias tm.4="bash ~/scripts/tm-grid-4.sh"
 alias tm.kpa="tmux kill-pane -a -t . && clear"

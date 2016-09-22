@@ -166,6 +166,8 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 "vimdiff loafs another theme
 " http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
 if &diff
+
+    hi TabLineFill ctermfg=DarkGray
     colorscheme Monokai
 endif
 
