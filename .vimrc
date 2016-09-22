@@ -7,9 +7,9 @@ execute pathogen#infect()
 
 """"""VIM PLUG""""""""""""""""""""""""
 if empty(glob("~/.vim/autoload/plug.vim"))
-    execute '!mkdir -p ~/.vim/ ~/.vim/autoload ~/.vim/bundle'
-    execute '!curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
-    execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+  execute '!mkdir -p ~/.vim/ ~/.vim/autoload ~/.vim/bundle'
+  execute '!curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
+  execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -18,28 +18,27 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'tpope/vim-sleuth'
+"detect indent
 " sudo npm -g install instant-markdown-d
 Plug 'suan/vim-instant-markdown'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
 Plug 'marijnh/tern_for_vim'
-"makes (V)im play nicely with (i)Term 2 and (t)mux.
-Plug 'sjl/vitality.vim'
-":MOVE etc
-Plug 'tpope/vim-eunuch'
-" busy statusline on the bottom
-Plug 'vim-airline/vim-airline' "status bar
+Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
+Plug 'tpope/vim-eunuch' "\:MOVE etc
+Plug 'vim-airline/vim-airline' "busy statusline on the bottom
 function! BuildYCM(info)
-    if a:info.status == 'installed' || a:info.force
-        !./install.sh
-    endif
+  if a:info.status == 'installed' || a:info.force
+    !./install.sh
+  endif
 endfunction
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 function! BuildTern(info)
-    if a:info.status == 'installed' || a:info.force
-        !npm install
-    endif
+  if a:info.status == 'installed' || a:info.force
+    !npm install
+  endif
 endfunction
 Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 
@@ -115,14 +114,15 @@ set backspace=indent,eol,start
 set clipboard=unnamed
 set backupcopy=yes
 set noswapfile " no swap file
-set tabstop=4       " The width of a TAB is set to 4.
+
+set tabstop=2 " The width of a TAB is set to a [number]
 " Still it is a \t. It is just that
 " Vim will interpret it to be having
 " a width of 4.
-set shiftwidth=4    " Indents will have a width of 4
-set softtabstop=4   " Sets the number of columns for a TAB
+set shiftwidth=2    " Indents will have a width of [number]
+set softtabstop=2   " Sets the number of columns for a TAB
 set expandtab     " Expand TABs to spaces
-set smarttab      "Enabling this will make the tab key (in insert mode) insert spaces or tabs to
+set smarttab      " Enabling this will make the tab key (in insert mode) insert spaces or tabs to
 "go to the next indent of the next tabstop when the cursor is at the beginning
 "of a line (ie: the only preceding characters are whitespace)
 
@@ -140,28 +140,31 @@ let g:syntastic_javascript_checkers = ['eslint']
 
 " wrap toggle
 function! ToggleWrap()
-    if (&wrap == 1)
-        set nowrap
-    else
-        set wrap
-    endif
+  if (&wrap == 1)
+    set nowrap
+  else
+    set wrap
+  endif
 endfunction
 map <F9> :call ToggleWrap()<CR>
 
 
 " get rid of trailing whitespace
 fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype scss setlocal ts=4 sw=4 expandtab
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
 
 "vimdiff loafs another theme
 " http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
 if &diff
-    colorscheme Monokai
+  colorscheme Monokai
 endif
 
 
@@ -181,9 +184,9 @@ inoremap <Left> <C-o>:echo "No left for you!"<CR>
 
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
-            \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$\|node_modules$',
-            \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-            \ }
+      \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$\|node_modules$\|modules$',
+      \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+      \ }
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 "https://github.com/maksimr/vim-jsbeautify
 map <F3> :call JsBeautify()<cr>
