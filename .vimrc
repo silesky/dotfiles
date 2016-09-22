@@ -118,9 +118,9 @@ set backupcopy=yes
 
 set noswapfile " no swap file
 set expandtab " insert space characters whenever the tab key is pressed
-
-set tabstop=2 " number of spaces when you press tab
-set shiftwidth=2 " number of spaces for indentation
+" For indents that consist of 4 space characters but are entered with the tab
+set tabstop=8 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=4 " number of spaces when you press tab
 " for command mode
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 
