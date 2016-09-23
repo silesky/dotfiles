@@ -96,15 +96,4 @@ alias browser-syncit='browser-sync start --server --proxy --files . &'
 alias srv="live-server"
 alias check='git checkout'
 alias killc="kill -9 `pgrep -f 'Google Chrome'`" #osx
-
-
-# OSX - app path realiases and os-specific
-alias chrome="open -a /Applications/Google\ Chrome.app" #osx
-alias git="/usr/local/bin/git" #osx
-alias vim='/usr/local/bin/vim' #osx
-alias sub="open -a '/Applications/Sublime Text.app'" #osx
 alias play='cd ~/Desktop/temp/ && vim play.js'
-# ... solarized
-# https://github.com/seebi/dircolors-solarized/issues/10
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #osx
-export CLICOLOR=1 #osx

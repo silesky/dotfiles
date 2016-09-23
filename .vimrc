@@ -1,3 +1,4 @@
+
 so ~/.vimrc_osx.vim
 so ~/.vimrc_linux.vim
 
@@ -45,9 +46,9 @@ Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 call plug#end()
 " DIRECTIONS:
 " YouCompleteMe--
-" cd /YouCompleteMe/third_party/ycmd/third_party/
+" cd ~/.vim/plugged/YouCompleteMe/
 "     git submodule update --init --recursive
-"  cd ~/YouCompleteMe/ && ./install.py
+"  cd ~/.vim/plugged/YouCompleteMe/ && ./install.py
 "
 " Tern--
 " cd /tern_for_vim/ && npm install
@@ -112,6 +113,7 @@ map <Esc><Esc> :w<CR>  " double escape to save
 set mouse=a
 set backspace=indent,eol,start
 set clipboard=unnamed
+set clipboard=unnamedplus
 set backupcopy=yes
 set noswapfile " no swap file
 

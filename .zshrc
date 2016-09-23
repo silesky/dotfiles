@@ -8,15 +8,6 @@ export ZSH=~/.oh-my-zsh
 source ~/partials/.zsh_vi
 #..................
 
-##################################
-# if tmux isn't open, attach
-tmux attach &> /dev/null
-
-if [[ ! $TERM =~ screen ]]; then
-    exec tmux
-fi
-# ...............................
-#################################
 
 #
 # Set name of the theme to load.
