@@ -15,6 +15,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
+Plug 'jszakmeister/vim-togglecursor'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -208,3 +209,4 @@ let g:instant_markdown_autostart = 0
 noremap µ :InstantMarkdownPreview<CR>
 " YCM YouCompleteMe (so it will complete markdown files)
 let g:ycm_filetype_blacklist = {}
+
