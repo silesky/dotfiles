@@ -1,0 +1,11 @@
+<!-- Generator: GNU source-highlight 3.1.8
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><i><font color="#9A1900">#!/bin/bash</font></i>
+echo <font color="#FF0000">"Searching for: $@"</font>
+<b><font color="#0000FF">for</font></b> term <b><font color="#0000FF">in</font></b> <font color="#009900">$@</font> <font color="#990000">;</font> <b><font color="#0000FF">do</font></b>
+    <font color="#009900">search</font><font color="#990000">=</font><font color="#FF0000">"$search%20$term"</font>
+<b><font color="#0000FF">done</font></b>
+open <font color="#FF0000">"http://www.google.com/search?q=$search"</font>
+</tt></pre>
