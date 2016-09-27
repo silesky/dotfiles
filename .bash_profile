@@ -1,4 +1,3 @@
-# http://stackoverflow.com/questions/10735574/include-source-script-if-it-exists-in-bash
 include () {
     [[ -f "$1" ]] && source "$1"
 }
@@ -26,10 +25,11 @@ alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
 alias l='ls -lah'  # Long view, show hidden
-alias ll='clear && ls -Afh' # Long view, show hidden + clear
+alias ll='clear && ls -AFh' # Long view, show hidden + clear
 alias la='ls -AF'   # Compact view, show hidden
-cl() { clear && cd "$@" && ls -al; } #cdls
+cl() { clear && cd "$@" && ls -AFh; } #cdls
 alias ed='ed -p" 🔥> "'
+alias vimcat='sh ~/scripts/vimcat.sh'
 alias hs='history | grep'
 alias as='alias | grep'
 alias catbash="ccat ~/.bash_profile"
