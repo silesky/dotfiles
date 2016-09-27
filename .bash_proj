@@ -17,7 +17,8 @@ alias dan="cd ~/projects/danrico87.github.io"
 alias dvt="cd ~/projects/devt-eslint"
 # ... pract-net
 alias pcn="cd ~/projects/pract-net"
-alias pcn.run="cd ~/projects/pract-net/WebApplication && dotnet run"
+alias pcn.start="cd ~/projects/pract-net && sh start.sh"
+alias pcn.kill="cd ~/projects/pract-net && sh kill.sh"
 # ... jsmobile
 alias jsm="cd ~/projects/JSMobile"
 alias jsm.run="cd ~/projects/JSMobile && sh start.sh"

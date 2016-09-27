@@ -12,8 +12,8 @@ include ~/.bash_osx
 
 # Vi mode
 set -o vi
-
-alias estest="eslint --debug ~/Desktop/temp/TimerBox.js"
+alias shebang="#!/usr/bin/env bash"
+alias estest="eslint --debug ~/estest.js"
 # scripts
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 alias google="sh ~/scripts/google.sh"
@@ -25,8 +25,8 @@ alias me="cd /Users/ssilesky/"
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
-alias l='ls -lah'  # Long view, show hidden
-alias ll='clear && ls -Afh' # Long view, show hidden + clear
+alias l='ls -Afh'  # Long view, show hidden
+alias ll='clear && ls -lAfh' # Long view, show hidden + clear
 alias la='ls -AF'   # Compact view, show hidden
 cl() { clear && cd "$@" && ls -al; } #cdls
 alias ed='ed -p" 🔥> "'

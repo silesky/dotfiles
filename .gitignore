@@ -4,6 +4,7 @@
 # But not these files...
 !.gitconfig
 !.eslintrc
+!estest.js
 !cron_test.txt
 !.atom
 !.gitignore
