@@ -73,7 +73,7 @@ alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-
 alias gd="git difftool --gui &"
 
 gb () {
-        ruby ~/scripts/git-blame-colored.sh $1 | less -R
+    ruby ~/scripts/git-blame-colored.sh $1 | less -R
 }
 
 
@@ -90,6 +90,24 @@ alias tm.3="bash ~/scripts/tm-grid-3.sh"
 alias tm.4="bash ~/scripts/tm-grid-4.sh"
 alias tm.kpa="tmux kill-pane -a -t . && clear"
 alias tm.x="killall tmux"
+
+
+# tmux specific
+ # linux / osx
+if [[ "$(uname)" = "Darwin" ]]; then
+    alias tmux='tmux -2 -f ~/.tmux-osx.conf'
+    alias tm="tmux -2"
+else
+    alias tmux='tmux -2'
+    alias tm="tmux -2"
+fi
+# reattach to user namespace
+
+if [[ "$(uname)" = "Darwin" ]]; then
+  reattach-to-user-namespace $@
+else
+  exec "$@"
+fi
 # ... misc
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 
@@ -108,3 +126,4 @@ alias play='cd ~/Desktop/temp/ && vim play.js'
 # https://github.com/seebi/dircolors-solarized/issues/10
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #osx
 export CLICOLOR=1 #osx
+
