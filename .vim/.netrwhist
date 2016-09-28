@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/ssilesky'
 let g:netrw_dirhist_2='/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/tulane-omega'
 let g:netrw_dirhist_3='/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/tulane-omega/sass'
@@ -8,3 +8,4 @@ let g:netrw_dirhist_5='/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/t
 let g:netrw_dirhist_6='/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/tulane-omega'
 let g:netrw_dirhist_7='/Users/ssilesky/projects/pract-net/wwwroot/app'
 let g:netrw_dirhist_8='/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/tulane-omega'
+let g:netrw_dirhist_9='/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/css/schools_and_departments/scss'

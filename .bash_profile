@@ -1,6 +1,6 @@
 # http://stackoverflow.com/questions/10735574/include-source-script-if-it-exists-in-bash
 include () {
-    [[ -f "$1" ]] && source "$1"
+   [[ -f "$1" ]] && source "$1"
 }
 # .bash_profile
 include ~/.paths
@@ -22,6 +22,7 @@ alias autopush='sh ~/scripts/autopush.sh'
 alias desk='cd ~/Desktop'
 alias me="cd /Users/ssilesky/"
 # Apps and Navigation, Misc
+alias f="sudo find . -iname"
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
@@ -73,7 +74,7 @@ alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-
 alias gd="git difftool --gui &"
 
 gb () {
-    ruby ~/scripts/git-blame-colored.sh $1 | less -R
+   ruby ~/scripts/git-blame-colored.sh $1 | less -R
 }
 
 
@@ -94,20 +95,18 @@ alias tm.x="killall tmux"
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 alias srv="live-server"
 
- # linux / osx
+# linux / osx
 if [[ "$(uname)" = "Darwin" ]]; then
-    alias tm="tmux"
-    # OSX - app path realiases and os-specific
-    alias chrome="open -a /Applications/Google\ Chrome.app" #osx
-    alias git="/usr/local/bin/git" #osx
-    alias vim='/usr/local/bin/vim' #osx
-    alias sub="open -a '/Applications/Sublime Text.app'" #osx
-    alias play='cd ~/Desktop/temp/ && vim play.js'
-    # ... solarized
-    # https://github.com/seebi/dircolors-solarized/issues/10
-    export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #osx
-    export CLICOLOR=1 #osx
+   alias tm="tmux"
+   # OSX - app path realiases and os-specific
+   alias chrome="open -a /Applications/Google\ Chrome.app" #osx
+   alias git="/usr/local/bin/git" #osx
+   alias vim='/usr/local/bin/vim' #osx
+   alias sub="open -a '/Applications/Sublime Text.app'" #osx
+   alias play='cd ~/Desktop/temp/ && vim play.js'
+   export CLICOLOR=1 #osx
+   export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #solarized
 else
-    alias tmux='tmux -2'
-    alias tm="tmux -2"
+   alias tmux='tmux -2'
+   alias tm="tmux -2"
 fi

@@ -2,9 +2,10 @@
 # Projects
 # ... site-factory
 alias sf='cd /Users/ssilesky/projects/sf/sf'
-alias sf.tulane='cd ~/projects/sf/sf/docroot/sites/all/themes/tulane-omega/'
+alias sf.tulane='cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/'
 alias sf.custom='cd ~/projects/sf/sf/docroot/sites/all/modules/custom'
-alias sf.bm='vim ~/projects/sf/sf/docroot/sites/all/themes/tulane-omega/bm.md'
+alias sf.bm='vim ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/bm.md'
+alias sf.schools="cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/css/schools_and_departments/"
 # ... misc
 alias blog="cd '/Users/ssilesky/projects/blog'"
 alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server . &"
