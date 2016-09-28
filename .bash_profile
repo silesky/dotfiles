@@ -78,7 +78,6 @@ gb () {
 
 
 # ... tmux
-alias tm="tmux"
 alias tm.sw="tmux splitw -d"
 alias tm.ks="tmux kill-session -t"
 alias tm.kw="tmux kill-window -t"
@@ -91,39 +90,24 @@ alias tm.4="bash ~/scripts/tm-grid-4.sh"
 alias tm.kpa="tmux kill-pane -a -t . && clear"
 alias tm.x="killall tmux"
 
+# ... misc
+alias browser-syncit='browser-sync start --server --proxy --files . &'
+alias srv="live-server"
 
-# tmux specific
  # linux / osx
 if [[ "$(uname)" = "Darwin" ]]; then
-    alias tmux='tmux -2 -f ~/.tmux-osx.conf'
-    alias tm="tmux -2"
+    alias tm="tmux"
+    # OSX - app path realiases and os-specific
+    alias chrome="open -a /Applications/Google\ Chrome.app" #osx
+    alias git="/usr/local/bin/git" #osx
+    alias vim='/usr/local/bin/vim' #osx
+    alias sub="open -a '/Applications/Sublime Text.app'" #osx
+    alias play='cd ~/Desktop/temp/ && vim play.js'
+    # ... solarized
+    # https://github.com/seebi/dircolors-solarized/issues/10
+    export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #osx
+    export CLICOLOR=1 #osx
 else
     alias tmux='tmux -2'
     alias tm="tmux -2"
 fi
-# reattach to user namespace
-
-if [[ "$(uname)" = "Darwin" ]]; then
-  reattach-to-user-namespace $@
-else
-  exec "$@"
-fi
-# ... misc
-alias browser-syncit='browser-sync start --server --proxy --files . &'
-
-alias srv="live-server"
-alias check='git checkout'
-alias killc="kill -9 `pgrep -f 'Google Chrome'`" #osx
-
-
-# OSX - app path realiases and os-specific
-alias chrome="open -a /Applications/Google\ Chrome.app" #osx
-alias git="/usr/local/bin/git" #osx
-alias vim='/usr/local/bin/vim' #osx
-alias sub="open -a '/Applications/Sublime Text.app'" #osx
-alias play='cd ~/Desktop/temp/ && vim play.js'
-# ... solarized
-# https://github.com/seebi/dircolors-solarized/issues/10
-export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #osx
-export CLICOLOR=1 #osx
-
