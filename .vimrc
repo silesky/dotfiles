@@ -1,4 +1,3 @@
-
 so ~/.vimrc_osx.vim
 so ~/.vimrc_linux.vim
 
@@ -15,6 +14,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'maksimr/vim-jsbeautify'
@@ -64,9 +64,10 @@ let g:html_indent_inctags = "html,body,head,tbody"
 filetype indent on " html auto indent working
 filetype plugin indent on
 set autoindent " o goes down and then matches the indentation of the prev line
-map <F8> gg=G``:echoerr 'Auto indented.'<CR>
+noremap <F8> gg=G``:echoerr 'Auto indented.'<CR>
+inoremap <F8> gg=G``:echoerr 'Auto indented.'<CR>
 " reload myvimrc with alt-r
-map ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
+noremap <f12> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 
 syntax on
 syntax enable
@@ -190,6 +191,7 @@ let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$\|node_modules$\|modules$',
       \ 'file': '\.so$\|\.dat$|\.DS_Store$'
       \ }
+let g:ctrlp_show_hidden = 1
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 "https://github.com/maksimr/vim-jsbeautify
 map <F3> :call JsBeautify()<cr>
@@ -209,4 +211,6 @@ let g:instant_markdown_autostart = 0
 noremap µ :InstantMarkdownPreview<CR>
 " YCM YouCompleteMe (so it will complete markdown files)
 let g:ycm_filetype_blacklist = {}
-
+noremap µ :InstantMarkdownPreview<CR>
+" YCM YouCompleteMe (so it will complete markdown files)
+noremap <C-b> :NERDTreeToggle<CR>
