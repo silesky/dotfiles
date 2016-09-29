@@ -91,8 +91,12 @@ set nu
 "Keep 8 lines above or below the cursor when scrolling.
 set scrolloff=8
 
+" cursorline for ctrlp
+hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+set nocursorline
 
-" Always show window statuses
+
+" AlWAYS show window statuses
 set laststatus=2
 set wildmenu
 " for autocompletion, complete as much as possible
@@ -214,3 +218,5 @@ let g:ycm_filetype_blacklist = {}
 noremap µ :InstantMarkdownPreview<CR>
 " YCM YouCompleteMe (so it will complete markdown files)
 noremap <C-b> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
+
