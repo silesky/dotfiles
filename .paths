@@ -16,3 +16,4 @@ export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/platform-tools #adb is her
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:/usr/local/share/dotnet
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
