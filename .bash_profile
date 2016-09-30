@@ -1,38 +1,40 @@
+# http://stackoverflow.com/questions/10735574/include-source-script-if-it-exists-in-bash
 include () {
     [[ -f "$1" ]] && source "$1"
 }
 # .bash_profile
-include ~/.paths
+include ~/.path
 include ~/.bash_functions
 include ~/.bash_proj
 include ~/.bash_private
 include ~/.bashrc
 include ~/.bash_osx
 
-# Vi mode
+# vi mode
 set -o vi
-
-alias estest="eslint --debug ~/Desktop/temp/TimerBox.js"
+alias shebang="#!/usr/bin/env bash"
+alias estest="eslint --debug ~/estest.js"
 # scripts
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 alias google="sh ~/scripts/google.sh"
 alias autopush='sh ~/scripts/autopush.sh'
-# Misc Folders
-alias desk='cd ~/Desktop'
-alias me="cd /Users/ssilesky/"
-# Apps and Navigation, Misc
-alias ..='cd ..'            # Go up one directory
-alias ...='cd ../..'        # Go up two directories
-alias ....='cd ../../..'    # And for good measure
-alias l='ls -lah'  # Long view, show hidden
-alias ll='clear && ls -AFh' # Long view, show hidden + clear
-alias la='ls -AF'   # Compact view, show hidden
-cl() { clear && cd "$@" && ls -AFh; } #cdls
+# misc folders
+alias desk='cd ~/desktop'
+alias me="cd /users/ssilesky/"
+# apps and navigation, misc
+alias ..='cd ..'            # go up one directory
+alias ...='cd ../..'        # go up two directories
+alias ....='cd ../../..'    # and for good measure
+alias l='ls -afh'  # long view, show hidden
+alias ll='clear && ls -lafh' # long view, show hidden + clear
+alias la='ls -af'   # compact view, show hidden
+cl() { clear && cd "$@" && ls -al; } #cdls
 alias ed='ed -p" 🔥> "'
-alias vimcat='sh ~/scripts/vimcat.sh'
 alias hs='history | grep'
 alias as='alias | grep'
-alias mail.delete="sudo rm /var/mail/$USER"
+alias catbash="ccat ~/.bash_profile"
+alias cat="ccat"
+alias mail.delete="sudo rm /var/mail/$user"
 alias c="clear"
 alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
 alias reprof="source ~/.bash_profile && echo 'bash reloaded.'"
@@ -55,12 +57,12 @@ alias vimrc="vim ~/.vimrc"
 alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 # misc
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
-alias lynda="cd ~/Lynda/"
+alias lynda="cd ~/lynda/"
 
 
 # ... git
 alias gp="git push"
-alias gac="git add -A && git commit"
+alias gac="git add -a && git commit"
 alias ga="git add"
 alias gc="git commit"
 alias gs="git status -sb"
@@ -71,12 +73,11 @@ alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-
 alias gd="git difftool --gui &"
 
 gb () {
-        ruby ~/scripts/git-blame-colored.sh $1 | less -R
+    ruby ~/scripts/git-blame-colored.sh $1 | less -r
 }
 
 
 # ... tmux
-alias tm="tmux"
 alias tm.sw="tmux splitw -d"
 alias tm.ks="tmux kill-session -t"
 alias tm.kw="tmux kill-window -t"
@@ -88,10 +89,25 @@ alias tm.3="bash ~/scripts/tm-grid-3.sh"
 alias tm.4="bash ~/scripts/tm-grid-4.sh"
 alias tm.kpa="tmux kill-pane -a -t . && clear"
 alias tm.x="killall tmux"
+
 # ... misc
 alias browser-syncit='browser-sync start --server --proxy --files . &'
-
 alias srv="live-server"
-alias check='git checkout'
-alias killc="kill -9 `pgrep -f 'Google Chrome'`" #osx
-alias play='cd ~/Desktop/temp/ && vim play.js'
+
+ # linux / osx
+if [[ "$(uname)" = "darwin" ]]; then
+    alias tm="tmux"
+    # osx - app path realiases and os-specific
+    alias chrome="open -a /applications/google\ chrome.app" #osx
+    alias git="/usr/local/bin/git" #osx
+    alias vim='/usr/local/bin/vim' #osx
+    alias sub="open -a '/applications/sublime text.app'" #osx
+    alias play='cd ~/desktop/temp/ && vim play.js'
+    # ... solarized
+    # https://github.com/seebi/dircolors-solarized/issues/10
+    export lscolors=gxfxbeaebxxehehbadacad #osx
+    export clicolor=1 #osx
+else
+    alias tmux='tmux -2'
+    alias tm="tmux -2"
+fi
