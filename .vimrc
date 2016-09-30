@@ -22,6 +22,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-sleuth'
 "detect indent
 " sudo npm -g install instant-markdown-d
+Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
@@ -207,3 +208,4 @@ let g:instant_markdown_autostart = 0
 noremap µ :InstantMarkdownPreview<CR>
 " YCM YouCompleteMe (so it will complete markdown files)
 let g:ycm_filetype_blacklist = {}
+noremap <C-b> :NERDTreeToggle<CR>
