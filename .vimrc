@@ -1,5 +1,10 @@
-so ~/.vimrc_osx.vim
-so ~/.vimrc_linux.vim
+if has('unix')
+
+endif
+
+if has('macunix')
+    map ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR> "osx
+endif
 
 """"""PATHOGEN""""""""""
 execute pathogen#infect()
@@ -14,15 +19,16 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'jszakmeister/vim-togglecursor'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'maksimr/vim-jsbeautify'
+Plug 'pangloss/vim-javascript' "syntax hl
+Plug 'maksimr/vim-jsbeautify' "f3
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jszakmeister/vim-togglecursor'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-sleuth'
 "detect indent
 " sudo npm -g install instant-markdown-d
+Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
@@ -47,9 +53,9 @@ Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 call plug#end()
 " DIRECTIONS:
 " YouCompleteMe--
-" cd ~/.vim/plugged/YouCompleteMe/
+" cd /YouCompleteMe/third_party/ycmd/third_party/
 "     git submodule update --init --recursive
-"  cd ~/.vim/plugged/YouCompleteMe/ && ./install.py
+"  cd ~/YouCompleteMe/ && ./install.py
 "
 " Tern--
 " cd /tern_for_vim/ && npm install
@@ -64,10 +70,9 @@ let g:html_indent_inctags = "html,body,head,tbody"
 filetype indent on " html auto indent working
 filetype plugin indent on
 set autoindent " o goes down and then matches the indentation of the prev line
-noremap <F8> gg=G``:echoerr 'Auto indented.'<CR>
-inoremap <F8> gg=G``:echoerr 'Auto indented.'<CR>
+map <F8> gg=G``:echoerr 'Auto indented.'<CR>
 " reload myvimrc with alt-r
-noremap <f12> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
+map ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 
 syntax on
 syntax enable
@@ -91,12 +96,8 @@ set nu
 "Keep 8 lines above or below the cursor when scrolling.
 set scrolloff=8
 
-" cursorline for ctrlp
-hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-set nocursorline
 
-
-" AlWAYS show window statuses
+" Always show window statuses
 set laststatus=2
 set wildmenu
 " for autocompletion, complete as much as possible
@@ -119,7 +120,6 @@ map <Esc><Esc> :w<CR>  " double escape to save
 set mouse=a
 set backspace=indent,eol,start
 set clipboard=unnamed
-set clipboard=unnamedplus
 set backupcopy=yes
 set noswapfile " no swap file
 
@@ -195,8 +195,9 @@ let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$\|node_modules$\|modules$',
       \ 'file': '\.so$\|\.dat$|\.DS_Store$'
       \ }
-let g:ctrlp_show_hidden = 1
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd = 'CtrlPMRU'
 "https://github.com/maksimr/vim-jsbeautify
 map <F3> :call JsBeautify()<cr>
 " or
@@ -215,8 +216,4 @@ let g:instant_markdown_autostart = 0
 noremap µ :InstantMarkdownPreview<CR>
 " YCM YouCompleteMe (so it will complete markdown files)
 let g:ycm_filetype_blacklist = {}
-noremap µ :InstantMarkdownPreview<CR>
-" YCM YouCompleteMe (so it will complete markdown files)
-noremap <C-b> :NERDTreeToggle<CR>
-let NERDTreeShowHidden=1
-
+noremap <C-k><C-b> :NERDTreeToggle<CR>
