@@ -1,12 +1,9 @@
 if has('unix')
-  set cursorline
+
 endif
 
 if has('macunix')
     map ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR> "osx
-    " change cursor shapase based on insert mode
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 endif
 
 """"""PATHOGEN""""""""""
@@ -26,6 +23,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'pangloss/vim-javascript' "syntax hl
 Plug 'maksimr/vim-jsbeautify' "f3
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'jszakmeister/vim-togglecursor'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-sleuth'
 "detect indent
@@ -198,6 +196,8 @@ let g:ctrlp_custom_ignore = {
       \ 'file': '\.so$\|\.dat$|\.DS_Store$'
       \ }
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
+let g:ctrlp_map='<c-p>'
+let g:ctrlp_cmd = 'CtrlPMRU'
 "https://github.com/maksimr/vim-jsbeautify
 map <F3> :call JsBeautify()<cr>
 " or
