@@ -28,6 +28,7 @@
 !/.vim/
 !/.vim/*
 !/.vim/**/*
+*/plugged/*
 !/partials/*
 !/partials/
 !.tern-config
