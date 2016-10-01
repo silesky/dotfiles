@@ -1,5 +1,14 @@
-so ~/.vimrc_osx.vim
-so ~/.vimrc_linux.vim
+if has('unix')
+  set cursorline
+endif
+
+if has('macunix')
+    map ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR> "osx
+    " change cursor shapase based on insert mode
+    " http://blog.terriblelabs.com/blog/2013/02/09/stupid-vim-tricks-how-to-change-insert-mode-cursor-shape-with-tmux/
+    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\" "osx
+    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\" "osx
+endif
 
 """"""PATHOGEN""""""""""
 execute pathogen#infect()
@@ -208,4 +217,4 @@ let g:instant_markdown_autostart = 0
 noremap µ :InstantMarkdownPreview<CR>
 " YCM YouCompleteMe (so it will complete markdown files)
 let g:ycm_filetype_blacklist = {}
-noremap <C-b> :NERDTreeToggle<CR>
+noremap <C-k><C-b> :NERDTreeToggle<CR>
