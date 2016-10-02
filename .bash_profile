@@ -62,7 +62,7 @@ alias lynda="cd ~/lynda/"
 
 # ... git
 alias gp="git push"
-alias gac="git add -a && git commit"
+alias gac="git add . && git commit"
 alias ga="git add"
 alias gc="git commit"
 alias gs="git status -sb"
