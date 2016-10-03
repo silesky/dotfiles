@@ -19,6 +19,7 @@ alias dvt="cd ~/projects/devt-eslint"
 # ... pract-net
 alias pcn="cd ~/projects/pract-net"
 alias pcn.start="cd ~/projects/pract-net && sh start.sh"
+alias pcn.devpack="cd ~/projects/pract-net/wwwroot && npm run devpack & cd .."
 alias pcn.kill="cd ~/projects/pract-net && sh kill.sh"
 # ... jsmobile
 alias jsm="cd ~/projects/JSMobile"
