@@ -75,10 +75,7 @@ map <F8> gg=G``:echoerr 'Auto indented.'<CR>
 " reload myvimrc with alt-r
 map ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 map <C-k><C-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
-
-syntax on
 syntax enable
-
 
 
 set hlsearch " search highlighting.
@@ -114,7 +111,6 @@ set showbreak=" "
 "common mistake of q: instead of :q
 map q: :q
 " keybindings
-noremap <F2> :lnext<CR> "syntastic skip to error
 
 map <Esc><Esc> :w<CR>  " double escape to save
 " mouse for scrolling and window resizing
@@ -149,6 +145,10 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_sass_checkers=["sass_lint"]
 let g:syntastic_scss_checkers=["sass_lint"]
+
+noremap <F2> :lprev<CR> "syntastic skip to error
+noremap <F3> :lnext<CR> "syntastic skip to error
+
 " wrap toggle
 function! ToggleWrap()
   if (&wrap == 1)
@@ -202,17 +202,17 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#
 let g:ctrlp_map='<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 "https://github.com/maksimr/vim-jsbeautify
-map <F3> :call JsBeautify()<cr>
+map <F4> :call JsBeautify()<cr>
 " or
-autocmd FileType javascript noremap <buffer>  <F3> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <F4> :call JsBeautify()<cr>
 " for json
-autocmd FileType json noremap <buffer> <F3> :call JsonBeautify()<cr>
+autocmd FileType json noremap <buffer> <F4> :call JsonBeautify()<cr>
 " for jsx
-autocmd FileType jsx noremap <buffer> <F3> :call JsxBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <F4> :call JsxBeautify()<cr>
 " for html
-autocmd FileType html noremap <buffer> <F3> :call HtmlBeautify()<cr>
+autocmd FileType html noremap <buffer> <F4> :call HtmlBeautify()<cr>
 " for css or scss
-autocmd FileType css noremap <buffer> <F3> :call CSSBeautify()<cr>
+autocmd FileType css noremap <buffer> <F4> :call CSSBeautify()<cr>
 " Instant Markdown
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
