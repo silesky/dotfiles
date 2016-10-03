@@ -1,9 +1,9 @@
 if has('unix')
-
+ "LINUX STUFF
 endif
 
 if has('macunix')
-    map ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR> "osx
+  "OSX STUFF
 endif
 
 """"""PATHOGEN""""""""""
@@ -32,6 +32,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
 Plug 'rking/ag.vim'
 Plug 'scrooloose/syntastic'
+Plug 'gcorne/vim-sass-lint'
 Plug 'marijnh/tern_for_vim'
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
@@ -73,6 +74,7 @@ set autoindent " o goes down and then matches the indentation of the prev line
 map <F8> gg=G``:echoerr 'Auto indented.'<CR>
 " reload myvimrc with alt-r
 map ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
+map <C-k><C-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 
 syntax on
 syntax enable
@@ -145,6 +147,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_sass_checkers=["sass_lint"]
 
 " wrap toggle
 function! ToggleWrap()
