@@ -96,8 +96,10 @@ alias tm.x="killall tmux"
 # ... misc
 alias browser-syncit='browser-sync start --server --proxy --files . &'
 alias srv="live-server"
-
-# linux / osx
+export GREP_COLOR='00;38;5;226'
+#############################################
+############### linux / osx #################
+#############################################
 if [[ "$(uname)" = "Darwin" ]]; then
    alias tm="tmux"
    # OSX - app path realiases and os-specific
@@ -112,3 +114,8 @@ else
    alias tmux='tmux -2'
    alias tm="tmux -2"
 fi
+# ..........................................
+############################################
+
+
+
