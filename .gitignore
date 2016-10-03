@@ -4,7 +4,6 @@
 # But not these files...
 !.gitconfig
 !.eslintrc
-!estest.js
 !cron_test.txt
 !.atom
 !.gitignore
@@ -29,11 +28,13 @@
 !/.vim/
 !/.vim/*
 !/.vim/**/*
+*/plugged/*
 !/partials/*
 !/partials/
 !.tern-config
 !/.alfred_sync
 !/.alfred_sync/**/*
+!/.alfred_sync/**/*.db
 .alfred_sync/Alfred.alfredpreferences/workflows/*
 !/.oh-my-zsh/**/*
 !/scripts/*
