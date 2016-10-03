@@ -178,6 +178,8 @@ if &diff
   colorscheme Monokai
 endif
 
+"reload
+noremap <F12> :e!<CR>
 
 " rebind arrow keys to do nothing
 nnoremap <Right> :echo "No Right for you!"<CR>
