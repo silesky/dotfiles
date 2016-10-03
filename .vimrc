@@ -148,7 +148,7 @@ let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_sass_checkers=["sass_lint"]
-
+let g:syntastic_scss_checkers=["sass_lint"]
 " wrap toggle
 function! ToggleWrap()
   if (&wrap == 1)
