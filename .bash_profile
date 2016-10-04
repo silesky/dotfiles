@@ -24,6 +24,9 @@ alias me="cd /Users/ssilesky/"
 # Apps and Navigation, Misc
 alias f="sudo find . -iname"
 
+a() {
+   ag -ro "$1" *
+}
 g() {
    sudo grep --color=always -r "$1" .
 }
