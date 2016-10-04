@@ -23,6 +23,10 @@ alias desk='cd ~/Desktop'
 alias me="cd /Users/ssilesky/"
 # Apps and Navigation, Misc
 alias f="sudo find . -iname"
+
+g() {
+   sudo grep --color=always -r "$1" .
+}
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
