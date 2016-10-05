@@ -24,6 +24,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript' "syntax hl
 Plug 'maksimr/vim-jsbeautify' "f3
+Plug 'gregsexton/gitv'
+Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'flazz/vim-colorschemes'

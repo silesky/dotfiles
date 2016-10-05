@@ -90,6 +90,7 @@ gb () {
 
 
 # ... tmux
+alias tma="tmux attach -t base || tmux new -s 'base'"
 alias mux="tmuxinator"
 alias tm.sw="tmux splitw -d"
 alias tm.ks="tmux kill-session -t"
