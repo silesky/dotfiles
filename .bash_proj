@@ -24,7 +24,6 @@ alias pcn.devpack="cd ~/projects/pract-net/wwwroot && npm run devpack & cd .."
 alias pcn.kill="cd ~/projects/pract-net && sh kill.sh"
 # ... jsmobile
 alias jsm="cd ~/projects/JSMobile"
-alias jsm.run="cd ~/projects/JSMobile && sh start.sh"
 alias jsm.kill="~/projects/JSMobile/kill.sh"
 alias jsm.emu="emulator -avd mydevice"
 alias rn.kill="kill -9 `pgrep -f /Users/ssilesky/Library/Android/sdk/` && kill -9 `pgrep -f genymotion`"

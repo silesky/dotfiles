@@ -21,6 +21,7 @@ call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
 Plug 'avakhov/vim-yaml'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript' "syntax hl
 Plug 'maksimr/vim-jsbeautify' "f3
 Plug 'ctrlpvim/ctrlp.vim'
@@ -54,17 +55,14 @@ Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 
 call plug#end()
 " DIRECTIONS:
+" Misc--
+" npm install -g eslint sass-lint csslint instant-markdown-d
 " YouCompleteMe--
 " cd /YouCompleteMe/third_party/ycmd/third_party/
 "     git submodule update --init --recursive
 "  cd ~/YouCompleteMe/ && ./install.py
-"
 " Tern--
 " cd /tern_for_vim/ && npm install
-"
-" InstantMarkdown--
-"  sudo npm -g install instant-markdown-d
-"
 " ............................................
 
 " get html indenting working
@@ -224,3 +222,5 @@ noremap µ :InstantMarkdownPreview<CR>
 " YCM YouCompleteMe (so it will complete markdown files)
 let g:ycm_filetype_blacklist = {}
 noremap <C-k><C-b> :NERDTreeToggle<CR>
+" Vim Jsx
+let g:jsx_ext_required = 0

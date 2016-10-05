@@ -12,7 +12,8 @@ include ~/.bash_osx
 
 # Vi mode
 set -o vi
-alias shebang="#!/usr/bin/env bash"
+alias z="zsh"
+alias bang="vim <(echo '#!/usr/bin/env bash')"
 alias estest="eslint --debug ~/estest.js"
 # scripts
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
