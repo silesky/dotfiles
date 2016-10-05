@@ -30,6 +30,7 @@ a() {
 g() {
    sudo grep --color=always -r "$1" .
 }
+
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
@@ -88,6 +89,7 @@ gb () {
 
 
 # ... tmux
+alias mux="tmuxinator"
 alias tm.sw="tmux splitw -d"
 alias tm.ks="tmux kill-session -t"
 alias tm.kw="tmux kill-window -t"

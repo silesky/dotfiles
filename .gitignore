@@ -17,7 +17,8 @@
 .bash_private
 .bash_history
 .bash_logout
-
+!/.tmuxinator/*
+!/.tmuxinator/
 !.sass-lint*
 !.tmux.conf
 !.vagrant.d
