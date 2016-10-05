@@ -19,6 +19,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
+Plug 'avakhov/vim-yaml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'pangloss/vim-javascript' "syntax hl
 Plug 'maksimr/vim-jsbeautify' "f3
