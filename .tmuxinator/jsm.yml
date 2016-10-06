@@ -31,6 +31,9 @@ windows:
   - editor:
       layout: main-vertical
       panes:
-        - vim index.android.js
+        - sub index.android.js && sleep 10 && react-native log-android
+  - server:
+      layout: main-vertical
+      panes:
         - emulator -avd mydevice
         - sleep 10 && react-native run-android
