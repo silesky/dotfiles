@@ -39,7 +39,7 @@ alias l='ls -Afh'  # Long view, show hidden
 alias ll='clear && ls -lAfh' # Long view, show hidden + clear
 alias la='ls -AF'   # Compact view, show hidden
 cl() { clear && cd "$@" && ls -al; } #cdls
-alias ed='ed -p" 🔥> "'
+alias ed='ed -p" Ã°ÂÂÂ¥> "'
 alias hs='history | grep'
 alias as='alias | grep'
 alias catbash="ccat ~/.bash_profile"
@@ -93,8 +93,11 @@ gb () {
 alias tma="tmux attach -t base || tmux new -s 'base'"
 alias mux="tmuxinator"
 alias tm.sw="tmux splitw -d"
-alias tm.ks="tmux kill-session -t"
-alias tm.kw="tmux kill-window -t"
+alias tms="tmux splitw"
+alias tmsv="tmux splitw -v"
+alias tmsh="tmux splitw -h"
+alias tmk="tmux kill-session -t"
+alias tmkw="tmux kill-window -t"
 alias tm.a="tmux attach -t"
 alias tmux.conf="vim ~/.tmux.conf"
 alias tm.kill="kill -9 `pgrep -f tmux`"
@@ -130,3 +133,5 @@ fi
 
 
 
+
+export PATH="$PATH:/Applications/DevDesktop/tools"

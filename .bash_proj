@@ -26,6 +26,7 @@ alias pcn.kill="cd ~/projects/pract-net && sh kill.sh"
 alias jsm="cd ~/projects/JSMobile"
 alias jsm.kill="~/projects/JSMobile/kill.sh"
 alias jsm.emu="emulator -avd mydevice"
+alias jsm.build="cd ~/projects/JSMobile/android && ./gradlew assembleRelease"
 alias rn.kill="kill -9 `pgrep -f /Users/ssilesky/Library/Android/sdk/` && kill -9 `pgrep -f genymotion`"
 # ... coop
 alias coop.ssh="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/ && vagrant ssh && coop.1"
