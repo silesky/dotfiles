@@ -77,7 +77,7 @@ map <F8> gg=G``:echoerr 'Auto indented.'<CR>
 map ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 map <C-k><C-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 syntax enable
-
+nmap <silent> <leader>p :set paste<CR>"*p:set nopaste<CR>
 
 set hlsearch " search highlighting.
 set ignorecase " ignore case when i search by default
