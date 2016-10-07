@@ -90,7 +90,7 @@ gb () {
 
 
 # ... tmux
-alias tma="tmux attach -t base || tmux new -s 'base'"
+alias tm.a="tmux attach -t base || tmux new -s 'base'"
 alias mux="tmuxinator"
 alias tm.sw="tmux splitw -d"
 alias tms="tmux splitw"
@@ -98,7 +98,7 @@ alias tmsv="tmux splitw -v"
 alias tmsh="tmux splitw -h"
 alias tmk="tmux kill-session -t"
 alias tmkw="tmux kill-window -t"
-alias tm.a="tmux attach -t"
+alias tma="tmux attach -t"
 alias tmux.conf="vim ~/.tmux.conf"
 alias tm.kill="kill -9 `pgrep -f tmux`"
 alias tm.2="tmux splitw -d -h && clear"
