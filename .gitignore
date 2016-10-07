@@ -9,7 +9,8 @@
 !.gitignore
 !.gitignore_global
 !.vimrc*
-
+!.tmuxinator
+!.tmuxinator/**
 # bash stuff
 !.paths
 !.bashrc

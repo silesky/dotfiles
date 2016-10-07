@@ -26,14 +26,14 @@ root: ~/projects/JSMobile
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t jsm
-
 windows:
   - editor:
-      layout: main-vertical
+      layout: main-horizontal
       panes:
-        - sub index.android.js && sleep 10 && react-native log-android
+        - sub index.android.js
+        - emulator -avd mydevice
+        - sleep 20 && react-native log-android
   - server:
       layout: main-vertical
       panes:
-        - emulator -avd mydevice
         - sleep 10 && react-native run-android
