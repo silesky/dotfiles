@@ -26,11 +26,11 @@ root: ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/css/scho
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t sf
-pre: open -a "Acquia Dev Desktop" --hide && sleep 3 && open "http://docroot.dd:8083/"
+pre: open -a "Acquia Dev Desktop" && sleep 3 && open "http://docroot.dd:8083/"
 
 windows:
   - editor:
-      layout: main-vertical
+      layout: main-horizontal
       panes:
         - sub school_of_liberal_arts.scss && tig
         - # empty
