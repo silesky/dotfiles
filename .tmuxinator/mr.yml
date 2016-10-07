@@ -1,7 +1,8 @@
 # ~/.tmuxinator/mr.yml
 
 name: mr
-root: ~/
+root: ~/projects/mr-dev
+
 
 # Optional tmux socket
 # socket_name: foo
@@ -27,11 +28,9 @@ root: ~/
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t mr
 
+pre: open 'http://musicrisingdev.tulane.edu'
 windows:
   - editor:
       layout: main-vertical
       panes:
-        - vim
-        - guard
-  - server: bundle exec rails s
-  - logs: tail -f log/development.log
+        - pstorm . && tig
