@@ -1,7 +1,8 @@
-# ~/.tmuxinator/jsm.yml
+# ~/.tmuxinator/pcn.yml
 
-name: jsm
-root: ~/projects/JSMobile
+name: pcn
+root: ~/projects/pract-net
+
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,18 +26,14 @@ root: ~/projects/JSMobile
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t jsm
+# post: tmux -CC attach -t pcn
+pre: code . && git pull
 windows:
-  - editor:
+  - main:
       layout: main-horizontal
       panes:
-        - sub index.android.js
-        - emulator -avd mydevice
+        - cd wwwroot && npm run devpack
+  - dotnet:
+      panes:
+        - dotnet run
 
-  - server:
-      layout: main-vertical
-      panes:
-        - sleep 10 && react-native run-android
-  - log:
-      panes:
-      - sleep 40 && react-native log-android

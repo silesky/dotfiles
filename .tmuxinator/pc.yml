@@ -1,7 +1,7 @@
-# ~/.tmuxinator/jsm.yml
+# ~/.tmuxinator/pc.yml
 
-name: jsm
-root: ~/projects/JSMobile
+name: pc
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,18 +25,13 @@ root: ~/projects/JSMobile
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t jsm
+# post: tmux -CC attach -t pc
+
 windows:
   - editor:
-      layout: main-horizontal
-      panes:
-        - sub index.android.js
-        - emulator -avd mydevice
-
-  - server:
       layout: main-vertical
       panes:
-        - sleep 10 && react-native run-android
-  - log:
-      panes:
-      - sleep 40 && react-native log-android
+        - vim
+        - guard
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log
