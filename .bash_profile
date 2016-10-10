@@ -119,6 +119,8 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias tm="tmux"
    # OSX - app path realiases and os-specific
    alias chrome="open -a /Applications/Google\ Chrome.app" #osx
+   alias gitkraken="open -a gitkraken"
+   alias gitkr="gitkraken"
    alias git="/usr/local/bin/git" #osx
    alias vim='/usr/local/bin/vim' #osx
    alias sub="open -a '/Applications/Sublime Text.app'" #osx
