@@ -68,7 +68,8 @@ alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 # misc
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
 alias lynda="cd ~/Lynda/"
-
+alias rp="realpath"
+alias pbc="pbcopy"
 
 # ... git
 alias gp="git push"

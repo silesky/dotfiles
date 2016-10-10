@@ -4,7 +4,10 @@ tags
 node_modules
 .DS_Store
 tmp
-dist
+!dist
+dist/*
+
+*.map
 *.swp
 *log
 ._*
