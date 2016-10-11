@@ -27,12 +27,11 @@ root: ~/projects/sf/sf/docroot/sites/all/modules/custom/sla
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t sla-mod
 pre: open -a "Acquia Dev Desktop" && sleep 3 && open "http://docroot.dd:8083/"
-
 windows:
   - editor:
       layout: main-horizontal
       panes:
-        - sub . && tig
-        - # empty
+        - gitkr &
+        - sub src/script.js
   - server:
         - npm run watch

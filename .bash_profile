@@ -126,6 +126,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias vim='/usr/local/bin/vim' #osx
    alias sub="open -a '/Applications/Sublime Text.app'" #osx
    alias play='cd ~/Desktop/temp/ && vim play.js'
+   alias temp='cd ~/Desktop/temp'
    export CLICOLOR=1 #osx
    export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #solarized
 else

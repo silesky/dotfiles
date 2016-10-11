@@ -41,12 +41,15 @@ Plug 'marijnh/tern_for_vim'
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
 Plug 'vim-airline/vim-airline' "busy statusline on the bottom
+
 function! BuildYCM(info)
   if a:info.status == 'installed' || a:info.force
     !./install.sh
   endif
 endfunction
-Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+if v:version > 703
+  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+endif
 
 function! BuildTern(info)
   if a:info.status == 'installed' || a:info.force
@@ -147,6 +150,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_sass_checkers=["sass_lint"]
 let g:syntastic_scss_checkers=["sass_lint"]
+let g:syntastic_php_phpcs_args='--tab-width=0'
+set tabstop=8
 
 noremap <F2> :lprev<CR> "syntastic skip to error
 noremap <F3> :lnext<CR> "syntastic skip to error
