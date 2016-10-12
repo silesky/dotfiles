@@ -1,5 +1,6 @@
 # http://stackoverflow.com/questions/10735574/include-source-script-if-it-exists-in-bash
 include () {
+    # stuff
     [[ -f "$1" ]] && source "$1"
 }
 # .bash_profile
@@ -12,6 +13,8 @@ include ~/.bash_osx
 
 # vi mode
 set -o vi
+
+alias gitkr="gitkraken &"
 alias shebang="#!/usr/bin/env bash"
 alias estest="eslint --debug ~/estest.js"
 # scripts
@@ -108,6 +111,8 @@ if [[ "$(uname)" = "darwin" ]]; then
     export lscolors=gxfxbeaebxxehehbadacad #osx
     export clicolor=1 #osx
 else
+    alias sub='subl'
     alias tmux='tmux -2'
     alias tm="tmux -2"
 fi
+alias python="python3"
