@@ -3,7 +3,8 @@ if has('unix')
 endif
 
 if has('macunix')
-  "OSX STUFF
+  autocmd InsertEnter * : silent exec "!printf '\033]50;CursorShape=2\x7'" | exec ":redraw!"
+  autocmd InsertLeave * : silent exec "!printf '\033]50;CursorShape=0\x7'" | exec ":redraw!"
 endif
 
 """"""PATHOGEN""""""""""
