@@ -1,3 +1,4 @@
+set paste
 if has('unix')
 
 endif
