@@ -40,7 +40,6 @@ Plug 'gcorne/vim-sass-lint'
 Plug 'marijnh/tern_for_vim'
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
-Plug 'vim-airline/vim-airline' "busy statusline on the bottom
 
 function! BuildYCM(info)
   if a:info.status == 'installed' || a:info.force
@@ -69,7 +68,9 @@ call plug#end()
 " Tern--
 " cd /tern_for_vim/ && npm install
 " ............................................
-
+"allows you to use left or right to nav through completion
+set wildmenu
+set wildmode=longest:full,full
 " get html indenting working
 let g:html_indent_inctags = "html,body,head,tbody"
 filetype indent on " html auto indent working
@@ -98,13 +99,6 @@ set nu
 
 "Keep 8 lines above or below the cursor when scrolling.
 set scrolloff=8
-
-
-" Always show window statuses
-set laststatus=2
-set wildmenu
-" for autocompletion, complete as much as possible
-set wildmode=longest,full
 
 "wrap lines by default
 "https://github.com/sheerun/vimrc

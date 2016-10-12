@@ -31,7 +31,11 @@ windows:
   - editor:
       layout: main-horizontal
       panes:
+        - vim .
+  - server:
+      panes:
         - gitkr &
         - sub src/script.js
-  - server:
         - npm run watch
+        - cd src && sass --watch school_of_liberal_arts.scss:../dist/school_of_liberal_arts.css
+
