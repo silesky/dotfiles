@@ -3,8 +3,11 @@ if has('unix')
 endif
 
 if has('macunix')
-  autocmd InsertEnter * : silent exec "!printf '\033]50;CursorShape=2\x7'" | exec ":redraw!"
-  autocmd InsertLeave * : silent exec "!printf '\033]50;CursorShape=0\x7'" | exec ":redraw!"
+  noremap ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
+  " alt-[ and alt-] to cycle buffers
+  noremap ‘ :bnext<CR>
+  noremap “ :bprevious<CR>
+  "OSX STUFF
 endif
 
 """"""PATHOGEN""""""""""
@@ -79,8 +82,7 @@ filetype plugin indent on
 set autoindent " o goes down and then matches the indentation of the prev line
 map <F8> gg=G``:echoerr 'Auto indented.'<CR>
 " reload myvimrc with alt-r
-map ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
-map <C-k><C-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
+noremap <C-k><C-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 syntax enable
 nmap <silent> <leader>p :set paste<CR>"*p:set nopaste<CR>
 
@@ -119,6 +121,9 @@ set backspace=indent,eol,start
 set clipboard=unnamed
 set backupcopy=yes
 set noswapfile " no swap file
+
+" copy visually selected text to search
+vnoremap / y/<C-R>"
 
 set tabstop=2 " The width of a TAB is set to a [number]
 " Still it is a \t. It is just that
