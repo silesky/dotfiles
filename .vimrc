@@ -67,7 +67,7 @@ call plug#end()
 " ............................................
 
 " get html indenting working
-let g:html_indent_inctags = "html,body,head,tbody"
+" let g:html_indent_inctags = "html,body,head,tbody"
 filetype indent on " html auto indent working
 filetype plugin indent on
 set autoindent " o goes down and then matches the indentation of the prev line

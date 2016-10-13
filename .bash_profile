@@ -13,9 +13,10 @@ include ~/.bash_osx
 
 # vi mode
 set -o vi
-
+alias clip="xclip -sel clip < "
 alias gitkr="gitkraken &"
 alias shebang="#!/usr/bin/env bash"
+alias estest="eslint --debug ~/estest.js"
 alias estest="eslint --debug ~/estest.js"
 # scripts
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
