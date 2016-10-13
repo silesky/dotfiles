@@ -10,6 +10,9 @@ include ~/.bash_private
 include ~/.bashrc
 include ~/.bash_osx
 
+# Temp
+
+
 # Vi mode
 set -o vi
 alias z="zsh"

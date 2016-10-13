@@ -5,7 +5,6 @@ getpath() {
   echo $PWD/$(basename $1) # or  echo $PWD/${1##*/}
   )
 }
-
 w3g() {
  w3m 'google.com/search?q="'$1'"'
 }

@@ -11,7 +11,7 @@ alias sf.schools="cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane
 alias blog="cd '/Users/ssilesky/projects/blog'"
 alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server . &"
 alias drupalcamp="cd '/Users/ssilesky/drupalcampnola.com/'"
-alias timeshark="ssh root@timeshark.sytes.net"
+alias timeshark="ssh -Y root@timeshark.sytes.net"
 alias proj="cd ~/projects/"
 #... dan
 alias dan="cd ~/projects/danrico87.github.io"
