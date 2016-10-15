@@ -36,4 +36,5 @@ windows:
   - dotnet:
       panes:
         - dotnet run
+        - open "https://trello.com/b/AQFI403u" && sleep 10 && open "http://localhost:5000"
 

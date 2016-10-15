@@ -30,7 +30,7 @@ windows:
   - editor:
       layout: main-horizontal
       panes:
-        - sub index.android.js
+        - sub . && sub index.android.js
         - emulator -avd mydevice
 
   - server:
