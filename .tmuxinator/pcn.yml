@@ -27,14 +27,18 @@ root: ~/projects/pract-net
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t pcn
-pre: code . && git pull
+pre: code . && git pull && open "https://trello.com/b/AQFI403u" && open "http://localhost:5000"
 windows:
-  - main:
-      layout: main-horizontal
-      panes:
-        - cd wwwroot && npm run devpack
-  - dotnet:
+  - Main:
       panes:
         - dotnet run
-        - open "https://trello.com/b/AQFI403u" && sleep 10 && open "http://localhost:5000"
+  - Dotnet:
+      panes:
+        - cd wwwroot && npm run devpack
+  - Misc:
+      panes:
+        - tig
+  - Timeshark:
+      panes:
+        - timeshark
 
