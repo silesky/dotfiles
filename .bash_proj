@@ -1,5 +1,7 @@
 
 # Projects
+# ... gifter
+alias giftr='cd ~/projects/giftr'
 # ... site-factory
 alias sf='cd /Users/ssilesky/projects/sf/sf'
 alias sf.tulane='cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/'
