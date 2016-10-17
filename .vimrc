@@ -33,6 +33,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-sleuth'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 "detect indent
 " sudo npm -g install instant-markdown-d
 Plug 'scrooloose/nerdtree'
@@ -71,7 +73,9 @@ call plug#end()
 " Tern--
 " cd /tern_for_vim/ && npm install
 " ............................................
-"allows you to use left or right to nav through completion
+" for airline:
+set laststatus=2
+"allows you to use left or right to nav through completion:
 set wildmenu
 set wildmode=longest:full,full
 " get html indenting working
