@@ -14,7 +14,11 @@ include ~/.bash_osx
 
 
 # Vi mode
+
+
 set -o vi
+
+alias stopm="kill -9 `pgrep -f mongo`"
 alias z="zsh"
 alias bang="vim <(echo '#!/usr/bin/env bash')"
 alias estest="eslint --debug ~/estest.js"
