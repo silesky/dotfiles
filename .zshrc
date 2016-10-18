@@ -24,7 +24,6 @@ source ~/partials/.zsh_vi
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 ZSH_THEME="lambda"
-
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -66,8 +65,12 @@ ZSH_THEME="lambda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# ... output highlighting
 # git clone git@github.com:l4u/zsh-output-highlighting.git
-plugins=(docker, git, git-extras, tig, rvm, node, tmuxinator, tmux, vi-mode, grunt, zsh-output-highlighting)
+# ... docker
+# mkdir -p ~/.oh-my-zsh/plugins/docker/
+# curl -fLo ~/.oh-my-zsh/plugins/docker/_docker https://raw.github.com/felixr/docker-zsh-completion/master/_docker
+plugins=(docker, docker-compose, git, git-extras, tig, rvm, node, tmuxinator, tmux, vi-mode, grunt, zsh-output-highlighting)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
@@ -100,6 +103,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # # alias ohmyzsh="mate ~/.oh-my-zsh"
-
 source ~/.bash_profile
 

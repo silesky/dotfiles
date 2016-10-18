@@ -32,7 +32,7 @@ windows:
   - editor:
       layout: main-horizontal
       panes:
-        - sub school_of_liberal_arts.scss && tig
+        - sub school_of_liberal_arts.scss && sub . && gitkr
         - # empty
   - server:
         - sudo sass --watch school_of_liberal_arts.scss:school_of_liberal_arts.css

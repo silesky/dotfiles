@@ -3,6 +3,8 @@
 # assures that the system looks in this custom place **before** searching default places
 # (that is, the specified path is appended before the standard places contained within $PATH).
 # $PATH goes at the beginning. Path goes at the end in the default places, because I want the default places to go first.
+
+export CLICOLOR=1
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export GREP_COLOR='00;38;5;226'
 export PATH=$HOME/bin:$PATH

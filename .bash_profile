@@ -37,7 +37,7 @@ g() {
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
-alias l='ls -Afh'  # Long view, show hidden
+alias l='ls -A'  # Long view, show hidden
 alias ll='clear && ls -lAfh' # Long view, show hidden + clear
 alias la='ls -AF'   # Compact view, show hidden
 cl() { clear && cd "$@" && ls -al; } #cdls
@@ -120,6 +120,7 @@ export GREP_COLOR='00;38;5;226'
 ############### linux / osx #################
 #############################################
 if [[ "$(uname)" = "Darwin" ]]; then
+   export LSCOLORS=GxFxCxDxBxegedabagaced
    alias tm="tmux"
    # OSX - app path realiases and os-specific
    alias chrome="open -a /Applications/Google\ Chrome.app" #osx
@@ -130,8 +131,6 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias sub="open -a '/Applications/Sublime Text.app'" #osx
    alias play='cd ~/Desktop/temp/ && vim play.js'
    alias temp='cd ~/Desktop/temp'
-   export CLICOLOR=1 #osx
-   export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD #solarized
 else
    alias tmux='tmux -2'
    alias tm="tmux -2"
