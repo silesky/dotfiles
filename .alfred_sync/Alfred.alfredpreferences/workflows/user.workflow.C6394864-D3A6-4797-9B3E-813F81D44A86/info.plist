@@ -51,7 +51,7 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>32</integer>
+				<integer>36</integer>
 				<key>keyword</key>
 				<string>h</string>
 				<key>queuedelaycustom</key>

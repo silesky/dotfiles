@@ -33,7 +33,7 @@ windows:
   - node:
       panes:
         - sub . && open "http://localhost:3000/api/friends/"
-        - node app.js
+        - nodemon ./app.js
   - server: mongod
   - git: gitkr & tig
 

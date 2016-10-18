@@ -1,5 +1,9 @@
 
 # Projects
+# ........
+
+alias cirt="cd ~/projects/cirtual"
+
 # ... gifter
 alias giftr='cd ~/projects/giftr'
 # ... site-factory
