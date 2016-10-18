@@ -1,7 +1,7 @@
 # ~/.tmuxinator/cirt.yml
 
 name: cirt
-root: ~/
+root: ~/projects/cirtual
 
 # Optional tmux socket
 # socket_name: foo
@@ -29,9 +29,8 @@ root: ~/
 
 windows:
   - editor:
-      layout: main-vertical
+      layout: main-horizontal
       panes:
-        - vim
-        - guard
-  - server: bundle exec rails s
-  - logs: tail -f log/development.log
+        - sub . && sub index.html
+        - tig
+  - server: srv .
