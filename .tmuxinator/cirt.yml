@@ -32,5 +32,5 @@ windows:
       layout: main-horizontal
       panes:
         - sub . && sub index.html
-        - tig
+        -
   - server: srv .

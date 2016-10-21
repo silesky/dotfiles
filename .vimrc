@@ -22,6 +22,8 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
+Plug 'tpope/vim-repeat' "let's you use the dot command with vim surround
+Plug 'tpope/vim-surround' "cst
 Plug 'avakhov/vim-yaml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'mxw/vim-jsx'
@@ -232,5 +234,12 @@ noremap µ :InstantMarkdownPreview<CR>
 " YCM YouCompleteMe (so it will complete markdown files)
 let g:ycm_filetype_blacklist = {}
 noremap <C-k><C-b> :NERDTreeToggle<CR>
-" Vim Jsx
+
+" theme explorer
 let g:jsx_ext_required = 0
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+

@@ -102,7 +102,7 @@
 					<string>/Applications/Evernote.app</string>
 				</array>
 				<key>toggle</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.launchfiles</string>
