@@ -34,6 +34,10 @@ windows:
       panes:
         - sub . && open "http://localhost:3000/api/friends/"
         - nodemon ./app.js
-  - server: mongod
-  - git: gitkr & tig
+  - server:
+      panes:
+        - sudo mongod
+        - node
+        - sleep 10 && seed
+  - git: gitkr
 
