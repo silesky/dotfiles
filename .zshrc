@@ -1,4 +1,6 @@
 source ~/partials/.zsh_vi
+source ~/.oh-my-zsh/plugins/z/z.sh
+
 ##############################################################
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH

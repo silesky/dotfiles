@@ -1,12 +1,17 @@
-# Paths (general)
 # It seems placing the $PATH at the end of the statement (export PATH=/usr/local/git/bin:$PATH)
 # assures that the system looks in this custom place **before** searching default places
 # (that is, the specified path is appended before the standard places contained within $PATH).
 # $PATH goes at the beginning. Path goes at the end in the default places, because I want the default places to go first.
 
-export CLICOLOR=1
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Vars
 export GREP_COLOR='00;38;5;226'
+export CLICOLOR=1
+export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+
+# Paths
+export PATH="$PATH:/Applications/DevDesktop/tools"
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$PATH:/usr/bin/compass
 export PATH=/opt/bin:$PATH
@@ -14,7 +19,6 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=$HOME/scripts:$PATH
-export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk
 export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/tools
 export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/platform-tools #adb is here
 export PATH=$PATH:/Users/ssilesky
@@ -22,6 +26,5 @@ export PATH=$PATH:/Users/ssilesky/scripts
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:/usr/local/share/dotnet
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 export PATH=/usr/local/Cellar/openssl/1.0.2j/bin/:$PATH
 

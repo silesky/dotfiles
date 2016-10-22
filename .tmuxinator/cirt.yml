@@ -31,6 +31,6 @@ windows:
   - editor:
       layout: main-horizontal
       panes:
-        - sub . && sub index.html
-        -
-  - server: srv .
+        - sub . && sub js/script.js
+  - server: browser-sync start --server --proxy --files .
+  - misc:
