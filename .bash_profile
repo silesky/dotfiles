@@ -2,6 +2,8 @@
 include () {
    [[ -f "$1" ]] && source "$1"
 }
+
+include ~/.oh-my-zsh/plugins/z/z.sh
 include ~/.paths
 include ~/.bash_functions
 include ~/.bash_proj
@@ -14,7 +16,6 @@ set -o vi
 
 # Aliases
 alias stopm="kill -9 `pgrep -f mongod`"
-alias z="zsh"
 alias bang="vim <(echo '#!/usr/bin/env bash')"
 alias estest="eslint --debug ~/estest.js"
 # scripts
