@@ -32,12 +32,11 @@ startup_window: node
 windows:
   - node:
       panes:
-        - sub . && open "http://localhost:3000/api/friends/"
-        - nodemon ./app.js
+       - sub .
+       - sudo mongod
+       - nodemon ./app.js
   - server:
       panes:
-        - sudo mongod
-        - node
-        - sleep 10 && seed
+        - sleep 30 && seed
   - git: gitkr
 

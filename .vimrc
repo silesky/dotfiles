@@ -3,6 +3,9 @@ if has('unix')
 endif
 
 if has('macunix')
+  " alt-s to toggle
+  noremap ßß :SyntasticToggleMode<CR>
+  noremap ß :SyntasticCheck<CR>
   noremap ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
   " alt-[ and alt-] to cycle buffers
   noremap ‘ :bnext<CR>
@@ -22,6 +25,7 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
+Plug 'mattn/emmet-vim' "html:5_ ctrl-y
 Plug 'tpope/vim-repeat' "let's you use the dot command with vim surround
 Plug 'tpope/vim-surround' "cst
 Plug 'avakhov/vim-yaml'
@@ -151,13 +155,15 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 " don't show quick list
 let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_open = 0
+" wq in order for SyntasticCheck to work:
+let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_sass_checkers=["sass_lint"]
 let g:syntastic_scss_checkers=["sass_lint"]
 let g:syntastic_php_phpcs_args='--tab-width=0'
-set tabstop=8
-
+"alt-ss to toggle syntastic
+noremap ßß :SyntasticToggleMode<CR>
 noremap <F2> :lprev<CR> "syntastic skip to error
 noremap <F3> :lnext<CR> "syntastic skip to error
 
@@ -180,10 +186,10 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+" set tab
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype scss setlocal ts=4 sw=4 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
-
 "vimdiff loafs another theme
 " http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
 if &diff
