@@ -8,7 +8,9 @@ export GREP_COLOR='00;38;5;226'
 export CLICOLOR=1
 export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
-
+export HISTCONTROL="erasedups:ignoreboth"
+export HISTFILESIZE=500000
+export HISTSIZE=100000
 # Paths
 export PATH="$PATH:/Applications/DevDesktop/tools"
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH

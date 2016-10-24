@@ -26,25 +26,17 @@
 !.rvm
 !.zshrc
 !autopush.sh
-/.vim/.netrwhist!/
 !/.vim/
 !/.vim/*
 !/.vim/**/*
-*/plugged/*
+/.vim/.netrwhist!/
+/.vim/plugged/*
 !/partials/*
 !/partials/
 !.tern-config
-!/.alfred_sync
 !/.alfred_sync/**/*
-!/.alfred_sync/**/*.db
-.alfred_sync/Alfred.alfredpreferences/workflows/*
+/.alfred_sync/**/*.db
 !/.oh-my-zsh/**/*
 !/scripts/*
 !scripts
-
-
-# A
-# etc...
-
-# ...even if they are in subdirectories
 

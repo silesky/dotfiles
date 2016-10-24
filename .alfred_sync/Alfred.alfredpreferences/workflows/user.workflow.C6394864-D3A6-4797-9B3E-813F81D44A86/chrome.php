@@ -78,10 +78,14 @@ foreach ($history as $key=>$website)
 	// Check if we are Filtering Results
 	if($query !== '')
 	{
-		// We did not find that query in this machine, so don't show it
-		if (strpos(strtolower($website['title']), strtolower($query)) === false && strpos(strtolower($website['url']), strtolower($query)) === false)
+		$terms = split(" +", $query);
+
+		foreach ($terms as $term)
 		{
-			$use_result = false;
+			if (strpos(strtolower($website['title']), strtolower($term)) === false && strpos(strtolower($website['url']), strtolower($term)) === false)
+			{
+				$use_result = false;
+			}
 		}
 	}
 
