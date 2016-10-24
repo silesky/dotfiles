@@ -1,4 +1,6 @@
 # Aliases
+
+alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
 alias stopm="kill -9 `pgrep -f mongod`"
 alias bang="echo '/usr/bin/env bash'"
 alias estest="eslint --debug ~/estest.js"
@@ -41,6 +43,7 @@ alias paths="vim ~/.paths"
 alias gitconfig="vim ~/.gitconfig"
 alias gitignore="vim ~/.gitignore"
 alias prof="vim ~/.bash_profile"
+alias aliases="vim ~/.bash_aliases"
 alias als="vim ~/.bash_aliases"
 alias zshrc="vim +/plugins ~/.zshrc"
 alias inputrc="vim ~/.inputrc"
@@ -107,7 +110,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias gitkraken="open -a gitkraken"
    alias gitkr="gitkraken"
    alias git="/usr/local/bin/git" #osx
-   alias vim='/usr/local/bin/vim' #osx
+   alias vim='/usr/local/bin/vim -p' #osx
    alias sub="open -a '/Applications/Sublime Text.app'" #osx
    alias play='cd ~/Desktop/temp/ && vim play.js'
    alias temp='cd ~/Desktop/temp'

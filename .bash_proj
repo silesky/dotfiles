@@ -2,9 +2,11 @@
 # Projects
 # ........
 
+alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
 alias cirt="cd ~/projects/cirtual"
 
 # ... gifter
+alias gft='cd ~/projects/giftr'
 alias giftr='cd ~/projects/giftr'
 # ... site-factory
 alias sf='cd /Users/ssilesky/projects/sf/sf'

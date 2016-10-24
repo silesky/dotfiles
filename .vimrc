@@ -4,7 +4,7 @@ endif
 
 if has('macunix')
   " alt-s to toggle
-  noremap ßß :SyntasticToggleMode<CR>
+  noremap ß∂ :SyntasticToggleMode<CR>
   noremap ß :SyntasticCheck<CR>
   noremap ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
   " alt-[ and alt-] to cycle buffers
