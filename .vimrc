@@ -178,7 +178,7 @@ function! ToggleWrap()
 endfunction
 map <F9> :call ToggleWrap()<CR>
 
-
+inoremap jj <Esc>
 " get rid of trailing whitespace
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
