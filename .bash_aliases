@@ -33,6 +33,7 @@ alias c="clear"
 alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
 alias reprof="source ~/.bash_profile && echo 'bash reloaded.'"
 alias reall="rezsh && reprof"
+
 # ... text files
 alias .sass-lint="vim ~/.sass-lint.yml"
 alias eslintrc="vim ~/.eslintrc"
@@ -40,6 +41,8 @@ alias nodemod="vim ~/.nodemodules.txt"
 alias bash_proj="vim ~/.bash_proj"
 alias bash_functions="vim ~/.bash_functions"
 alias paths="vim ~/.paths"
+
+# .... Git
 alias gitconfig="vim ~/.gitconfig"
 alias gitignore="vim ~/.gitignore"
 alias prof="vim ~/.bash_profile"
@@ -57,6 +60,7 @@ alias rp="realpath"
 alias pbc="pbcopy"
 
 # ... git
+alias gpk="git cherry-pick"
 alias gp="git push"
 alias gac="git add -A && git commit"
 alias ga="git add"
@@ -70,17 +74,14 @@ alias gck='git checkout'
 alias gl='git log --graph --name-status --branches --decorate --abbrev-commit'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
 alias gd="git difftool --gui &"
-
-gb () {
-   ruby ~/scripts/git-blame-colored.sh $1 | less -R
-}
+gb () { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
 
 
 # ... tmux
 alias tm.a="tmux attach -t base || tmux new -s 'base'"
 alias mux="tmuxinator"
-alias tm.sw="tmux splitw -d"
 alias tms="tmux splitw"
+alias tmsd="tmux splitw -d"
 alias tmsv="tmux splitw -v"
 alias tmsh="tmux splitw -h"
 alias tml="tmux ls"
@@ -88,12 +89,11 @@ alias tmk="tmux kill-session -t"
 alias tmkw="tmux kill-window -t"
 alias tma="tmux attach -t"
 alias tmux.conf="vim ~/.tmux.conf"
-alias tm.kill="kill -9 `pgrep -f tmux`"
-alias tm.2="tmux splitw -d -h && clear"
-alias tm.3="bash ~/scripts/tm-grid-3.sh"
-alias tm.4="bash ~/scripts/tm-grid-4.sh"
-alias tm.kpa="tmux kill-pane -a -t . && clear"
-alias tm.x="killall tmux"
+alias tm2="tmux splitw -d -h && clear"
+alias tm3="bash ~/scripts/tm-grid-3.sh"
+alias tm4="bash ~/scripts/tm-grid-4.sh"
+alias tmkpa="tmux kill-pane -a -t . && clear"
+alias tmx="killall tmux"
 # tmuxinator thing
 DISABLE_AUTO_TITLE=true
 # ... misc
