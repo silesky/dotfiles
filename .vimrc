@@ -122,7 +122,8 @@ set showbreak=" "
 map q: :q
 " keybindings
 
-map <Esc><Esc> :w<CR>  " double escape to save
+" double escape to save
+map <Esc><Esc> :w<CR>
 " mouse for scrolling and window resizing
 
 set mouse=a
@@ -200,7 +201,7 @@ endif
 noremap <F12> :e!<CR>
 
 " rebind arrow keys to do nothing
-noremap <Right> :echo "No Right for you!"<CR>
+noremap <Right> :echo "no right for you!"<CR>
 noremap <Down> :echo "No Down for you!"<CR>
 noremap <Up> :echo "No Up for you!"<CR>
 noremap <Left> :echo "No Left for you!"<CR>

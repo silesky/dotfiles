@@ -33,6 +33,7 @@ windows:
   - node:
       panes:
        - sub .
+       - open http://gifter.sethsilesky.com:3000/
        - sudo mongod
        - nodemon ./app.js
   - server:
