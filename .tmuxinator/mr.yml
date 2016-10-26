@@ -28,9 +28,10 @@ root: ~/projects/mr-dev
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t mr
 
-pre: open 'http://musicrisingdev.tulane.edu' && pstorm
+pre: sqlpro && pstorm
 windows:
   - editor:
       layout: main-horizontal
       panes:
+        - browser-sync start --proxy musicrisingdev.tulane.edu --files . --no-inject-changes
         - mrdev

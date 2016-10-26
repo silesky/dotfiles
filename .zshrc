@@ -55,7 +55,7 @@ ZSH_THEME="lambda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, git-extras, rvm, node, tmuxinator, tmux, vi-mode, grunt, zsh-output-highlighting)
+plugins=(git, git-extras, rvm, node, tmuxinator, tmux, vi-mode, grunt, zsh-output-highlighting, last-working-dir)
 
 source $ZSH/oh-my-zsh.sh
 

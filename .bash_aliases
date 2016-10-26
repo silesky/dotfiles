@@ -13,6 +13,7 @@ alias desk='cd ~/Desktop'
 alias me="cd /Users/ssilesky/"
 # Apps and Navigation, Misc
 alias f="sudo find . -iname"
+alias sqlpro="open -a 'Sequel Pro'"
 a() { ag -ro "$1" * }
 g() { sudo grep --color=always -r "$1" . }
 
@@ -57,7 +58,6 @@ alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
 alias lynda="cd ~/Lynda/"
 alias rp="realpath"
-alias pbc="pbcopy"
 
 # ... git
 alias gpk="git cherry-pick"
