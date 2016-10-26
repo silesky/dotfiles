@@ -116,17 +116,19 @@ set scrolloff=8
 "https://github.com/sheerun/vimrc
 set wrap linebreak
 set showbreak=" "
-"display line next to cursor
-" set cursorline
+
 "common mistake of q: instead of :q
 map q: :q
+
 " keybindings
+inoremap jj <Esc>
 
 " double escape to save
 map <Esc><Esc> :w<CR>
-" mouse for scrolling and window resizing
 
+" mouse for scrolling and window resizing
 set mouse=a
+
 set backspace=indent,eol,start
 set clipboard=unnamed
 set backupcopy=yes
@@ -178,7 +180,6 @@ function! ToggleWrap()
 endfunction
 map <F9> :call ToggleWrap()<CR>
 
-inoremap jj <Esc>
 " get rid of trailing whitespace
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
