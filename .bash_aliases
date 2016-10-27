@@ -24,11 +24,8 @@ alias l='ls -A'  # Long view, show hidden
 alias ll='clear && ls -al' # Long view, show hidden + clear
 alias la='ls -AF'   # Compact view, show hidden
 cl() { clear && cd "$@" && ls -al; } #cdls
-alias ed='ed -p" Ã°ÂÂÂ¥> "'
 alias hs='history | grep'
 alias as='alias | grep'
-alias catbash="ccat ~/.bash_profile"
-alias cat="ccat"
 alias mail.delete="sudo rm /var/mail/$USER"
 alias c="clear"
 alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
@@ -94,21 +91,22 @@ alias tm3="bash ~/scripts/tm-grid-3.sh"
 alias tm4="bash ~/scripts/tm-grid-4.sh"
 alias tmkpa="tmux kill-pane -a -t . && clear"
 alias tmx="killall tmux"
-# tmuxinator thing
-DISABLE_AUTO_TITLE=true
 # ... misc
-alias browser-syncit='browser-sync start --server --proxy --files . &'
+alias bs="browser-sync"
+alias bstart='browser-sync start --server --proxy --files . &'
 alias srv="live-server"
+alias gitkr="gitkraken"
 #############################################
 ############### linux / osx #################
 #############################################
 if [[ "$(uname)" = "Darwin" ]]; then
+   alias cat="ccat"
    export LSCOLORS=GxFxCxDxBxegedabagaced
    alias tm="tmux"
    # OSX - app path realiases and os-specific
    alias chrome="open -a /Applications/Google\ Chrome.app" #osx
    alias gitkraken="open -a gitkraken"
-   alias gitkr="gitkraken"
+
    alias git="/usr/local/bin/git" #osx
    alias vim='/usr/local/bin/vim -p' #osx
    alias sub="open -a '/Applications/Sublime Text.app'" #osx
