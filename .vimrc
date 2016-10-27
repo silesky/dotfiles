@@ -25,6 +25,8 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
+
+Plug 'easymotion/vim-easymotion'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'mattn/emmet-vim' "html:5_ ctrl-y
 Plug 'tpope/vim-repeat' "let's you use the dot command with vim surround
@@ -104,9 +106,8 @@ set incsearch " see searc results as I type them in
 set t_Co=256 "otherwise you'll only see  8bits
 " Monokai gotham zenburn 256_noir 256_grayvim
 colorscheme zenburn
-" tab colors
-hi TabLineFill ctermfg=DarkGray
-
+" tab bg color
+:highlight Normal ctermfg=DarkGray
 " line numbers
 set nu
 
@@ -125,7 +126,7 @@ map q: :q
 inoremap jj <Esc>
 
 " double escape to save
-map <Esc><Esc> :w<CR>
+map <ESC><ESC> :w<CR>
 
 " mouse for scrolling and window resizing
 set mouse=a
@@ -170,6 +171,8 @@ let g:syntastic_php_phpcs_args='--tab-width=0'
 noremap ßß :SyntasticToggleMode<CR>
 noremap <F2> :lprev<CR> "syntastic skip to error
 noremap <F3> :lnext<CR> "syntastic skip to error
+"gutter column
+:highlight clear SignColumn
 
 " wrap toggle
 function! ToggleWrap()
@@ -245,3 +248,5 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 25
 
 noremap !! :set shellcmdflag=-ic<CR>
+" EasyMotion
+map <Leader> <Plug>(easymotion-prefix)
