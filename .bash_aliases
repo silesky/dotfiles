@@ -1,5 +1,4 @@
-# Aliases
-
+# ALIASES
 alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
 alias stopm="kill -9 `pgrep -f mongod`"
 alias bang="echo '/usr/bin/env bash'"

@@ -4,7 +4,7 @@ endif
 
 if has('macunix')
   " alt-s to toggle
-  noremap ß∂ :SyntasticToggleMode<CR>
+  noremap ß∂ :SyntasticReset<CR>
   noremap ß :SyntasticCheck<CR>
   noremap ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
   " alt-[ and alt-] to cycle buffers
@@ -158,9 +158,11 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
-" don't show quick list
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 0
+" toggle quick list
+let g:syntastic_auto_loc_list = 1
+" quick list should be smaller
+:let g:syntastic_loc_list_height=3
+let g:syntastic_check_on_open = 1
 " wq in order for SyntasticCheck to work:
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']

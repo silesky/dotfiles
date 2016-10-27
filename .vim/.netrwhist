@@ -1,8 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/libraries'
 let g:netrw_dirhist_2='/Users/ssilesky/projects/sf/sf/docroot/sites/all'
 let g:netrw_dirhist_3='/Users/ssilesky/projects/sf/sf/docroot/sites'
 let g:netrw_dirhist_4='/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/layouts'
 let g:netrw_dirhist_5='/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/layouts/page-main-without-margins'
 let g:netrw_dirhist_6='/Users/ssilesky'
+let g:netrw_dirhist_7='/Users/ssilesky/projects/giftr'
+let g:netrw_dirhist_8='/Users/ssilesky/projects/giftr/seeds'
+let g:netrw_dirhist_9='/Users/ssilesky/projects/giftr'

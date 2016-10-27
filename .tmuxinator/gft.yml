@@ -27,7 +27,7 @@ root: ~/projects/giftr/
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t gft
-
+pre: gitkr
 startup_window: node
 windows:
   - node:
@@ -36,8 +36,10 @@ windows:
        - open http://gifter.sethsilesky.com:3000/
        - sudo mongod
        - nodemon ./app.js
+       - livereload .
   - server:
       panes:
         - sleep 30 && seed
-  - git: gitkr
-
+  - vim:
+      panes:
+      - vim .
