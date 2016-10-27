@@ -1,7 +1,7 @@
-# ~/.tmuxinator/sf.yml
+# ~/.tmuxinator/sla.yml
 
-name: sf
-root: ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/css/schools_and_departments
+name: sla
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,12 +25,13 @@ root: ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/css/scho
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t sf
-pre: open -a "Acquia Dev Desktop" && sleep 3 && open "http://docroot.dd:8083/"
-startup_window: server
+# post: tmux -CC attach -t sla
+
 windows:
   - editor:
-      layout: main-horizontal
+      layout: main-vertical
       panes:
-        - sub school_of_liberal_arts.scss && sub . && gitkr
-        - sudo sass --watch school_of_liberal_arts.scss:school_of_liberal_arts.css
+        - vim
+        - guard
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log
