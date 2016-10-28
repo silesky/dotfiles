@@ -156,6 +156,7 @@ set timeoutlen=1000 ttimeoutlen=0
 " syntastic (for eslint)... pathogen is a dep
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 " toggle quick list
@@ -212,16 +213,20 @@ noremap <Right> :echo "no right for you!"<CR>
 noremap <Down> :echo "No Down for you!"<CR>
 noremap <Up> :echo "No Up for you!"<CR>
 noremap <Left> :echo "No Left for you!"<CR>
-
+""""""""""""""""""""""""
+" CTRLP
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$\|node_modules$\|modules$',
+      \ 'dir':  '\.git$\|\upload[sS]$|\.yardoc\|public$|log\|tmp$\|node_modules$\|modules$',
       \ 'file': '\.so$\|\.dat$|\.DS_Store$'
       \ }
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 let g:ctrlp_map='<c-p>'
+" don't limit the ctrlp results
+let g:ctrlp_match_window = 'min:4,max:72'
 let g:ctrlp_cmd = 'CtrlPMixed'
-"https://github.com/maksimr/vim-jsbeautify
+"""""""""""""""""""""""""""
+" JSBEAUTIFY
 map <F4> :call JsBeautify()<cr>
 " or
 autocmd FileType javascript noremap <buffer>  <F4> :call JsBeautify()<cr>
@@ -233,6 +238,7 @@ autocmd FileType jsx noremap <buffer> <F4> :call JsxBeautify()<cr>
 autocmd FileType html noremap <buffer> <F4> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <F4> :call CSSBeautify()<cr>
+"""""""""""""""""""""""""""
 " Instant Markdown
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
@@ -240,7 +246,7 @@ noremap µ :InstantMarkdownPreview<CR>
 " YCM YouCompleteMe (so it will complete markdown files)
 let g:ycm_filetype_blacklist = {}
 noremap <C-k><C-b> :NERDTreeToggle<CR>
-
+""""""""""""""""""""""""
 " theme explorer
 let g:jsx_ext_required = 0
 let g:netrw_banner = 0
@@ -248,7 +254,7 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-
+""""""""""""""""""""""""
 noremap !! :set shellcmdflag=-ic<CR>
 " EasyMotion
 map <Leader> <Plug>(easymotion-prefix)

@@ -1,5 +1,6 @@
 ### .bashrc
-
+export HISTFILESIZE=500000
+export HISTSIZE=100000
 export VISUAL=vim
 export EDITOR="$VISUAL"
 # Include Drush bash customizations.
