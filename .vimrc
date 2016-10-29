@@ -218,7 +218,7 @@ noremap <Left> :echo "No Left for you!"<CR>
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\upload[sS]$|\.yardoc\|public$|log\|tmp$\|node_modules$\|modules$',
-      \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+      \ 'file': '\.so$\|\.dat$|\.DS_Store$|\.jpg$|\.gif$'
       \ }
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 let g:ctrlp_map='<c-p>'

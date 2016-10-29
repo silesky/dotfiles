@@ -1,7 +1,7 @@
-# ~/.tmuxinator/gft.yml
+# ~/.tmuxinator/gftm.yml
 
-name: gft
-root: ~/projects/giftr/
+name: gftm
+root: ~/projects/giftr/mobile
 
 
 # Optional tmux socket
@@ -32,14 +32,6 @@ startup_window: node
 windows:
   - node:
       panes:
-       - sub .
-       - open http://gifter.sethsilesky.com:3000/
-       - sudo mongod
-       - nodemon ./app.js
-       - livereload .
-  - server:
-      panes:
-        - sleep 30 && seed
-  - vim:
-      panes:
-      - vim .
+       - sub . && sub index.ios.js
+       - react-native run-ios
+  - misc:

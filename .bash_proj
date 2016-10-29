@@ -6,6 +6,7 @@ alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
 alias cirt="cd ~/projects/cirtual"
 
 # ... gifter
+alias gft.bm='vim ~/projects/giftr/bm.md'
 alias gft='cd ~/projects/giftr'
 alias giftr='cd ~/projects/giftr'
 # ... site-factory
