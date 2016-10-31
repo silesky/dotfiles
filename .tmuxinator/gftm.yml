@@ -27,7 +27,7 @@ root: ~/projects/giftr/mobile
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t gft
-pre: gitkr && open "https://trello.com/b/kOwrKDAC/giftr"
+pre: open "https://trello.com/b/kOwrKDAC/giftr"
 startup_window: node
 windows:
   - node:

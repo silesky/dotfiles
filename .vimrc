@@ -107,7 +107,7 @@ set t_Co=256 "otherwise you'll only see  8bits
 " Monokai gotham zenburn 256_noir 256_grayvim
 colorscheme zenburn
 " tab bg color
-:highlight Normal ctermfg=DarkGray
+" :highlight Normal ctermfg=DarkGray
 " line numbers
 set nu
 

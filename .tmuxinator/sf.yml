@@ -34,3 +34,4 @@ windows:
       panes:
         - sub school_of_liberal_arts.scss && sub . && gitkr
         - sudo sass --watch school_of_liberal_arts.scss:school_of_liberal_arts.css
+        - export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot"

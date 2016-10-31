@@ -101,6 +101,7 @@ alias gitkr="gitkraken"
 #############################################
 if [[ "$(uname)" = "Darwin" ]]; then
    alias cat="ccat"
+   alias ca="cat"
    export LSCOLORS=GxFxCxDxBxegedabagaced
    alias tm="tmux"
    # OSX - app path realiases and os-specific
