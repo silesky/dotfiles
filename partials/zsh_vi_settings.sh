@@ -1,3 +1,4 @@
+#!/usr/bin/zsh
 bindkey -v
 
 bindkey '^r' history-incremental-search-backward

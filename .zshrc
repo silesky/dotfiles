@@ -1,5 +1,4 @@
-source ~/partials/.zsh_vi
-source ~/.oh-my-zsh/plugins/z/z.sh
+source ~/.bash_profile
 
 # tmuxinator thing
 DISABLE_AUTO_TITLE=true
@@ -57,10 +56,8 @@ ZSH_THEME="lambda"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git, git-extras, rvm, node, tmuxinator, tmux, vi-mode, grunt, zsh-output-highlighting, last-working-dir)
-
+plugins=(git git-extras rvm node tmuxinator tmux vi-mode grunt zsh-output-highlighting last-working-dir zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -90,5 +87,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 ##################################################################
-source ~/.bash_profile
 
+# source plugins last
+source ~/partials/zsh_syntax_highlight_settings.sh
+source ~/.oh-my-zsh/plugins/z/z.sh
+source ~/partials/zsh_vi_settings.sh
