@@ -3,6 +3,9 @@ if has('unix')
 endif
 
 if has('macunix')
+  " alt-s to toggle
+  noremap ß∂ :SyntasticReset<CR>
+  noremap ß :SyntasticCheck<CR>
   noremap ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
   " alt-[ and alt-] to cycle buffers
   noremap ‘ :bnext<CR>
@@ -22,6 +25,10 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
+Plug 'elixir-lang/vim-elixir'
+Plug 'easymotion/vim-easymotion'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'mattn/emmet-vim' "html:5_ ctrl-y
 Plug 'tpope/vim-repeat' "let's you use the dot command with vim surround
 Plug 'tpope/vim-surround' "cst
 Plug 'avakhov/vim-yaml'
@@ -99,9 +106,8 @@ set incsearch " see searc results as I type them in
 set t_Co=256 "otherwise you'll only see  8bits
 " Monokai gotham zenburn 256_noir 256_grayvim
 colorscheme zenburn
-" tab colors
-hi TabLineFill ctermfg=DarkGray
-
+" tab bg color
+" :highlight Normal ctermfg=DarkGray
 " line numbers
 set nu
 
@@ -112,16 +118,19 @@ set scrolloff=8
 "https://github.com/sheerun/vimrc
 set wrap linebreak
 set showbreak=" "
-"display line next to cursor
-" set cursorline
+
 "common mistake of q: instead of :q
 map q: :q
+
 " keybindings
+inoremap jj <Esc>
 
-map <Esc><Esc> :w<CR>  " double escape to save
+" double escape to save
+map <ESC><ESC> :w<CR>
+
 " mouse for scrolling and window resizing
-
 set mouse=a
+
 set backspace=indent,eol,start
 set clipboard=unnamed
 set backupcopy=yes
@@ -147,19 +156,26 @@ set timeoutlen=1000 ttimeoutlen=0
 " syntastic (for eslint)... pathogen is a dep
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
-" don't show quick list
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_wq = 0
+" toggle quick list
+let g:syntastic_auto_loc_list = 1
+" quick list should be smaller
+:let g:syntastic_loc_list_height=3
+let g:syntastic_check_on_open = 1
+" wq in order for SyntasticCheck to work:
+let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_sass_checkers=["sass_lint"]
 let g:syntastic_scss_checkers=["sass_lint"]
 let g:syntastic_php_phpcs_args='--tab-width=0'
-set tabstop=8
-
+"alt-ss to toggle syntastic
+noremap ßß :SyntasticToggleMode<CR>
 noremap <F2> :lprev<CR> "syntastic skip to error
 noremap <F3> :lnext<CR> "syntastic skip to error
+"gutter column
+:highlight clear SignColumn
 
 " wrap toggle
 function! ToggleWrap()
@@ -171,7 +187,6 @@ function! ToggleWrap()
 endfunction
 map <F9> :call ToggleWrap()<CR>
 
-
 " get rid of trailing whitespace
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
@@ -180,10 +195,10 @@ fun! <SID>StripTrailingWhitespaces()
   call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
+" set tab
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype scss setlocal ts=4 sw=4 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
-
 "vimdiff loafs another theme
 " http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
 if &diff
@@ -194,28 +209,24 @@ endif
 noremap <F12> :e!<CR>
 
 " rebind arrow keys to do nothing
-nnoremap <Right> :echo "No Right for you!"<CR>
-vnoremap <Right> :<C-u>echo "No Right for you!"<CR>
-inoremap <Right> <C-o>:echo "No Right for you!"<CR>
-nnoremap <Down> :echo "No Down for you!"<CR>
-vnoremap <Down> :<C-u>echo "No Down for you!"<CR>
-inoremap <Down> <C-o>:echo "No Down for you!"<CR>
-nnoremap <Up> :echo "No Up for you!"<CR>
-vnoremap <Up> :<C-u>echo "No Up for you!"<CR>
-inoremap <Up> <C-o>:echo "No Up for you!"<CR>
-nnoremap <Left> :echo "No Left for you!"<CR>
-vnoremap <Left> :<C-u>echo "No left for you!"<CR>
-inoremap <Left> <C-o>:echo "No left for you!"<CR>
-
+noremap <Right> :echo "no right for you!"<CR>
+noremap <Down> :echo "No Down for you!"<CR>
+noremap <Up> :echo "No Up for you!"<CR>
+noremap <Left> :echo "No Left for you!"<CR>
+""""""""""""""""""""""""
+" CTRLP
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$\|node_modules$\|modules$',
-      \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+      \ 'dir':  '\.git$\|\upload[sS]$|\.yardoc\|public$|log\|tmp$\|node_modules$\|modules$',
+      \ 'file': '\.so$\|\.dat$|\.DS_Store$|\.jpg$|\.gif$'
       \ }
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 let g:ctrlp_map='<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
-"https://github.com/maksimr/vim-jsbeautify
+" don't limit the ctrlp results
+let g:ctrlp_match_window = 'min:4,max:72'
+let g:ctrlp_cmd = 'CtrlPMixed'
+"""""""""""""""""""""""""""
+" JSBEAUTIFY
 map <F4> :call JsBeautify()<cr>
 " or
 autocmd FileType javascript noremap <buffer>  <F4> :call JsBeautify()<cr>
@@ -227,6 +238,7 @@ autocmd FileType jsx noremap <buffer> <F4> :call JsxBeautify()<cr>
 autocmd FileType html noremap <buffer> <F4> :call HtmlBeautify()<cr>
 " for css or scss
 autocmd FileType css noremap <buffer> <F4> :call CSSBeautify()<cr>
+"""""""""""""""""""""""""""
 " Instant Markdown
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
@@ -234,7 +246,7 @@ noremap µ :InstantMarkdownPreview<CR>
 " YCM YouCompleteMe (so it will complete markdown files)
 let g:ycm_filetype_blacklist = {}
 noremap <C-k><C-b> :NERDTreeToggle<CR>
-
+""""""""""""""""""""""""
 " theme explorer
 let g:jsx_ext_required = 0
 let g:netrw_banner = 0
@@ -242,4 +254,7 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-
+""""""""""""""""""""""""
+noremap !! :set shellcmdflag=-ic<CR>
+" EasyMotion
+map <Leader> <Plug>(easymotion-prefix)

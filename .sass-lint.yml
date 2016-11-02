@@ -23,10 +23,7 @@ rules:
     - 1
     - filename-extension: false
       leading-underscore: false
-  empty-line-between-blocks:
-    - include: true
-    - 1
-    - ignore-single-line-rulesets: true
+  empty-line-between-blocks: 0
   extends-before-declarations: 1
   extends-before-mixins: 1
   final-newline:
@@ -49,7 +46,7 @@ rules:
     - 1
     - convention: hyphenatedlowercase
   indentation:
-    - 1
+    - 0
     - size: 4
   leading-zero:
     - 0

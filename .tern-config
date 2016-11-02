@@ -1,11 +1,12 @@
 {
   "libs": [
-    "browser"
+    "browser",
+    "ecma6"
   ],
   "plugins": {
-     "node": {},
-     "modules": {},
-     "es_modules": {},
-     "jasmine": {}
+    "node": {},
+    "es_modules": {},
+    "jasmine": {},
+    "complete_strings": {}
   }
 }
