@@ -26,12 +26,12 @@ root: ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/css/scho
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t sf
-pre: open -a "Acquia Dev Desktop" && sleep 3 && open "http://docroot.dd:8083/"
+pre: open -a "Acquia Dev Desktop" && sleep 3 && open "http://docroot.dd:8083/" && open "https://trello.com/b/kSOmmLF9/sla-drupal-migration"
 startup_window: server
 windows:
   - editor:
       layout: main-horizontal
       panes:
-        - sub school_of_liberal_arts.scss && sub . && gitkr
+        - sub ~/projects/sf/sf/docroot/sites/all/themes/multitheme/ && sub school_of_liberal_arts.scss && sub . && gitkr
         - sudo sass --watch school_of_liberal_arts.scss:school_of_liberal_arts.css
         - export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot"

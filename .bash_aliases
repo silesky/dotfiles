@@ -66,9 +66,8 @@ alias gck.="git checkout -- ."
 alias gck="git checkout"
 alias gs="git status -sb"
 alias gst="git status"
-alias glo='git log --oneline'
+alias gl='git log --oneline'
 alias gck='git checkout'
-alias gl='git log --graph --name-status --branches --decorate --abbrev-commit'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
 alias gd="git difftool --gui &"
 gb () { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
@@ -107,8 +106,6 @@ if [[ "$(uname)" = "Darwin" ]]; then
    # OSX - app path realiases and os-specific
    alias chrome="open -a /Applications/Google\ Chrome.app" #osx
    alias gitkraken="open -a gitkraken"
-
-   alias git="/usr/local/bin/git" #osx
    alias vim='/usr/local/bin/vim -p' #osx
    alias sub="open -a '/Applications/Sublime Text.app'" #osx
    alias play='cd ~/Desktop/temp/ && vim play.js'
