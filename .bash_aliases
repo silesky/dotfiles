@@ -101,6 +101,7 @@ alias gitkr="gitkraken"
 if [[ "$(uname)" = "Darwin" ]]; then
    alias cat="ccat"
    alias ca="cat"
+   export CLICOLOR=1
    export LSCOLORS=GxFxCxDxBxegedabagaced
    alias tm="tmux"
    # OSX - app path realiases and os-specific
@@ -110,6 +111,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias sub="open -a '/Applications/Sublime Text.app'" #osx
    alias play='cd ~/Desktop/temp/ && vim play.js'
    alias temp='cd ~/Desktop/temp'
+   alias tree='tree -C'
 else
    alias tmux='tmux -2'
    alias tm="tmux -2"
