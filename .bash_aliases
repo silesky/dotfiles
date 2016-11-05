@@ -14,8 +14,8 @@ alias me="cd /Users/ssilesky/"
 # Apps and Navigation, Misc
 alias f="sudo find . -iname"
 alias sqlpro="open -a 'Sequel Pro'"
-a() { ag -ro "$1" * }
-g() { sudo grep --color=always -r "$1" . }
+# a() { ag -ro "$1" * }
+# g() { sudo grep --color=always -r "$1" . }
 
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
@@ -70,7 +70,7 @@ alias gl='git log --oneline'
 alias gck='git checkout'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
 alias gd="git difftool --gui &"
-gb () { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
+# gb () { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
 
 
 # ... tmux

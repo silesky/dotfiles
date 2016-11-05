@@ -1,8 +1,7 @@
-# ~/.tmuxinator/gftm.yml
+# ~/.tmuxinator/sla.yml
 
-name: gftm
-root: ~/projects/giftr/mobile
-
+name: sla
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -26,12 +25,13 @@ root: ~/projects/giftr/mobile
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t gft
-pre: sub .
-windows:
-  - node:
-      panes:
-       - react-native run-ios
-       - open "https://trello.com/b/kOwrKDAC/giftr"
-  - log: sleep 30 && react-native log-ios
+# post: tmux -CC attach -t sla
 
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - guard
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log
