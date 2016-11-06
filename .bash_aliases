@@ -12,7 +12,7 @@ alias autopush='sh ~/scripts/autopush.sh'
 alias desk='cd ~/Desktop'
 alias me="cd /Users/ssilesky/"
 # Apps and Navigation, Misc
-alias f="sudo find . -iname"
+alias f="find . -iname"
 alias sqlpro="open -a 'Sequel Pro'"
 # a() { ag -ro "$1" * }
 # g() { sudo grep --color=always -r "$1" . }

@@ -156,14 +156,16 @@ set timeoutlen=1000 ttimeoutlen=0
 " syntastic (for eslint)... pathogen is a dep
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
-
 set statusline+=%*
+
+" neccessary for syntastic to work
 let g:syntastic_always_populate_loc_list = 1
 " toggle quick list
 let g:syntastic_auto_loc_list = 1
-" quick list should be smaller
-:let g:syntastic_loc_list_height=3
-let g:syntastic_check_on_open = 1
+" quick list height (3 is smaller)
+let g:syntastic_loc_list_height=3
+" check on open (0 -> faster)
+let g:syntastic_check_on_open = 0
 " wq in order for SyntasticCheck to work:
 let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
