@@ -71,6 +71,7 @@ alias gck="git checkout"
 alias gs="git status -sb"
 alias gst="git status"
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias glo="git log --oneline"
 alias gck='git checkout'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
 alias gd="git difftool --gui &"
@@ -79,8 +80,8 @@ alias gd="git difftool --gui &"
 
 # ... tmux
 alias tm.a="tmux attach -t base || tmux new -s 'base'"
-alias tmn=tmux new-session -s  `date '+%m-%d_%H%M%S'`
-alias TM=tmux new-session -d -s `date '+%m-%d_%H%M%S'` && tmux switch-client -t  `date '+%H%M%S'`
+alias tmn="tmux new-session -s  `date '+%H%M%S'`"
+alias TM="tmux new-session -d -s `date '+%H%M%S'` && tmux switch-client -t  `date '+%H%M%S'`"
 alias mux="tmuxinator"
 alias tms="tmux splitw"
 alias tmsd="tmux splitw -d"
