@@ -1,9 +1,13 @@
 # ALIASES
+
+# Temp (for current installation
+
+#...............................
+# misc
 alias doc="cd ~/Documents"
-alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
 alias stopm="kill -9 `pgrep -f mongod`"
 alias bang="echo '/usr/bin/env bash'"
-alias estest="eslint --debug ~/estest.js"
+alias ca="cat"
 # scripts
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 alias google="sh ~/scripts/google.sh"
@@ -13,7 +17,7 @@ alias desk='cd ~/Desktop'
 alias me="cd /Users/ssilesky/"
 # Apps and Navigation, Misc
 alias f="find . -iname"
-alias sqlpro="open -a 'Sequel Pro'"
+
 # a() { ag -ro "$1" * }
 # g() { sudo grep --color=always -r "$1" . }
 
@@ -66,7 +70,7 @@ alias gck.="git checkout -- ."
 alias gck="git checkout"
 alias gs="git status -sb"
 alias gst="git status"
-alias gl='git log --oneline'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gck='git checkout'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
 alias gd="git difftool --gui &"
@@ -75,6 +79,8 @@ alias gd="git difftool --gui &"
 
 # ... tmux
 alias tm.a="tmux attach -t base || tmux new -s 'base'"
+alias tmn=tmux new-session -s  `date '+%m-%d_%H%M%S'`
+alias TM=tmux new-session -d -s `date '+%m-%d_%H%M%S'` && tmux switch-client -t  `date '+%H%M%S'`
 alias mux="tmuxinator"
 alias tms="tmux splitw"
 alias tmsd="tmux splitw -d"
@@ -100,7 +106,6 @@ alias gitkr="gitkraken"
 #############################################
 if [[ "$(uname)" = "Darwin" ]]; then
    alias cat="ccat"
-   alias ca="cat"
    export CLICOLOR=1
    export LSCOLORS=GxFxCxDxBxegedabagaced
    alias tm="tmux"
@@ -108,8 +113,11 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias chrome="open -a /Applications/Google\ Chrome.app" #osx
    alias gitkraken="open -a gitkraken"
    alias vim='/usr/local/bin/vim -p' #osx
+   alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
    alias sub="open -a '/Applications/Sublime Text.app'" #osx
    alias play='cd ~/Desktop/temp/ && vim play.js'
+   alias sqlpro="open -a 'Sequel Pro'"
+alias estest="eslint --debug ~/estest.js"
    alias temp='cd ~/Desktop/temp'
    alias tree='tree -C'
 else
