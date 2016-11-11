@@ -31,7 +31,7 @@ windows:
   - node:
       panes:
        - gitkr
-       - cd .. && code .
+       - code .
        - react-native run-ios
        - open "https://trello.com/b/kOwrKDAC/giftr"
   - log: sleep 30 && react-native log-ios

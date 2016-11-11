@@ -4,9 +4,10 @@
 # $PATH goes at the beginning. Path goes at the end in the default places, because I want the default places to go first.
 
 # Vars
+export HOME=/users/ssilesky
 export GREP_COLOR='00;38;5;226'
 export CLICOLOR=1
-export ANDROID_HOME=/Users/ssilesky/Library/Android/sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 export HISTCONTROL="erasedups:ignoreboth"
 export HISTFILESIZE=500000
@@ -21,12 +22,11 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH=$HOME/scripts:$PATH
-export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/tools
-export PATH=$PATH:/Users/ssilesky/Library/Android/sdk/platform-tools #adb is here
-export PATH=$PATH:/Users/ssilesky
-export PATH=$PATH:/Users/ssilesky/scripts
+export PATH=$PATH:$HOME/Library/Android/sdk/tools
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools #adb is here
+export PATH=$PATH:$HOME
+export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:/usr/local/share/dotnet
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/usr/local/Cellar/openssl/1.0.2j/bin/:$PATH
-
