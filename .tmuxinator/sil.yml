@@ -1,7 +1,7 @@
-# ~/.tmuxinator/gft.yml
+# ~/.tmuxinator/sil.yml
 
-name: gft
-root: ~/projects/giftr/
+name: sil
+root: ~/projects/silesky.github.io
 
 
 # Optional tmux socket
@@ -26,15 +26,11 @@ root: ~/projects/giftr/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t gft
-pre: gitkr && open "https://trello.com/b/kOwrKDAC/giftr" && open http://gifter.sethsilesky.com:3000
-startup_window: log
+# post: tmux -CC attach -t sil
+
 windows:
-  - node:
+  - editor:
+      layout: main-vertical
       panes:
-       - sub . && livereload .
-       - sudo mongod
-  - log: nodemon ./app.js
-  - seed:
-      panes:
-        - sleep 30 && seed
+        - srv .
+        - code .
