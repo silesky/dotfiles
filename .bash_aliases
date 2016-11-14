@@ -24,7 +24,7 @@ alias f="find . -iname"
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
-alias l='ls -A'  # Long view, show hidden
+alias l='ls -a'  # Long view, show hidden
 alias ll='clear && ls -al' # Long view, show hidden + clear
 alias la='ls -AF'   # Compact view, show hidden
 cl() { clear && cd "$@" && ls -al; } #cdls
