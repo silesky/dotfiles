@@ -27,14 +27,13 @@ root: ~/projects/giftr/
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t gft
-pre: gitkr && open "https://trello.com/b/kOwrKDAC/giftr" && open http://gifter.sethsilesky.com:3000
+pre: open "https://trello.com/b/kOwrKDAC/giftr" && open http://gifter.sethsilesky.com:3000
 startup_window: log
 windows:
   - node:
       panes:
-       - sub . && livereload .
        - sudo mongod
-  - log: nodemon ./app.js
-  - seed:
-      panes:
-        - sleep 30 && seed
+       - sleep 30 && seed
+       - code . && livereload .
+  - log: npm run watch
+
