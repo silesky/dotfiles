@@ -1,8 +1,7 @@
-# ~/.tmuxinator/gft.yml
+# ~/.tmuxinator/fdt.yml
 
-name: gft
-root: ~/projects/giftr/
-
+name: fdt
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -26,17 +25,13 @@ root: ~/projects/giftr/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t gft
-pre: open "https://trello.com/b/kOwrKDAC/giftr" && open http://gifter.sethsilesky.com:3000
-startup_window: log
-windows:
-  - node:
-      panes:
-       - sudo mongod
-       - sleep 30 && seed
-       - code .
-  - log:
-      panes:
-        - npm run testwatch
-        - npm run watch
+# post: tmux -CC attach -t fdt
 
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - guard
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log
