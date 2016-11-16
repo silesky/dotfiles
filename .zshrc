@@ -92,3 +92,5 @@ source $ZSH/oh-my-zsh.sh
 source ~/partials/zsh_syntax_highlight_settings.sh
 source ~/.oh-my-zsh/plugins/z/z.sh
 source ~/partials/zsh_vi_settings.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
