@@ -33,10 +33,10 @@ windows:
   - node:
       panes:
        - sudo mongod
-       - sleep 30 && seed
        - code .
   - log:
       panes:
+        - sleep 30 && seed
         - npm run testwatch
         - npm run watch
 

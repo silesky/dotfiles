@@ -1,6 +1,6 @@
-# ~/.tmuxinator/fdt.yml
+# ~/.tmuxinator/iex.yml
 
-name: fdt
+name: iex
 root: ~/
 
 # Optional tmux socket
@@ -25,13 +25,9 @@ root: ~/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t fdt
-
+# post: tmux -CC attach -t iex
+pre: open "http://elixirschool.com/lessons/basics/pattern-matching/" && open "evernote:///view/2147483647/s557/407664c6-65ac-43ef-817a-71e0e452481e/407664c6-65ac-43ef-817a-71e0e452481e/"
 windows:
   - editor:
-      layout: main-vertical
       panes:
-        - vim
-        - guard
-  - server: bundle exec rails s
-  - logs: tail -f log/development.log
+        - iex

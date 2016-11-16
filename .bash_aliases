@@ -4,6 +4,7 @@
 
 #...............................
 # misc
+alias dockerq="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 alias doc="cd ~/Documents"
 alias stopm="kill -9 `pgrep -f mongod`"
 alias bang="echo '/usr/bin/env bash'"
@@ -90,7 +91,7 @@ alias tmsh="tmux splitw -h"
 alias tml="tmux ls"
 alias tmk="tmux kill-session -t"
 alias tmkw="tmux kill-window -t"
-alias tma="tmux attach -t"
+alias tma="tmux attach -d -t"
 alias tmux.conf="vim ~/.tmux.conf"
 alias tm2="tmux splitw -d -h && clear"
 alias tm3="bash ~/scripts/tm-grid-3.sh"
