@@ -26,6 +26,7 @@ alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
 alias l='ls -a'  # Long view, show hidden
+alias lsd='ls -d */'
 alias ll='clear && ls -al' # Long view, show hidden + clear
 alias la='ls -AF'   # Compact view, show hidden
 cl() { clear && cd "$@" && ls -al; } #cdls
@@ -80,7 +81,7 @@ alias gd="git difftool --gui &"
 
 
 # ... tmux
-alias tm.a="tmux attach -t base || tmux new -s 'base'"
+alias tmA="tmux attach -t base || tmux new -s 'base'"
 alias tmn="tmux new-session -s  `date '+%H%M%S'`"
 alias TM="tmux new-session -d -s `date '+%H%M%S'` && tmux switch-client -t  `date '+%H%M%S'`"
 alias mux="tmuxinator"
@@ -97,7 +98,8 @@ alias tm2="tmux splitw -d -h && clear"
 alias tm3="bash ~/scripts/tm-grid-3.sh"
 alias tm4="bash ~/scripts/tm-grid-4.sh"
 alias tmkpa="tmux kill-pane -a -t . && clear"
-alias tmx="killall tmux"
+alias tmx="tmux kill-session ."
+alias tmX="killall tmux"
 # ... misc
 alias bs="browser-sync"
 alias bstart='browser-sync start --server --proxy --files . &'
