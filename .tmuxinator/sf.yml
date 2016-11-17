@@ -34,4 +34,4 @@ windows:
         - sub ~/projects/sf/sf/docroot/sites/all/themes/multitheme/ && sub school_of_liberal_arts.scss && sub . && gitkr
         - sudo sass --watch school_of_liberal_arts.scss:school_of_liberal_arts.css
         - export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot" && drush uli
-        - cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/ && grunt watch
+        - cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega && grunt watch
