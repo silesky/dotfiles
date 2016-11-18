@@ -21,3 +21,4 @@ fi
 export PATH="$PATH:/Applications/DevDesktop/tools"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+eval "$(direnv hook bash)"

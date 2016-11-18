@@ -36,4 +36,3 @@ windows:
         - sleep 20 && seed
         - sleep 20 && npm run testwatch
         - npm run watch
-
