@@ -1,8 +1,7 @@
-# ~/.tmuxinator/gftm.yml
+# ~/.tmuxinator/testwatch.yml
 
-name: gftm
-root: ~/projects/giftr/mobile
-
+name: testwatch
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -26,13 +25,13 @@ root: ~/projects/giftr/mobile
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t gft
-pre: open "https://trello.com/b/kOwrKDAC/giftr"
-windows:
-  - node:
-      panes:
-       - npm run testwatch
-       - cd .. && code . && gitkr
-       - react-native run-ios
-  - log: sleep 20 && react-native log-ios
+# post: tmux -CC attach -t testwatch
 
+windows:
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - guard
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log
