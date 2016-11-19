@@ -76,9 +76,10 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias glo="git log --oneline"
 alias gck='git checkout'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
-alias gd="git difftool --gui &"
+alias gdiff="git difftool --gui --dir-diff &"
+alias gd="git diff"
 # gb () { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
-
+alias pd="pretty-diff ^head"
 
 # ... tmux
 alias tmA="tmux attach -t base || tmux new -s 'base'"

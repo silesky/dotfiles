@@ -1,12 +1,6 @@
 {
-  "libs": [
-    "browser",
-    "ecma6"
-  ],
+  "exclude": ["node_modules/**"],
   "plugins": {
-    "node": {},
-    "es_modules": {},
-    "jasmine": {},
-    "complete_strings": {}
+    "node": {}
   }
 }
