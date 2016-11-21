@@ -30,9 +30,13 @@ root: ~/projects/giftr/
 pre: open "https://trello.com/b/kOwrKDAC/giftr" && open http://gifter.sethsilesky.com:3000
 startup_window: log
 windows:
-  - log:
+  - node:
       panes:
         - code . && sudo mongod
-        - sleep 20 && seed
+        - sleep 10 && seed
         - npm run testwatch
+        - cd mobile && npm run testwatch
         - npm run watch
+        - cd mobile && react-native run-ios
+      log:
+        - cd mobile && react-native log-ios
