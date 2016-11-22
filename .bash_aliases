@@ -99,6 +99,7 @@ alias tm2="tmux splitw -d -h && clear"
 alias tm3="bash ~/scripts/tm-grid-3.sh"
 alias tm4="bash ~/scripts/tm-grid-4.sh"
 alias tmkpa="tmux kill-pane -a -t . && clear"
+alias tmkp="tmux kill-pane -t ."
 alias tmx="tmux kill-session ."
 alias tmX="killall tmux"
 # ... misc
