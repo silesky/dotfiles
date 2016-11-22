@@ -25,7 +25,7 @@
   },
   "rules": {
     "mocha/no-exclusive-tests": "error",
-    "no-console": 0,
+    "no-console": 1,
     "no-case-declarations": 0,
     "no-var": 1,
     "react/prop-types": 0,
@@ -34,7 +34,7 @@
 }
 
 /*
-// 1 = off, 2=warn, 3=error
+// 0 = off, 1=warn, 2=error
 react/display-name
 react/jsx-no-duplicate-props
 react/jsx-no-undef
