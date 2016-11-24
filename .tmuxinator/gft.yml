@@ -33,10 +33,11 @@ windows:
   - node:
       panes:
         - code . && sudo mongod
-        - sleep 10 && seed
-        - npm run testwatch
+        - cd server && sleep 10 && seed
         - cd mobile && npm run testwatch
-        - npm run watch
-        - cd mobile && react-native run-ios
+        - cd server && npm run testwatch
+        - cd server && npm run watch
+        - cd mobile && sleep 10 && react-native run-ios
       log:
         - cd mobile && react-native log-ios
+      misc:

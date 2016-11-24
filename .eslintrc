@@ -24,12 +24,13 @@
     "browser": true
   },
   "rules": {
-    "mocha/no-exclusive-tests": "error",
+    "mocha/no-exclusive-tests": 1,
     "no-console": 1,
     "no-case-declarations": 0,
     "no-var": 1,
     "react/prop-types": 0,
-    "no-unused-vars": 1
+    "no-unused-vars": 1,
+
   }
 }
 

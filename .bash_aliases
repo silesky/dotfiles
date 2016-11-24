@@ -4,6 +4,7 @@
 
 #...............................
 # misc
+alias testw="npm run testwatch"
 alias dockerq="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 alias doc="cd ~/Documents"
 alias stopm="kill -9 `pgrep -f mongod`"
@@ -91,7 +92,7 @@ alias tmsd="tmux splitw -d"
 alias tmsv="tmux splitw -v"
 alias tmsh="tmux splitw -h"
 alias tml="tmux ls"
-alias tmk="tmux kill-session -t"
+alias tmks="tmux kill-session -t"
 alias tmkw="tmux kill-window -t"
 alias tma="tmux attach -d -t"
 alias tmux.conf="vim ~/.tmux.conf"
