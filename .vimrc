@@ -25,7 +25,7 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
-
+Plug 'elixir-lang/vim-elixir'
 Plug 'easymotion/vim-easymotion'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'mattn/emmet-vim' "html:5_ ctrl-y

@@ -1,8 +1,7 @@
-# ~/.tmuxinator/gft.yml
+# ~/.tmuxinator/dict.yml
 
-name: gft
-root: ~/projects/giftr/
-
+name: dict
+root: ~/projects/elixir/dictionary
 
 # Optional tmux socket
 # socket_name: foo
@@ -26,18 +25,10 @@ root: ~/projects/giftr/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t gft
-pre: open "https://trello.com/b/kOwrKDAC/giftr"
-startup_window: log
+# post: tmux -CC attach -t dict
 windows:
-  - node:
+  - main:
       panes:
-        - code . && sudo mongod
-        - cd server && npm run watch
-        - cd server && sleep 10 && seed
-        - cd mobile && npm run testwatch
-        - cd server && sleep 20 && npm run testwatch
-      log:
-        - cd mobile && sleep 20 && react-native run-ios
-        - cd mobile && react-native log-ios
-      misc:
+        - wr --exec 'mix escript.build'
+        - sub .
+        - watch -n 1 './dictionary atom'

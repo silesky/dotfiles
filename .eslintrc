@@ -14,7 +14,8 @@
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
+      "jsx": true,
+      "experimentalObjectRestSpread": true
     }
   },
   "env": {
@@ -25,6 +26,7 @@
   },
   "rules": {
     "mocha/no-exclusive-tests": 1,
+    "no-debugger": 1,
     "no-console": 1,
     "no-case-declarations": 0,
     "no-var": 1,

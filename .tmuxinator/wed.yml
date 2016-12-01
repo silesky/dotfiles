@@ -1,7 +1,7 @@
-# ~/.tmuxinator/testwatch.yml
+# ~/.tmuxinator/wedding.yml
 
-name: testwatch
-root: ~/
+name: wedding
+root: ~/projects/wedding
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,13 +25,12 @@ root: ~/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t testwatch
+# post: tmux -CC attach -t wedding
 
 windows:
   - editor:
       layout: main-vertical
       panes:
-        - vim
-        - guard
-  - server: bundle exec rails s
-  - logs: tail -f log/development.log
+        - code .
+        - bundle exec jekyll serve
+        - sleep 5 && open "http://127.0.0.1:4000"

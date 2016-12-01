@@ -4,7 +4,11 @@
 
 #...............................
 # misc
-alias testw="npm run testwatch"
+alias rnri="react-native run-ios"
+alias rnra="react-native run-android"
+alias npmtw="npm run testwatch"
+alias npmw="npm run watch"
+alias npmt="npm test"
 alias dockerq="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 alias doc="cd ~/Documents"
 alias stopm="kill -9 `pgrep -f mongod`"
