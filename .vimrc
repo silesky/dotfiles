@@ -4,8 +4,8 @@ endif
 
 if has('macunix')
   " alt-s to toggle
-  noremap ß∂ :SyntasticReset<CR>
-  noremap ß :SyntasticCheck<CR>
+"DEL  noremap ß∂ :SyntasticReset<CR>
+"DEL  noremap ß :SyntasticCheck<CR>
   noremap ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
   " alt-[ and alt-] to cycle buffers
   noremap ‘ :bnext<CR>
@@ -49,12 +49,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
 Plug 'rking/ag.vim'
-Plug 'scrooloose/syntastic'
+
+" Plug 'scrooloose/syntastic'
 Plug 'gcorne/vim-sass-lint'
 Plug 'marijnh/tern_for_vim'
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
-
+Plug 'w0rp/ale'
 function! BuildYCM(info)
   if a:info.status == 'installed' || a:info.force
     !./install.sh
@@ -152,30 +153,16 @@ set smarttab      " Enabling this will make the tab key (in insert mode) insert 
 
 " remove escape delay
 set timeoutlen=1000 ttimeoutlen=0
-
-" syntastic (for eslint)... pathogen is a dep
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-" toggle quick list
-let g:syntastic_auto_loc_list = 1
-" quick list should be smaller
-:let g:syntastic_loc_list_height=3
-let g:syntastic_check_on_open = 1
-" wq in order for SyntasticCheck to work:
-let g:syntastic_check_on_wq = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_sass_checkers=["sass_lint"]
-let g:syntastic_scss_checkers=["sass_lint"]
-let g:syntastic_php_phpcs_args='--tab-width=0'
-"alt-ss to toggle syntastic
-noremap ßß :SyntasticToggleMode<CR>
-noremap <F2> :lprev<CR> "syntastic skip to error
-noremap <F3> :lnext<CR> "syntastic skip to error
-"gutter column
-:highlight clear SignColumn
+nmap <silent> <F2> <Plug>(ale_previous_wrap)
+nmap <silent> <F3> <Plug>(ale_next_wrap)
+"noremap <F2> :lprev<CR> "syntastic skip to error
+"noremap <F3> :lnext<CR> "syntastic skip to error
+"gutter column (next to numbers)
+let g:ale_sign_error = '=='
+let g:ale_sign_warning = '--'
+let g:ale_sign_column_always = 1
+let g:ale_linters = {'javascript': ['eslint']}
+:highlight clear SignColumn "make same as everything else
 
 " wrap toggle
 function! ToggleWrap()

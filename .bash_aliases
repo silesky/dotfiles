@@ -14,14 +14,14 @@ alias me="cd /Users/ssilesky/"
 # Apps and Navigation, Misc
 alias f="sudo find . -iname"
 alias sqlpro="open -a 'Sequel Pro'"
-a() { ag -ro "$1" * }
-g() { sudo grep --color=always -r "$1" . }
 
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
+
 alias l='ls -A'  # Long view, show hidden
 alias ll='clear && ls -al' # Long view, show hidden + clear
+alias lsd='ls -d */'
 alias la='ls -AF'   # Compact view, show hidden
 cl() { clear && cd "$@" && ls -al; } #cdls
 alias hs='history | grep'
@@ -71,7 +71,6 @@ alias gck='git checkout'
 alias gl='git log --graph --name-status --branches --decorate --abbrev-commit'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
 alias gd="git difftool --gui &"
-gb () { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
 
 
 # ... tmux
@@ -86,7 +85,8 @@ alias tmk="tmux kill-session -t"
 alias tmkw="tmux kill-window -t"
 alias tma="tmux attach -t"
 alias tmux.conf="vim ~/.tmux.conf"
-alias tm2="tmux splitw -d -h && clear"
+alias tm2="tmux splitw -d -v -l 20 && clear"
+
 alias tm3="bash ~/scripts/tm-grid-3.sh"
 alias tm4="bash ~/scripts/tm-grid-4.sh"
 alias tmkpa="tmux kill-pane -a -t . && clear"
@@ -113,9 +113,11 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias play='cd ~/Desktop/temp/ && vim play.js'
    alias temp='cd ~/Desktop/temp'
 else
+   alias sub="subl"
+   alias www="sensible-browser"
    alias tmux='tmux -2'
    alias tm="tmux -2"
 fi
 # ..........................................
 ############################################
-
+alias sb='sensible-browser'
