@@ -31,4 +31,4 @@ windows:
       panes:
         - wr --exec 'mix escript.build'
         - sub .
-        - watch -n 1 './dictionary atom'
+        - watch -n 1 './dictionary -f "atom"'
