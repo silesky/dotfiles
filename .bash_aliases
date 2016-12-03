@@ -4,6 +4,7 @@
 
 #...............................
 # misc
+k9p() { kill -9 `pgrep -f $1`}
 alias rnri="react-native run-ios"
 alias rnra="react-native run-android"
 alias npmtw="npm run testwatch"
