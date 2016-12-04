@@ -31,6 +31,7 @@ alias f="find . -iname"
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
+l.() { ls `*.$1` j}
 alias l='ls -a'  # Long view, show hidden
 alias lsd='ls -d */'
 alias ll='clear && ls -al' # Long view, show hidden + clear
