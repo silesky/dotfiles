@@ -204,11 +204,20 @@ let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\upload[sS]$|\.yardoc\|public$|log\|tmp$\|node_modules$\|modules$',
       \ 'file': '\.so$\|\.dat$|\.DS_Store$|\.jpg$|\.gif$'
       \ }
+let g:ctrlp_cmd = 'call CallCtrlP()'
+
+func! CallCtrlP()
+    if exists('s:called_ctrlp')
+        CtrlPLastMode
+    else
+        let s:called_ctrlp = 1
+        CtrlPMRU
+    endif
+endfunc
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 let g:ctrlp_map='<c-p>'
 " don't limit the ctrlp results
 let g:ctrlp_match_window = 'min:4,max:72'
-let g:ctrlp_cmd = 'CtrlPMixed'
 """""""""""""""""""""""""""
 " JSBEAUTIFY
 map <F4> :call JsBeautify()<cr>
