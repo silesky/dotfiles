@@ -1,3 +1,5 @@
+ZSH_THEME="agnoster"
+DEFAULT_USER="ssilesky"
 source ~/.bash_profile
 
 bindkey '^[[A' up-line-or-search
@@ -5,7 +7,7 @@ bindkey '^[[B' down-line-or-search
 
 # tmuxinator thing
 DISABLE_AUTO_TITLE=true
-##############################################################
+#########0*#####################################################
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -15,7 +17,7 @@ export ZSH=/Users/ssilesky/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="lambda"
+# ZSH_THEME="lambda"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"

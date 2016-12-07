@@ -80,7 +80,7 @@ alias gck.="git checkout -- ."
 alias gck="git checkout"
 alias gs="git status -sb"
 alias gst="git status"
-alias gl="git log --pretty --oneline"
+alias gl="git log --no-merges --oneline"
 alias glog="git log --graph --abbrev-commit"
 alias gck='git checkout'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"

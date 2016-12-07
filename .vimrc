@@ -28,7 +28,6 @@ Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'easymotion/vim-easymotion'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'mattn/emmet-vim' "html:5_ ctrl-y
 Plug 'tpope/vim-repeat' "let's you use the dot command with vim surround
 Plug 'tpope/vim-surround' "cst
 Plug 'avakhov/vim-yaml'
@@ -55,7 +54,7 @@ Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
 
 function! BuildYCM(info)
-  if a:info.status == 'installed' || a:info.force
+  if a:info.status == 'installed' || 'updated' || a:info.force
     !./install.sh
   endif
 endfunction
@@ -64,7 +63,7 @@ if v:version > 703
 endif
 
 function! BuildTern(info)
-  if a:info.status == 'installed' || a:info.force
+  if a:info.status == 'installed' || 'updated' || a:info.force
     !npm install
   endif
 endfunction
