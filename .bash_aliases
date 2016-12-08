@@ -70,6 +70,7 @@ alias lynda="cd ~/Lynda/"
 alias rp="realpath"
 
 # ... git
+alias grs="git reset"
 alias gpk="git cherry-pick"
 alias gp="git push"
 alias gac="git add -A && git commit"
@@ -92,7 +93,7 @@ alias gdc="git diff --cached"
 alias pd="pretty-diff ^head"
 
 # ... tmux
-alias tmA="tmux attach -t base || tmux new -s 'base'"
+alias tmA="tmux attach || tmux new"
 alias tmn="tmux new-session -s  `date '+%H%M%S'`"
 alias TM="tmux new-session -d -s `date '+%H%M%S'` && tmux switch-client -t  `date '+%H%M%S'`"
 alias mux="tmuxinator"
