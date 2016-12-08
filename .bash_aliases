@@ -84,8 +84,10 @@ alias gl="git log --no-merges --oneline"
 alias glog="git log --graph --abbrev-commit"
 alias gck='git checkout'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
+
 alias gdiff="git difftool --gui --dir-diff &"
 alias gd="git diff"
+alias gdc="git diff --cached"
 # gb () { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
 alias pd="pretty-diff ^head"
 
