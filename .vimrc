@@ -251,3 +251,4 @@ let g:netrw_winsize = 25
 noremap !! :set shellcmdflag=-ic<CR>
 " EasyMotion
 map <Leader> <Plug>(easymotion-prefix)
+set guifont=Inconsolata-g\ for\ Powerline
