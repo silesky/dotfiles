@@ -158,8 +158,8 @@ nmap <silent> <F3> <Plug>(ale_next_wrap)
 "noremap <F2> :lprev<CR> "syntastic skip to error
 "noremap <F3> :lnext<CR> "syntastic skip to error
 "gutter column (next to numbers)
-let g:ale_sign_error = '=='
-let g:ale_sign_warning = '--'
+let g:ale_sign_error = '+'
+let g:ale_sign_warning = '+'
 let g:ale_sign_column_always = 1
 let g:ale_linters = {'javascript': ['eslint']}
 :highlight clear SignColumn "make same as everything else
@@ -245,3 +245,8 @@ let g:netrw_winsize = 25
 noremap !! :set shellcmdflag=-ic<CR>
 " EasyMotion
 map <Leader> <Plug>(easymotion-prefix)
+:set guioptions-=m  "remove menu bar
+:set guioptions-=T  "remove toolbar
+:set guioptions-=L  "remove left-hand scroll bar
+:set guioptions-=r  "remove right-hand scroll bar
+

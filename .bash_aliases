@@ -113,6 +113,8 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias play='cd ~/Desktop/temp/ && vim play.js'
    alias temp='cd ~/Desktop/temp'
 else
+   alias vvim="/usr/bin/vim"
+   alias vim="gvim"
    alias sub="subl"
    alias www="sensible-browser"
    alias tmux='tmux -2'
@@ -121,3 +123,4 @@ fi
 # ..........................................
 ############################################
 alias sb='sensible-browser'
+
