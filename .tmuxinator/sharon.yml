@@ -1,8 +1,7 @@
-# ~/.tmuxinator/gft.yml
+# ~/.tmuxinator/sharon.yml
 
-name: gft
-root: ~/projects/giftr/
-
+name: sharon
+root: ~/projects/sharon
 
 # Optional tmux socket
 # socket_name: foo
@@ -26,20 +25,11 @@ root: ~/projects/giftr/
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t gft
-pre: open "https://trello.com/b/kOwrKDAC/giftr"
-startup_window: mobile
+# post: tmux -CC attach -t sharon
+
 windows:
-  - server:
+  - editor:
+      layout: main-vertical
       panes:
-        - cd server && code . && sudo mongod
-        - cd server && npm run watch
-        - cd server && sleep 10 && seed
-        - cd server && sleep 20 && npm run testwatch
-  - mobile:
-      panes:
-        - cd mobile && code .
-        - cd mobile && react-native run-ios
-        - cd mobile && npm run testwatch
-        - cd mobile && sleep 10 && react-native log-ios
-      misc:
+        - srv .
+        - vim .
