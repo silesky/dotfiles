@@ -32,13 +32,13 @@ startup_window: mobile
 windows:
   - server:
       panes:
-        - cd server && code . && sudo mongod
+        - cd server && code -n . && sudo mongod
         - cd server && npm run watch
         - cd server && sleep 10 && seed
         - cd server && sleep 20 && npm run testwatch
   - mobile:
       panes:
-        - cd mobile && code .
+        - cd mobile && code -n .
         - cd mobile && react-native run-ios
         - cd mobile && npm run testwatch
         - cd mobile && sleep 10 && react-native log-ios
