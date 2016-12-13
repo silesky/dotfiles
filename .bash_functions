@@ -30,7 +30,9 @@ man() {
         command man "$@"
 
 }
-
+pman() {
+    man -t ${@} | open -f -a /Applications/Preview.app/
+}
 
 extract() {
      if [ -f $1 ] ; then
