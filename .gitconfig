@@ -2,6 +2,7 @@
   graph = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate
   chk = checkout
   st = status
+  ls = log --oneline
   stat = log --graph --author='silesky' --oneline
 [filter "lfs"]
 	clean = git lfs clean %f

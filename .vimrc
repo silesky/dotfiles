@@ -154,8 +154,8 @@ set timeoutlen=1000 ttimeoutlen=0
 "ale
 nmap <silent> <F2> <Plug>(ale_previous_wrap)
 nmap <silent> <F3> <Plug>(ale_next_wrap)
-let g:ale_sign_error = '=='
-let g:ale_sign_warning = '--'
+let g:ale_sign_error = '++'
+let g:ale_sign_warning = '+'
 let g:ale_sign_column_always = 1
 let g:ale_linters = {'javascript': ['eslint'] }
 "gutter column
