@@ -1,4 +1,5 @@
 #!/bin/sh
+k9p() {kill -9 `pgrep -f "$1"`}
 function extract {
  if [ -z "$1" ]; then
     # display usage if no parameters given

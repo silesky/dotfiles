@@ -128,7 +128,7 @@ inoremap jj <Esc>
 
 " double escape to save
 map <ESC><ESC> :w<CR>
-
+map QQ :qa!<CR>
 " mouse for scrolling and window resizing
 set mouse=a
 
@@ -211,7 +211,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#
 let g:ctrlp_map='<c-p>'
 " don't limit the ctrlp results
 let g:ctrlp_match_window = 'min:4,max:72'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlPLastMode' "to switch between recent, file etc, ctrl-f/b
 """""""""""""""""""""""""""
 " JSBEAUTIFY
 map <F4> :call JsBeautify()<cr>
@@ -241,7 +241,7 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-""""""""""""""""""""""""
+"""""""""""""""""""""""""
 noremap !! :set shellcmdflag=-ic<CR>
 " EasyMotion
 map <Leader> <Plug>(easymotion-prefix)
