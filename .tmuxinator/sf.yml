@@ -1,7 +1,7 @@
 # ~/.tmuxinator/sf.yml
 
 name: sf
-root: ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/css/schools_and_departments
+root: ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/
 
 # Optional tmux socket
 # socket_name: foo
@@ -35,8 +35,8 @@ startup_window: server
 windows:
   - editor:
       panes:
-        - sub ~/projects/sf/sf/docroot/sites/all/themes/multitheme/ && sub school_of_liberal_arts.scss && sub . && gitkr && sub ~/projects/sf/sf/docroot/
-        - sudo sass --watch school_of_liberal_arts.scss:school_of_liberal_arts.css
+        - sub . && sub /sass/schools_and_departments/school_of_liberal_arts.scss
+        - gulp watch
         - export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot" && drush uli
         - livereload .
         # - cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega && grunt watch

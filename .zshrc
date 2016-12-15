@@ -1,4 +1,7 @@
-ZSH_THEME="agnoster"
+ZSH_THEME="wezm"
+ZSH_THEME="amuse"
+
+#ZSH_THEME="agnoster"
 DEFAULT_USER="ssilesky"
 source ~/.bash_profile
 
