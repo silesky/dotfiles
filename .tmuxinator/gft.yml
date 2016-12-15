@@ -39,7 +39,7 @@ windows:
   - mobile:
       panes:
         - cd mobile && code -n .
-        - cd mobile && react-native run-ios
+          # - cd mobile && react-native run-ios
         - cd mobile && npm run testwatch
-        - cd mobile && sleep 10 && react-native log-ios
+          # - cd mobile && sleep 10 && react-native log-ios
       misc:
