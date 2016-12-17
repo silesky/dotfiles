@@ -34,8 +34,8 @@ windows:
       panes:
         - cd server && code -n . && sudo mongod
         - cd server && npm run watch
-        - cd server && sleep 10 && seed
-        - cd server && sleep 20 && npm run testwatch
+        - cd server && sleep 30 && seed
+        - cd server && sleep 30 && npm run testwatch
   - mobile:
       panes:
         - cd mobile && code -n .
