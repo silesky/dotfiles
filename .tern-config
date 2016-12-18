@@ -1,6 +1,12 @@
 {
   "exclude": ["node_modules/**"],
   "plugins": {
-    "node": {}
+    "node": {},
+    "es_modules": {},
+    "libs": [
+        "ecma5",
+        "ecma6"
+    ],
+    "ecmaVersion": 6
   }
 }

@@ -38,8 +38,8 @@ windows:
         - cd server && sleep 30 && npm run testwatch
   - mobile:
       panes:
-        - cd mobile && code -n .
-          # - cd mobile && react-native run-ios
+        - cd mobile && sub . # code -n .
+        - cd mobile && react-native run-ios
         - cd mobile && npm run testwatch
           # - cd mobile && sleep 10 && react-native log-ios
       misc:
