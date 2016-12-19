@@ -96,6 +96,7 @@ alias pd="pretty-diff ^head"
 # ... tmux
 alias tmA="tmux attach -d || tmux new"
 alias tma="tmux attach -d -t"
+alias tmd="tmux detach-client"
 alias tmn="tmux new-session -s  `date '+%H%M%S'`"
 alias TM="tmux new-session -d -s `date '+%H%M%S'` && tmux switch-client -t  `date '+%H%M%S'`"
 alias mux="tmuxinator"
