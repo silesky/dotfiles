@@ -1,4 +1,5 @@
 # ALIASES
+alias goo="google-chrome"
 alias doc="cd ~/Documents"
 alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
 alias stopm="kill -9 `pgrep -f mongod`"
@@ -113,7 +114,9 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias play='cd ~/Desktop/temp/ && vim play.js'
    alias temp='cd ~/Desktop/temp'
 else
+
    alias vvim="/usr/bin/vim"
+   alias vm="vvim"
    alias vim="gvim"
    alias sub="subl"
    alias www="sensible-browser"

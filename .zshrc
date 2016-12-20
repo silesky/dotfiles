@@ -94,3 +94,6 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.bash_profile
 
+
+export NVM_DIR="/home/me/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
