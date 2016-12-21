@@ -1,7 +1,7 @@
 
 # Projects
 # ........
-
+alias dc="cd ~/projects/dc-nola"
 alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
 alias cirt="cd ~/projects/cirtual"
 
