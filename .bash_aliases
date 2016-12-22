@@ -1,7 +1,3 @@
-# ALIASES
-
-# Temp (for current installation
-
 #...............................
 # misc
 k9bp() { kill -9 $(lsof -t -i:$1) } # kill by port
