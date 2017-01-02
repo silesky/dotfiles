@@ -26,10 +26,15 @@ root: ~/Kalabox/dc-nola/code
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t dc
+pre: open -a "/Applications/Kalabox.app"
 windows:
-  - editor:
+  - kalabox
       panes:
-        - sub . && sub ~/Kalabox/dc-nola/code/sites/all/themes/custom/dcnola
-        - cd ~/Kalabox/dc-nola/code/sites/all/themes/custom/dcnola && grunt watch
-        - kbox start
+        - sub .
         - sleep 20 && open http://dc-nola.kbox.site/
+  - scss:
+      root: ~/Kalabox/dc-nola/code/sites/all/themes/custom/dcnola
+      panes:
+        - sub .
+        - grunt watch
+
