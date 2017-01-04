@@ -28,7 +28,7 @@ root: ~/Kalabox/dc-nola/code
 # post: tmux -CC attach -t dc
 pre: open -a "/Applications/Kalabox.app"
 windows:
-  - kalabox
+  - kalabox:
       panes:
         - sub .
         - sleep 20 && open http://dc-nola.kbox.site/
