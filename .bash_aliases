@@ -2,6 +2,7 @@
 # misc
 k9bp() { kill -9 $(lsof -t -i:$1) } # kill by port
 k9p() { kill -9 `pgrep -f $1`}
+alias kb="kbox"
 alias rnri="react-native run-ios --simulator='iPhone 5s'"
 alias rnra="react-native run-android"
 alias npmtw="npm run testwatch"

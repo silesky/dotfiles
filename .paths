@@ -4,8 +4,7 @@
 # $PATH goes at the beginning. Path goes at the end in the default places, because I want the default places to go first.
 
 # Vars
-export DIRENV_LOG_FORMAT=
-export HOME=/users/ssilesky
+export HOME=/Users/ssilesky
 export GREP_COLOR='00;38;5;226'
 export CLICOLOR=1
 export ANDROID_HOME=$HOME/Library/Android/sdk
