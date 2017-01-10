@@ -31,15 +31,16 @@ pre: open "https://trello.com/b/kOwrKDAC/giftr"
 startup_window: mobile
 windows:
   - server:
+      root: ~/projects/giftr/server
       panes:
-        - cd server && code -n . && sudo mongod
-        - cd server && npm run watch
-        - cd server && sleep 30 && seed
-        - cd server && sleep 30 && npm run testwatch
+        - code -n . && sudo mongod
+        - npm run watch
+        - sleep 30 && seed
+        - sleep 30 && npm run testwatch
   - mobile:
+      root: ~/projects/giftr/mobile
       panes:
-        - cd mobile && code -n .
-        - cd mobile && react-native run-ios
-        - cd mobile && npm run testwatch
+        - code -n .
+        - react-native run-ios
+        - npm run testwatch
           # - cd mobile && sleep 10 && react-native log-ios
-      misc:
