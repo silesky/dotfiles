@@ -23,6 +23,7 @@ alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server
 alias drupalcamp="cd '/Users/ssilesky/drupalcampnola.com/'"
 alias timeshark="ssh -Y root@timeshark.sytes.net"
 alias proj="cd ~/projects/"
+alias inspector="cd ~/Desktop/inspector/"
 #... dan
 alias dan="cd ~/projects/danrico87.github.io"
 # ... devt-eslint
