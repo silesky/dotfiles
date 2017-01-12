@@ -1,6 +1,7 @@
 
 # Projects
 # ... site-factory
+alias dc="~/Kalabox/dc-nola/code/sites/all/themes/custom/dcnola/"
 alias sf='cd /Users/ssilesky/projects/sf/sf'
 alias sf.tulane='cd ~/projects/sf/sf/docroot/sites/all/themes/tulane-omega/'
 alias sf.custom='cd ~/projects/sf/sf/docroot/sites/all/modules/custom'

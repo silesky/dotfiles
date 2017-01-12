@@ -1,4 +1,9 @@
 # ALIASES
+alias terminus="./vendor/pantheon-systems/terminus/bin/terminus"
+alias pj='vim package.json'
+alias xclip='xclip -selection c'
+alias kb="kbox"
+alias kbdr="kbox drush"
 alias goo="google-chrome"
 alias doc="cd ~/Documents"
 alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"

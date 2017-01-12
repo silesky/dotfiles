@@ -210,7 +210,7 @@ let g:ctrlp_custom_ignore = {
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 let g:ctrlp_map='<c-p>'
 " don't limit the ctrlp results
-let g:ctrlp_match_window = 'min:4,max:72'
+let g:ctrlp_match_window = 'min:4,max:25'
 let g:ctrlp_cmd = 'CtrlPLastMode' "to switch between recent, file etc, ctrl-f/b
 """""""""""""""""""""""""""
 " JSBEAUTIFY
