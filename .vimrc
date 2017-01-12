@@ -216,6 +216,8 @@ func! CallCtrlP()
 endfunc
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 let g:ctrlp_map='<c-p>'
+
+" let g:ctrlp_cmd = 'CtrlPMRU'
 " don't limit the ctrlp results
 let g:ctrlp_match_window = 'min:4,max:72'
 """""""""""""""""""""""""""

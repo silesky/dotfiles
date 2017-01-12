@@ -1,8 +1,7 @@
-# ~/.tmuxinator/mr.yml
+# ~/.tmuxinator/mrdev.yml
 
-name: mr
-root: ~/projects/mr-dev
-
+name: mrdev
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -26,15 +25,13 @@ root: ~/projects/mr-dev
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t mr
-pre: open "https://trello.com/b/nU5KSCyh/music-rising-mr"
+# post: tmux -CC attach -t mrdev
+
 windows:
   - editor:
+      layout: main-vertical
       panes:
-        - browser-sync start --proxy musicrisingdev.tulane.edu --files . --no-inject-changes
-        - mrdev
-        - sqlpro
-        - pstorm
-  - inspector:
-      root: ~/Desktop/inspector
-      - github
+        - vim
+        - guard
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log
