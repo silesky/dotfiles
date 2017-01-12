@@ -131,17 +131,17 @@ if [[ "$(uname)" = "Darwin" ]]; then
    # OSX - app path realiases and os-specific
    alias chrome="open -a /Applications/Google\ Chrome.app" #osx
    alias gitkraken="open -a gitkraken"
-   alias v='/usr/local/bin/vim -p' #osx
-   alias vim='mvim' #osx
+   alias v="/usr/local/bin/vim -p" #osx
+   alias vim="mvim" #osx
    alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
    alias sub="open -a '/Applications/Sublime Text.app'" #osx
-   alias play='cd ~/Desktop/temp/ && vim play.js'
+   alias play="cd ~/Desktop/temp/ && vim play.js"
    alias sqlpro="open -a 'Sequel Pro'"
-alias estest="eslint --debug ~/estest.js"
-   alias temp='cd ~/Desktop/temp'
-   alias tree='tree -C'
+   alias estest="eslint --debug ~/estest.js"
+   alias temp="cd ~/Desktop/temp"
+   alias tree="tree -C"
 else
-   alias tmux='tmux -2'
+   alias tmux="tmux -2"
    alias tm="tmux -2"
 fi
 # ..........................................
