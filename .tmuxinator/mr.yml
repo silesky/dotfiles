@@ -36,5 +36,5 @@ windows:
         - sqlpro
         - pstorm
   - inspector:
-      root: ~/Desktop/inspector
+    root: ~/Desktop/inspector
       - github
