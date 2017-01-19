@@ -1,7 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/ssilesky/projects/giftr/server'
 let g:netrw_dirhist_2='/Users/ssilesky/projects/giftr'
 let g:netrw_dirhist_3='/Users/ssilesky/projects/giftr/server'
 let g:netrw_dirhist_4='/Users/ssilesky/projects/giftr'
 let g:netrw_dirhist_5='/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega'
+let g:netrw_dirhist_6='/Users/ssilesky/projects/sharon/css'
+let g:netrw_dirhist_7='/Users/ssilesky/projects/sharon'
+let g:netrw_dirhist_8='/Users/ssilesky/projects'
