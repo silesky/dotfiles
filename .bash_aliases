@@ -18,7 +18,7 @@ alias autopush='sh ~/scripts/autopush.sh'
 alias desk='cd ~/Desktop'
 alias me="cd /Users/ssilesky/"
 # Apps and Navigation, Misc
-alias f="sudo find . -iname"
+alias f="find . -iname"
 alias sqlpro="open -a 'Sequel Pro'"
 
 alias ..='cd ..'            # Go up one directory
@@ -120,7 +120,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias temp='cd ~/Desktop/temp'
 else
 
-   alias vvim="/usr/bin/vim"
+   alias v="/usr/bin/vim"
    alias vm="vvim"
    alias vim="gvim"
    alias sub="subl"
