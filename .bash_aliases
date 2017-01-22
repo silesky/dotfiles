@@ -2,7 +2,9 @@
 # misc
 k9bp() { kill -9 $(lsof -t -i:$1) } # kill by port
 k9p() { kill -9 `pgrep -f $1`}
+
 alias kb="kbox"
+alias rnl="react-native link"
 alias rnri="react-native run-ios --simulator='iPhone 5s'"
 alias rnra="react-native run-android"
 alias npmtw="npm run testwatch"
@@ -12,7 +14,6 @@ alias dockerq="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Cont
 alias doc="cd ~/Documents"
 alias stopm="kill -9 `pgrep -f mongod`"
 alias bang="echo '/usr/bin/env bash'"
-alias ca="cat"
 # scripts
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 alias google="sh ~/scripts/google.sh"
@@ -99,6 +100,8 @@ alias tmd="tmux detach-client"
 alias tmn="tmux new-session -s  `date '+%H%M%S'`"
 alias TM="tmux new-session -d -s `date '+%H%M%S'` && tmux switch-client -t  `date '+%H%M%S'`"
 alias mux="tmuxinator"
+alias muxs="mux start"
+alias muxst="mux stop"
 alias tms="tmux splitw"
 alias tmsd="tmux splitw -d"
 alias tmsv="tmux splitw -v"

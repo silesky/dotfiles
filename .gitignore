@@ -11,6 +11,8 @@
 !.vimrc*
 !.tmuxinator
 !.tmuxinator/**
+!.stylelintrc
+!.tigrc
 # bash stuff
 !.paths
 !.bashrc
@@ -39,4 +41,3 @@
 !/.oh-my-zsh/**/*
 !/scripts/*
 !scripts
-
