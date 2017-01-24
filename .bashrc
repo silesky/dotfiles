@@ -1,6 +1,7 @@
 ### .bashrc
 export HISTFILESIZE=500000
 export HISTSIZE=100000
+export HISTCONTROL=ignoredups:erasedups
 export VISUAL=vim
 export EDITOR="$VISUAL"
 # Include Drush bash customizations.
@@ -19,6 +20,4 @@ fi
 # * fi
 
 export PATH="$PATH:/Applications/DevDesktop/tools"
-
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-eval "$(direnv hook bash)"

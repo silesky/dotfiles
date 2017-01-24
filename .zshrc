@@ -1,6 +1,6 @@
-ZSH_THEME="wezm"
-ZSH_THEME="amuse"
-
+ZSH_THEME="amuse" # full line with time
+setopt inc_append_history # keep history in chronological order (zsh)
+setopt share_history # cmd in shell 1 becomes last command in shell two (zsh)
 #ZSH_THEME="agnoster"
 DEFAULT_USER="ssilesky"
 source ~/.bash_profile
@@ -16,7 +16,6 @@ DISABLE_AUTO_TITLE=true
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/ssilesky/.oh-my-zsh
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
