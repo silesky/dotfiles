@@ -27,20 +27,21 @@ root: ~/projects/giftr/
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t gft
-pre: open "https://trello.com/b/kOwrKDAC/giftr"
-startup_window: mobile
+# pre: open "https://trello.com/b/kOwrKDAC/giftr"
+startup_window: server
 windows:
   - server:
       root: ~/projects/giftr/server
       panes:
-        - code -n . && sudo mongod
+        - sudo mongod
         - npm run watch
         - sleep 30 && seed
         - sleep 30 && npm run testwatch
   - mobile:
+      pre:
       root: ~/projects/giftr/mobile
       panes:
         - code -n .
-        - react-native run-ios
+        - rnri
         - npm run testwatch
           # - cd mobile && sleep 10 && react-native log-ios
