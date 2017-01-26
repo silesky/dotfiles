@@ -42,6 +42,7 @@ windows:
       root: ~/projects/giftr/mobile
       panes:
         - code -n .
-        - rnri
+        - npm start
+        - sleep 5 && rnri
         - npm run testwatch
           # - cd mobile && sleep 10 && react-native log-ios

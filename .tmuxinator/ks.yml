@@ -29,9 +29,8 @@ root: ~/projects/NativeBase-KitchenSink
 # post: tmux -CC attach -t ks
 pre:
   - code -n .
-  - sleep 1 && code "js/app.js"
 windows:
   - editor:
-      layout: main-vertical
       panes:
-        - rnri
+        - npm start
+        - sleep 5 && rnri

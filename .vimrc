@@ -252,3 +252,6 @@ set guifont=Fira\ Mono
 set autoread
 au CursorHold * checktime
 "==========================
+"  copy all
+nnoremap <C-S-y> :%y<CR>
+
