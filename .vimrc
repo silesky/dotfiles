@@ -242,6 +242,13 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 25
 """"""""""""""""""""""""
 noremap !! :set shellcmdflag=-ic<CR>
+""""""""""""""""""""""""""""""""""
 " EasyMotion
 map <Leader> <Plug>(easymotion-prefix)
 set guifont=Fira\ Mono
+"""""""""""""""""""""""""""""""""""
+"--------------------------
+" auto watch changes to file without any prompt
+set autoread
+au CursorHold * checktime
+"==========================
