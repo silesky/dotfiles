@@ -249,4 +249,4 @@ map <Leader> <Plug>(easymotion-prefix)
 :set guioptions-=T  "remove toolbar
 :set guioptions-=L  "remove left-hand scroll bar
 :set guioptions-=r  "remove right-hand scroll bar
-:set guifont=Fira\ Mono\ For\ Powerline\ 11
+:set guifont=Fira\ Mono\ For\ Powerline\ Medium\ 11
