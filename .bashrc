@@ -1,5 +1,5 @@
 ### .bashrc
-export VISUAL=vim
+export VISUAL=gvim
 export EDITOR="$VISUAL"
 # Include Drush bash customizations.
 if [ -f "/Users/ssilesky/.drush/drush.bashrc" ] ; then
