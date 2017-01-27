@@ -23,7 +23,9 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
-Plug 'w0rp/ale'
+if v:version >=800
+  Plug 'w0rp/ale'
+endif
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'easymotion/vim-easymotion'
@@ -151,13 +153,15 @@ set smarttab      " Enabling this will make the tab key (in insert mode) insert 
 " remove escape delay
 set timeoutlen=1000 ttimeoutlen=0
 
-"ale
-nmap <silent> <F2> <Plug>(ale_previous_wrap)
-nmap <silent> <F3> <Plug>(ale_next_wrap)
-let g:ale_sign_error = '++'
-let g:ale_sign_warning = '+'
-let g:ale_sign_column_always = 1
-let g:ale_linters = {'javascript': ['eslint'] }
+" ale uses timers which only work om vim 8
+if v:version >= 800
+  nmap <silent> <F2> <Plug>(ale_previous_wrap)
+  nmap <silent> <F3> <Plug>(ale_next_wrap)
+  let g:ale_sign_error = '++'
+  let g:ale_sign_warning = '+'
+  let g:ale_sign_column_always = 1
+  let g:ale_linters = {'javascript': ['eslint'] }
+endif
 "gutter column
 :highlight clear SignColumn
 
@@ -249,7 +253,7 @@ set guifont=Fira\ Mono
 """""""""""""""""""""""""""""""""""
 "--------------------------
 " auto watch changes to file without any prompt
-set autoread
+set autoread "might be osx only
 au CursorHold * checktime
 "==========================
 "  copy all
