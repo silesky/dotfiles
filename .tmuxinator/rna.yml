@@ -1,4 +1,4 @@
-# ~/.tmuxinator/rna.yml
+#<C-D-a> ~/.tmuxinator/rna.yml
 
 name: rna
 root: ~/projects/AutosuggestExample
@@ -29,6 +29,7 @@ root: ~/projects/AutosuggestExample
 pre: code .
 windows:
   - editor:
-      layout: main-vertical
+      layout: main-horizontal
       panes:
-        - rnri
+        - npm start
+        - sleep 5 && rnri

@@ -253,7 +253,8 @@ set guifont=Fira\ Mono
 """""""""""""""""""""""""""""""""""
 "--------------------------
 " auto watch changes to file without any prompt
-set autoread "might be osx only
+set autoread
+"might be osx only
 au CursorHold * checktime
 "==========================
 "  copy all

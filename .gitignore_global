@@ -18,3 +18,5 @@ ehthumbs.db
 Thumbs.db
 jsconfig.json
 launchReactNative.js
+.vscode/**
+

@@ -21,4 +21,8 @@ fi
 # * fi
 
 export PATH="$PATH:/Applications/DevDesktop/tools"
+
+# added by travis gem
+[ -f /Users/ssilesky/.travis/travis.sh ] && source /Users/ssilesky/.travis/travis.sh
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
