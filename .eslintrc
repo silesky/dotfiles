@@ -11,10 +11,12 @@
 
   "parser": "babel-eslint", // without parser specified, I just get import is not defined
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 7,
     "sourceType": "module",
     "ecmaFeatures": {
+      "impliedStrict": true,
       "jsx": true,
+      "classes": true,
       "experimentalObjectRestSpread": true
     }
   },
