@@ -4,7 +4,7 @@
 alias dc="cd ~/Kalabox/dc-nola/code"
 alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
 #.... react-native autosuggest
-alias rna="cd ~/projects/react-native-autosuggest"
+alias rna="cd AutosuggestExample/node_modules/react-native-autosuggest"
 # ... gifter
 alias gft.rna="cd ~/projects/giftr/mobile/node_modules/react-native-autosuggest"
 alias gft.bm='vim ~/projects/giftr/bm.md'
