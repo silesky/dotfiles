@@ -26,10 +26,10 @@ root: ~/projects/AutosuggestExample
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t rna
-pre: code .
+pre: code -n node_modules/react-native-autosuggest && code index.ios.js
 windows:
   - editor:
       layout: main-horizontal
       panes:
-        - npm start
         - sleep 5 && rnri
+        - npm start
