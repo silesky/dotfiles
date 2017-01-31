@@ -71,6 +71,7 @@ alias lynda="cd ~/Lynda/"
 alias rp="realpath"
 
 # ... git
+alias gshowhidden='git ls-files -v | grep '^[^H]"'
 alias gshow="git show --color --pretty=format:%b"
 alias grs="git reset"
 alias gpk="git cherry-pick"

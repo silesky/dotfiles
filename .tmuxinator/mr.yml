@@ -27,14 +27,14 @@ root: ~/projects/mr-dev
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t mr
-pre: open "https://trello.com/b/nU5KSCyh/music-rising-mr"
+pre: open "https://trello.com/b/nU5KSCyh/music-rising-mr" && open -a "mamp"
 windows:
   - editor:
       panes:
-        - browser-sync start --proxy musicrisingdev.tulane.edu --files . --no-inject-changes
+        - browser-sync start http://mr.dev:8888 --files .
         - mrdev
         - sqlpro
-        - pstorm
+        - code .
   - inspector:
     root: ~/Desktop/inspector
       - github
