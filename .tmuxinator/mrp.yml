@@ -1,7 +1,7 @@
 # ~/.tmuxinator/mr.yml
 
-name: mr
-root: ~/projects/mr-dev
+name: mrdev
+root: ~/projects/mr-prod
 
 
 # Optional tmux socket
@@ -27,14 +27,13 @@ root: ~/projects/mr-dev
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t mr
-pre: open "https://trello.com/b/nU5KSCyh/music-rising-mr" && open -a "mamp"
+pre: open -a "mamp"
 windows:
   - editor:
       panes:
-        - browser-sync start http://mr.dev:8888 --files .
+        - browser-sync start --proxy http://mr.prod:8888 --files .
         - mrdev
-        - sqlpro
-        - code .
+        - code -n .
   - inspector:
     root: ~/Desktop/inspector
       - github

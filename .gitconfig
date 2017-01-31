@@ -22,14 +22,10 @@
   ui = auto
 [diff]
        guitool = meld
-[difftool "diffmerge"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/diffmerge $LOCAL $REMOTE
 [difftool]
 	prompt = false
 [merge]
-	tool = diffmerge
-[mergetool "diffmerge"]
-	cmd = /Applications/DiffMerge.app/Contents/MacOS/diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+	tool = meld
 [mergetool]
 	keepBackup = false
 [push]

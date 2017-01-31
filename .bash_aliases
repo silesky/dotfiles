@@ -71,7 +71,7 @@ alias lynda="cd ~/Lynda/"
 alias rp="realpath"
 
 # ... git
-alias gshowhidden='git ls-files -v | grep '^[^H]"'
+alias gshowhidden="git ls-files -v | grep '^[^H]'"
 alias gshow="git show --color --pretty=format:%b"
 alias grs="git reset"
 alias gpk="git cherry-pick"
@@ -85,8 +85,8 @@ alias gck="git checkout"
 alias gs="git status -sb"
 alias gst="git status"
 alias glp="git log -p"
-alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
-alias glog="git log --graph --abbrev-commit"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gl="glog HEAD~10..HEAD --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 alias gck='git checkout'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
 
