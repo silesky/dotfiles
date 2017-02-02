@@ -1,7 +1,7 @@
 #...............................
 # misc
-k9bp() { kill -9 $(lsof -t -i:$1) } # kill by port
-k9p() { kill -9 `pgrep -f $1`}
+k9bp() { kill -9 $(lsof -t -i:$1); } # kill by port
+k9p() { kill -9 `pgrep -f "$1"`; }
 alias k9="k9p"
 alias kb="kbox"
 alias rn="react-native"
@@ -32,7 +32,6 @@ alias f="find * -iname"
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
-l.() { ls `*.$1` j}
 alias l='ls -a'  # Long view, show hidden
 alias lsd='ls -d */'
 alias ll='clear && ls -al' # Long view, show hidden + clear
