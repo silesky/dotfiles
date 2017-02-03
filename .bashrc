@@ -26,3 +26,4 @@ export PATH="$PATH:/Applications/DevDesktop/tools"
 [ -f /Users/ssilesky/.travis/travis.sh ] && source /Users/ssilesky/.travis/travis.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+source $(brew --prefix php-version)/php-version.sh && php-version 7
