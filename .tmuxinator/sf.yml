@@ -30,6 +30,7 @@ pre:
   - open -a "Acquia Dev Desktop"
     && open "https://trello.com/b/kSOmmLF9/sla-drupal-migration"
     && open "http://docroot.dd:8083/"
+    && cd "~/projects/sf/sf/docroot/sites/all/themes/multitheme" && github
 startup_window: server
 windows:
   - editor:
