@@ -2,6 +2,7 @@
 # misc
 k9bp() { kill -9 $(lsof -t -i:$1); } # kill by port
 k9p() { kill -9 `pgrep -f "$1"`; }
+alias dn="dotnet"
 alias k9="k9p"
 alias kb="kbox"
 alias rn="react-native"
