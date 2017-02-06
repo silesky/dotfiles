@@ -34,7 +34,6 @@ Plug 'tpope/vim-repeat' "let's you use the dot command with vim surround
 Plug 'tpope/vim-surround' "cst
 Plug 'avakhov/vim-yaml'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript' "syntax hl
 Plug 'maksimr/vim-jsbeautify' "f3
 Plug 'gregsexton/gitv'
