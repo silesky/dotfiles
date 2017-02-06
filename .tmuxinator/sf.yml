@@ -30,14 +30,16 @@ pre:
   - open -a "Acquia Dev Desktop"
     && open "https://trello.com/b/kSOmmLF9/sla-drupal-migration"
     && open "http://docroot.dd:8083/"
-    && cd "~/projects/sf/sf/docroot/sites/all/themes/multitheme" && github
+    && github
+    && code .
+    # && pstorm "~/projects/sf/sf/docroot"
 startup_window: server
 windows:
   - editor:
       panes:
-        - gulp watch
         - export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot" && drush uli
-        - pstorm ~/projects/sf/sf/docroot
+        - gulp watch-layout
+        - gulp watch-deps
         - livereload .
         # - cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega && grunt watch
         # browser-sync start --proxy http://docroot.dd:8083/ --files .
