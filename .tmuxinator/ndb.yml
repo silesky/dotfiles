@@ -26,7 +26,7 @@ root: ~/projects/ndb/server
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t ndb
-pre: open "http://localhost:5000" && code .
+pre: code . && open "http://localhost:5000" && open -a psequel
 windows:
   - editor:
       layout: main-horizontal
