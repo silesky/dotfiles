@@ -1,6 +1,8 @@
 
 # Projects
 # ........
+alias mrp="cd ~/projects/mr-prod"
+alias mrd="cd ~/projects/mr-dev"
 alias dc="cd ~/Kalabox/dc-nola/code"
 alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
 #.... react-native autosuggest
