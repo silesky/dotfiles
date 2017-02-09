@@ -1,7 +1,7 @@
-# ~/.tmuxinator/ndb.yml
+# ~/.tmuxinator/nb.yml
 
-name: ndb
-root: ~/projects/ndb/server
+name: nb
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -25,11 +25,13 @@ root: ~/projects/ndb/server
 # attach: false
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
-# post: tmux -CC attach -t ndb
-pre: code . && open "http://localhost:5000" && open -a psequel
+# post: tmux -CC attach -t nb
+
 windows:
   - editor:
-      layout: main-horizontal
+      layout: main-vertical
       panes:
-        - git status
-        - dotnet watch run
+        - vim
+        - guard
+  - server: bundle exec rails s
+  - logs: tail -f log/development.log
