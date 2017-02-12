@@ -1,13 +1,8 @@
 ZSH_THEME="amuse" # full line with time
+source ~/.bash_profile
 setopt inc_append_history # keep history in chronological order (zsh)
 setopt share_history # cmd in shell 1 becomes last command in shell two (zsh)
-#ZSH_THEME="agnoster"
 DEFAULT_USER="ssilesky"
-source ~/.bash_profile
-
-bindkey '^[[A' up-line-or-search
-bindkey '^[[B' down-line-or-search
-
 # tmuxinator thing
 DISABLE_AUTO_TITLE=true
 #########0*#####################################################

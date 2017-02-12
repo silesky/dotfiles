@@ -3,6 +3,7 @@
     "react",
     "mocha",
     "standard",
+    "promise"
   ],
   "extends": [
     "standard",
@@ -153,7 +154,6 @@
     "one-var": ["warn", { "initialized": "never" }],
     "operator-linebreak": ["warn", "after", { "overrides": { "?": "before", ":": "before" } }],
     "padded-blocks": ["warn", { "blocks": "never", "switches": "never", "classes": "never" }],
-    "prefer-promise-reject-warns": "warn",
     "quotes": ["warn", "single", { "avoidEscape": true, "allowTemplateLiterals": true }],
     "rest-spread-spacing": ["warn", "never"],
     "semi": ["warn", "never"],
