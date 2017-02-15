@@ -1,6 +1,6 @@
 # ~/.tmuxinator/mr.yml
 
-name: mrdev
+name: mr
 root: ~/projects/mr-prod
 
 
@@ -27,12 +27,12 @@ root: ~/projects/mr-prod
 
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t mr
-pre: open -a "mamp"
+pre: open -a "mamp" && open http://mr.prod:8888/
 windows:
   - editor:
       panes:
         - browser-sync start --proxy http://mr.prod:8888 --files .
-        - mrdev
+        - mrprod
         - code -n .
   - inspector:
     root: ~/Desktop/inspector
