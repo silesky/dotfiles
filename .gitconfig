@@ -4,6 +4,7 @@
   st = status
   ls = log --oneline
   stat = log --graph --author='silesky' --oneline
+  dirdiff = difftool --tool=meld --dir-diff
 [filter "lfs"]
   clean = git lfs clean %f
   smudge = git lfs smudge %f
@@ -21,13 +22,19 @@
   status = auto
   ui = auto
 [diff]
-  tool = "vscode"
+  tool = "vscode" # default tool for 'git difftool'
+[difftool]
+  prompt = false # prevent Launch 'vscode' [y/n]? on git diff
 [difftool "vscode"]
-  prompt = false
-  cmd = code --wait --diff $LOCAL $REMOTE
-[merge]
+  cmd = code --wait --diff $LOCAL $REMOTE # boilerplate copied from vscode website
+[difftool "meld"] #git difftool --tool=meld
+    cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+    trustExitCode = true # not sure what this does, but it's in the docs
+[merge] # default tool for 'git mergetool'
   tool = meld
-[mergetool]
+[mergetool "meld"]
+  trustExitCode = true
+  cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\" # in the docs https://yousseb.github.io/meld/
   keepBackup = false
 [push]
   default = upstream

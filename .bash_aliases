@@ -54,7 +54,7 @@ alias bash_proj="vim ~/.bash_proj"
 alias bash_functions="vim ~/.bash_functions"
 alias paths="vim ~/.paths"
 
-# .... Git
+# .... dotfiles
 alias gitconfig="vim ~/.gitconfig"
 alias gitignore="vim ~/.gitignore"
 alias prof="vim ~/.bash_profile"
@@ -89,8 +89,7 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias gl="glog HEAD~10..HEAD --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 alias gck='git checkout'
 alias glm="git log --author='silesky' --branches --graph --name-status --abbrev-commit"
-
-alias gdiff="git difftool --gui --dir-diff &"
+alias gdt="git difftool"
 alias gd="git diff"
 alias gdc="git diff --cached"
 # gb () { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
