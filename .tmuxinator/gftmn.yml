@@ -1,6 +1,5 @@
-# ~/.tmuxinator/gft.yml
 
-name: gft
+name: gftmn
 root: ~/projects/giftr/
 
 startup_window: server

@@ -140,7 +140,7 @@
     "no-unsafe-finally": "warn",
     "no-unsafe-negation": "warn",
     "no-unused-expressions": ["warn", { "allowShortCircuit": true, "allowTernary": true }],
-    "no-unused-vars": ["warn", { "vars": "all", "args": "none" }],
+    "no-unused-vars": "warn",
     "no-use-before-define": ["warn", { "functions": false, "classes": false, "variables": false }],
     "no-useless-call": "warn",
     "no-useless-computed-key": "warn",

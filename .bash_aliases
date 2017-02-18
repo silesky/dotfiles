@@ -35,6 +35,7 @@ alias ...='cd ../..'        # Go up two directories
 alias ....='cd ../../..'    # And for good measure
 alias l='ls -a'  # Long view, show hidden
 alias lsd='ls -d */'
+alias ldot='ls -d .*' #List dotfiles only
 alias ll='clear && ls -al' # Long view, show hidden + clear
 alias la='ls -AF'   # Compact view, show hidden
 cl() { clear && cd "$@" && ls -al; } #cdls
@@ -135,6 +136,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias tm="tmux"
    # OSX - app path realiases and os-specific
    alias chrome="open -a /Applications/Google\ Chrome.app" #osx
+   alias pbc="pbcopy"
    alias gitkraken="open -a gitkraken"
    alias v="/usr/local/bin/vim -p" #osx
    alias vim="mvim" #osx

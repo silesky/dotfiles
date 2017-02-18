@@ -1,0 +1,11 @@
+name: sfmin
+root: ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/
+
+startup_window: server
+windows:
+  - editor:
+      panes:
+        - export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot" && drush uli
+        - gulp watch-layout
+        - gulp watch-deps
+        - livereload .
