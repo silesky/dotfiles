@@ -27,7 +27,7 @@ root: ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/
 # Runs after everything. Use it to attach to tmux with custom options etc.
 # post: tmux -CC attach -t sf
 pre:
-  - open -a "Acquia Dev Desktop"
+  - open -a "Acquia Dev Desktope
     && open "https://trello.com/b/kSOmmLF9/sla-drupal-migration"
     && open "http://docroot.dd:8083/"
     && github

@@ -13,6 +13,7 @@ alias gft.bm='vim ~/projects/giftr/bm.md'
 alias gft='cd ~/projects/giftr'
 alias gftm='cd ~/projects/giftr/mobile'
 # ... site-factory
+alias sf.pstorm="phpstorm /Users/ssilesky/projects/sf/sf/docroot"
 alias sf.drush='export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot"'
 alias sf='cd /Users/ssilesky/projects/sf/sf'
 alias sf.tulane='cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/'
