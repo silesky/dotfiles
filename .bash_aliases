@@ -1,4 +1,4 @@
-#...............................
+#s...............................
 # misc
 k9bp() { kill -9 $(lsof -t -i:$1); } # kill by port
 k9p() { kill -9 `pgrep -f "$1"`; }
@@ -52,6 +52,7 @@ alias .sass-lint="vim ~/.sass-lint.yml"
 alias eslintrc="vim ~/.eslintrc"
 alias nodemod="vim ~/.nodemodules.txt"
 alias bash_proj="vim ~/.bash_proj"
+alias bashpj="vim ~/.bash_proj"
 alias bash_functions="vim ~/.bash_functions"
 alias paths="vim ~/.paths"
 
