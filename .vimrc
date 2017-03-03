@@ -11,6 +11,18 @@ if has('macunix')
   "OSX STUFF
 endif
 
+""""""""""""""""""""""""""""""""""""""""
+" Fonts
+if has('win32')
+    set guifont=Consolas:h12   " Win32.
+elseif has('gui_macvim')
+    set guifont=Monaco:h14     " OSX.
+else
+    set guifont=Monospace\ 12  " Linux.
+endif
+" other fonts = Fira\ Mono
+"""""""""""""""""""""""""""""""""""
+
 """"""PATHOGEN""""""""""
 execute pathogen#infect()
 "..........................
@@ -248,8 +260,6 @@ noremap !! :set shellcmdflag=-ic<CR>
 """"""""""""""""""""""""""""""""""
 " EasyMotion
 map <Leader> <Plug>(easymotion-prefix)
-set guifont=Fira\ Mono
-"""""""""""""""""""""""""""""""""""
 "--------------------------
 " auto watch changes to file without any prompt
 set autoread
