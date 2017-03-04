@@ -48,7 +48,7 @@
     "block-spacing": ["warn", "always"],
     "brace-style": ["warn", "1tbs", { "allowSingleLine": true }],
     "camelcase": ["warn", { "properties": "never" }],
-    "comma-dangle": ["warn", "never"],
+    // "comma-dangle": ["warn", "always"],
     "comma-spacing": ["warn", { "before": false, "after": true }],
     "comma-style": ["warn", "last"],
     "constructor-super": "warn",

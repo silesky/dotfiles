@@ -140,6 +140,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias pbc="pbcopy"
    alias gitkraken="open -a gitkraken"
    alias v="/usr/local/bin/vim -p" #osx
+   alias vi="v"
    alias vim="mvim" #osx
    alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
    alias sub="open -a '/Applications/Sublime Text.app'" #osx
