@@ -268,8 +268,6 @@
 				<integer>0</integer>
 				<key>argument</key>
 				<integer>3</integer>
-				<key>argumenttext</key>
-				<string>.</string>
 				<key>hotkey</key>
 				<integer>47</integer>
 				<key>hotmod</key>

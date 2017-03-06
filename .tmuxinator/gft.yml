@@ -9,7 +9,7 @@ windows:
       root: ~/projects/giftr/server
       panes:
         - sudo mongod
-        - npm run watch
+        - sleep 30 && npm run watch
         - sleep 30 && seed
         - sleep 30 && npm run testwatch
   - mobile:
@@ -21,3 +21,6 @@ windows:
         - sleep 5 && rnri
         - npm run testwatch
           # - cd mobile && sleep 10 && react-native log-ios
+  - Editor:
+      panes:
+        - vi .

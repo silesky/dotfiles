@@ -266,8 +266,8 @@ set autoread
 "might be osx only
 au CursorHold * checktime
 "==========================
-"  copy all
-nnoremap <C-S-y> :%y<CR>
+"  copy / yank all
+" nnoremap <C-S-y> :%y<CR>
 "--------------------------
 "==========================
 " The Silver Searcher
