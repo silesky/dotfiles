@@ -1,3 +1,4 @@
+let g:rainbow_active = 1
 if has('unix')
  "LINUX STUFF
 endif
@@ -63,6 +64,7 @@ Plug 'suan/vim-instant-markdown'
 Plug 'rking/ag.vim'
 Plug 'gcorne/vim-sass-lint'
 Plug 'marijnh/tern_for_vim'
+Plug 'luochen1990/rainbow'
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
 
@@ -146,6 +148,9 @@ set backspace=indent,eol,start
 set clipboard=unnamed
 set backupcopy=yes
 set noswapfile " no swap file
+
+" make bracket matching color have better contrast
+:highlight MatchParen ctermbg=lightgreen guibg=lightgreen
 
 " copy visually selected text to search
 vnoremap / y/<C-R>"
