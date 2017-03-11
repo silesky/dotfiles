@@ -1,6 +1,7 @@
 
 # Projects
 # ........
+alias playdn="cd ~/projects/play.dn"
 alias mrp="cd ~/projects/mr-prod && git status"
 alias mrd="cd ~/projects/mr-dev && git status"
 alias dc="cd ~/Kalabox/dc-nola/code"
