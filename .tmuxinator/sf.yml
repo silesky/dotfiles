@@ -31,7 +31,6 @@ pre:
     && open "https://trello.com/b/kSOmmLF9/sla-drupal-migration"
     && open "http://docroot.dd:8083/"
     && github
-    && code ~/projects/sf/sf/docroot
     # && pstorm "~/projects/sf/sf/docroot"
 startup_window: server
 windows:
