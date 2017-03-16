@@ -21,6 +21,7 @@ alias sf.drush='export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP
 alias sf='cd /Users/ssilesky/projects/sf/sf/docroot'
 alias sf.tulane='cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/'
 alias sf.custom='cd ~/projects/sf/sf/docroot/sites/all/modules/custom'
+alias sf.gulp='vim ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/gulpfile.js'
 alias sf.bm='vim ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/bm.md'
 alias sf.multitheme="cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme"
 alias sf.schools="cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/css/schools_and_departments/"

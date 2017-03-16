@@ -52,7 +52,7 @@ alias .sass-lint="vim ~/.sass-lint.yml"
 alias eslintrc="vim ~/.eslintrc"
 alias nodemod="vim ~/.nodemodules.txt"
 alias bash_proj="vim ~/.bash_proj"
-alias bashpj="vim ~/.bash_proj"
+alias bashpj="bash_proj"
 alias bash_functions="vim ~/.bash_functions"
 alias paths="vim ~/.paths"
 
