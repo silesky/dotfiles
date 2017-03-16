@@ -150,14 +150,13 @@ set backupcopy=yes
 set noswapfile " no swap file
 
 " make bracket matching color have better contrast
-:highlight MatchParen ctermbg=lightgreen guibg=lightgreen
+:highlight MatchParen ctermbg=black guibg=black
 " Enable CursorLine
-" { }
 set cursorline
 " Default Colors for CursorLine
 highlight  CursorLine ctermbg=Yellow ctermfg=None
 autocmd InsertEnter * highlight  CursorLine ctermbg=Green ctermfg=Red
-autocmd InsertLeave * highlight  CursorLine ctermbg=Yellow ctermfg=None
+
 " copy visually selected text to search
 vnoremap / y/<C-R>"
 
