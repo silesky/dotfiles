@@ -1,4 +1,31 @@
-#s...............................
+#############################################
+############### linux / osx #################
+#############################################
+if [[ "$(uname)" = "Darwin" ]]; then
+   alias cat="ccat"
+   export CLICOLOR=1
+   export LSCOLORS=GxFxCxDxBxegedabagaced
+   alias tm="tmux"
+   # OSX - app path realiases and os-specific
+   alias chrome="open -a /Applications/Google\ Chrome.app" #osx
+   alias pbc="pbcopy"
+   alias gitkraken="open -a gitkraken"
+   alias v="/usr/local/bin/vim -p" #osx
+   alias vi="v"
+   alias vim="mvim" #osx
+   alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
+   alias sub="open -a '/Applications/Sublime Text.app'" #osx
+   alias play="cd ~/Desktop/temp/ && vim play.js"
+   alias sqlpro="open -a 'Sequel Pro'"
+   alias estest="eslint --debug ~/estest.js"
+   alias temp="cd ~/Desktop/temp"
+   alias tree="tree -C"
+else
+   alias tmux="tmux -2"
+   alias tm="tmux -2"
+fi
+# ..........................................
+############################################
 # misc
 k9bp() { kill -9 $(lsof -t -i:$1); } # kill by port
 k9p() { kill -9 `pgrep -f "$1"`; }
@@ -127,32 +154,4 @@ alias bs="browser-sync"
 alias bstart='browser-sync start --server --proxy --files . &'
 alias srv="live-server"
 alias gitkr="gitkraken"
-#############################################
-############### linux / osx #################
-#############################################
-if [[ "$(uname)" = "Darwin" ]]; then
-   alias cat="ccat"
-   export CLICOLOR=1
-   export LSCOLORS=GxFxCxDxBxegedabagaced
-   alias tm="tmux"
-   # OSX - app path realiases and os-specific
-   alias chrome="open -a /Applications/Google\ Chrome.app" #osx
-   alias pbc="pbcopy"
-   alias gitkraken="open -a gitkraken"
-   alias v="/usr/local/bin/vim -p" #osx
-   alias vi="v"
-   alias vim="mvim" #osx
-   alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
-   alias sub="open -a '/Applications/Sublime Text.app'" #osx
-   alias play="cd ~/Desktop/temp/ && vim play.js"
-   alias sqlpro="open -a 'Sequel Pro'"
-   alias estest="eslint --debug ~/estest.js"
-   alias temp="cd ~/Desktop/temp"
-   alias tree="tree -C"
-else
-   alias tmux="tmux -2"
-   alias tm="tmux -2"
-fi
-# ..........................................
-############################################
 

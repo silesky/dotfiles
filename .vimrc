@@ -154,7 +154,7 @@ set noswapfile " no swap file
 " Enable CursorLine
 set cursorline
 " Default Colors for CursorLine
-highlight  CursorLine ctermbg=Yellow ctermfg=None
+" highlight  CursorLine ctermbg=Yellow ctermfg=None
 autocmd InsertEnter * highlight  CursorLine ctermbg=Green ctermfg=Red
 
 " copy visually selected text to search
