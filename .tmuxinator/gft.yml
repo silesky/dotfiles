@@ -11,7 +11,7 @@ windows:
         - sudo mongod
         - sleep 30 && npm run watch
         - sleep 30 && seed
-        - sleep 30 && npm run testwatch
+          # sleep 30 && npm run testwatch
   - mobile:
       pre:
       root: ~/projects/giftr/mobile
@@ -19,7 +19,7 @@ windows:
         - code -n .
         - npm start
         - sleep 5 && rnri
-        - npm run testwatch
+          # - npm run testwatch
           # - cd mobile && sleep 10 && react-native log-ios
   - Editor:
       panes:

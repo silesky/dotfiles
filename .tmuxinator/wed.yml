@@ -32,5 +32,5 @@ windows:
       layout: main-vertical
       panes:
         - code .
-        - bundle exec jekyll serve
-        - sleep 5 && open "http://127.0.0.1:4000"
+        - bundle exec jekyll build --watch --incremental
+        - browser-sync start --server _site --proxy --files **/*.css

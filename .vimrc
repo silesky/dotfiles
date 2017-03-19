@@ -120,7 +120,7 @@ set t_Co=256 "otherwise you'll only see  8bits
 " Monokai gotham zenburn 256_noir 256_grayvim
 colorscheme zenburn
 " tab bg color
-" :highlight Normal ctermfg=DarkGray
+":highlight Normal ctermfg=gray
 " line numbers
 set nu
 
@@ -155,7 +155,6 @@ set noswapfile " no swap file
 set cursorline
 " Default Colors for CursorLine
 " highlight  CursorLine ctermbg=Yellow ctermfg=None
-autocmd InsertEnter * highlight  CursorLine ctermbg=Green ctermfg=Red
 
 " copy visually selected text to search
 vnoremap / y/<C-R>"
@@ -208,6 +207,10 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype scss setlocal ts=4 sw=4 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
+" set custom filetype
+au BufRead,BufNewFile *.eslintrc setfiletype javascript
+au BufRead,BufNewFile *.json setfiletype javascript
+
 "vimdiff loafs another theme
 " http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
 if &diff
@@ -235,7 +238,7 @@ let g:ctrlp_map='<c-p>'
 " let g:ctrlp_cmd = 'CtrlPMRU'
 " don't limit the ctrlp results
 let g:ctrlp_match_window = 'min:4,max:25'
-let g:ctrlp_cmd = 'CtrlPLastMode' "to switch between recent, file etc, ctrl-f/b
+let g:ctrlp_cmd = 'CtrlPMixed' "to switch between recent, file etc, ctrl-f/b
 """""""""""""""""""""""""""
 " JSBEAUTIFY
 map <F4> :call JsBeautify()<cr>

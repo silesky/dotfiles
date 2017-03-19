@@ -36,6 +36,7 @@
     "no-var": 1,
     "array-bracket-spacing": [1, "always"], // space inside brackets
     "object-curly-spacing": [1, "always"], // I like space inside braces
+    "comma-dangle": [1, "always"], // I like commas at the end
     "react/jsx-no-duplicate-props": 1,
     "react/prop-types": 0,
     "react/no-find-dom-node": 1,
@@ -48,7 +49,7 @@
     "block-spacing": ["warn", "always"],
     "brace-style": ["warn", "1tbs", { "allowSingleLine": true }],
     "camelcase": ["warn", { "properties": "never" }],
-    // "comma-dangle": ["warn", "always"],
+    // "comma-dangle": ["warn", "never"],
     "comma-spacing": ["warn", { "before": false, "after": true }],
     "comma-style": ["warn", "last"],
     "constructor-super": "warn",
@@ -136,8 +137,8 @@
     "no-this-before-super": "warn",
     "no-throw-literal": "warn",
     "no-trailing-spaces": "warn",
-    "no-undef": "warn",
-    "no-undef-init": "warn",
+    "no-undef": "error",
+    "no-undef-init": "error",
     "no-unexpected-multiline": "warn",
     "no-unmodified-loop-condition": "warn",
     "no-unneeded-ternary": ["warn", { "defaultAssignment": false }],
@@ -182,7 +183,7 @@
     "wrap-iife": ["warn", "any", { "functionPrototypeMethods": true }],
     "yield-star-spacing": ["warn", "both"],
     "yoda": ["warn", "never"],
-    "standard/object-curly-even-spacing": ["warn", "either"], // overriding this
+    "standard/object-curly-even-spacing": [0, "either"], // overriding this
     "standard/array-bracket-even-spacing": ["warn", "either"],
     "standard/computed-property-even-spacing": ["warn", "even"],
     "promise/param-names": "warn"
