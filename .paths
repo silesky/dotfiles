@@ -21,7 +21,7 @@ export PATH=$PATH:/usr/bin/compass
 export PATH=/opt/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
-
+export PATH="$PATH:`yarn global bin`"
 export PATH=$HOME/scripts:$PATH
 export PATH=$PATH:$HOME/Library/Android/sdk/tools
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools #adb is here

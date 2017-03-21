@@ -3,6 +3,7 @@
 #############################################
 if [[ "$(uname)" = "Darwin" ]]; then
    alias cat="ccat"
+   export PATH="$PATH:`yarn global bin`"
    export CLICOLOR=1
    export LSCOLORS=GxFxCxDxBxegedabagaced
    alias tm="tmux"
