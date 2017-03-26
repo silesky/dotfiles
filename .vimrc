@@ -39,6 +39,7 @@ call plug#begin('~/.vim/plugged')
 if v:version >=800
   Plug 'w0rp/ale'
 endif
+Plug 'mxw/vim-jsx'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'easymotion/vim-easymotion'

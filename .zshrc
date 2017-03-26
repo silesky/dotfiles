@@ -59,7 +59,7 @@ export ZSH=/Users/ssilesky/.oh-my-zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # gl
-plugins=(nvm bundle grunt gulp docker git-extras rvm node tmuxinator tmux vi-mode grunt zsh-output-highlighting zsh-syntax-highlighting)
+plugins=(gulp docker git-extras rvm node tmuxinator tmux vi-mode grunt zsh-output-highlighting zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
