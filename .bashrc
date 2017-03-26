@@ -22,8 +22,9 @@ fi
 
 export PATH="$PATH:/Applications/DevDesktop/tools"
 
-# added by travis gem
-[ -f /Users/ssilesky/.travis/travis.sh ] && source /Users/ssilesky/.travis/travis.sh
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source $(brew --prefix php-version)/php-version.sh && php-version 7
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
