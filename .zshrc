@@ -1,4 +1,5 @@
-. ~/.bash_profile
+. ~/.bash_profile # load everything
+
 ZSH_THEME="amuse" # full line with time
 setopt inc_append_history # keep history in chronological order (zsh)
 setopt share_history # cmd in shell 1 becomes last command in shell two (zsh)
@@ -59,7 +60,19 @@ export ZSH=/Users/ssilesky/.oh-my-zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # gl
- plugins=(gulp docker npm git-extras tmuxinator tmux vi-mode grunt zsh-output-highlighting zsh-syntax-highlighting)
+plugins=(
+gulp
+docker
+# nvm
+npm
+git-extras
+tmuxinator
+tmux
+vi-mode
+grunt
+# zsh-output-highlighting
+zsh-syntax-highlighting
+ )
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
@@ -95,4 +108,4 @@ source $ZSH/oh-my-zsh.sh
 . ~/partials/zsh_syntax_highlight_settings.sh
 . ~/.oh-my-zsh/plugins/z/z.sh
 . ~/partials/zsh_vi_settings.sh
-
+. ~/partials/autoload-nvmrc.sh #taken from https://github.com/creationix/nvm
