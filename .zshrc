@@ -1,5 +1,5 @@
+. ~/.bash_profile
 ZSH_THEME="amuse" # full line with time
-source ~/.bash_profile
 setopt inc_append_history # keep history in chronological order (zsh)
 setopt share_history # cmd in shell 1 becomes last command in shell two (zsh)
 DEFAULT_USER="ssilesky"
@@ -59,7 +59,7 @@ export ZSH=/Users/ssilesky/.oh-my-zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # gl
-plugins=(gulp docker git-extras rvm node tmuxinator tmux vi-mode grunt zsh-output-highlighting zsh-syntax-highlighting)
+ plugins=(gulp docker npm git-extras tmuxinator tmux vi-mode grunt zsh-output-highlighting zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
@@ -92,14 +92,7 @@ source $ZSH/oh-my-zsh.sh
 ##################################################################
 
 # source plugins last
-source ~/partials/zsh_syntax_highlight_settings.sh
-source ~/.oh-my-zsh/plugins/z/z.sh
-source ~/partials/zsh_vi_settings.sh
-
-eval "$(direnv hook zsh)"
-
-# added by travis gem
-[ -f /Users/ssilesky/.travis/travis.sh ] && source /Users/ssilesky/.travis/travis.sh
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+. ~/partials/zsh_syntax_highlight_settings.sh
+. ~/.oh-my-zsh/plugins/z/z.sh
+. ~/partials/zsh_vi_settings.sh
 
