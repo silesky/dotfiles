@@ -54,11 +54,17 @@ Plug 'gregsexton/gitv'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jszakmeister/vim-togglecursor'
-Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-sleuth'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'hhsnopek/vim-firewatch' "firewatch theme
+"
+" colorschemes
+Plug 'flazz/vim-colorschemes'
+Plug 'jacoborus/tender.vim' "sort of like firwatch but works with mvim
+Plug 'hhsnopek/vim-firewatch' "doesn't work with mvim
+Plug 'dikiaap/minimalist'
+
+
 "detect indent
 " sudo npm -g install instant-markdown-d
 Plug 'scrooloose/nerdtree'
@@ -135,7 +141,13 @@ set incsearch " see searc results as I type them in
 set t_Co=256 "otherwise you'll only see  8bits
 " firewatch Monokai gotham zenburn 256_noir 256_grayvim
 colorscheme firewatch
-
+if (has("termguicolors") && v:version > 800)
+ set termguicolors
+endif
+if has("gui_macvim")
+  colorscheme tender
+  let macvim_skip_colorscheme=1
+endif
 
 " tab bg color
 ":highlight Normal ctermfg=gray
@@ -169,7 +181,7 @@ set backupcopy=yes
 set noswapfile " no swap file
 
 " make bracket matching color have better contrast
-:highlight MatchParen ctermbg=black guibg=black
+" :highlight MatchParen ctermbg=black guibg=black
 " Enable CursorLine
 set cursorline
 " Default Colors for CursorLine

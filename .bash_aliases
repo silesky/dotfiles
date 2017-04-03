@@ -14,6 +14,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias v="/usr/local/bin/vim -p" #osx
    alias vi="v"
    alias vim="vim" #osx
+   alias vvim="mvim"
    alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
    alias sub="open -a '/Applications/Sublime Text.app'" #osx
    alias play="cd ~/Desktop/temp/ && vim play.js"
@@ -22,6 +23,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias temp="cd ~/Desktop/temp"
    alias tree="tree -C"
 else
+   alias vvim="gvim"
    alias tmux="tmux -2"
    alias tm="tmux -2"
 fi
