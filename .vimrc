@@ -58,6 +58,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-sleuth'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'hhsnopek/vim-firewatch' "firewatch theme
 "detect indent
 " sudo npm -g install instant-markdown-d
 Plug 'scrooloose/nerdtree'
@@ -69,22 +70,36 @@ Plug 'luochen1990/rainbow'
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
 
+
+" Completor: Postinstall hook (for versions over 8, install this, otherwise install ycm)
+function! BuildCompletor(info)
+  if a:info.status == 'installed' || 'updated' || a:info.force
+    !make js
+  endif
+endfunction
+
+if v:version >= 800
+  Plug 'maralla/completor.vim', { 'do': function('BuildCompletor') }
+endif
+
+" YouCompleteMe: PostInstall hook
 function! BuildYCM(info)
   if a:info.status == 'installed' || 'updated' || a:info.force
     !./install.sh
   endif
 endfunction
-if v:version > 703
+
+if v:version > 703 && v:version < 800
   Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 endif
 
+" Tern: Postinstall hook
 function! BuildTern(info)
   if a:info.status == 'installed' || 'updated' || a:info.force
     !npm install
   endif
 endfunction
 Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
-
 call plug#end()
 " DIRECTIONS:
 " Misc--
@@ -118,10 +133,13 @@ set smartcase " goes with ignorecase... It means that unless there is uppercase 
 set incsearch " see searc results as I type them in
 
 set t_Co=256 "otherwise you'll only see  8bits
-" Monokai gotham zenburn 256_noir 256_grayvim
-colorscheme zenburn
+" firewatch Monokai gotham zenburn 256_noir 256_grayvim
+colorscheme firewatch
+
+
 " tab bg color
 ":highlight Normal ctermfg=gray
+
 " line numbers
 set nu
 
@@ -258,8 +276,6 @@ autocmd FileType css noremap <buffer> <F4> :call CSSBeautify()<cr>
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
 noremap µ :InstantMarkdownPreview<CR>
-" YCM YouCompleteMe (so it will complete markdown files)
-let g:ycm_filetype_blacklist = {}
 noremap <C-k><C-b> :NERDTreeToggle<CR>
 """"""""""""""""""""""""
 " theme explorer
@@ -288,7 +304,6 @@ au CursorHold * checktime
 if executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor
-
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
