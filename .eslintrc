@@ -36,7 +36,7 @@
     "no-var": 1,
     "array-bracket-spacing": [1, "always"], // space inside brackets
     "object-curly-spacing": [1, "always"], // I like space inside braces
-    "comma-dangle": [1, "always"], // I like commas at the end
+    "comma-dangle": [1, "always-multiline"], // I like commas at the end
     "react/jsx-no-duplicate-props": 1,
     "react/prop-types": 0,
     "react/no-find-dom-node": 1,
