@@ -141,6 +141,8 @@ set incsearch " see searc results as I type them in
 set t_Co=256 "otherwise you'll only see  8bits
 " firewatch Monokai gotham zenburn 256_noir 256_grayvim
 colorscheme firewatch
+:highlight Normal ctermbg=black "firewatch needs this extra
+
 if has("gui_macvim")
   colorscheme tender
   set termguicolors
@@ -148,7 +150,6 @@ let macvim_skip_colorscheme=1
 endif
 
 " tab bg color
-:highlight Normal ctermbg=black
 " line numbers
 set nu
 
