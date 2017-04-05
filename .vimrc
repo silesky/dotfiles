@@ -57,7 +57,7 @@ Plug 'jszakmeister/vim-togglecursor'
 Plug 'tpope/vim-sleuth'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"
+" haya14busa/incsearch.vim "
 " colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'jacoborus/tender.vim' "sort of like firwatch but works with mvim
@@ -141,17 +141,14 @@ set incsearch " see searc results as I type them in
 set t_Co=256 "otherwise you'll only see  8bits
 " firewatch Monokai gotham zenburn 256_noir 256_grayvim
 colorscheme firewatch
-if (has("termguicolors") && v:version > 800)
- set termguicolors
-endif
 if has("gui_macvim")
   colorscheme tender
-  let macvim_skip_colorscheme=1
+  set termguicolors
+let macvim_skip_colorscheme=1
 endif
 
 " tab bg color
-":highlight Normal ctermfg=gray
-
+:highlight Normal ctermbg=black
 " line numbers
 set nu
 
