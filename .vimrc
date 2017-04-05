@@ -1,17 +1,28 @@
+let g:rainbow_active = 1
 if has('unix')
  "LINUX STUFF
 endif
 
 if has('macunix')
   " alt-s to toggle
-"DEL  noremap ß∂ :SyntasticReset<CR>
-"DEL  noremap ß :SyntasticCheck<CR>
   noremap ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
   " alt-[ and alt-] to cycle buffers
   noremap ‘ :bnext<CR>
   noremap “ :bprevious<CR>
   "OSX STUFF
 endif
+
+""""""""""""""""""""""""""""""""""""""""
+" Fonts
+if has('win32')
+    set guifont=Consolas:h12   " Win32.
+elseif has('gui_macvim')
+    set guifont=Monaco:h14     " OSX.
+else
+    set guifont=Monaco     " OSX.
+endif
+" other fonts = Fira\ Mono
+"""""""""""""""""""""""""""""""""""
 
 """"""PATHOGEN""""""""""
 execute pathogen#infect()
@@ -25,53 +36,76 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
+if v:version >=800
+  Plug 'w0rp/ale'
+endif
+Plug 'mxw/vim-jsx'
+Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
 Plug 'easymotion/vim-easymotion'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'mattn/emmet-vim' "html:5_ ctrl-y
 Plug 'tpope/vim-repeat' "let's you use the dot command with vim surround
 Plug 'tpope/vim-surround' "cst
 Plug 'avakhov/vim-yaml'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript' "syntax hl
 Plug 'maksimr/vim-jsbeautify' "f3
 Plug 'gregsexton/gitv'
 Plug 'tpope/vim-fugitive'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'jszakmeister/vim-togglecursor'
-Plug 'flazz/vim-colorschemes'
 Plug 'tpope/vim-sleuth'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" haya14busa/incsearch.vim "
+" colorschemes
+Plug 'flazz/vim-colorschemes'
+Plug 'jacoborus/tender.vim' "sort of like firwatch but works with mvim
+Plug 'hhsnopek/vim-firewatch' "doesn't work with mvim
+Plug 'dikiaap/minimalist'
+
+
 "detect indent
 " sudo npm -g install instant-markdown-d
 Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
 Plug 'rking/ag.vim'
-
-" Plug 'scrooloose/syntastic'
 Plug 'gcorne/vim-sass-lint'
 Plug 'marijnh/tern_for_vim'
+Plug 'luochen1990/rainbow'
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
-Plug 'w0rp/ale'
+
+
+" Completor: Postinstall hook (for versions over 8, install this, otherwise install ycm)
+function! BuildCompletor(info)
+  if a:info.status == 'installed' || 'updated' || a:info.force
+    !make js
+  endif
+endfunction
+
+if v:version >= 800
+  Plug 'maralla/completor.vim', { 'do': function('BuildCompletor') }
+endif
+
+" YouCompleteMe: PostInstall hook
 function! BuildYCM(info)
-  if a:info.status == 'installed' || a:info.force
+  if a:info.status == 'installed' || 'updated' || a:info.force
     !./install.sh
   endif
 endfunction
-if v:version > 703
+
+if v:version > 703 && v:version < 800
   Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 endif
 
+" Tern: Postinstall hook
 function! BuildTern(info)
-  if a:info.status == 'installed' || a:info.force
+  if a:info.status == 'installed' || 'updated' || a:info.force
     !npm install
   endif
 endfunction
 Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
-
 call plug#end()
 " DIRECTIONS:
 " Misc--
@@ -105,10 +139,18 @@ set smartcase " goes with ignorecase... It means that unless there is uppercase 
 set incsearch " see searc results as I type them in
 
 set t_Co=256 "otherwise you'll only see  8bits
-" Monokai gotham zenburn 256_noir 256_grayvim
-colorscheme zenburn
+" firewatch Monokai gotham zenburn 256_noir 256_grayvim
+colorscheme tender
+
+
+if has("gui_running")
+  set termguicolors
+let macvim_skip_colorscheme=1
+endif
+hi Normal ctermbg=black "firewatch needs this extra
+hi Search cterm=NONE ctermfg=black ctermbg=white
+hi Visual cterm=NONE ctermfg=white ctermbg=red guibg=red "search highlighting
 " tab bg color
-" :highlight Normal ctermfg=DarkGray
 " line numbers
 set nu
 
@@ -128,14 +170,21 @@ inoremap jj <Esc>
 
 " double escape to save
 map <ESC><ESC> :w<CR>
-map QQ :qa!<CR>
+
 " mouse for scrolling and window resizing
 set mouse=a
 
 set backspace=indent,eol,start
-set clipboard=unnamedplus
+set clipboard=unnamed
 set backupcopy=yes
 set noswapfile " no swap file
+
+" make bracket matching color have better contrast
+" :highlight MatchParen ctermbg=black guibg=black
+" Enable CursorLine
+set cursorline
+" Default Colors for CursorLine
+" highlight  CursorLine ctermbg=Yellow ctermfg=None
 
 " copy visually selected text to search
 vnoremap / y/<C-R>"
@@ -153,16 +202,18 @@ set smarttab      " Enabling this will make the tab key (in insert mode) insert 
 
 " remove escape delay
 set timeoutlen=1000 ttimeoutlen=0
-nmap <silent> <F2> <Plug>(ale_previous_wrap)
-nmap <silent> <F3> <Plug>(ale_next_wrap)
-"noremap <F2> :lprev<CR> "syntastic skip to error
-"noremap <F3> :lnext<CR> "syntastic skip to error
-"gutter column (next to numbers)
-let g:ale_sign_error = '+'
-let g:ale_sign_warning = '+'
-let g:ale_sign_column_always = 1
-let g:ale_linters = {'javascript': ['eslint']}
-:highlight clear SignColumn "make same as everything else
+
+" ale uses timers which only work om vim 8
+if v:version >= 800
+  nmap <silent> <F2> <Plug>(ale_previous_wrap)
+  nmap <silent> <F3> <Plug>(ale_next_wrap)
+  let g:ale_sign_error = '++'
+  let g:ale_sign_warning = '+'
+  let g:ale_sign_column_always = 1
+  let g:ale_linters = {'javascript': ['eslint'] }
+endif
+"gutter column
+:highlight clear SignColumn
 
 " wrap toggle
 function! ToggleWrap()
@@ -186,6 +237,10 @@ autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
 autocmd Filetype scss setlocal ts=4 sw=4 expandtab
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 noexpandtab
+" set custom filetype
+au BufRead,BufNewFile *.eslintrc setfiletype javascript
+au BufRead,BufNewFile *.json setfiletype javascript
+
 "vimdiff loafs another theme
 " http://stackoverflow.com/questions/2019281/load-different-colorscheme-when-using-vimdiff
 if &diff
@@ -209,9 +264,11 @@ let g:ctrlp_custom_ignore = {
       \ }
 set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 let g:ctrlp_map='<c-p>'
+
+" let g:ctrlp_cmd = 'CtrlPMRU'
 " don't limit the ctrlp results
 let g:ctrlp_match_window = 'min:4,max:25'
-let g:ctrlp_cmd = 'CtrlPLastMode' "to switch between recent, file etc, ctrl-f/b
+let g:ctrlp_cmd = 'CtrlPMixed' "to switch between recent, file etc, ctrl-f/b
 """""""""""""""""""""""""""
 " JSBEAUTIFY
 map <F4> :call JsBeautify()<cr>
@@ -230,8 +287,6 @@ autocmd FileType css noremap <buffer> <F4> :call CSSBeautify()<cr>
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
 noremap µ :InstantMarkdownPreview<CR>
-" YCM YouCompleteMe (so it will complete markdown files)
-let g:ycm_filetype_blacklist = {}
 noremap <C-k><C-b> :NERDTreeToggle<CR>
 """"""""""""""""""""""""
 " theme explorer
@@ -241,13 +296,30 @@ let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 25
-"""""""""""""""""""""""""
+""""""""""""""""""""""""
 noremap !! :set shellcmdflag=-ic<CR>
+""""""""""""""""""""""""""""""""""
 " EasyMotion
 map <Leader> <Plug>(easymotion-prefix)
-:set guioptions-=m  "remove menu bar
-:set guioptions-=T  "remove toolbar
-:set guioptions-=L  "remove left-hand scroll bar
-:set guioptions-=r  "remove right-hand scroll bar
-:set guifont=Monaco
-let g:airline#extensions#tabline#enabled = 1
+"--------------------------
+" auto watch changes to file without any prompt
+set autoread
+"might be osx only
+au CursorHold * checktime
+"==========================
+"  copy / yank all
+" nnoremap <C-S-y> :%y<CR>
+"--------------------------
+"==========================
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+" ==================================================
+:set wrapscan "toggle arround search

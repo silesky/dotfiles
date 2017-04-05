@@ -121,8 +121,8 @@ if [[ "$(uname)" = "Darwin" ]]; then
 else
 
    alias v="/usr/bin/vim"
-   alias vm="vvim"
-   alias vim="gvim"
+   alias vim="v"
+   alias vvim="gvim"
    alias sub="subl"
    alias www="sensible-browser"
    alias tmux='tmux -2'
