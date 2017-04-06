@@ -19,7 +19,7 @@ if has('win32')
 elseif has('gui_macvim')
     set guifont=Monaco:h14     " OSX.
 else
-    set guifont=Monospace\ 12  " Linux.
+    set guifont=Monaco     " OSX.
 endif
 " other fonts = Fira\ Mono
 """""""""""""""""""""""""""""""""""
@@ -140,15 +140,16 @@ set incsearch " see searc results as I type them in
 
 set t_Co=256 "otherwise you'll only see  8bits
 " firewatch Monokai gotham zenburn 256_noir 256_grayvim
-colorscheme firewatch
-:highlight Normal ctermbg=black "firewatch needs this extra
+colorscheme tender
 
-if has("gui_macvim")
-  colorscheme tender
+
+if has("gui_running")
   set termguicolors
 let macvim_skip_colorscheme=1
 endif
-
+hi Normal ctermbg=black "firewatch needs this extra
+hi Search cterm=NONE ctermfg=black ctermbg=white
+hi Visual cterm=NONE ctermfg=white ctermbg=red guibg=red "search highlighting
 " tab bg color
 " line numbers
 set nu
@@ -321,3 +322,4 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 " ==================================================
+:set wrapscan "toggle arround search
