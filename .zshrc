@@ -1,5 +1,9 @@
 . ~/.bash_profile # load everything
 
+autoload bashcompinit
+bashcompinit
+. ~/scripts/drush.complete.sh
+
 ZSH_THEME="amuse" # full line with time
 setopt inc_append_history # keep history in chronological order (zsh)
 setopt share_history # cmd in shell 1 becomes last command in shell two (zsh)
@@ -61,17 +65,17 @@ export ZSH=/Users/ssilesky/.oh-my-zsh
 # Add wisely, as too many plugins slow down shell startup.
 # gl
 plugins=(
-gulp
-docker
-# nvm
-npm
-git-extras
-tmuxinator
-tmux
-vi-mode
-grunt
-# zsh-output-highlighting
-zsh-syntax-highlighting
+  gulp
+  docker
+  # nvm
+  npm
+  git-extras
+  tmuxinator
+  tmux
+  vi-mode
+  grunt
+  # zsh-output-highlighting
+  zsh-syntax-highlighting
  )
 source $ZSH/oh-my-zsh.sh
 # User configuration
