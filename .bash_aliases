@@ -74,7 +74,7 @@ alias as='alias | grep'
 alias mail.delete="sudo rm /var/mail/$USER"
 alias c="clear"
 alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
-alias reprof="rezsh && source ~/.bash_profile && echo 'bash reloaded.'"
+alias reprof=". ~/.bash_profile && echo 'profile reloaded.'"
 alias reall="rezsh && reprof"
 
 # ... text files

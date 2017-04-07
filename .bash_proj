@@ -1,4 +1,5 @@
 
+
 # Projects
 # ........
 alias playdn="cd ~/projects/play.dn"
@@ -14,7 +15,7 @@ alias gft.bm='vim ~/projects/giftr/bm.md'
 alias gft='cd ~/projects/giftr'
 alias gftm='cd ~/projects/giftr/mobile'
 # ... site-factory
-
+alias sf.restore="/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/configure-dev-with-drush.sh"
 alias sf.doc-code="code -r ~/projects/sf/sf/docroot"
 alias sf.doc-pstorm="pstorm /Users/ssilesky/projects/sf/sf/docroot"
 alias sf.drush='export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot"'

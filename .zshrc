@@ -1,8 +1,5 @@
 . ~/.bash_profile # load everything
 
-autoload bashcompinit
-bashcompinit
-. ~/scripts/drush.complete.sh
 
 ZSH_THEME="amuse" # full line with time
 setopt inc_append_history # keep history in chronological order (zsh)
@@ -113,3 +110,5 @@ source $ZSH/oh-my-zsh.sh
 . ~/.oh-my-zsh/plugins/z/z.sh
 . ~/partials/zsh_vi_settings.sh
 . ~/partials/autoload-nvmrc.sh #taken from https://github.com/creationix/nvm
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
