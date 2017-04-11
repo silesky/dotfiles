@@ -152,7 +152,7 @@ hi Visual cterm=NONE ctermfg=white ctermbg=red guibg=red "search highlighting
 " firewatch tender Monokai gotham zenburn 256_noir 256_grayvim
 
 set background=dark
-colorscheme solarized
+colorscheme tender
 " tab bg color
 " line numbers
 set nu
