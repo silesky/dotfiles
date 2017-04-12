@@ -32,12 +32,15 @@ pre:
     && open "http://docroot.dd:8083/"
     && github
     # && pstorm "~/projects/sf/sf/docroot"
-startup_window: server
+startup_window: Gulp
 windows:
-  - editor:
+  - Gulp:
+      panes:
+        - gulp watch:all
+        - gulp watch:tpl
+        - livereload templates
+  - Drush:
       panes:
         - export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot" && drush uli
-        - gulp watch:sla
-        - livereload css --debug
+        #- livereload css --debug
         # - cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega && grunt watch
-        # browser-sync start --proxy http://docroot.dd:8083/ --files .
