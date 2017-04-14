@@ -76,7 +76,6 @@ Plug 'luochen1990/rainbow'
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
 
-
 " Completor: Postinstall hook (for versions over 8, install this, otherwise install ycm)
 function! BuildCompletor(info)
   if a:info.status == 'installed' || 'updated' || a:info.force
@@ -138,26 +137,29 @@ set ignorecase " ignore case when i search by default
 set smartcase " goes with ignorecase... It means that unless there is uppercase on the string, it's case insensive by default
 set incsearch " see searc results as I type them in
 
+" firewatch tender Monokai gotham zenburn 256_noir 256_grayvim
 set t_Co=256 "otherwise you'll only see  8bits
-" colorscheme tender
+
 if has("gui_running")
   set termguicolors
   let macvim_skip_colorscheme=1
 endif
-" hi Normal ctermbg=black "firewatch needs this extra
+
+function! SetSolarized()
+  set bg=dark
+  let g:solarized_termcolors=16
+  set termguicolors
+  colorscheme solarized
+endfunction
+call SetSolarized()
+
+hi Normal ctermbg=black "firewatch needs this extra
 hi Search cterm=NONE ctermfg=black ctermbg=white
 hi Visual cterm=NONE ctermfg=white ctermbg=red guibg=red "search highlighting
 
-"
-" firewatch tender Monokai gotham zenburn 256_noir 256_grayvim
-
-set background=dark
-colorscheme tender
-" tab bg color
 " line numbers
 set nu
-
-"Keep 8 lines above or below the cursor when scrolling.
+"Keep 8 lines above or below the cursor when scroling.
 set scrolloff=8
 
 "wrap lines by default
