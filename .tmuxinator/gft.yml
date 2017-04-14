@@ -21,6 +21,3 @@ windows:
         - sleep 5 && rnri
           # - npm run testwatch
           # - cd mobile && sleep 10 && react-native log-ios
-  - Editor:
-      panes:
-        - vi .
