@@ -1,15 +1,6 @@
 {
-  "plugins": [
-    "react",
-    "mocha",
-    "standard",
-    "promise"
-  ],
-  "extends": [
-    "standard",
-    // "eslint:recommended",
-    "plugin:react/recommended", //paired with plugins: ["react"]
-  ],
+  "plugins": ["react","mocha","standard","promise"],
+  "extends": ["standard","plugin:react/recommended"], //paired with plugins: ["react"]
   "parser": "babel-eslint", // without parser specified, I just get import is not defined
   "parserOptions": {
     "ecmaVersion": 7,
@@ -174,7 +165,6 @@
       "block": { "balanced": true, "markers": ["*package", "!", ",", ":", "::", "flow-include"], "exceptions": ["*"] }
     }],
     "symbol-description": "warn",
-
     "template-curly-spacing": ["warn", "never"],
     "template-tag-spacing": ["warn", "never"],
     "unicode-bom": ["warn", "never"],
@@ -191,19 +181,3 @@
   }
 }
 
-/*
-// 0 = off, 1=error, 2=warn
-react/display-name
-react/jsx-no-duplicate-props
-react/jsx-no-undef
-react/jsx-uses-react
-react/jsx-uses-vars
-react/no-deprecated
-react/no-direct-mutation-state
-react/no-find-dom-node
-react/no-is-mounted
-react/no-unknown-property
-react/prop-types
-react/react-in-jsx-scope
-react/require-render-return
-*/

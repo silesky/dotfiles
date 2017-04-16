@@ -57,14 +57,13 @@ Plug 'jszakmeister/vim-togglecursor'
 Plug 'tpope/vim-sleuth'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" haya14busa/incsearch.vim "
+Plug 'haya14busa/incsearch.vim'
 " colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'jacoborus/tender.vim' "sort of like firwatch but works with mvim
 Plug 'hhsnopek/vim-firewatch' "doesn't work with mvim
 Plug 'dikiaap/minimalist'
-
-
+Plug 'lifepillar/vim-solarized8'
 "detect indent
 " sudo npm -g install instant-markdown-d
 Plug 'scrooloose/nerdtree'
@@ -76,6 +75,8 @@ Plug 'luochen1990/rainbow'
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
 
+" COLORSCHEME
+noremap <C-k><C-z> :colorscheme zenburn <CR>
 " Completor: Postinstall hook (for versions over 8, install this, otherwise install ycm)
 function! BuildCompletor(info)
   if a:info.status == 'installed' || 'updated' || a:info.force
@@ -145,15 +146,13 @@ if has("gui_running")
   let macvim_skip_colorscheme=1
 endif
 
+
 function! SetSolarized()
-  set bg=dark
-  let g:solarized_termcolors=16
-  set termguicolors
-  colorscheme solarized
+  colorscheme solarized8_dark_high
 endfunction
 call SetSolarized()
 
-hi Normal ctermbg=black "firewatch needs this extra
+"hi Normal ctermbg=002b36 "firewatch needs this extra
 hi Search cterm=NONE ctermfg=black ctermbg=white
 hi Visual cterm=NONE ctermfg=white ctermbg=red guibg=red "search highlighting
 
@@ -216,9 +215,11 @@ if v:version >= 800
   let g:ale_sign_warning = '+'
   let g:ale_sign_column_always = 1
   let g:ale_linters = {'javascript': ['eslint'] }
+  let g:ale_set_loclist = 0
+  let g:ale_set_quickfix = 1
 endif
 "gutter column
-:highlight clear SignColumn
+ :highlight clear SignColumn
 
 " wrap toggle
 function! ToggleWrap()
@@ -273,7 +274,16 @@ let g:ctrlp_map='<c-p>'
 " let g:ctrlp_cmd = 'CtrlPMRU'
 " don't limit the ctrlp results
 let g:ctrlp_match_window = 'min:4,max:25'
-let g:ctrlp_cmd = 'CtrlPMixed' "to switch between recent, file etc, ctrl-f/b
+" let g:ctrlp_cmd = 'CtrlPMixed' "to switch between recent, file etc, ctrl-f/b
+let g:ctrlp_cmd = 'call CallCtrlP()'
+func! CallCtrlP()
+    if exists('s:called_ctrlp')
+        CtrlPLastMode
+    else
+        let s:called_ctrlp = 1
+        CtrlPMRU
+    endif
+endfunc
 """""""""""""""""""""""""""
 " JSBEAUTIFY
 map <F4> :call JsBeautify()<cr>
@@ -328,3 +338,7 @@ if executable('ag')
 endif
 " ==================================================
 :set wrapscan "toggle arround search
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+let g:incsearch#auto_nohlsearch = 1

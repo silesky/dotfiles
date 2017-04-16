@@ -1,6 +1,4 @@
 . ~/.bash_profile # load everything
-bindkey "^[[A" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
 ZSH_THEME="amuse" # full line with time
 setopt inc_append_history # keep history in chronological order (zsh)
 setopt share_history # cmd in shell 1 becomes last command in shell two (zsh)
@@ -65,11 +63,11 @@ plugins=(
   gulp
   docker
   # nvm
+  vi-mode
   npm
   git-extras
   tmuxinator
   tmux
-  vi-mode
   grunt
   # zsh-output-highlighting
   zsh-syntax-highlighting

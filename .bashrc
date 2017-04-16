@@ -21,9 +21,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 alias loadnvm="source '$HOME/.rvm/scripts/rvm'"
 # oh-my-zsh slow https://github.com/robbyrussell/oh-my-zsh/issues/5327
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-        export TERM='xterm-256color'
-else
-        export TERM='xterm-color'
-fi
+
 
