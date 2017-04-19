@@ -13,13 +13,14 @@ windows:
         - sleep 30 && npm run watch
         - sleep 30 && seed
           # sleep 30 && npm run testwatch
-  - mobile:
+  - rnri:
       root: ~/projects/giftr/mobile
       panes:
         - sleep 5 && react-native run-ios --simulator="iPhone 6 Plus"
           # - npm run testwatch
           # - cd mobile && sleep 10 && react-native log-ios
-  - packager:
+  - packager+remotedev:
       root: ~/projects/giftr/mobile
       panes:
         - npm start
+        - npm run remotedev-start
