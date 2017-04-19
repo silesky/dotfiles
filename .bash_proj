@@ -15,6 +15,7 @@ alias gft.bm='vim ~/projects/giftr/bm.md'
 alias gft='cd ~/projects/giftr'
 alias gftm='cd ~/projects/giftr/mobile'
 # ... site-factory
+alias sf.default="cd ~/projects/sf/sf/docroot/sites/default"
 alias sf.restore="/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/configure-dev-with-drush.sh"
 alias sf.doc-code="code -r ~/projects/sf/sf/docroot"
 alias sf.doc-pstorm="pstorm /Users/ssilesky/projects/sf/sf/docroot"
