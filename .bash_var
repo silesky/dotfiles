@@ -1,10 +1,9 @@
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export HOME=/Users/ssilesky
 export NVM_DIR="$HOME/.nvm"
 export HISTCONTROL=ignoredups:erasedups
 export VISUAL=code
 export EDITOR="$VISUAL"
 export EVENT_NOKQUEUE=1 #fix for broken kqueue message in tmux`
-export HOME=/Users/ssilesky
 export GREP_COLOR='00;38;5;226'
 export CLICOLOR=1
 export ANDROID_HOME=$HOME/Library/Android/sdk

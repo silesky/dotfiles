@@ -1,4 +1,3 @@
- . ~/.bash_profile # load everything
 setopt inc_append_history # keep history in chronological order (zsh)
 setopt share_history # cmd in shell 1 becomes last command in shell two (zsh)
 
@@ -69,6 +68,7 @@ plugins=(
   git-extras
   tmuxinator
   tmux
+  # rvm
   grunt
   # zsh-output-highlighting
   zsh-syntax-highlighting
@@ -110,3 +110,5 @@ source $ZSH/oh-my-zsh.sh
 . ~/partials/zsh_vi_settings.sh
 
 # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#
+. ~/.bash_profile # load everything

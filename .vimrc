@@ -150,8 +150,8 @@ endif
 function! SetSolarized()
   colorscheme solarized8_dark_high
 endfunction
-call SetSolarized()
-
+" call SetSolarized()
+colorscheme Monokai
 "hi Normal ctermbg=002b36 "firewatch needs this extra
 hi Search cterm=NONE ctermfg=black ctermbg=white
 hi Visual cterm=NONE ctermfg=white ctermbg=red guibg=red "search highlighting
