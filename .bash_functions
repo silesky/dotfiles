@@ -78,3 +78,6 @@ extract() {
         echo "'$1' is not a valid file"
     fi
 }
+
+dedupe() { nl "$1" | sort -k 2  -k 1,1nr | uniq -f 1 | sort -n |
+          cut -f 2 > ~/dedupe && cp ~/dedupe "$1"; }

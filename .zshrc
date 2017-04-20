@@ -1,5 +1,12 @@
 setopt inc_append_history # keep history in chronological order (zsh)
 setopt share_history # cmd in shell 1 becomes last command in shell two (zsh)
+setopt    EXTENDED_HISTORY
+setopt    HIST_IGNORE_ALL_DUPS
+setopt    HIST_IGNORE_DUPS
+setopt    HIST_IGNORE_SPACE
+setopt    HIST_NO_STORE
+setopt    HIST_REDUCE_BLANKS
+setopt    HIST_VERIFY
 
 # ______________ ZSH CONFIG _________________
 ZSH_THEME="amuse" # full line with time
