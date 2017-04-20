@@ -24,3 +24,7 @@ windows:
       panes:
         - npm start
         - npm run remotedev-start
+  - android:
+      root: ~/projects/giftr/mobile
+    -   - npm run emu
+        - sleep 15 && react-native run-android
