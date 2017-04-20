@@ -3,15 +3,6 @@
 # (that is, the specified path is appended before the standard places contained within $PATH).
 # $PATH goes at the beginning. Path goes at the end in the default places, because I want the default places to go first.
 
-# Vars
-export HOME=/Users/ssilesky
-export GREP_COLOR='00;38;5;226'
-export CLICOLOR=1
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
-export HISTCONTROL="erasedups:ignoreboth"
-export HISTFILESIZE=500000
-export HISTSIZE=100000
 # Paths
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export PATH=$PATH:/Applications/DevDesktop/tools

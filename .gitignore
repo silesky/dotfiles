@@ -13,10 +13,8 @@
 !.tmuxinator/**
 !.stylelintrc
 !.tigrc
-# bash stuff
-!.paths
-!.bashrc
 !.bash*
+
 .bash_private
 .bash_history
 .bash_logout

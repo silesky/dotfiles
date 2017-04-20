@@ -1,7 +1,7 @@
 include () {
    [[ -f "$1" ]] && source "$1"
 }
-include ~/.paths
+include ~/.bash_paths
 include ~/.bash_var
 include ~/.bash_functions
 include ~/.bash_proj
