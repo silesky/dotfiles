@@ -36,6 +36,6 @@
 !.tern-config
 !/.alfred_sync/**/*
 /.alfred_sync/**/*.db
-!/.oh-my-zsh/**/*
+!/.oh-my-zsh/custom/**/*
 !/scripts/*
 !scripts

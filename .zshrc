@@ -1,10 +1,11 @@
-. ~/.bash_profile # load everything
-ZSH_THEME="amuse" # full line with time
+ . ~/.bash_profile # load everything
 setopt inc_append_history # keep history in chronological order (zsh)
 setopt share_history # cmd in shell 1 becomes last command in shell two (zsh)
-DEFAULT_USER="ssilesky"
-# tmuxinator thing
-DISABLE_AUTO_TITLE=true
+
+# ______________ ZSH CONFIG _________________
+ZSH_THEME="amuse" # full line with time
+
+
 #########0*#####################################################
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -107,6 +108,5 @@ source $ZSH/oh-my-zsh.sh
 . ~/partials/zsh_syntax_highlight_settings.sh
 . ~/.oh-my-zsh/plugins/z/z.sh
 . ~/partials/zsh_vi_settings.sh
-. ~/partials/autoload-nvmrc.sh #taken from https://github.com/creationix/nvm
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
