@@ -75,9 +75,6 @@ alias hs='history | grep'
 alias as='alias | grep'
 alias mail.delete="sudo rm /var/mail/$USER"
 alias c="clear"
-alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
-alias reprof=". ~/.bash_profile && echo 'profile reloaded.'"
-alias reall="rezsh && reprof"
 
 # ... text files
 alias .sass-lint="vim ~/.sass-lint.yml"
@@ -89,6 +86,12 @@ alias bash_functions="vim ~/.bash_functions"
 alias paths="vim ~/.paths"
 
 # .... dotfiles
+alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
+alias reprof=". ~/.bash_profile && echo 'profile reloaded.'"
+alias reall="rezsh && reprof"
+alias bash_="vim ~/.bash_*"
+alias vars="vim ~/.bash_vars"
+alias paths="vim ~/.bash_paths"
 alias gitconfig="vim ~/.gitconfig"
 alias gitignore="vim ~/.gitignore"
 alias prof="vim ~/.bash_profile"

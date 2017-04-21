@@ -1,49 +1,23 @@
 setopt inc_append_history # keep history in chronological order (zsh)
 setopt share_history # cmd in shell 1 becomes last command in shell two (zsh)
-setopt    EXTENDED_HISTORY
-setopt    HIST_IGNORE_ALL_DUPS
-setopt    HIST_IGNORE_DUPS
-setopt    HIST_IGNORE_SPACE
-setopt    HIST_NO_STORE
-setopt    HIST_REDUCE_BLANKS
-setopt    HIST_VERIFY
+setopt extended_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_no_store
+setopt hist_reduce_blanks
+setopt hist_verify
 
 # ______________ ZSH CONFIG _________________
-ZSH_THEME="amuse" # full line with time
-
-
-#########0*#####################################################
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
+
 export ZSH=/Users/ssilesky/.oh-my-zsh
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="lambda"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
+# https://github.com/robbyrussell/oh-my-zsh/wiki/Customization
+ZSH_CUSTOM=/Users/ssilesky/.oh-my-zsh/custom # any themes/* or plugins/* will override the default themes/plugins
+ZSH_THEME="amuse" # full line with time
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -58,14 +32,8 @@ export ZSH=/Users/ssilesky/.oh-my-zsh
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-# gl
 plugins=(
   gulp
   docker
@@ -81,41 +49,13 @@ plugins=(
   zsh-syntax-highlighting
  )
 source $ZSH/oh-my-zsh.sh
-# User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+#_______________END ZSH CONFIG____________________________
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-##################################################################
-
-# source plugins last
 . ~/partials/zsh_syntax_highlight_settings.sh
 . ~/.oh-my-zsh/plugins/z/z.sh
 . ~/partials/zsh_vi_settings.sh
 
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-#
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
 . ~/.bash_profile # load everything
