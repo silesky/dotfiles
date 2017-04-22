@@ -3,7 +3,7 @@
 name: gft
 root: ~/projects/giftr/
 
-pre: code .
+pre: code -r .
 startup_window: server
 windows:
   - server:
@@ -11,16 +11,15 @@ windows:
       panes:
         - sudo mongod
         - sleep 30 && npm run watch
-        - sleep 30 && seed
           # sleep 30 && npm run testwatch
   - rnri:
       root: ~/projects/giftr/mobile
       panes:
+        - npm start
         - sleep 5 && react-native run-ios --simulator="iPhone 6 Plus"
           # - npm run testwatch
           # - cd mobile && sleep 10 && react-native log-ios
   - packager+remotedev:
       root: ~/projects/giftr/mobile
       panes:
-        - npm start
         - npm run remotedev-start
