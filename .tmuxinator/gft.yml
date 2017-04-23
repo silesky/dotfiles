@@ -3,15 +3,15 @@
 name: gft
 root: ~/projects/giftr/
 
-pre: code -r .
+pre: code -r . && kill -9 $(lsof -t -i:5858)
 startup_window: server
 windows:
   - server:
       root: ~/projects/giftr/server
       panes:
-        - sudo mongod
-        - sleep 30 && npm run watch
-          # sleep 30 && npm run testwatch
+        - mongo-start
+        - sleep 20 && npm run watch
+        - npm run watch
   - rnri:
       root: ~/projects/giftr/mobile
       panes:

@@ -47,6 +47,7 @@ alias npmw="npm run watch"
 alias npmt="npm test"
 alias dockerq="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 alias doc="cd ~/Documents"
+alias mongo-start=". ~/scripts/mongo-start.sh"
 alias stopm="kill -9 `pgrep -f mongod`"
 alias bang="echo '/usr/bin/env bash'"
 # scripts
