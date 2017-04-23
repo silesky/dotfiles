@@ -108,6 +108,8 @@ alias lynda="cd ~/Lynda/"
 alias rp="realpath"
 
 # ... git
+alias gitb="git checkout HEAD~"
+alias gitf="git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout"
 alias gshowhidden="git ls-files -v | grep '^[^H]'"
 alias gshow="git show --color --pretty=format:%b"
 alias grs="git reset"
