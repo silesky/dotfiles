@@ -63,6 +63,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'jacoborus/tender.vim' "sort of like firwatch but works with mvim
 Plug 'hhsnopek/vim-firewatch' "doesn't work with mvim
 Plug 'dikiaap/minimalist'
+
 Plug 'lifepillar/vim-solarized8'
 "detect indent
 " sudo npm -g install instant-markdown-d
@@ -145,7 +146,7 @@ if has("gui_running")
   set termguicolors
   let macvim_skip_colorscheme=1
 endif
-
+colorscheme material-theme
 
 function! SetSolarized()
   colorscheme solarized8_dark_high
