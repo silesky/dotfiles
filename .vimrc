@@ -1,3 +1,4 @@
+
 let g:rainbow_active = 1
 if has('unix')
  "LINUX STUFF
@@ -75,7 +76,7 @@ Plug 'marijnh/tern_for_vim'
 Plug 'luochen1990/rainbow'
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
-
+Plug 'terryma/vim-expand-region'
 " COLORSCHEME
 noremap <C-k><C-z> :colorscheme zenburn <CR>
 " Completor: Postinstall hook (for versions over 8, install this, otherwise install ycm)
@@ -171,10 +172,10 @@ set showbreak=" "
 map q: :q
 
 " keybindings
-inoremap jj <Esc>
+inoremap jj <Leader>
 
 " double escape to save
-map <ESC><ESC> :w<CR>
+map <Leader><Leader> :w<CR>
 
 " mouse for scrolling and window resizing
 set mouse=a
@@ -343,3 +344,7 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 let g:incsearch#auto_nohlsearch = 1
+" hit v to expand one word, v again to expand a paragraph
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+
