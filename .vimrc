@@ -18,7 +18,7 @@ endif
 if has('win32')
     set guifont=Consolas:h12   " Win32.
 elseif has('gui_macvim')
-    set guifont=Monaco:h14     " OSX.
+  set guifont=Monaco:h14     " OSX.
 else
     set guifont=Monaco     " OSX.
 endif
@@ -133,7 +133,7 @@ map <F8> gg=G``:echoerr 'Auto indented.'<CR>
 " reload myvimrc with alt-r
 noremap <C-k><C-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 syntax enable
-nmap <silent> <leader>p :set paste<CR>"*p:set nopaste<CR>
+nmap <silent> <Esc>p :set paste<CR>"*p:set nopaste<CR>
 
 set hlsearch " search highlighting.
 set ignorecase " ignore case when i search by default
@@ -147,7 +147,6 @@ if has("gui_running")
   set termguicolors
   let macvim_skip_colorscheme=1
 endif
-colorscheme material-theme
 
 function! SetSolarized()
   colorscheme solarized8_dark_high
@@ -172,10 +171,10 @@ set showbreak=" "
 map q: :q
 
 " keybindings
-inoremap jj <Leader>
+inoremap jj <Esc>
 
 " double escape to save
-map <Leader><Leader> :w<CR>
+map <Esc><Esc> :w<CR>
 
 " mouse for scrolling and window resizing
 set mouse=a
@@ -254,7 +253,6 @@ au BufRead,BufNewFile *.json setfiletype javascript
 if &diff
   colorscheme Monokai
 endif
-
 "reload
 noremap <F12> :e!<CR>
 
@@ -317,7 +315,7 @@ let g:netrw_winsize = 25
 noremap !! :set shellcmdflag=-ic<CR>
 """"""""""""""""""""""""""""""""""
 " EasyMotion
-map <Leader> <Plug>(easymotion-prefix)
+map <Esc> <Plug>(easymotion-prefix)
 "--------------------------
 " auto watch changes to file without any prompt
 set autoread

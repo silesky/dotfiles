@@ -17,7 +17,7 @@ export ZSH=/Users/ssilesky/.oh-my-zsh
 ZSH_CUSTOM=/Users/ssilesky/.oh-my-zsh/custom # any themes/* or plugins/* will override the default themes/plugins
 ZSH_THEME="amuse" # full line with time
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -47,10 +47,14 @@ plugins=(
   grunt
   # zsh-output-highlighting
   zsh-syntax-highlighting
+  zsh-autosuggestions
  )
 source $ZSH/oh-my-zsh.sh
 
 #_______________END ZSH CONFIG____________________________
+# zsh-autosuggestions
+#   https://github.com/zsh-users/zsh-autosuggestions
+bindkey '^y' autosuggest-accept
 
 . ~/partials/zsh_syntax_highlight_settings.sh
 . ~/.oh-my-zsh/plugins/z/z.sh

@@ -3,6 +3,7 @@ precmd() { RPROMPT="" }
 bindkey -M viins '^R' history-incremental-pattern-search-backward
 bindkey -M viins '^B' history-incremental-pattern-search-backward
 bindkey -M viins '^F' history-incremental-pattern-search-forward
+bindkey -M viins '^Y' clear-screen
 #
 #
 #function zle-line-init zle-keymap-select {
