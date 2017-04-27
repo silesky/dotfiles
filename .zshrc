@@ -8,6 +8,8 @@ setopt hist_no_store
 setopt hist_reduce_blanks
 setopt hist_verify
 
+
+
 # ______________ ZSH CONFIG _________________
 # Path to your oh-my-zsh installation.
 
@@ -55,6 +57,7 @@ source $ZSH/oh-my-zsh.sh
 # zsh-autosuggestions
 #   https://github.com/zsh-users/zsh-autosuggestions
 bindkey '^y' autosuggest-accept
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=red"
 
 . ~/partials/zsh_syntax_highlight_settings.sh
 . ~/.oh-my-zsh/plugins/z/z.sh

@@ -29,18 +29,16 @@ root: ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/
 pre:
   - open -a "Acquia Dev Desktop"
     && open "https://trello.com/b/kSOmmLF10/sla-drupal-migration"
-    && open "http://docroot.dd:8083/"
-    && github
+    && open "http://localhost:3000"
     # && pstorm "~/projects/sf/sf/docroot"
 startup_window: Gulp
 windows:
   - Gulp:
       panes:
+        - git log --stat
         - gulp watch:all
         - gulp watch:tpl
         - livereload templates
   - Drush:
       panes:
-        - export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot" && drush uli
-        #- livereload css --debug
-        # - cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega && grunt watch
+        - export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot" && echo "drush!"
