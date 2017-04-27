@@ -56,7 +56,6 @@ source $ZSH/oh-my-zsh.sh
 #_______________END ZSH CONFIG____________________________
 # zsh-autosuggestions
 #   https://github.com/zsh-users/zsh-autosuggestions
-bindkey '^y' autosuggest-accept
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=red"
 
 . ~/partials/zsh_syntax_highlight_settings.sh
