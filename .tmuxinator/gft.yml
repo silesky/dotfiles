@@ -16,7 +16,7 @@ windows:
       root: ~/projects/giftr/mobile
       panes:
         - npm start
-        - git log --state --oneline
+        - git log --stat --oneline
         - sleep 5 && react-native run-ios --simulator="iPhone 6 Plus"
           # - npm run testwatch
           # - cd mobile && sleep 10 && react-native log-ios
