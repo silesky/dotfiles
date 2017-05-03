@@ -341,7 +341,7 @@ endif
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-let g:incsearch#auto_nohlsearch = 1
+" let g:incsearch#auto_nohlsearch = 1
 " hit v to expand one word, v again to expand a paragraph
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
