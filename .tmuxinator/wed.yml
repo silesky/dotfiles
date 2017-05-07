@@ -32,5 +32,5 @@ windows:
       layout: main-vertical
       panes:
         - code .
-        - bundle exec jekyll build --watch --incremental
+        - bundle exec jekyll build --watch
         - browser-sync start --server _site --proxy --files **/*.css
