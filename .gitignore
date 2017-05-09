@@ -34,8 +34,7 @@
 !/partials/*
 !/partials/
 !.tern-config
-!/.alfred_sync/**/*
-/.alfred_sync/**/*.db
 !/.oh-my-zsh/custom/**/*
 !/scripts/*
 !scripts
+.DS_Store
