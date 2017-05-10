@@ -1,4 +1,4 @@
-
+let g:mapleader = " "
 let g:rainbow_active = 1
 if has('unix')
  "LINUX STUFF
@@ -40,6 +40,8 @@ call plug#begin('~/.vim/plugged')
 if v:version >=800
   Plug 'w0rp/ale'
 endif
+
+Plug 'tpope/vim-unimpaired' "quickfix ]a and [b
 Plug 'mxw/vim-jsx'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
@@ -133,7 +135,7 @@ map <F8> gg=G``:echoerr 'Auto indented.'<CR>
 " reload myvimrc with alt-r
 noremap <C-k><C-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 syntax enable
-nmap <silent> <Esc>p :set paste<CR>"*p:set nopaste<CR>
+nmap <silent> sc>p :set paste<CR>"*p:set nopaste<CR>
 
 set hlsearch " search highlighting.
 set ignorecase " ignore case when i search by default
@@ -171,10 +173,10 @@ set showbreak=" "
 map q: :q
 
 " keybindings
-inoremap jj <Esc>
+inoremap jj <leader>
 
 " double escape to save
-map <Esc><Esc> :w<CR>
+map <leader><leader> :w<CR>
 
 " mouse for scrolling and window resizing
 set mouse=a
@@ -210,8 +212,7 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " ale uses timers which only work om vim 8
 if v:version >= 800
-  nmap <silent> <F2> <Plug>(ale_previous_wrap)
-  nmap <silent> <F3> <Plug>(ale_next_wrap)
+  nmap <silent> <F2> <Plug>(ale_next_wrap)
   let g:ale_sign_error = '++'
   let g:ale_sign_warning = '+'
   let g:ale_sign_column_always = 1
@@ -315,7 +316,7 @@ let g:netrw_winsize = 25
 noremap !! :set shellcmdflag=-ic<CR>
 """"""""""""""""""""""""""""""""""
 " EasyMotion
-map <Esc> <Plug>(easymotion-prefix)
+map <leader> <Plug>(easymotion-prefix)
 "--------------------------
 " auto watch changes to file without any prompt
 set autoread
@@ -341,8 +342,38 @@ endif
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
-" let g:incsearch#auto_nohlsearch = 1
+let g:incsearch#auto_nohlsearch = 1 "don't show automatically
+map ?? :noh<CR>
+:vmap * y:let @/ = @"<CR>
 " hit v to expand one word, v again to expand a paragraph
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+function! GetBufferList()
+  redir =>buflist
+  silent! ls!
+  redir END
+  return buflist
+endfunction
 
+"" use leader+q to toggle quickfix
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec(a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
+nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
