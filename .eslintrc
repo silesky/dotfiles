@@ -24,6 +24,7 @@
       "no-debugger": 1,
       "no-console": 1,
       "no-case-declarations": 0,
+      "no-unused-expressions": 0, // mocha complains
       "no-var": 1,
       "array-bracket-spacing": [1, "always"], // space inside brackets
       "object-curly-spacing": [1, "always"], // I like space inside braces
@@ -136,7 +137,6 @@
       "no-unreachable": "warn",
       "no-unsafe-finally": "warn",
       "no-unsafe-negation": "warn",
-      "no-unused-expressions": ["warn", { "allowShortCircuit": true, "allowTernary": true }],
       "no-unused-vars": "warn",
       "no-use-before-define": ["warn", { "functions": false, "classes": false, "variables": false }],
       "no-useless-call": "warn",
