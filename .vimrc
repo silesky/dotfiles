@@ -1,3 +1,4 @@
+let g:mapleader = " "
 let g:rainbow_active = 1
 if has('unix')
  "LINUX STUFF
@@ -17,7 +18,7 @@ endif
 if has('win32')
     set guifont=Consolas:h12   " Win32.
 elseif has('gui_macvim')
-    set guifont=Monaco:h14     " OSX.
+  set guifont=Monaco:h14     " OSX.
 else
     set guifont=Monaco     " OSX.
 endif
@@ -39,6 +40,8 @@ call plug#begin('~/.vim/plugged')
 if v:version >=800
   Plug 'w0rp/ale'
 endif
+
+Plug 'tpope/vim-unimpaired' "quickfix ]a and [b
 Plug 'mxw/vim-jsx'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
@@ -48,6 +51,7 @@ Plug 'tpope/vim-repeat' "let's you use the dot command with vim surround
 Plug 'tpope/vim-surround' "cst
 Plug 'avakhov/vim-yaml'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript' "syntax hl
 Plug 'maksimr/vim-jsbeautify' "f3
 Plug 'gregsexton/gitv'
@@ -57,14 +61,14 @@ Plug 'jszakmeister/vim-togglecursor'
 Plug 'tpope/vim-sleuth'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" haya14busa/incsearch.vim "
+Plug 'haya14busa/incsearch.vim'
 " colorschemes
 Plug 'flazz/vim-colorschemes'
 Plug 'jacoborus/tender.vim' "sort of like firwatch but works with mvim
 Plug 'hhsnopek/vim-firewatch' "doesn't work with mvim
 Plug 'dikiaap/minimalist'
 
-
+Plug 'lifepillar/vim-solarized8'
 "detect indent
 " sudo npm -g install instant-markdown-d
 Plug 'scrooloose/nerdtree'
@@ -75,8 +79,9 @@ Plug 'marijnh/tern_for_vim'
 Plug 'luochen1990/rainbow'
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
-
-
+Plug 'terryma/vim-expand-region'
+" COLORSCHEME
+noremap <C-k><C-z> :colorscheme zenburn <CR>
 " Completor: Postinstall hook (for versions over 8, install this, otherwise install ycm)
 function! BuildCompletor(info)
   if a:info.status == 'installed' || 'updated' || a:info.force
@@ -131,30 +136,33 @@ map <F8> gg=G``:echoerr 'Auto indented.'<CR>
 " reload myvimrc with alt-r
 noremap <C-k><C-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 syntax enable
-nmap <silent> <leader>p :set paste<CR>"*p:set nopaste<CR>
+nmap <silent> sc>p :set paste<CR>"*p:set nopaste<CR>
 
 set hlsearch " search highlighting.
 set ignorecase " ignore case when i search by default
 set smartcase " goes with ignorecase... It means that unless there is uppercase on the string, it's case insensive by default
 set incsearch " see searc results as I type them in
 
+" firewatch tender Monokai gotham zenburn 256_noir 256_grayvim
 set t_Co=256 "otherwise you'll only see  8bits
-" firewatch Monokai gotham zenburn 256_noir 256_grayvim
-colorscheme tender
-
 
 if has("gui_running")
   set termguicolors
-let macvim_skip_colorscheme=1
+  let macvim_skip_colorscheme=1
 endif
-hi Normal ctermbg=black "firewatch needs this extra
+
+function! SetSolarized()
+  colorscheme solarized8_dark_high
+endfunction
+" call SetSolarized()
+colorscheme Monokai
+"hi Normal ctermbg=002b36 "firewatch needs this extra
 hi Search cterm=NONE ctermfg=black ctermbg=white
 hi Visual cterm=NONE ctermfg=white ctermbg=red guibg=red "search highlighting
-" tab bg color
+
 " line numbers
 set nu
-
-"Keep 8 lines above or below the cursor when scrolling.
+"Keep 8 lines above or below the cursor when scroling.
 set scrolloff=8
 
 "wrap lines by default
@@ -166,10 +174,10 @@ set showbreak=" "
 map q: :q
 
 " keybindings
-inoremap jj <Esc>
+inoremap jj <leader>
 
 " double escape to save
-map <ESC><ESC> :w<CR>
+map <leader><leader> :w<CR>
 
 " mouse for scrolling and window resizing
 set mouse=a
@@ -205,15 +213,16 @@ set timeoutlen=1000 ttimeoutlen=0
 
 " ale uses timers which only work om vim 8
 if v:version >= 800
-  nmap <silent> <F2> <Plug>(ale_previous_wrap)
-  nmap <silent> <F3> <Plug>(ale_next_wrap)
+  nmap <silent> <F2> <Plug>(ale_next_wrap)
   let g:ale_sign_error = '++'
   let g:ale_sign_warning = '+'
   let g:ale_sign_column_always = 1
   let g:ale_linters = {'javascript': ['eslint'] }
+  let g:ale_set_loclist = 0
+  let g:ale_set_quickfix = 1
 endif
 "gutter column
-:highlight clear SignColumn
+ :highlight clear SignColumn
 
 " wrap toggle
 function! ToggleWrap()
@@ -246,7 +255,6 @@ au BufRead,BufNewFile *.json setfiletype javascript
 if &diff
   colorscheme Monokai
 endif
-
 "reload
 noremap <F12> :e!<CR>
 
@@ -268,7 +276,16 @@ let g:ctrlp_map='<c-p>'
 " let g:ctrlp_cmd = 'CtrlPMRU'
 " don't limit the ctrlp results
 let g:ctrlp_match_window = 'min:4,max:25'
-let g:ctrlp_cmd = 'CtrlPMixed' "to switch between recent, file etc, ctrl-f/b
+" let g:ctrlp_cmd = 'CtrlPMixed' "to switch between recent, file etc, ctrl-f/b
+let g:ctrlp_cmd = 'call CallCtrlP()'
+func! CallCtrlP()
+    if exists('s:called_ctrlp')
+        CtrlPLastMode
+    else
+        let s:called_ctrlp = 1
+        CtrlPMRU
+    endif
+endfunc
 """""""""""""""""""""""""""
 " JSBEAUTIFY
 map <F4> :call JsBeautify()<cr>
@@ -300,7 +317,7 @@ let g:netrw_winsize = 25
 noremap !! :set shellcmdflag=-ic<CR>
 """"""""""""""""""""""""""""""""""
 " EasyMotion
-map <Leader> <Plug>(easymotion-prefix)
+map <leader> <Plug>(easymotion-prefix)
 "--------------------------
 " auto watch changes to file without any prompt
 set autoread
@@ -323,3 +340,43 @@ if executable('ag')
 endif
 " ==================================================
 :set wrapscan "toggle arround search
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+let g:incsearch#auto_nohlsearch = 1 "don't show automatically
+map ?? :noh<CR>
+:vmap * y:let @/ = @"<CR>
+" hit v to expand one word, v again to expand a paragraph
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+function! GetBufferList()
+  redir =>buflist
+  silent! ls!
+  redir END
+  return buflist
+endfunction
+
+"" use leader+q to toggle quickfix
+function! ToggleList(bufname, pfx)
+  let buflist = GetBufferList()
+  for bufnum in map(filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 'str2nr(matchstr(v:val, "\\d\\+"))')
+    if bufwinnr(bufnum) != -1
+      exec(a:pfx.'close')
+      return
+    endif
+  endfor
+  if a:pfx == 'l' && len(getloclist(0)) == 0
+      echohl ErrorMsg
+      echo "Location List is Empty."
+      return
+  endif
+  let winnr = winnr()
+  exec(a:pfx.'open')
+  if winnr() != winnr
+    wincmd p
+  endif
+endfunction
+nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
+nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
+
+autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
