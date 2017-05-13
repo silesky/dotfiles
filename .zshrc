@@ -1,14 +1,16 @@
+setopt inc_append_history # keep history in chronological order (zsh)
+setopt share_history # cmd in shell 1 becomes last command in shell two (zsh)
+setopt extended_history
+setopt hist_ignore_all_dups
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt hist_no_store
+setopt hist_reduce_blanks
+setopt hist_verify
+
+########################3
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
-
-
-#################
-# VI MODE #######
-#################
-source ~/partials/.zsh_vi
-#..................
-
-
 #
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -58,7 +60,7 @@ ZSH_THEME="amuse"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # git clone git@github.com:l4u/zsh-output-highlighting.git
-plugins=(git z tmux zsh-syntax-highlighting zsh-output-highlighting vi-mode tmuxinator)
+plugins=(git z zsh-autosuggestions npm tmux zsh-syntax-highlighting zsh-output-highlighting vi-mode tmuxinator)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
@@ -91,9 +93,12 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-source ~/.bash_profile
+#
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=red"
+. ~/partials/.zsh_vi
 
 
 export NVM_DIR="/home/me/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+. ~/.bash_profile
