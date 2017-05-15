@@ -1,6 +1,9 @@
 #!/usr/bin/zsh
 # http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html
 # enable "VI-MODE plugin"
+
+bindkey '^[[A' up-line-or-search
+bindkey '^[[B' down-line-or-search
 bindkey '^r' history-incremental-search-backward #uses the mini buffer
 bindkey '^f' history-beginning-search-forward #use the current input
 bindkey '^b' history-beginning-search-backward
