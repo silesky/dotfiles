@@ -1,18 +1,18 @@
 let g:mapleader = " "
-let g:rainbow_active = 1
+
+ noremap <leader><S-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
+
 if has('unix')
  "LINUX STUFF
 endif
 
 if has('macunix')
   " alt-s to toggle
-  noremap ® :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
   " alt-[ and alt-] to cycle buffers
   noremap ‘ :bnext<CR>
   noremap “ :bprevious<CR>
   "OSX STUFF
 endif
-
 """"""""""""""""""""""""""""""""""""""""
 " Fonts
 if has('win32')
@@ -134,7 +134,7 @@ filetype plugin indent on
 set autoindent " o goes down and then matches the indentation of the prev line
 map <F8> gg=G``:echoerr 'Auto indented.'<CR>
 " reload myvimrc with alt-r
-noremap <C-k><C-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
+noremap <C-j><C-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
 syntax enable
 nmap <silent> sc>p :set paste<CR>"*p:set nopaste<CR>
 
@@ -143,6 +143,9 @@ set ignorecase " ignore case when i search by default
 set smartcase " goes with ignorecase... It means that unless there is uppercase on the string, it's case insensive by default
 set incsearch " see searc results as I type them in
 
+
+set history=1000 "remember more commands
+set hidden "doesn't forget marks between buffers
 " firewatch tender Monokai gotham zenburn 256_noir 256_grayvim
 set t_Co=256 "otherwise you'll only see  8bits
 
@@ -155,7 +158,10 @@ function! SetSolarized()
   colorscheme solarized8_dark_high
 endfunction
 " call SetSolarized()
-colorscheme Monokai
+" onedark
+
+set background=dark
+colorscheme onedark
 "hi Normal ctermbg=002b36 "firewatch needs this extra
 hi Search cterm=NONE ctermfg=black ctermbg=white
 hi Visual cterm=NONE ctermfg=white ctermbg=red guibg=red "search highlighting
@@ -317,7 +323,7 @@ let g:netrw_winsize = 25
 noremap !! :set shellcmdflag=-ic<CR>
 """"""""""""""""""""""""""""""""""
 " EasyMotion
-map <leader> <Plug>(easymotion-prefix)
+map <Leader> <Plug>(easymotion-prefix)
 "--------------------------
 " auto watch changes to file without any prompt
 set autoread
@@ -380,3 +386,15 @@ nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
 nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
 
 autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
+
+" rainbow matching braces
+let g:rainbow_active = 1
+
+" auto-reload vimrc
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }
+
+" show list of buffers and prepend space
+nnoremap <Leader>b :ls<CR>:b<Space>

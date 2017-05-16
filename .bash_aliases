@@ -33,6 +33,7 @@ fi
 # misc
 k9bp() { kill -9 $(lsof -t -i:$1); } # kill by port
 k9p() { kill -9 `pgrep -f "$1"`; }
+alias swapfn="sudo ~/scripts/linux_hardware/k810/swap-fn.sh"
 alias co="code"
 alias dn="dotnet"
 alias k9="k9p"
@@ -48,6 +49,7 @@ alias npmt="npm test"
 alias dockerq="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 alias doc="cd ~/Documents"
 alias mongo-start=". ~/scripts/mongo-start.sh"
+
 alias stopm="kill -9 `pgrep -f mongod`"
 alias bang="echo '/usr/bin/env bash'"
 # scripts

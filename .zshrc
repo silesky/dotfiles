@@ -60,7 +60,7 @@ ZSH_THEME="amuse"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # git clone git@github.com:l4u/zsh-output-highlighting.git
-plugins=(git z zsh-autosuggestions npm tmux zsh-syntax-highlighting zsh-output-highlighting vi-mode tmuxinator)
+plugins=(git z docker zsh-autosuggestions npm tmux zsh-syntax-highlighting zsh-output-highlighting vi-mode tmuxinator)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
