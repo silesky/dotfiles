@@ -1,17 +1,9 @@
 let g:mapleader = " "
 
- noremap <leader><S-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
-
 if has('unix')
  "LINUX STUFF
 endif
-
 if has('macunix')
-  " alt-s to toggle
-  " alt-[ and alt-] to cycle buffers
-  noremap ‘ :bnext<CR>
-  noremap “ :bprevious<CR>
-  "OSX STUFF
 endif
 """"""""""""""""""""""""""""""""""""""""
 " Fonts
@@ -41,6 +33,7 @@ if v:version >=800
   Plug 'w0rp/ale'
 endif
 
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired' "quickfix ]a and [b
 Plug 'mxw/vim-jsx'
 Plug 'slashmili/alchemist.vim'
@@ -67,7 +60,6 @@ Plug 'flazz/vim-colorschemes'
 Plug 'jacoborus/tender.vim' "sort of like firwatch but works with mvim
 Plug 'hhsnopek/vim-firewatch' "doesn't work with mvim
 Plug 'dikiaap/minimalist'
-
 Plug 'lifepillar/vim-solarized8'
 "detect indent
 " sudo npm -g install instant-markdown-d
@@ -76,12 +68,15 @@ Plug 'suan/vim-instant-markdown'
 Plug 'rking/ag.vim'
 Plug 'gcorne/vim-sass-lint'
 Plug 'marijnh/tern_for_vim'
+
 Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1 " rainbow matching braces
+
 Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
 Plug 'tpope/vim-eunuch' "\:MOVE etc
 Plug 'terryma/vim-expand-region'
+"
 " COLORSCHEME
-noremap <C-k><C-z> :colorscheme zenburn <CR>
 " Completor: Postinstall hook (for versions over 8, install this, otherwise install ycm)
 function! BuildCompletor(info)
   if a:info.status == 'installed' || 'updated' || a:info.force
@@ -127,6 +122,8 @@ set laststatus=2
 "allows you to use left or right to nav through completion:
 set wildmenu
 set wildmode=longest:full,full
+syntax enable
+"
 " get html indenting working
 let g:html_indent_inctags = "html,body,head,tbody"
 filetype indent on " html auto indent working
@@ -134,36 +131,34 @@ filetype plugin indent on
 set autoindent " o goes down and then matches the indentation of the prev line
 map <F8> gg=G``:echoerr 'Auto indented.'<CR>
 " reload myvimrc with alt-r
-noremap <C-j><C-r> :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>
-syntax enable
-nmap <silent> sc>p :set paste<CR>"*p:set nopaste<CR>
+nnoremap <leader>erc :sp<CR>:e $MYVIMRC<CR>
+
+nnoremap <leader>rrc :so $MYVIMRC<CR>:echoerr '$MYVIMRC Reloaded.'<CR>:noh<CR>
 
 set hlsearch " search highlighting.
 set ignorecase " ignore case when i search by default
 set smartcase " goes with ignorecase... It means that unless there is uppercase on the string, it's case insensive by default
 set incsearch " see searc results as I type them in
-
-
 set history=1000 "remember more commands
 set hidden "doesn't forget marks between buffers
 " firewatch tender Monokai gotham zenburn 256_noir 256_grayvim
 set t_Co=256 "otherwise you'll only see  8bits
 
 if has("gui_running")
+    " set 24-bit colors. to check if your terminal supports it,
+    " do printf '\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n' ... TRUECOLORS should
+    " be in red
   set termguicolors
-  let macvim_skip_colorscheme=1
 endif
 
 function! SetSolarized()
   colorscheme solarized8_dark_high
 endfunction
 " call SetSolarized()
-" onedark
-
-set background=dark
+set bg=dark
 colorscheme onedark
 "hi Normal ctermbg=002b36 "firewatch needs this extra
-hi Search cterm=NONE ctermfg=black ctermbg=white
+hi Search cterm=NONE ctermfg=black ctermbg=yellow
 hi Visual cterm=NONE ctermfg=white ctermbg=red guibg=red "search highlighting
 
 " line numbers
@@ -179,8 +174,6 @@ set showbreak=" "
 "common mistake of q: instead of :q
 map q: :q
 
-" keybindings
-inoremap jj <leader>
 
 " double escape to save
 map <leader><leader> :w<CR>
@@ -216,16 +209,12 @@ set smarttab      " Enabling this will make the tab key (in insert mode) insert 
 
 " remove escape delay
 set timeoutlen=1000 ttimeoutlen=0
-
 " ale uses timers which only work om vim 8
 if v:version >= 800
-  nmap <silent> <F2> <Plug>(ale_next_wrap)
+  nmap <F2> <Plug>(ale_next_wrap)
   let g:ale_sign_error = '++'
   let g:ale_sign_warning = '+'
-  let g:ale_sign_column_always = 1
   let g:ale_linters = {'javascript': ['eslint'] }
-  let g:ale_set_loclist = 0
-  let g:ale_set_quickfix = 1
 endif
 "gutter column
  :highlight clear SignColumn
@@ -276,7 +265,7 @@ let g:ctrlp_custom_ignore = {
       \ 'dir':  '\.git$\|\upload[sS]$|\.yardoc\|public$|log\|tmp$\|node_modules$\|modules$',
       \ 'file': '\.so$\|\.dat$|\.DS_Store$|\.jpg$|\.gif$'
       \ }
-set runtimepath^=~/.vim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
+set runtimepath^=~/.cim/bundle/ctrlp.vim  "http://ctrlpvim.github.io/ctrlp.vim/#installation
 let g:ctrlp_map='<c-p>'
 
 " let g:ctrlp_cmd = 'CtrlPMRU'
@@ -309,21 +298,23 @@ autocmd FileType css noremap <buffer> <F4> :call CSSBeautify()<cr>
 " Instant Markdown
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0
-noremap µ :InstantMarkdownPreview<CR>
-noremap <C-k><C-b> :NERDTreeToggle<CR>
+noremap <silent> <leader>md :InstantMarkdownPreview<CR>
+
+
+
+let g:jsx_ext_required = 0
 """"""""""""""""""""""""
 " theme explorer
-let g:jsx_ext_required = 0
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 25
 """"""""""""""""""""""""
 noremap !! :set shellcmdflag=-ic<CR>
 """"""""""""""""""""""""""""""""""
 " EasyMotion
-map <Leader> <Plug>(easymotion-prefix)
+map <leader> <Plug>(easymotion-prefix)
 "--------------------------
 " auto watch changes to file without any prompt
 set autoread
@@ -387,9 +378,10 @@ nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
 
 autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
 
-" rainbow matching braces
-let g:rainbow_active = 1
 
+" when I vim to a new file, change the working directory as well (you can
+" check in nerdtree
+set autochdir
 " auto-reload vimrc
 augroup reload_vimrc " {
     autocmd!
@@ -397,4 +389,5 @@ augroup reload_vimrc " {
 augroup END " }
 
 " show list of buffers and prepend space
-nnoremap <Leader>b :ls<CR>:b<Space>
+nnoremap <leader>B :ls<CR>:b<Space>
+noremap <silent> <leader>b :NERDTreeToggle<CR>

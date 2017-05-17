@@ -1,0 +1,16 @@
+export VISUAL=code
+export EDITOR="$VISUAL"
+
+# set in bash, but use history as well
+export HISTCONTROL="erasedups:ignoreboth"
+export HISTFILESIZE=500000
+export HISTSIZE=100000
+
+# tmuxinator thing
+DISABLE_AUTO_TITLE=true
+DEFAULT_USER="me"
+export EVENT_NOKQUEUE=1 #fix for broken kqueue message in tmux`
+
+# man should have pages like vim
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+export GREP_COLOR='00;38;5;226'

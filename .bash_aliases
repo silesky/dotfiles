@@ -24,16 +24,22 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias temp="cd ~/Desktop/temp"
    alias tree="tree -C"
 else
-   alias vvim="gvim"
+   # linux-specific
+   alias v="vim"
+   alias vv="gvim"
+   alias pbcopy='xclip -selection clipboard' # paper over the differences
+   alias pbpaste='xclip -selection clipboard -o'
    alias tmux="tmux -2"
    alias tm="tmux -2"
+   # linux-specific
+   alias swapfn="sudo ~/scripts/linux_hardware/k810/swap-fn.sh"
 fi
 # ..........................................
 ############################################
+# linux-specific
 # misc
 k9bp() { kill -9 $(lsof -t -i:$1); } # kill by port
 k9p() { kill -9 `pgrep -f "$1"`; }
-alias swapfn="sudo ~/scripts/linux_hardware/k810/swap-fn.sh"
 alias co="code"
 alias dn="dotnet"
 alias k9="k9p"
@@ -80,29 +86,26 @@ alias mail.delete="sudo rm /var/mail/$USER"
 alias c="clear"
 
 # ... text files
-alias .sass-lint="vim ~/.sass-lint.yml"
-alias eslintrc="vim ~/.eslintrc"
-alias nodemod="vim ~/.nodemodules.txt"
-alias bash_proj="vim ~/.bash_proj"
-alias bashpj="bash_proj"
-alias bash_functions="vim ~/.bash_functions"
-alias paths="vim ~/.paths"
+alias sass-lint="$EDITOR ~/.sass-lint.yml"
+alias eslintrc="$EDITOR ~/.eslintrc"
+alias bash_proj="$EDITOR ~/.bash_proj"
+alias bash_functions="$EDITOR ~/.bash_functions"
 
 # .... dotfiles
 alias rezsh="source ~/.zshrc && echo 'zshrc reloaded.'"
 alias reprof=". ~/.bash_profile && echo 'profile reloaded.'"
 alias reall="rezsh && reprof"
-alias bash_="vim ~/.bash_*"
-alias vars="vim ~/.bash_vars"
-alias paths="vim ~/.bash_paths"
-alias gitconfig="vim ~/.gitconfig"
-alias gitignore="vim ~/.gitignore"
-alias prof="vim ~/.bash_profile"
-alias aliases="vim ~/.bash_aliases"
-alias als="vim ~/.bash_aliases"
-alias zshrc="vim +/plugins ~/.zshrc"
-alias inputrc="vim ~/.inputrc"
-alias bashrc="vim ~/.bashrc"
+alias bash_="$EDITOR ~/.bash_*"
+alias vars="$EDITOR ~/.bash_vars"
+alias paths="$EDITOR ~/.bash_paths"
+alias gitconfig="$EDITOR ~/.gitconfig"
+alias gitignore="$EDITOR ~/.gitignore"
+alias prof="$EDITOR ~/.bash_profile"
+alias aliases="$EDITOR ~/.bash_aliases"
+alias als="$EDITOR ~/.bash_aliases"
+alias zshrc="$EDITOR +/plugins= ~/.zshrc"
+alias inputrc="$EDITOR ~/.inputrc"
+alias bashrc="$EDITOR ~/.bashrc"
 alias vimrc="vim ~/.vimrc"
 alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 # misc
@@ -154,7 +157,7 @@ alias tmls="tmux ls"
 alias tml="tmux ls"
 alias tmks="tmux kill-session -t"
 alias tmkw="tmux kill-window -t"
-alias tmux.conf="vim ~/.tmux.conf"
+alias tmux.conf="$EDITOR ~/.tmux.conf"
 alias tm2="tmux splitw -d -h && clear"
 alias tm3="bash ~/scripts/tm-grid-3.sh"
 alias tm4="bash ~/scripts/tm-grid-4.sh"
