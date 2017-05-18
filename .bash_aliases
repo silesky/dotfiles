@@ -25,6 +25,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias tree="tree -C"
 else
    # linux-specific
+   alias open="xdg-open"
    alias v="vim"
    alias vv="gvim"
    alias pbcopy='xclip -selection clipboard' # paper over the differences
@@ -73,7 +74,6 @@ alias f="find * -iname"
 
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
-alias ....='cd ../../..'    # And for good measure
 alias l='ls -a'  # Long view, show hidden
 alias lsd='ls -d */'
 alias ldot='ls -d .*' #List dotfiles only

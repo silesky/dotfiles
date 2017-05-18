@@ -1,3 +1,4 @@
+// npm install -g eslint-plugin-react eslint-plugin-mocha eslint-standard
 {
   "plugins": ["react","mocha","standard","promise"],
     "extends": ["standard","plugin:react/recommended"], //paired with plugins: ["react"]
