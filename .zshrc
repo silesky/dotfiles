@@ -18,7 +18,7 @@ export ZSH=~/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="amuse"
 
-plugins=(git z docker zsh-autosuggestions npm tmux zsh-syntax-highlighting zsh-output-highlighting vi-mode tmuxinator)
+plugins=(gulp bower git z docker zsh-autosuggestions npm tmux zsh-syntax-highlighting zsh-output-highlighting vi-mode tmuxinator)
 source $ZSH/oh-my-zsh.sh
 # User configuration
 
@@ -54,6 +54,10 @@ source $ZSH/oh-my-zsh.sh
 #
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=red"
 . ~/partials/zsh_vi_settings.sh
+
+if [ -f ~/.config/exercism/exercism_completion.zsh ]; then
+  . ~/.config/exercism/exercism_completion.zsh
+fi
 
 export NVM_DIR="/home/me/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -1,5 +1,7 @@
 
 # Projects
+#alias vscode
+alias vsc="cd ~/projects/vsc-theme-gen"
 # ... site-factory
 alias dc="~/Kalabox/dc-nola/code/sites/all/themes/custom/dcnola/"
 alias sf='cd /Users/ssilesky/projects/sf/sf'

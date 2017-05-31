@@ -211,11 +211,12 @@ set smarttab      " Enabling this will make the tab key (in insert mode) insert 
 set timeoutlen=1000 ttimeoutlen=0
 " ale uses timers which only work om vim 8
 if v:version >= 800
-
   nmap <F2> <Plug>(ale_next_wrap)
   let g:ale_sign_error = '++'
   let g:ale_sign_warning = '+'
-  " let g:ale_linters = {'javascript': ['eslint'] }
+  let g:ale_set_loclist = 0
+  let g:ale_set_quickfix = 1
+  let g:ale_linters = {'javascript': ['eslint'] }
 endif
 "gutter column
  :highlight clear SignColumn
