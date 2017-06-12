@@ -1,0 +1,14 @@
+# ~/.tmuxinator/rot-myrot.yml
+
+name: rot-myrot
+root: ~/projects/rotary_myrotary
+
+pre: code -r . &&  open -a "Google Chrome" --args "http://rotary_myrotary.com.docker.amazee.io/" --profile-directory="Profile 2"
+windows:
+  - MISC:
+      panes:
+        - eval $(cachalot env) && amazeeio-cachalot start && docker-compose up -d && docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
+  - JS:
+      root: ~/projects/rotary_myrotary/sites/all/modules/custom/rotary_donate_widget/js/
+      panes:
+        - ls -al

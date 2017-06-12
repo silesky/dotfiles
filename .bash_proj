@@ -1,82 +1,35 @@
+## PROJECTS
 
 
-# Projects
-# ........
-alias playdn="cd ~/projects/play.dn"
-alias mrp="cd ~/projects/mr-prod && git status"
-alias mrd="cd ~/projects/mr-dev && git status"
-alias dc="cd ~/Kalabox/dc-nola/code"
-alias mde="cd ~/Dropbox/Apps/Markdown\ to\ Evernote/"
-#.... react-native autosuggest
+#=========================
+# Rotary
+alias rot.execit="docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash"
+##########################
+
+#==========================
+# RN autosuggest
 alias rna="cd AutosuggestExample/node_modules/react-native-autosuggest"
-# ... gifter
+############################
+
+#==========================
+# GiftKeep
 alias gft.rna="cd ~/projects/giftr/mobile/node_modules/react-native-autosuggest"
 alias gft.bm='vim ~/projects/giftr/bm.md'
 alias gft='cd ~/projects/giftr'
 alias gftm='cd ~/projects/giftr/mobile'
-# ... site-factory
-alias sf.default="cd ~/projects/sf/sf/docroot/sites/default"
-alias sf.restore="/Users/ssilesky/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/configure-dev-with-drush.sh"
-alias sf.doc-code="code -r ~/projects/sf/sf/docroot"
-alias sf.doc-pstorm="pstorm /Users/ssilesky/projects/sf/sf/docroot"
-alias sf.drush='export PHP_ID=php5_5; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH" && cd "/Users/ssilesky/projects/sf/sf/docroot"'
-alias sf='cd /Users/ssilesky/projects/sf/sf/docroot'
-alias sf.tulane='cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/'
-alias sf.custom='cd ~/projects/sf/sf/docroot/sites/all/modules/custom'
-alias sf.gulp='vim ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/gulpfile.js'
-alias sf.bm='vim ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/bm.md'
-alias sf.multitheme="cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme"
-alias sf.schools="cd ~/projects/sf/sf/docroot/sites/all/themes/multitheme/tulane-omega/css/schools_and_departments/"
-# ... misc
+################################################################################
+
+#======================================
 alias blog="cd '/Users/ssilesky/projects/blog'"
 alias sharon="cd '/Users/ssilesky/projects/sharon/docroot/public' && live-server . &"
 alias drupalcamp="cd '/Users/ssilesky/drupalcampnola.com/'"
 alias timeshark="ssh -Y root@timeshark.sytes.net"
 alias proj="cd ~/projects/"
 alias inspector="cd ~/Desktop/inspector/"
-#... dan
-alias dan="cd ~/projects/danrico87.github.io"
-# ... devt-eslint
-alias dvt="cd ~/projects/devt-eslint"
-# ... pract-net
-alias pcn="cd ~/projects/pract-net"
-alias pcn.start="cd ~/projects/pract-net && sh start.sh"
-alias pcn.devpack="cd ~/projects/pract-net/wwwroot && npm run devpack & cd .."
-alias pcn.kill="cd ~/projects/pract-net && sh kill.sh"
-# ... jsmobile
-alias jsm="cd ~/projects/JSMobile"
-alias jsm.kill="~/projects/JSMobile/kill.sh"
-alias jsm.emu="emulator -avd mydevice"
-alias jsm.build="cd ~/projects/JSMobile/android && ./gradlew assembleRelease"
-alias rn.kill="kill -9 `pgrep -f /Users/ssilesky/Library/Android/sdk/` && kill -9 `pgrep -f genymotion`"
-# ... coop
-alias coop.ssh="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/ && vagrant ssh && coop.1"
-alias coop.up="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/ && vagrant up && coop.2"
-alias coop.reload="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/ && vagrant reload"
-alias coop.vm="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal-vm-master/"
-alias coop.root="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/"
-alias coop="cd /Users/ssilesky/projects/cooperationlouisiana.com/"
-alias coop.coop="cd /Users/ssilesky/projects/cooperationlouisiana.com/drupal/themes/coop"
-alias coop2.ssh="cd /Users/ssilesky/projects/drupal-vm-2/ && vagrant ssh"
-alias coop2.up="cd /Users/ssilesky/projects/drupal-vm-2/ && vagrant up"
-alias coop2.vm="cd /Users/ssilesky/projects/drupal-vm-2/"
-alias coop2="cd /Users/ssilesky/projects/coop-2"
-alias coop2.root="cd /Users/ssilesky/projects/coop-2/drupal/"
-# ... wedding
+#########################################
+
+#==========================================
+# Wedding
 alias wedding="cd ~/projects/wedding"
-#... pct
-alias pract="cd '/Users/ssilesky/projects/practicetimer'"
-alias pract.app="cd /Users/ssilesky/projects/practicetimer/app"
-#... Music Rising
-alias mr-dev="cd ~/projects/mr-dev"
-alias mr-prod="cd ~/projects/mr-prod"
-alias mrdiff="diff -rq ~/projects/mr-prod ~/projects/mr-dev"
-alias mrdiff-view="colordiff -r ~/projects/mr-dev/application/views ~/projects/mr-prod/application/views"
-alias mr-bs="browser-sync start --proxy='musicrisingdev.tulane.edu' --files ."
-#... portfolio
-alias portfolio="cd '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio'"
-alias port-features="cd '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/modules/features'"
-alias sf-features="cd '/Users/ssilesky/projects/site-factory/docroot/sites/all/modules/features'"
-alias rsync-port="rsync -azvh /Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio/ /Users/ssilesky/projects/site-factory/docroot/sites/all/themes/portfolio/"
-alias bs-port="browser-sync start --proxy portfolio.dd:8083 --files '/Users/ssilesky/projects/site-factory-portfolio/docroot/sites/all/themes/portfolio/templates' --no-inject-changes"
-alias v2="cd ~/projects/CooperationLouisiana.github.io/v2"
+#############################################
+

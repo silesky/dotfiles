@@ -1,0 +1,16 @@
+# ~/.tmuxinator/wmf.yml
+# you can make as many tabs as you wish...
+
+name: wmf
+root: ~/projects/wmf_org
+# socket_name: foo # Remove to use default socket
+# pre_window: rbenv shell 2.0.0-p247 # Runs in each tab and pane
+# tmux_options: -f ~/.tmux.mac.conf # Pass arguments to tmux
+# tmux_detached: false
+pre: code .
+windows:
+  - MISC:
+      pre:
+      layout: main-vertical
+      panes:
+        - docker-compose up -d && docker exec -itu drupal wmf.org.docker.amazee.io bash

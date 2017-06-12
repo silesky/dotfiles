@@ -1,0 +1,10 @@
+name: gfb
+root: ~/projects/gulfbase_org
+pre: code .
+startup_window: FRONT
+windows:
+  - BACK:
+      panes:
+        - open http://gulfbase.org.docker.amazee.io/
+        - docker-compose up -d && docker exec -itu drupal gulfbase.org.docker.amazee.io bash
+

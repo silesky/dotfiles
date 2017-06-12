@@ -1,0 +1,21 @@
+# ~/.tmuxinator/default.yml
+# you can make as many tabs as you wish...
+
+name: sample
+root: ~/projects/
+# socket_name: foo # Remove to use default socket
+# pre_window: rbenv shell 2.0.0-p247 # Runs in each tab and pane
+# tmux_options: -f ~/.tmux.mac.conf # Pass arguments to tmux
+# tmux_detached: false
+windows:
+  - editor:
+      pre:
+        - echo "I get run in each pane, before each pane command!"
+      layout: main-vertical
+      panes:
+        - vim
+        - #empty, will just run plain bash
+        - top
+        - pane_with_multiple_commands:
+            - ssh server
+            - echo "Hello"
