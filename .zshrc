@@ -7,7 +7,7 @@ setopt hist_ignore_space
 setopt hist_no_store
 setopt hist_reduce_blanks
 setopt hist_verify
-eval $(cachalot env)
+# eval $(cachalot env)
 # ______________ ZSH CONFIG _________________
 # Path to your oh-my-zsh installation.
 
@@ -36,9 +36,10 @@ ZSH_THEME="amuse" # full line with time
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
   gulp
+  composer
   docker
   docker-compose
-  vi-mode
+  #vi-mode #disabled because have a zsh_vi_settings script that shows prompt, and I don't need ctrl+[ bc I have jj
   npm
   git-extras
   tmuxinator

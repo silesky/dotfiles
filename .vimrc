@@ -186,6 +186,7 @@ set clipboard=unnamed
 set backupcopy=yes
 set noswapfile " no swap file
 
+
 " make bracket matching color have better contrast
 " :highlight MatchParen ctermbg=black guibg=black
 " Enable CursorLine
@@ -302,6 +303,7 @@ autocmd FileType css noremap <buffer> <F4> :call CSSBeautify()<cr>
 let g:instant_markdown_autostart = 0
 noremap <silent> <leader>md :InstantMarkdownPreview<CR>
 
+set pastetoggle=<leader>p
 
 
 let g:jsx_ext_required = 0
@@ -393,3 +395,4 @@ augroup END " }
 " show list of buffers and prepend space
 nnoremap <leader>B :ls<CR>:b<Space>
 noremap <silent> <leader>b :NERDTreeToggle<CR>
+inoremap jj <ESC>

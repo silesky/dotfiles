@@ -1,7 +1,7 @@
 ### .bashrc
 source $(brew --prefix php-version)/php-version.sh && php-version 7
 
-loadcachalot() {eval $(cachalot env)} #takes the result of the 'cachalot env' command and executes it... basically a bunch of env variables
+loadcachalot() { eval $(cachalot env); } #takes the result of the 'cachalot env' command and executes it... basically a bunch of env variables
 
 # [ -s "$nVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 alias loadnvm=". $NVM_DIR/nvm.sh"
@@ -34,3 +34,5 @@ npm() {
 export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export PATH="$PATH:/Applications/DevDesktop/tools"

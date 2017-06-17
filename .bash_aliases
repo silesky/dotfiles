@@ -3,7 +3,6 @@
 #############################################
 if [[ "$(uname)" = "Darwin" ]]; then
    alias cat="ccat"
-   export PATH="$PATH:`yarn global bin`"
    export CLICOLOR=1
    export LSCOLORS=GxFxCxDxBxegedabagaced
    alias tm="tmux"
@@ -31,6 +30,7 @@ fi
 # ..........................................
 ############################################
 # misc
+alias devdesktop='export PHP_ID=php7_0; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH"'
 k9bp() { kill -9 $(lsof -t -i:$1); } # kill by port
 k9p() { kill -9 `pgrep -f "$1"`; }
 alias co="code"
@@ -98,10 +98,10 @@ alias gitignore="$EDITOR ~/.gitignore"
 alias prof="$EDITOR ~/.bash_profile"
 alias aliases="$EDITOR ~/.bash_aliases"
 alias als="$EDITOR ~/.bash_aliases"
-alias zshrc="$EDITOR +/plugins ~/.zshrc"
+alias zshrc="$EDITOR ~/.zshrc"
 alias inputrc="$EDITOR ~/.inputrc"
 alias bashrc="$EDITOR ~/.bashrc"
-alias vimrc="$EDITOR ~/.vimrc"
+alias vimrc="vim ~/.vimrc"
 alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 # misc
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"

@@ -1,10 +1,12 @@
 name: gfb
 root: ~/projects/gulfbase_org
-pre: code .
-startup_window: FRONT
+pre: $EDITOR . && git pull
+startup_window: MISC
 windows:
-  - BACK:
+  - MISC:
+      layout: tiled
+      pre: eval $(cachalot env) # run before each pane
       panes:
-        - open http://gulfbase.org.docker.amazee.io/
-        - docker-compose up -d && docker exec -itu drupal gulfbase.org.docker.amazee.io bash
-
+        - amazeeio-cachalot start && docker-compose up -d
+        - open "http://gulfbase.org.docker.amazee.io"
+        - sleep 10 && docker exec -itu drupal gulfbase.org.docker.amazee.io bash

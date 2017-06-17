@@ -1,4 +1,5 @@
 export HOME=/Users/me
+LESSOPEN="|$HOME/scripts/lesspipe/lesspipe.sh %s"; export LESSOPEN  #(sh like shells)
 export NVM_DIR="$HOME/.nvm"
 export HISTCONTROL=ignoredups:erasedups
 export VISUAL=code

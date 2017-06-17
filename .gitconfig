@@ -10,10 +10,10 @@
   smudge = git lfs smudge %f
   required = true
 [user]
-  name = silesky
+  name = Seth Silesky
   email = seth.silesky@gmail.com
 [core]
-  excludesfile = /Users/ssilesky/.gitignore_global
+  excludesfile = /Users/me/.gitignore_global
   autocrlf = input
   editor = vim
   pager = less -F -X
@@ -28,8 +28,8 @@
 [difftool "vscode"]
   cmd = code --wait --diff $LOCAL $REMOTE # boilerplate copied from vscode website
 [difftool "meld"] #git difftool --tool=meld
-    cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
-    trustExitCode = true # not sure what this does, but it's in the docs
+  cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
+  trustExitCode = true # not sure what this does, but it's in the docs
 [merge] # default tool for 'git mergetool'
   tool = meld
 [mergetool "meld"]
@@ -42,4 +42,9 @@
   autosquash = true
 [log]
   decorate = full
-
+[difftool "sourcetree"]
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path =
+[mergetool "sourcetree"]
+  cmd = /private/var/folders/k6/9xg_zvd547b_1k5l4d3nl1yw0000gn/T/AppTranslocation/982B7CE3-2E2A-4988-A5CB-810B544A50F2/d/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true

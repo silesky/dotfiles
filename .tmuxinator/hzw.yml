@@ -8,7 +8,7 @@
 name: hzw
 root: ~/projects/inventory_horizonwood_com
 
-pre: $EDITOR . && git pull && gulp compile
+pre: $EDITOR . && git pull
 startup_window: MISC
 windows:
   - MISC:
@@ -16,5 +16,5 @@ windows:
       pre: eval $(cachalot env) # run before each pane
       panes:
         - amazeeio-cachalot start && docker-compose up -d
-        - sleep 10 && docker exec -itu drupal inventory.horizonwood.com.docker.amazee.io bash
         - open "http://inventory.horizonwood.com.docker.amazee.io"
+        - sleep 10 && docker exec -itu drupal inventory.horizonwood.com.docker.amazee.io bash

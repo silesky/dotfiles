@@ -2,7 +2,7 @@
 
 name: rot-myrot
 root: ~/projects/rotary_myrotary
-
+startup-window: js
 pre: code -r . &&  open -a "Google Chrome" --args "http://rotary_myrotary.com.docker.amazee.io/" --profile-directory="Profile 2"
 windows:
   - MISC:
@@ -11,4 +11,4 @@ windows:
   - JS:
       root: ~/projects/rotary_myrotary/sites/all/modules/custom/rotary_donate_widget/js/
       panes:
-        - ls -al
+        - yarn dev
