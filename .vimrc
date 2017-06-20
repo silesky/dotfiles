@@ -1,18 +1,18 @@
 let g:mapleader = " "
 
 if has('unix')
- "LINUX STUFF
+  "LINUX STUFF
 endif
 if has('macunix')
 endif
 """"""""""""""""""""""""""""""""""""""""
 " Fonts
 if has('win32')
-    set guifont=Consolas:h12   " Win32.
+  set guifont=Consolas:h12   " Win32.
 elseif has('gui_macvim')
   set guifont=Monaco:h14     " OSX.
 else
-    set guifont=Monaco     " OSX.
+  set guifont=Monaco     " OSX.
 endif
 " other fonts = Fira\ Mono
 """""""""""""""""""""""""""""""""""
@@ -145,9 +145,9 @@ set hidden "doesn't forget marks between buffers
 set t_Co=256 "otherwise you'll only see  8bits
 
 if has("gui_running")
-    " set 24-bit colors. to check if your terminal supports it,
-    " do printf '\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n' ... TRUECOLORS should
-    " be in red
+  " set 24-bit colors. to check if your terminal supports it,
+  " do printf '\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n' ... TRUECOLORS should
+  " be in red
   set termguicolors
 endif
 
@@ -174,7 +174,7 @@ set showbreak=" "
 "common mistake of q: instead of :q
 map q: :q
 
-
+map <leader>= mzgg=G`z
 " double escape to save
 map <leader><leader> :w<CR>
 
@@ -220,7 +220,7 @@ if v:version >= 800
   let g:ale_linters = {'javascript': ['eslint'] }
 endif
 "gutter column
- :highlight clear SignColumn
+:highlight clear SignColumn
 
 " wrap toggle
 function! ToggleWrap()
@@ -277,12 +277,12 @@ let g:ctrlp_match_window = 'min:4,max:25'
 " let g:ctrlp_cmd = 'CtrlPMixed' "to switch between recent, file etc, ctrl-f/b
 let g:ctrlp_cmd = 'call CallCtrlP()'
 func! CallCtrlP()
-    if exists('s:called_ctrlp')
-        CtrlPLastMode
-    else
-        let s:called_ctrlp = 1
-        CtrlPMRU
-    endif
+  if exists('s:called_ctrlp')
+    CtrlPLastMode
+  else
+    let s:called_ctrlp = 1
+    CtrlPMRU
+  endif
 endfunc
 """""""""""""""""""""""""""
 " JSBEAUTIFY
@@ -367,9 +367,9 @@ function! ToggleList(bufname, pfx)
     endif
   endfor
   if a:pfx == 'l' && len(getloclist(0)) == 0
-      echohl ErrorMsg
-      echo "Location List is Empty."
-      return
+    echohl ErrorMsg
+    echo "Location List is Empty."
+    return
   endif
   let winnr = winnr()
   exec(a:pfx.'open')
@@ -388,8 +388,8 @@ autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
 set autochdir
 " auto-reload vimrc
 augroup reload_vimrc " {
-    autocmd!
-    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
 augroup END " }
 
 " show list of buffers and prepend space
