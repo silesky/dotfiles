@@ -10,10 +10,10 @@
   smudge = git lfs smudge %f
   required = true
 [user]
-  name = Seth Silesky
-  email = seth.silesky@gmail.com
+	name = Seth Silesky
+	email = seth.silesky@gmail.com
 [core]
-  excludesfile = /Users/me/.gitignore_global
+	excludesfile = /Users/me/.gitignore_global
   autocrlf = input
   editor = vim
   pager = less -F -X
@@ -43,8 +43,10 @@
 [log]
   decorate = full
 [difftool "sourcetree"]
-  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-  path =
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
 [mergetool "sourcetree"]
-  cmd = /private/var/folders/k6/9xg_zvd547b_1k5l4d3nl1yw0000gn/T/AppTranslocation/982B7CE3-2E2A-4988-A5CB-810B544A50F2/d/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-  trustExitCode = true
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/me/.stCommitMsg

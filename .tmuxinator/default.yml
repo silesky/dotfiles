@@ -13,6 +13,7 @@ startup_window: MISC
 windows:
   - MISC:
       layout: tiled
+      # loadnvm
       pre: eval $(cachalot env) # run before each pane
       panes:
         - amazeeio-cachalot start && docker-compose up -d

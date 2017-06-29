@@ -39,6 +39,7 @@ plugins=(
   composer
   docker
   docker-compose
+  github
   #vi-mode #disabled because have a zsh_vi_settings script that shows prompt, and I don't need ctrl+[ bc I have jj
   npm
   git-extras
