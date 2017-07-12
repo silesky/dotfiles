@@ -61,6 +61,7 @@ Plug 'jacoborus/tender.vim' "sort of like firwatch but works with mvim
 Plug 'hhsnopek/vim-firewatch' "doesn't work with mvim
 Plug 'dikiaap/minimalist'
 Plug 'lifepillar/vim-solarized8'
+Plug 'trevordmiller/nova-vim'
 "detect indent
 " sudo npm -g install instant-markdown-d
 Plug 'scrooloose/nerdtree'

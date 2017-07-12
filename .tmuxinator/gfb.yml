@@ -9,4 +9,6 @@ windows:
       panes:
         - amazeeio-cachalot start && docker-compose up -d
         - open "http://gulfbase.org.docker.amazee.io"
-        - sleep 10 && docker exec -itu drupal gulfbase.org.docker.amazee.io bash
+        - docker:
+            - sleep 10
+            - docker exec -itu drupal gulfbase.org.docker.amazee.io bash

@@ -86,3 +86,65 @@ chrome() { open -a "Google Chrome" --args "$1" }
 
 chrome.devt() { open -a "Google Chrome" --args "$1" --profile-directory="Profile 2" }
 
+alias gh=GitHub
+function GitHub()
+{
+    if [ ! -d .git ] ;
+        then echo "ERROR: This isnt a git directory" && return false;
+    fi
+
+    git_url=`git config --get remote.origin.url`
+    git_domain=`echo $git_url | awk -v FS="(@|:)" '{print $2}'`
+    git_branch=`git rev-parse --abbrev-ref HEAD 2>/dev/null`
+
+    if [[ $git_url == https://* ]];
+    then
+        url=${git_domain}/${git_url%.git}/tree/${git_branch}
+    else
+       if [[ $git_url == git@* ]]
+       then
+            url="https://${git_domain}/${${git_url#*:}%.git}/tree/${git_branch}"
+            echo $url
+            open "$url"
+       else
+           echo "ERROR: Remote origin is invalid" && return false;
+       fi
+    fi
+}
+
+ask() {
+    # https://djm.me/ask
+    local prompt default REPLY
+
+    while true; do
+
+        if [ "${2:-}" = "Y" ]; then
+            prompt="Y/n"
+            default=Y
+        elif [ "${2:-}" = "N" ]; then
+            prompt="y/N"
+            default=N
+        else
+            prompt="y/n"
+            default=
+        fi
+
+        # Ask the question (not using "read -p" as it uses stderr not stdout)
+        echo -n "$1 [$prompt] "
+
+        # Read the answer (use /dev/tty in case stdin is redirected from somewhere else)
+        read REPLY </dev/tty
+
+        # Default?
+        if [ -z "$REPLY" ]; then
+            REPLY=$default
+        fi
+
+        # Check if the reply is valid
+        case "$REPLY" in
+            Y*|y*) return 0 ;;
+            N*|n*) return 1 ;;
+        esac
+
+    done
+}

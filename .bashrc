@@ -1,8 +1,10 @@
+
+
 ### .bashrc
 source $(brew --prefix php-version)/php-version.sh && php-version 7
 
-loadcachalot() { eval $(cachalot env); } #takes the result of the 'cachalot env' command and executes it... basically a bunch of env variables
-
+env.cachalot() { eval $(cachalot env); } #takes the result of the 'cachalot env' command and executes it... basically a bunch of env variables
+# eval $(cachalot env);
 # [ -s "$nVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 alias loadnvm=". $NVM_DIR/nvm.sh"
 
@@ -31,8 +33,7 @@ npm() {
 # . ~/partials/autoload-nvmrc.sh #taken from https://github.com/creationix/nvm
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 export PATH="$PATH:/Applications/DevDesktop/tools"
+export PATH="$PATH:$HOME/.rvm/bin"
+

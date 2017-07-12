@@ -38,6 +38,7 @@ plugins=(
   gulp
   composer
   docker
+  # rvm
   docker-compose
   github
   #vi-mode #disabled because have a zsh_vi_settings script that shows prompt, and I don't need ctrl+[ bc I have jj
@@ -48,7 +49,6 @@ plugins=(
   yarn
   # rvm
   grunt
-  # zsh-syntax-highlighting
   zsh-autosuggestions
  )
 source $ZSH/oh-my-zsh.sh
@@ -58,14 +58,10 @@ source $ZSH/oh-my-zsh.sh
 # git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 #
 
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=red"
-
-# . ~/partials/zsh_syntax_highlight_settings.sh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=yellow"
 . ~/.oh-my-zsh/plugins/z/z.sh
 . ~/partials/zsh_vi_settings.sh
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-. ~/.bash_profile # load everything
 
+. ~/.bash_profile

@@ -16,7 +16,5 @@ dist/*
 .Trashes
 ehthumbs.db
 Thumbs.db
-jsconfig.json
 launchReactNative.js
-.vscode/**
-st.sh
+.vscode

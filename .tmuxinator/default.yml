@@ -5,17 +5,19 @@
 # tmux_options: -f ~/.tmux.mac.conf # Pass arguments to tmux
 # tmux_detached: false
 
-name: hzw
-root: ~/projects/inventory_horizonwood_com
-
-pre: $EDITOR . && git pull && gulp compile
+name:
+root: ~/projects/
 startup_window: MISC
+pre: $EDITOR .
 windows:
   - MISC:
-      layout: tiled
-      # loadnvm
-      pre: eval $(cachalot env) # run before each pane
+      layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
+      pre: eval $(cachalot env)
       panes:
-        - amazeeio-cachalot start && docker-compose up -d
-        - sleep 10 && docker exec -itu drupal inventory.horizonwood.com.docker.amazee.io bash
-        - open "http://inventory.horizonwood.com.docker.amazee.io"
+        - docker_start_me_up:
+          - amazeeio-cachalot start
+          - docker-compose up -d
+        - docker exec -itu drupal <DOCKERHOST???> bash
+        - docker:
+          - sleep 10
+          - docker exec -itu drupal <DOCKERHOST??> bash

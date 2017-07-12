@@ -31,6 +31,7 @@ fi
 ############################################
 # misc
 alias devdesktop='export PHP_ID=php7_0; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH"'
+alias ask="sh ~/scripts/ask.sh"
 k9bp() { kill -9 $(lsof -t -i:$1); } # kill by port
 k9p() { kill -9 `pgrep -f "$1"`; }
 alias co="code"
@@ -149,7 +150,7 @@ alias tm3="bash ~/scripts/tm-grid-3.sh"
 alias tm4="bash ~/scripts/tm-grid-4.sh"
 alias tmkpa="tmux kill-pane -a -t . && clear"
 alias tmkp="tmux kill-pane -t ."
-alias tmx="tmux kill-session ."
+alias tmx="tmux kill-session -t ."
 alias tmX="killall tmux"
 # ... misc
 alias bs="browser-sync"

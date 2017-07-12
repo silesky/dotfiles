@@ -3,20 +3,25 @@
 name: rot-myrot
 root: ~/projects/rotary_myrotary
 startup_window: MISC
-pre: git pull && $EDITOR .
+pre: git pull
 windows:
   - MISC:
+      layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
       pre: eval $(cachalot env)
       panes:
-        - amazeeio-cachalot start && docker-compose up -d
-        - sleep 15 && docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
+        - docker_start_me_up:
+          - amazeeio-cachalot start
+          - docker-compose up -d
+          - docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
+        - open_the_url:
+          - sleep 10
+          - echo "---> http://rotary_myrotary.com.docker.amazee.io/"
   - JS:
       pre: loadnvm
-      root: ~/projects/rotary_myrotary/sites/all/modules/custom/rotary_donate_widget/js/
+      root: ~/projects/rotary_myrotary/sites/all/modules/custom/rotary_donate_widget/js
       panes:
         - yarn dev
-        - sleep 15 && open "http://rotary_myrotary.com.docker.amazee.io/"
-        - $EDITOR .
+        - code -r .
   - THEME:
       pre: loadnvm
       root: ~/projects/rotary_myrotary/sites/all/themes/rotary_org
