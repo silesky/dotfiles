@@ -30,6 +30,7 @@ fi
 # ..........................................
 ############################################
 # misc
+alias cch="amazeeio-cachalot"
 alias devdesktop='export PHP_ID=php7_0; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH"'
 alias ask="sh ~/scripts/ask.sh"
 k9bp() { kill -9 $(lsof -t -i:$1); } # kill by port

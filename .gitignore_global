@@ -8,6 +8,7 @@ tmp
 !dist
 dist/*
 .sass-cache
+**.*.map
 *.map
 *.swp
 *log
