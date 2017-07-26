@@ -10,8 +10,7 @@ windows:
       pre: eval $(cachalot env)
       panes:
         - docker_start_me_up:
-          - amazeeio-cachalot start
-          - docker-compose up -d
+          - docker-compose up -d && amazeeio-cachalot start
           - sleep 10 && docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
         - docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
         - open_the_url:

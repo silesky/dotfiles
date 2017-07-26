@@ -218,7 +218,11 @@ if v:version >= 800
   let g:ale_sign_warning = '+'
   let g:ale_set_loclist = 0
   let g:ale_set_quickfix = 1
-  let g:ale_linters = {'javascript': ['eslint'] }
+  augroup FiletypeGroup
+      autocmd!
+      au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+  augroup END
+  let g:ale_linters = { 'javascript': ['eslint'], 'jsx': ['jsx'] }
 endif
 "gutter column
 :highlight clear SignColumn

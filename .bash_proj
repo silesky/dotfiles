@@ -28,6 +28,7 @@ alias drupalcamp="cd '/Users/ssilesky/drupalcampnola.com/'"
 alias timeshark="ssh -Y root@timeshark.sytes.net"
 alias proj="cd ~/projects/"
 alias inspector="cd ~/Desktop/inspector/"
+alias exercism.js="cd ~/exercism/javascript"
 #########################################
 
 #==========================================
