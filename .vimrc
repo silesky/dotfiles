@@ -388,6 +388,7 @@ nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
 autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
 
 
+let g:NERDTreeQuitOnOpen=0 "don't close sidebar when opening a file
 " when I vim to a new file, change the working directory as well (you can
 " check in nerdtree
 set autochdir

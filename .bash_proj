@@ -2,9 +2,15 @@
 
 
 #=========================
-# Rotary
-alias rot.execit="docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash"
-alias rot.gulp="cd ~/projects/rotary_myrotary/sites/all/themes/rotary_org && gulp; cd -"
+# HRI
+alias hri="cd ~/projects/harteresearchinstitute"
+##########################
+
+#=========================
+# RI
+alias ri="cd ~/projects/rotary_myrotary"
+alias ri.execit="docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash"
+alias ri.gulp="cd ~/projects/rotary_myrotary/sites/all/themes/rotary_org && gulp; cd -"
 
 ##########################
 
