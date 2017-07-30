@@ -1,0 +1,10 @@
+
+name: gql
+root: ~/projects/gql
+startup_window: MISC
+pre: $EDITOR .
+windows:
+  - MISC:
+      layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
+      panes:
+        - npm run start
