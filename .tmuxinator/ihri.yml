@@ -15,9 +15,10 @@ windows:
       panes:
         - git fetch --all
         - yarn dev
+        - yarn run storybook
   - DRUPAL:
       root: ~/projects/harteresearchinstitute
       pre: eval $(cachalot env)
       panes:
-        - docker-compose up -d
+        - amazeeio-cachalot start && docker-compose up -d
         - docker exec -itu drupal harteresearchinstitute.org.docker.amazee.io bash
