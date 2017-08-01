@@ -34,6 +34,10 @@ pman() {
     man -t ${@} | open -f -a /Applications/Preview.app/
 }
 
+hr() {
+  printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+}
+
 extract() {
      if [ -f $1 ] ; then
          case $1 in
