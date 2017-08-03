@@ -36,6 +36,7 @@ alias ask="sh ~/scripts/ask.sh"
 k9bp() { kill -9 $(lsof -t -i:$1); } # kill by port
 k9p() { kill -9 `pgrep -f "$1"`; }
 alias co="code"
+alias code.settings="code '/Users/me/Library/Application Support/Code/User/settings.json'"
 alias dn="dotnet"
 alias k9="k9p"
 alias kb="kbox"
