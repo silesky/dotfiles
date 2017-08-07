@@ -8,7 +8,7 @@
 name: ihri
 root: ~/projects/harteresearchinstitute_touchscreen
 startup_window: REACT
-pre: $EDITOR .
+pre: $EDITOR . && amazeeio-cachalot start
 windows:
   - REACT:
       layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
@@ -20,5 +20,5 @@ windows:
       root: ~/projects/harteresearchinstitute
       pre: eval $(cachalot env)
       panes:
-        - amazeeio-cachalot start && docker-compose up -d
-        - docker exec -itu drupal harteresearchinstitute.org.docker.amazee.io bash
+        - docker-compose up -d
+        - sleep 20 && docker exec -itu drupal harteresearchinstitute.org.docker.amazee.io bash
