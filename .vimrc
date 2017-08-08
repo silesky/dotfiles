@@ -68,8 +68,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'suan/vim-instant-markdown'
 Plug 'rking/ag.vim'
 Plug 'gcorne/vim-sass-lint'
-Plug 'marijnh/tern_for_vim'
-
 Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1 " rainbow matching braces
 
