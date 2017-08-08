@@ -1,9 +1,0 @@
-name: rot-end
-root: ~/projects/rotary_myrotary
-pre: code -r .
-windows:
-  - MAIN:
-      root: ~/projects/rotary_myrotary
-      panes:
-        - eval $(cachalot env) && amazeeio-cachalot start && docker-compose up -d && docker exec -itu drupal rotary_endpolio.com.docker.amazee.io bash
-

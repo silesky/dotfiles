@@ -220,7 +220,7 @@ if v:version >= 800
       autocmd!
       au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   augroup END
-  let g:ale_linters = { 'javascript': ['eslint'], 'jsx': ['jsx'] }
+  let g:ale_linters = { 'javascript': ['eslint'], 'jsx': ['eslint'] }
 endif
 "gutter column
 :highlight clear SignColumn

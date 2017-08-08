@@ -34,8 +34,11 @@ pman() {
     man -t ${@} | open -f -a /Applications/Preview.app/
 }
 
+# draw horizontal line of //
 hr() {
-  printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+  RED='\033[0;31m'
+  echo ${RED}
+  printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' ~ # "~" becomes line of //
 }
 
 extract() {
