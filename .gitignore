@@ -38,3 +38,4 @@
 !/scripts/*
 !scripts
 .DS_Store
+tmp.*
