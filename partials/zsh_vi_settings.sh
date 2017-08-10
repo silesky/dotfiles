@@ -1,7 +1,6 @@
 #!/usr/bin/zsh
 # http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html
 bindkey -v
-
 bindkey -M viins 'jj' vi-cmd-mode
 bindkey '^f' history-beginning-search-forward #use the current input
 bindkey '^b' history-beginning-search-backward

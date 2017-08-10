@@ -59,6 +59,8 @@ source $ZSH/oh-my-zsh.sh
 #
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=yellow"
+bindkey '^ ' autosuggest-accept # ctrl-space to accept suggestion, also lets !_ work
+
 . ~/.oh-my-zsh/plugins/z/z.sh
 . ~/partials/zsh_vi_settings.sh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
