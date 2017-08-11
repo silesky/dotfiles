@@ -18,9 +18,9 @@ windows:
           - echo "---> http://rotary_myrotary.com.docker.amazee.io/"
   - JS:
       pre: loadnvm
-      root: ~/projects/rotary_myrotary/sites/all/modules/custom/rotary_donate_widget/js
+      root: ~/projects/rotary_myrotary/sites/all/modules/custom/rotary_donate_widget/
       panes:
-        - yarn dev
+        - cd js && yarn dev
         - code -r . && clear
   - THEME:
       pre: loadnvm
