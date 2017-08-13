@@ -3,8 +3,11 @@ name: gql
 root: ~/projects/gql
 startup_window: MISC
 pre: $EDITOR .
+  && open -a postman
+  && open "http://harteresearchinstitute.org.docker.amazee.io/graphql/explorer"
 windows:
   - MISC:
       layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
       panes:
         - npm run start
+        - npm run test
