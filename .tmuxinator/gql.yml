@@ -4,10 +4,11 @@ root: ~/projects/gql
 startup_window: MISC
 pre: $EDITOR .
   && open -a postman
-  && open "http://harteresearchinstitute.org.docker.amazee.io/graphql/explorer"
+  && open "http://harteresearchinstitute.org.docker.amazee.io/admin/config/graphql"
 windows:
   - MISC:
       layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
       panes:
+        - echo "https://docs.google.com/presentation/d/1ooup3oEY1vweo0kLs8xTZFbrf5x4u8w0-lRCWa9GpIo/edit#slide=id.g241e7a0c4e_0_104"
         - npm run start
         - npm run test
