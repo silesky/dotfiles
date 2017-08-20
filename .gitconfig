@@ -1,17 +1,17 @@
+[user]
+  name = Seth Silesky
+  email = seth.silesky@gmail.com
 [alias]
   graph = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate
   chk = checkout
   st = status
   ls = log --oneline
-  stat = log --graph --author='silesky' --oneline
+  stat = log --graph --author='Seth Silesky' --oneline
   dirdiff = difftool --tool=meld --dir-diff
 [filter "lfs"]
   clean = git lfs clean %f
   smudge = git lfs smudge %f
   required = true
-[user]
-  name = Seth Silesky
-  email = seth.silesky@gmail.com
 [core]
   excludesfile = /Users/me/.gitignore_global
   autocrlf = input
@@ -43,7 +43,7 @@
   decorate = full
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

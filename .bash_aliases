@@ -116,7 +116,7 @@ alias gitb="git checkout HEAD~"
 alias gitf="git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout"
 alias gshowhidden="git ls-files -v | grep '^[^H]'"
 alias gshow="git show --color --pretty=format:%b"
-alias grs="git reset"
+alias gr="git reset"
 alias gpk="git cherry-pick"
 alias gp="git push"
 alias gac="git add -A && git commit"
@@ -136,7 +136,7 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 # gb () { ruby ~/scripts/git-blame-colored.sh $1 | less -R }
 alias pd="pretty-diff ^head"
-
+alias tower="gittower"
 # ... tmux
 alias tmA="tmux attach -d || tmux new"
 alias tma="tmux attach -d -t"
