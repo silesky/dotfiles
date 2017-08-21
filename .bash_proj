@@ -16,7 +16,8 @@ alias hri="cd ~/projects/harteresearchinstitute"
 alias ri="cd ~/projects/rotary_myrotary"
 alias ri.execit="docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash"
 alias ri.gulp="cd ~/projects/rotary_myrotary/sites/all/themes/rotary_org && gulp; cd -"
-
+ri.feature() {git fetch upstream && git branch feature/$1 --no-track upstream/master && git checkout feature/$1;}
+ri.integration() {git fetch upstream && git branch integration/$1 --no-track upstream/master && git checkout integration/$1;}
 ##########################
 
 #==========================
