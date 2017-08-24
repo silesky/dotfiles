@@ -13,7 +13,9 @@ alias hri="cd ~/projects/harteresearchinstitute"
 
 #=========================
 # RI
+
 alias ri="cd ~/projects/rotary_myrotary"
+alias ri.patch="cd ~/projects/rotary_myrotary && curl https://www.drupal.org/files/issues/ignore_front_end_vendor-2329453-111.patch | git apply -v && cd -"
 alias ri.execit="docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash"
 alias ri.gulp="cd ~/projects/rotary_myrotary/sites/all/themes/rotary_org && gulp; cd -"
 ri.feature() {git fetch upstream && git branch feature/$1 --no-track upstream/master && git checkout feature/$1;}

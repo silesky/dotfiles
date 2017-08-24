@@ -4,7 +4,7 @@
 source $(brew --prefix php-version)/php-version.sh && php-version 7
 
 env.cachalot() { eval $(cachalot env); } #takes the result of the 'cachalot env' command and executes it... basically a bunch of env variables
-eval $(cachalot env);
+
 # [ -s "$nVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 alias loadnvm=". $NVM_DIR/nvm.sh"
 
