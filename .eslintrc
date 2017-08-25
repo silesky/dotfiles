@@ -8,6 +8,7 @@
     'flowtype',
   ],
   rules: {
+    'semi': 0,
     'no-trailing-spaces': 0,
     'arrow-body-style': 0,
     'no-confusing-arrow': 0,
