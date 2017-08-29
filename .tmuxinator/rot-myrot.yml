@@ -27,5 +27,5 @@ windows:
   - ENDPOLIO:
       root: ~/projects/rotary_endpolio
       panes:
-        - docker-compose up -d
+        - env.cachalot && docker-compose up -d
         - echo "---> http://rotary_endpolio.com.docker.amazee.io/donate-new"
