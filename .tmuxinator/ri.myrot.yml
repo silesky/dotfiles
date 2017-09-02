@@ -8,10 +8,8 @@ windows:
   - MISC:
       layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
       panes:
-        - docker_start_me_up:
-          - env.cachalot && amazeeio-cachalot start && docker-compose up -d &&
-          - sleep 10 && docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
-        - docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
+        - env.cachalot && amazeeio-cachalot start && docker-compose up -d &&
+        - env.cachalot && docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
         - echo "---> http://rotary_myrotary.com.docker.amazee.io/"
   - JS:
       pre: loadnvm
