@@ -11,7 +11,7 @@ startup_window: REACT
 pre: $EDITOR . && amazeeio-cachalot start
 windows:
   - REACT:
-      layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
+      layout: even-horizontal # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
       panes:
         - git fetch --all
         - yarn dev
