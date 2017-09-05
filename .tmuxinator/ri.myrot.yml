@@ -3,20 +3,20 @@
 name: rot-myrot
 root: ~/projects/rotary_myrotary
 startup_window: JS
-pre: git fetch
+pre: git fetch && eval $(cachalot env) && amazeeio-cachalot start
 windows:
-  - MISC:
+  - DOCKER:
       layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
+      pre: eval $(cachalot env)
       panes:
-        - env.cachalot && amazeeio-cachalot start && docker-compose up -d &&
-        - env.cachalot && docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
-        - echo "---> http://rotary_myrotary.com.docker.amazee.io/"
+        - docker-compose up -d
+        - docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
   - JS:
       pre: loadnvm
       root: ~/projects/rotary_myrotary/sites/all/modules/custom/rotary_donate_widget
       panes:
         - cd js && yarn dev
-        - code -r . && clear
+        - code -r . && git status
   - THEME:
       pre: loadnvm
       root: ~/projects/rotary_myrotary/sites/all/themes/rotary_org
@@ -24,6 +24,7 @@ windows:
         - gulp
   - ENDPOLIO:
       root: ~/projects/rotary_endpolio
+      pre:  eval $(cachalot env)
       panes:
-        - env.cachalot && docker-compose up -d
+        - docker-compose up -d
         - echo "---> http://rotary_endpolio.com.docker.amazee.io/donate-new"
