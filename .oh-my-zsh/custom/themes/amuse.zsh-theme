@@ -33,4 +33,4 @@ DATE=%{$fg[green]%}%W%{$reset_color%}
 
 PROMPT='
 %{$fg_bold[green]%}${PWD/#$HOME/~}%{$reset_color%}$(git_prompt_info) ⌚ $TIME @ $DATE
-$ '
+ '
