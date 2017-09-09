@@ -44,9 +44,6 @@ alias ka="killall"
 alias rnl="react-native link"
 alias rnri="react-native run-ios"
 alias rnra="react-native run-android"
-alias npmtw="npm run testwatch"
-alias npmw="npm run watch"
-alias npmt="npm test"
 alias dockerq="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 alias doc="cd ~/Documents"
 alias mongo-start=". ~/scripts/mongo-start.sh"
@@ -109,6 +106,18 @@ alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
 alias lynda="cd ~/Lynda/"
 alias rp="realpath"
+
+# npm
+alias ni='npm install'
+alias nid='npm install --save-dev'
+alias nig='npm install --global'
+alias nt='npm test'
+alias nit='npm install && npm test'
+alias nk='npm link'
+alias nr='npm run'
+alias ns='npm start'
+alias nf='npm cache clean && rm -rf node_modules && npm install'
+alias nlg='npm list --global --depth=0'
 
 # ... git
 alias gitb="git checkout HEAD~"
