@@ -50,6 +50,7 @@ plugins=(
   # rvm
   grunt
   zsh-autosuggestions
+  nvm-auto
  )
 source $ZSH/oh-my-zsh.sh
 
