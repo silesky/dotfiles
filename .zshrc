@@ -35,22 +35,21 @@ ZSH_THEME="amuse" # full line with time
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
-  gulp
   composer
   docker
-  # rvm
   docker-compose
   github
-  #vi-mode #disabled because have a zsh_vi_settings script that shows prompt, and I don't need ctrl+[ bc I have jj
+  grunt
+  gulp
   npm
-  git-extras
   tmuxinator
   tmux
   yarn
-  # rvm
-  grunt
+  # nvm # slow
+  # rvm # slow
+  # Custom
+  git-open # open to project website with 'git open'
   zsh-autosuggestions
-  nvm-auto
  )
 source $ZSH/oh-my-zsh.sh
 

@@ -91,10 +91,9 @@ dedupe() { nl "$1" | sort -k 2  -k 1,1nr | uniq -f 1 | sort -n |
 
 chrome() { open -a "Google Chrome" --args "$1" }
 
-chrome.devt() { open -a "Google Chrome" --args "$1" --profile-directory="Profile 2" }
+chrome.devt() { open -a "Google Chrome" --args "$1" --profile-directory="Profile 3" }
 
-alias gh=GitHub
-function GitHub()
+gh() # github
 {
     if [ ! -d .git ] ;
         then echo "ERROR: This isnt a git directory" && return false;
@@ -118,7 +117,11 @@ function GitHub()
        fi
     fi
 }
-
+bb() { # bitbucket
+    local P="$(hg paths 2>/dev/null | grep 'bitbucket.org' | head -1)"
+    local URL="$(echo $P | sed -e's|.*\(bitbucket.org.*\)|http://\1|')"
+    [[ -n $URL ]] && open $URL || echo "No BitBucket path found!"
+}
 ask() {
     # https://djm.me/ask
     local prompt default REPLY
