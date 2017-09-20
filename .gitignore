@@ -14,7 +14,7 @@
 !.stylelintrc
 !.tigrc
 !.bash*
-
+!.quokka/**
 .bash_private
 .bash_history
 .bash_logout
