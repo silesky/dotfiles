@@ -4,9 +4,9 @@ name: rot-myrot
 root: ~/projects/rotary_myrotary
 startup_window: JS
 pre: git fetch && eval $(cachalot env) && amazeeio-cachalot start
+layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
 windows:
   - DOCKER:
-      layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
       pre: eval $(cachalot env)
       panes:
         - docker-compose up -d

@@ -5,19 +5,17 @@
 # tmux_options: -f ~/.tmux.mac.conf # Pass arguments to tmux
 # tmux_detached: false
 
-name:
-root: ~/projects/
+name: Default project
+root: ~/projects/<???>
 startup_window: MISC
-pre: $EDITOR .
+# pre: git fetch && eval $(cachalot env) && amazeeio-cachalot start
+pre: git fetch && $EDITOR .
+layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
 windows:
   - MISC:
-      layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
-      pre: eval $(cachalot env)
+      # pre: loadnvm
+      # root: ~/projects/<???>
       panes:
-        - docker_start_me_up:
-          - amazeeio-cachalot start
-          - docker-compose up -d
-        - docker exec -itu drupal <DOCKERHOST???> bash
-        - docker:
-          - sleep 10
-          - docker exec -itu drupal <DOCKERHOST??> bash
+        - cd js && yarn dev
+        - git status
+        - dssh
