@@ -21,4 +21,4 @@ windows:
       pre: eval $(cachalot env)
       panes:
         - docker-compose up -d
-        - sleep 20 && docker exec -itu drupal harteresearchinstitute.org.docker.amazee.io bash
+        - dssh && cd .. && composer install && drush cr -y
