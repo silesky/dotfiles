@@ -1,0 +1,18 @@
+# ~/.tmuxinator/default.yml
+# you can make as many tabs as you wish...
+# socket_name: foo # Remove to use default socket
+# pre_window: rbenv shell 2.0.0-p247 # Runs in each tab and pane
+# tmux_options: -f ~/.tmux.mac.conf # Pass arguments to tmux
+# tmux_detached: false
+
+name: blog
+root: ~/projects/blog
+startup_window: MISC
+# pre: git fetch && eval $(cachalot env) && amazeeio-cachalot start
+pre: $EDITOR .
+layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
+windows:
+  - MISC:
+      panes:
+        - vim Post.md
+        - chrome Post.md
