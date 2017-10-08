@@ -1,12 +1,15 @@
 #!/usr/bin/zsh
 # http://zsh.sourceforge.net/Doc/Release/Zsh-Line-Editor.html
-bindkey -v
 bindkey -M viins 'jj' vi-cmd-mode
 bindkey '^f' history-beginning-search-forward #use the current input
 bindkey '^b' history-beginning-search-backward
+bindkey '^s' kill-whole-line
+bindkey '^u' kill-whole-line
+bindkey '^y' clear-screen
 bindkey -M viins '^f' history-beginning-search-forward
 bindkey -M viins '^b' history-beginning-search-backward
-bindkey '^y' clear-screen
+bindkey -M viins '^s' kill-whole-line
+bindkey -M viins '^b' history-beginning-search-backward
 export KEYTIMEOUT=50 #if I set it too low, can't switch with j j
 function zle-keymap-select zle-line-init
 {
@@ -45,10 +48,10 @@ bindkey '^N' down-history
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
+bindkey '^x' forward-kill-word
 
 # allow ctrl-r to perform backward search in history
 bindkey '^r' history-incremental-search-backward
-
 # allow ctrl-a and ctrl-e to move to beginning/end of line
 bindkey '^q' beginning-of-line
 bindkey '^e' end-of-line
