@@ -10,7 +10,7 @@ bindkey -M viins '^f' history-beginning-search-forward
 bindkey -M viins '^b' history-beginning-search-backward
 bindkey -M viins '^s' kill-whole-line
 bindkey -M viins '^b' history-beginning-search-backward
-export KEYTIMEOUT=50 #if I set it too low, can't switch with j j
+export KEYTIMEOUT=20 #if I set it too low, can't switch with j j
 function zle-keymap-select zle-line-init
 {
     # change cursor shape in iTerm2
@@ -48,13 +48,22 @@ bindkey '^N' down-history
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 bindkey '^w' backward-kill-word
+bindkey -M viins '^w' backward-kill-word
+
 bindkey '^x' forward-kill-word
+
+bindkey -M viins '^x' forward-kill-word
 
 # allow ctrl-r to perform backward search in history
 bindkey '^r' history-incremental-search-backward
+bindkey -M viins '^r' history-incremental-search-backward
+#
 # allow ctrl-a and ctrl-e to move to beginning/end of line
 bindkey '^q' beginning-of-line
+bindkey -M viins '^q' beginning-of-line
+
 bindkey '^e' end-of-line
+bindkey -M viins '^e' end-of-line
 
 # if mode indicator wasn't setup by theme, define default
 if [[ "$MODE_INDICATOR" == "" ]]; then
