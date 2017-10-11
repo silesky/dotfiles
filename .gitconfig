@@ -2,8 +2,6 @@
   name = Seth Silesky
   email = seth.silesky@gmail.com
 [alias]
-  graph = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate
-  ls = log --oneline
   stat = log --graph --author='Seth Silesky' --oneline
   dirdiff = difftool --tool=meld --dir-diff
 [filter "lfs"]
