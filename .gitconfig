@@ -3,9 +3,6 @@
   email = seth.silesky@gmail.com
 [alias]
   graph = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate
-  co = checkout
-  c = commit
-  st = status
   ls = log --oneline
   stat = log --graph --author='Seth Silesky' --oneline
   dirdiff = difftool --tool=meld --dir-diff
@@ -44,7 +41,7 @@
   decorate = full
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
