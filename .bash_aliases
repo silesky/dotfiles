@@ -131,6 +131,7 @@ alias gitf="git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEA
 alias gshowhidden="git ls-files -v | grep '^[^H]'"
 alias gshow="git show --color --pretty=format:%b"
 alias gr="git reset"
+alias grb="git rebase"
 alias gm="git merge"
 alias gpk="git cherry-pick"
 alias gp="git push"
