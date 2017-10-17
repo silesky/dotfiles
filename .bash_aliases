@@ -36,8 +36,6 @@ alias dssh='docker-compose exec --user drupal drupal bash'
 alias dstopall='docker stop $(docker ps -a -q)'
 alias dup='docker-compose up -d'
 alias dstop='docker-compose stop'
-
-
 alias devdesktop='export PHP_ID=php7_0; export PATH="/Applications/DevDesktop/$PHP_ID/bin:/Applications/DevDesktop/mysql/bin:/Applications/DevDesktop/tools:$PATH"'
 alias ask="sh ~/scripts/ask.sh"
 k9bp() { kill -9 $(lsof -t -i:$1); } # kill by port
@@ -176,4 +174,4 @@ alias bs="browser-sync"
 alias bstart='browser-sync start --server --proxy --files . &'
 alias srv="live-server"
 alias gitkr="gitkraken"
-
+alias yarn='loadnvm && yarn' # I don't usually use nvm
