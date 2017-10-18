@@ -4,7 +4,6 @@ name: rot-myrot
 root: ~/projects/rotary_myrotary
 startup_window: JS
 pre: git fetch && eval $(cachalot env) && amazeeio-cachalot start
-layout: main-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
 windows:
   - DOCKER:
       pre: eval $(cachalot env)
@@ -12,11 +11,12 @@ windows:
         - docker-compose up -d
         - docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
   - JS:
+      layout: main-vertical
       pre: loadnvm
       root: ~/projects/rotary_myrotary/sites/all/modules/custom/rotary_donate_widget
       panes:
-        - cd js && yarn dev
         - code -r . && git status
+        - cd js && yarn dev
   - THEME:
       pre: loadnvm
       root: ~/projects/rotary_myrotary/sites/all/themes/rotary_org

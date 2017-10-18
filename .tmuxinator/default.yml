@@ -10,9 +10,9 @@ root: ~/projects/<???>
 startup_window: MISC
 # pre: git fetch && eval $(cachalot env) && amazeeio-cachalot start
 pre: git fetch && $EDITOR .
-layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
 windows:
   - MISC:
+      layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
       # pre: loadnvm
       # root: ~/projects/<???>
       panes:
