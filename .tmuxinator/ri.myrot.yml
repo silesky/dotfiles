@@ -9,7 +9,7 @@ windows:
       pre: eval $(cachalot env)
       panes:
         - docker-compose up -d
-        - docker exec -itu drupal rotary_myrotary.com.docker.amazee.io bash
+        - dssh
   - JS:
       layout: main-vertical
       pre: loadnvm
