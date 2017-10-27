@@ -14,7 +14,7 @@ windows:
       layout: even-vertical # #options are even-horizontal, even-vertical, main-horizontal, main-vertical, tiled
       panes:
         - git fetch --all
-        - yarn dev
+        - yarn install --pure-lockfile && yarn dev
         - yarn run storybook
   - DRUPAL:
       root: ~/projects/harteresearchinstitute
