@@ -34,7 +34,7 @@ if v:version >=800
 endif
 
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-unimpaired' "quickfix ]a and [b
+Plug 'tpope/vim-unimpaired' "quickfix ]a and [b and move down and up is [e ]e
 Plug 'mxw/vim-jsx'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-lang/vim-elixir'
@@ -400,3 +400,14 @@ augroup END " }
 nnoremap <leader>B :ls<CR>:b<Space>
 noremap <silent> <leader>b :NERDTreeToggle<CR>
 inoremap jj <ESC>
+
+" rebind arrow keys to something useful
+nmap <Left> <<
+nmap <Right> >>
+vmap <Left> <gv
+vmap <Right> >gv
+
+nmap <Up> [e
+nmap <Down> ]e
+vmap <Up> [egv
+vmap <Down> ]egv

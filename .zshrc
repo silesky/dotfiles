@@ -33,6 +33,7 @@ plugins=(
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   git-open
   zsh-autosuggestions
+  zsh-nvm # lazy load nvms
   z
  )
 source $ZSH/oh-my-zsh.sh
@@ -46,10 +47,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=yellow"
 bindkey -v #  enable vim mode
 bindkey '^ ' autosuggest-accept # needs to go after bindkey -v
 . ~/partials/zsh_vi_settings.sh
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 export PATH="$PATH:$HOME/.rvm/bin"
-
 . ~/.bash_profile
 
+export NVM_LAZY_LOAD=true
