@@ -3,7 +3,6 @@
 # ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 
 # Override highlighter colors
-ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=009
 ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=009,standout
 ZSH_HIGHLIGHT_STYLES[alias]=fg=white,bold
 ZSH_HIGHLIGHT_STYLES[builtin]=fg=white,bold

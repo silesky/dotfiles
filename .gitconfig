@@ -1,45 +1,55 @@
-[alias]
-  graph = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --decorate
-  chk = checkout
-  st = status
-  ls = log --oneline
-  stat = log --graph --author='silesky' --oneline
-  dirdiff = difftool --tool=meld --dir-diff
-[filter "lfs"]
-  clean = git lfs clean %f
-  smudge = git lfs smudge %f
-  required = true
 [user]
-  name = silesky
-  email = seth.silesky@gmail.com
+	name = Seth Silesky
+	email = seth.silesky@gmail.com
+[alias]
+	# list my latest commits
+	stat = log --graph --author='Seth Silesky' --oneline
+	# search commit message, file
+	grep = log --all --oneline --name-status --grep
+	# what does this do?
+	sdiff = "!bash -c 'O=(); A=(); while x=\"$1\"; shift; do case $x in -*) O+=(\"$x\");; *) A+=(\"$x^{}\");; esac; done; g(){ git show \"${A[$1]}\" && return; echo FAIL ${A[$1]}; git show \"${A[$2]}\"; }; diff \"${O[@]}\" <(g 0 1) <(g 1 0)' --"
+	# what does this do?
+	bdiff = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	# skip files in  worktree
+	ignore = update-index --skip-worktree
+	# don't skip files in worktree
+	unignore = update-index --no-skip-worktree
+	# list skip-worktree files
+	ignored = !git ls-files -t | grep '^S'
+	b = branch
+	c = commit
+	d = diff
+	co = checkout
+	l = log --stat --pretty=format:'%C(red)%h%Creset - %C(yellow)%s%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	lo = log --oneline
+	m = merge
+	r = reset
+	rb = rebase
+	s = status
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
 [core]
-  excludesfile = /Users/ssilesky/.gitignore_global
-  autocrlf = input
-  editor = vim
-  pager = less -F -X
+	excludesfile = /Users/me/.gitignore_global
+	autocrlf = input
+	editor = vim
+	pager = less -F -X
 [color]
-  branch = auto
-  status = auto
-  ui = auto
-[diff]
-  tool = "vscode" # default tool for 'git difftool'
-[difftool]
-  prompt = false # prevent Launch 'vscode' [y/n]? on git diff
-[difftool "vscode"]
-  cmd = code --wait --diff $LOCAL $REMOTE # boilerplate copied from vscode website
-[difftool "meld"] #git difftool --tool=meld
-    cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
-    trustExitCode = true # not sure what this does, but it's in the docs
-[merge] # default tool for 'git mergetool'
-  tool = meld
-[mergetool "meld"]
-  trustExitCode = true
-  cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\" # in the docs https://yousseb.github.io/meld/
-  keepBackup = false
+	branch = auto
+	status = auto
+	ui = auto
 [push]
-  default = upstream
+	default = upstream
 [rebase]
-  autosquash = true
+	autosquash = true
 [log]
-  decorate = full
-
+	decorate = full
+[commit]
+	template = /Users/me/.stCommitMsg
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = 0
