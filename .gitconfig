@@ -1,0 +1,72 @@
+[user]
+	name = Seth Silesky
+	email = seth.silesky@gmail.com
+[alias]
+	# find the merge where a commit entered a branch
+  find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+	# show which remote the current branch is tracking
+	show-tracking = rev-parse --symbolic-full-name --abbrev-ref @{u}
+	# list recent branches that we've switched to
+	recent = !git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n15
+	# list files that changed in the last 10 commits of the branch
+	changed = !git whatchanged -n 100 | grep -v 'Seth Silesky <seth.silesky@gmail.com>'| grep -v date | grep -v commit | grep -o '[M\\|A][[:space:]].*' | awk '{print $NF}' | uniq | head
+	# list all conflicted files in diff
+	conflict = grep '<<<<<<< HEAD'
+	# list my latest commits
+	stat = log --graph --author='Seth Silesky' --oneline
+	# search commit message, file
+	grep = log --all --oneline --name-status --grep
+	# skip files in  worktree
+	ignore = update-index --skip-worktree
+	# show top committers
+        leaderboard = shortlog -sn --all --no-merges
+	# don't skip files in worktree
+	unignore = update-index --no-skip-worktree
+	# list skip-worktree files
+	ignored = !git ls-files -t | grep '^S'
+	b = branch
+	c = commit
+	d = diff
+	co = checkout
+	clear = reset -- . && git checkout -- .
+	l = log --oneline --pretty=format:'%C(red)%h%Creset - %C(yellow)%s%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	m = merge
+	r = reset
+	rb = rebase
+	s = status
+	st = stash
+	stp = stash pop
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[core]
+	excludesfile = /Users/seth.silesky/.gitignore_global
+	autocrlf = input
+	editor = vim
+	pager = less -F -X
+[color]
+	branch = auto
+	status = auto
+	ui = auto
+[push]
+	default = upstream
+[rebase]
+	autosquash = true
+[log]
+	decorate = full
+[commit]
+	template = /Users/me/.stCommitMsg
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = 0
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+

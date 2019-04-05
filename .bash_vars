@@ -1,0 +1,26 @@
+
+export HOME=/Users/seth.silesky
+LESSOPEN="|$HOME/scripts/lesspipe/lesspipe.sh %s"; export LESSOPEN  #(sh like shells)
+export VISUAL=code
+export EDITOR="$VISUAL"
+export EVENT_NOKQUEUE=1 #fix for broken kqueue message in tmux`
+export GREP_COLOR='00;38;5;226'
+export CLICOLOR=1
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export ANDROID_SDK=$ANDROID_HOME
+export ANDROID_AVD_HOME=$HOME/.android/avd
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export GOPATH=$HOME/go
+# export PATH=$PATH:$(go env GOPATH)/bin # always be able to access executables in gopath
+export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
+export HISTCONTROL="erasedups:ignoreboth"
+export HISTFILESIZE=500000
+export HISTSIZE=100000
+export HELM_HOME="$HOME/.helm"
+export KUBE_EDITOR=vim # for kubectl edit
+export NVM_DIR="$HOME/.nvm"
+
+# tmuxinator thing
+DISABLE_AUTO_TITLE=true
+DEFAULT_USER="me"

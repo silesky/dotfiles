@@ -1,0 +1,37 @@
+# ignore everything
+*
+
+# But not these files...
+!.gitconfig
+!.eslintrc
+!.eslintrc.js
+!cron_test.txt
+!.atom
+!.gitignore
+!.gitignore_global
+!.vimrc*
+!.stylelintrc
+!.tigrc
+!.bash*
+!.quokka/**
+!Brewfile
+.bash_private
+.bash_history
+.bash_logout
+!.tmux.conf
+!.rvm
+!.zshrc
+!autopush.sh
+/.vim/.netrwhist!/
+!/partials/*
+!/partials/
+!.tern-config
+!/.oh-my-zsh/custom/**/*
+!/scripts/*
+!scripts
+.DS_Store
+tmp.*
+tmp*
+.env
+ERRORS.md
+registration.json
