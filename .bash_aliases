@@ -9,6 +9,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias tm="tmux"
    # OSX - app path realiases and os-specific
    alias chrome="open -a 'Google Chrome.app'"
+   alias blisk="open -a Blisk.app"
    alias vim="/usr/local/bin/vim" # requires brew install vim for clipboard to work
    alias vi="vim"
    alias v="vim"
@@ -45,8 +46,7 @@ alias kesys="kubectl edit --namespace=kube-system"
 # misc
 alias ai="autoenv_init"
 alias dc="docker-compose"
-alias sub="open -a 'Sublime Text'"
-alias timeshark="ssh -Y root@timeshark.org"
+alias ch="chokidar"
 
 ## Docker alias
 k9bp() { kill -9 "$(lsof -t -i:"$1")"; } # kill by port
@@ -54,17 +54,11 @@ k9p() { kill -9 "$(pgrep -f "$1")"; }
 alias co="code"
 alias code.settings="code '/Users/me/Library/Application Support/Code/User/settings.json'"
 alias code="'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'"
+alias c="clear"
 alias k9="k9p"
-alias kb="kbox"
 alias rn="react-native"
 alias ka="killall"
-alias rnl="react-native link"
-alias rnri="react-native run-ios"
-alias rnra="react-native run-android"
 alias dockerq="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
-alias doc="cd ~/Documents"
-alias mongo-start=". ~/scripts/mongo-start.sh"
-alias stopm="kill -9 `pgrep -f mongod`"
 alias bang="echo '#!/usr/bin/env bash'"
 
 # scripts
@@ -72,10 +66,6 @@ alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 alias google="sh ~/scripts/google.sh"
 alias autopush='sh ~/scripts/autopush.sh'
 # Misc Folders
-
-# a() { ag -ro "$1" * }
-# g() { sudo grep --color=always -r "$1" . }
-
 alias ..='cd ..'            # Go up one directory
 alias ...='cd ../..'        # Go up two directories
 
@@ -117,19 +107,6 @@ alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read
 alias lynda="cd ~/Lynda/"
 alias rp="realpath"
 
-# npm
-alias ni='npm install'
-alias nid='npm install --save-dev'
-alias nig='npm install --global'
-alias nt='npm test'
-alias nit='npm install && npm test'
-alias nk='npm link'
-alias nr='npm run'
-alias ns='npm start'
-alias nf='npm cache clean && rm -rf node_modules && npm install'
-alias nlg='npm list --global --depth=0'
-
-# ... git
 alias gitb="git checkout HEAD~"
 alias gitf="git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout"
 alias gshowhidden="git ls-files -v | grep '^[^H]'"

@@ -3,35 +3,35 @@
 
 # But not these files...
 !.gitconfig
-!.eslintrc
-!.eslintrc.js
-!cron_test.txt
-!.atom
+!.eslintrc*
 !.gitignore
 !.gitignore_global
 !.vimrc*
 !.stylelintrc
 !.tigrc
+
+# shell stuff
 !.bash*
-!.quokka/**
-!Brewfile
 .bash_private
 .bash_history
 .bash_logout
-!.tmux.conf
-!.rvm
 !.zshrc
+
+!.tmux.conf
+!.quokka/**
+!Brewfile
+!.rvm
 !autopush.sh
-/.vim/.netrwhist!/
 !/partials/*
 !/partials/
-!.tern-config
 !/.oh-my-zsh/custom/**/*
 !/scripts/*
 !scripts
+!/.tmuxinator/default*
+
+# ignore these no matter where they are
 .DS_Store
 tmp.*
 tmp*
 .env
-ERRORS.md
-registration.json
+tmuxinator.yml
