@@ -43,6 +43,13 @@ alias ke="kubectl edit"
 alias kesys="kubectl edit --namespace=kube-system"
 
 
+# chrome
+alias chrome.def='open -a "Google Chrome" --args --new-window --profile-directory="Default"'
+alias chrome.pande='open -a "Google Chrome" --args --new-window --profile-directory="Profile 2"'
+alias chrome.spr='open -a "Google Chrome" --args --new-window --profile-directory="Profile 3"'
+
+# spreetail
+alias kubefwd="gcloud container clusters get-credentials dev-qa-2603 --zone us-central1-a --project delta-album-220413 && sudo kubefwd -n dev services"
 # misc
 alias ai="autoenv_init"
 alias dc="docker-compose"

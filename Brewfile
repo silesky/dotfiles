@@ -36,7 +36,12 @@ cask "sourcetree"
 cask "amazon-music"
 cask "skitch"
 cask "mongodb-compass"
+cask "mandrake" # for man pages
 
 # App store
 mas "Magnet", id: 441258766
 mas "Xcode", id: 497799835
+
+# Getting a list of globally installed npm packages
+# npm install -g chokidar git-open live-server
+# npm list -g --depth 0

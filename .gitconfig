@@ -29,7 +29,9 @@
 	d = diff
 	co = checkout
 	clear = reset -- . && git checkout -- .
-	l = log --oneline --pretty=format:'%C(red)%h%Creset - %C(yellow)%s%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	back = checkout HEAD~1
+	fwd = "!sh -c git checkout $(git rev-list --topo-order HEAD..\"$*\" | tail -1)"
+	l = log --oneline --pretty=format:'%C(red)%h%Creset - %C(yellow)%s%Creset %Cgreen(%cr) %C(bold blue)<%an>%Creset'checkout $(git rev-list --topo-order HEAD..towards | tail -1)
 	m = merge
 	r = reset
 	rb = rebase
@@ -65,7 +67,7 @@
 	prompt = 0
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

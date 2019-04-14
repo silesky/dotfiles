@@ -50,6 +50,7 @@ fi
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
   composer
+  npm
   helm
   docker
   docker-compose
@@ -59,10 +60,11 @@ plugins=(
   yarn
   kubectl
   z
+  zsh-iterm-touchbar
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   zsh-autosuggestions
  )
-
+TOUCHBAR_GIT_ENABLED=true
 source $ZSH/oh-my-zsh.sh
 
 # source everything
