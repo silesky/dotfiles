@@ -3,6 +3,7 @@ cask_args appdir: "/Applications"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "caskroom/fonts"
 
 brew "exercism"
 brew "tmux"
@@ -19,6 +20,9 @@ brew "vim"
 brew "git-open"
 
 # Casks
+cask "font-hack-nerd-font"
+cask "font-firacode-nerd-font"
+cask "font-hasklig-nerd-font"
 cask "docker"
 cask "virtualbox"
 cask "minikube"

@@ -109,3 +109,13 @@ if [ -f '/Users/seth.silesky/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/se
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/seth.silesky/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/seth.silesky/google-cloud-sdk/completion.zsh.inc'; fi
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/slss.zsh
