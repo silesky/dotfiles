@@ -17,7 +17,6 @@
 .bash_logout
 !.zshrc
 
-!node-global
 !.tmux.conf
 !.quokka/**
 !Brewfile
