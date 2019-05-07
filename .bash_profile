@@ -3,8 +3,7 @@ include () {
 }
 
 # also sources from zshrc
-include ~/.bash_vars
-include ~/.bash_paths # some vars are in paths...
+include ~/.bash_vars # also includes paths
 include ~/.bashrc
 include ~/.bash_private
 include ~/.bash_aliases

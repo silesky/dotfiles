@@ -1,4 +1,4 @@
-
+#!/usr/bin/env zsh
 
 # If this is set, zsh sessions will append their history list to the history file, rather than replace it. Thus, multiple parallel zsh sessions will all have the new entries from their history lists added to the history file, in the order that they exit. The file will still be periodically re-written to trim it when the number of lines grows 20% beyond the value specified by $SAVEHIST (see also the HIST_SAVE_BY_COPY option).
 
@@ -56,7 +56,6 @@ plugins=(
   docker-compose
   history
   tmuxinator
-  tmux
   yarn
   kubectl
   z
@@ -71,9 +70,9 @@ source $ZSH/oh-my-zsh.sh
 . ~/.bash_profile
 
 
-export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 
 #_______________END ZSH CONFIG____________________________
 # space in front of terminal during ssh bug
@@ -81,41 +80,32 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # hstr config (brew install hstr) -- activate with hh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
 export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HH_CONFIG=hicolor        # get more colors
 
-# git clone git://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 
-# colors https://upload.wikimedia.org/wikipedia/commons/1/15/Xterm_256color_chart.svg
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
 
-bindkey -v # enable vim mode
-# load vim specific settings.
-. ~/partials/zsh_vi_settings.sh
+. ~/partials/zsh_vi_settings.sh  # load vim specific settings.
+. ~/partials/google-cloud.sh # load google cloud completions
 
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
 bindkey '^ ' autosuggest-accept
 
-
 # iterm integration auto
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# rvm needs this for some reason
-export PATH="$PATH:$HOME/.rvm/bin"
 
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/seth.silesky/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/seth.silesky/google-cloud-sdk/path.zsh.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/seth.silesky/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/seth.silesky/google-cloud-sdk/completion.zsh.inc'; fi
+###################
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/serverless.zsh
+[[ -f /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/sls.zsh
+[[ -f /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/sls.zsh
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/seth.silesky/projects/core/devops/ci-cd/bitbucket-gcp-cloud-build-integration/node_modules/tabtab/.completions/slss.zsh
+[[ -f /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/slss.zsh

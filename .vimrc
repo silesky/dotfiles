@@ -116,13 +116,6 @@ if v:version > 703 && v:version < 800
   Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 endif
 
-" Tern: Postinstall hook
-function! BuildTern(info)
-  if a:info.status == 'installed' || 'updated' || a:info.force
-    !npm install
-  endif
-endfunction
-Plug 'marijnh/tern_for_vim', { 'do': function('BuildTern') }
 call plug#end()
 " DIRECTIONS:
 " Misc--
@@ -184,7 +177,7 @@ function! SetSolarized()
 endfunction
 " call SetSolarized()
 set bg=dark
-colorscheme molokai
+colorscheme zenburn
 "hi Normal ctermbg=002b36 "firewatch needs this extra
 hi Search cterm=NONE ctermfg=black ctermbg=yellow
 hi Visual cterm=NONE ctermfg=white ctermbg=red guibg=red "search highlighting

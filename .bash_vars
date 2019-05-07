@@ -1,4 +1,4 @@
-
+#!/usr/bin/env bash
 export HOME=/Users/seth.silesky
 LESSOPEN="|$HOME/scripts/lesspipe/lesspipe.sh %s"; export LESSOPEN  #(sh like shells)
 export VISUAL=code
@@ -20,6 +20,27 @@ export HISTSIZE=100000
 export HELM_HOME="$HOME/.helm"
 export KUBE_EDITOR=vim # for kubectl edit
 export NVM_DIR="$HOME/.nvm"
+
+# It seems placing the $PATH at the end of the statement (export PATH=/usr/local/git/bin:$PATH)
+# assures that the system looks in this custom place **before** searching default places
+# (that is, the specified path is appended before the standard places contained within $PATH).
+# $PATH goes at the beginning. Path goes at the end in the default places, because I want the default places to go first.
+
+# Paths
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/opt/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
+export PATH=$PATH:$HOME
+export PATH=$HOME/scripts:$PATH
+export PATH=$PATH:$HOME/scripts
+export PATH=$PATH:$HOME/Library/Android/sdk/tools
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
+export PATH=$PATH:$HOME/.composer/vendor/bin
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:/usr/local/share/dotnet
+export PATH=$PATH:$HOME/.rvm/bin
+
 
 # tmuxinator thing
 DISABLE_AUTO_TITLE=true

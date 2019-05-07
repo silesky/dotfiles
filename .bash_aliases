@@ -1,10 +1,7 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 
 # temp - for google cloud function emulator
 alias func="functions-emulator"
-alias copylast="echo !! | pbcopy"
-
 
 ############################################
 ############### linux / osx #################
@@ -13,15 +10,10 @@ if [[ "$(uname)" = "Darwin" ]]; then
    alias cat="ccat"
    export CLICOLOR=1
    export LSCOLORS=GxFxCxDxBxegedabagaced
-   alias tm="tmux"
-   # OSX - app path realiases and os-specific
    alias chrome="open -a 'Google Chrome.app'"
-   alias blisk="open -a Blisk.app"
    alias vim="/usr/local/bin/vim" # requires brew install vim for clipboard to work
    alias vi="vim"
-   alias v="vim"
    alias estest="eslint --debug ~/estest.js"
-   alias temp="cd ~/Desktop/temp"
    alias tree="tree -C"
 else
    alias tmux="tmux -2"
@@ -35,20 +27,10 @@ getLog() {
    POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
    kubectl logs $POD_NAME -c flags
 }
-alias ksys="kubectl --namespace=kube-system"
 
-alias kg="kubectl get"
-alias kgsys="kubectl get --namespace=kube-system"
-
-alias kgpa="kubectl get pods --all-namespaces"
-alias kgpsys="kubectl get pods --namespace=kube-system"
-
-alias kd="kubectl describe"
-alias kdsys="kubectl describe --namespace=kube-system"
-
-alias ke="kubectl edit"
-alias kesys="kubectl edit --namespace=kube-system"
-
+# ... system
+alias tm="tmux"
+alias top="top -o cpu"
 
 # chrome
 alias chrome.def='open -a "Google Chrome" --args --new-window --profile-directory="Default"'
@@ -57,20 +39,18 @@ alias chrome.spr='open -a "Google Chrome" --args --new-window --profile-director
 
 # spreetail
 alias kubefwd="gcloud container clusters get-credentials dev-qa-2603 --zone us-central1-a --project delta-album-220413 && sudo kubefwd -n dev services"
+
 # misc
-alias ai="autoenv_init"
 alias dc="docker-compose"
 alias ch="chokidar"
 
 ## Docker alias
 k9bp() { kill -9 "$(lsof -t -i:"$1")"; } # kill by port
 k9p() { kill -9 "$(pgrep -f "$1")"; }
-alias co="code"
-alias code.settings="code '/Users/me/Library/Application Support/Code/User/settings.json'"
 alias code="'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'"
+alias co="code -r"
 alias c="clear"
 alias k9="k9p"
-alias rn="react-native"
 alias ka="killall"
 alias dockerq="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 alias bang="echo '#!/usr/bin/env bash'"
@@ -86,8 +66,6 @@ alias ...='cd ../..'        # Go up two directories
 alias l="ls"
 alias ls/='ls -ld */'
 alias ls.='ls -ld .*' #List dotfiles only
-alias ll='clear && ls -al' # Long view, show hidden + clear
-cl() { clear && cd "$@" && ls -al; } #cdls
 
 # ...  dotfiles
 alias eslintrc="$EDITOR ~/.eslintrc"
@@ -106,36 +84,15 @@ alias gitignore="$EDITOR ~/.gitignore"
 # .... dotfiles
 alias reprof=". ~/.bash_profile && . ~/.zshrc && echo 'reloaded.'"
 alias blame="git blame-colored.sh"
-
 alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
-# misc
-alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
-alias lynda="cd ~/Lynda/"
-alias rp="realpath"
 
+# misc
 alias gitb="git checkout HEAD~"
 alias gitf="git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout"
 alias gshowhidden="git ls-files -v | grep '^[^H]'"
 alias gshow="git show --color --pretty=format:%b"
-alias gr="git reset"
-alias grb="git rebase"
-alias gm="git merge"
-alias gpk="git cherry-pick"
-alias gp="git push"
-alias ga="git add"
-alias gc="git commit"
-alias gcam="git commit --amend"
-alias gcnv="git commit --no-verify"
-alias gck.="git checkout -- ."
-alias gck="git checkout"
 alias gs="git status -sb"
-alias gst="git status"
 alias gl="git l"
-alias gck='git checkout'
-alias gdt="git difftool"
-alias gd="git diff"
-alias gdc="git diff --cached"
-alias git-changed="git whatchanged -n 10 | grep -v Author | grep -o 'M.*\|A.*' | awk '{print $NF}' | uniq"
 
 # ... tmux
 alias tmA="tmux attach -d || tmux new"
@@ -154,12 +111,14 @@ alias tmkpa="tmux kill-pane -a -t . && clear"
 alias tmkp="tmux kill-pane -t ."
 alias tmx="tmux kill-session -t ."
 alias tmX="killall tmux"
+
+
 # ... misc
 alias bs="browser-sync"
 alias bstart='browser-sync start --server --proxy --files . &'
 alias srv="live-server"
-alias gitkr="gitkraken"
-alias top="top -o cpu"
+alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
+
 #!/bin/sh
 
 # display image names of all running containers
@@ -176,7 +135,7 @@ k.all-containers() {
 # e.g. branch feature/foo // branches foo from dev
 #      branch feature/foo uat // branches foo from uat
 branch() {
-  local BASE=${2-dev}
+  local BASE=${2-uat}
   git checkout $BASE;
   git pull origin $BASE --ff-only;
   git checkout -b $1;
@@ -184,13 +143,6 @@ branch() {
 ##########################
 
 
-# convert a json path to a .env
-jsonenv() {
-  jq -r "to_entries|map(\"\(.key)=\(.value|tostring)\")|.[]" $1 > .env
-  echo "---> .env created:"
-  cat .env
-  autoenv_init
-}
 mergecheck() {
   let current_branch=git rev-parse --abbrev-ref HEAD | tr -d '\n'
   git format-patch $(git merge-base $current_branch $1)..$1 --stdout | git apply --check -
@@ -234,53 +186,3 @@ man() {
 
 }
 
-
-# draw horizontal line of //
-hr() {
-  RED='\033[0;31m'
-  echo ${RED}
-  printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' ~ # "~" becomes line of //
-}
-
-
-# OSX: open in chrome
-chrome() {
-  open -a "Google Chrome" --args "$1"
-}
-
-ask() {
-    # https://djm.me/ask
-    local prompt default REPLY
-
-    while true; do
-
-        if [ "${2:-}" = "Y" ]; then
-            prompt="Y/n"
-            default=Y
-        elif [ "${2:-}" = "N" ]; then
-            prompt="y/N"
-            default=N
-        else
-            prompt="y/n"
-            default=
-        fi
-
-        # Ask the question (not using "read -p" as it uses stderr not stdout)
-        echo -n "$1 [$prompt] "
-
-        # Read the answer (use /dev/tty in case stdin is redirected from somewhere else)
-        read REPLY </dev/tty
-
-        # Default?
-        if [ -z "$REPLY" ]; then
-            REPLY=$default
-        fi
-
-        # Check if the reply is valid
-        case "$REPLY" in
-            Y*|y*) return 0 ;;
-            N*|n*) return 1 ;;
-        esac
-
-    done
-}
