@@ -38,11 +38,17 @@ alias chrome.pande='open -a "Google Chrome" --args --new-window --profile-direct
 alias chrome.spr='open -a "Google Chrome" --args --new-window --profile-directory="Profile 3"'
 
 # spreetail
-alias kubefwd="gcloud container clusters get-credentials dev-qa-2603 --zone us-central1-a --project delta-album-220413 && sudo kubefwd -n dev services"
+alias kubefwd.dev="gcloud container clusters get-credentials dev-1604 --zone us-central1-a --project delta-album-220413 && sudo kubefwd -n dev services"
+alias kubefwd.uat="gcloud container clusters get-credentials uat-2504 --zone us-central1-a --project delta-album-220413 && sudo kubefwd -n uat services"
 
 # misc
 alias dc="docker-compose"
 alias ch="chokidar"
+
+# curl - with response time
+curlb() {
+  curl -s -o /dev/null -w '%{time_starttransfer}\n' "$@"
+}
 
 ## Docker alias
 k9bp() { kill -9 "$(lsof -t -i:"$1")"; } # kill by port
@@ -72,7 +78,6 @@ alias eslintrc="$EDITOR ~/.eslintrc"
 alias bash_profile="$EDITOR ~/.bash_profile"
 alias bashrc="$EDITOR ~/.bashrc"
 alias bash_vars="$EDITOR ~/.bash_vars"
-alias vars=$bash_vars
 alias bash_aliases="$EDITOR ~/.bash_aliases"
 alias bash_paths="$EDITOR ~/.bash_paths"
 alias zshrc="$EDITOR ~/.zshrc"

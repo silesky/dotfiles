@@ -1,29 +1,30 @@
 #!/usr/bin/zsh
 bindkey -v # enable vim mode
 
-function zle-keymap-select zle-line-init
-{
-    # change cursor shape in iTerm2
-    case $KEYMAP in
-        vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
-        viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
-    esac
+ function zle-keymap-select zle-line-init
+ {
+     # change cursor shape in iTerm2
+     case $KEYMAP in
+         vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
+         viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
+     esac
 
-    zle reset-prompt
-    zle -R
-}
+     zle reset-prompt
+     zle -R
+ }
 
-function zle-line-finish
-{
-    print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
-}
+ function zle-line-finish
+ {
+     print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
+ }
 
-zle -N zle-line-init
-zle -N zle-line-finish
-zle -N zle-keymap-select
+ # Disable different lines bc slow and only works without tmux
+  zle -N zle-line-init
+  zle -N zle-line-finish
+  zle -N zle-keymap-select
 
 
-export KEYTIMEOUT=10 #if I set it too low, can't switch with j j
+export KEYTIMEOUT=5 #if I set it too low, can't switch with j j
 
 # history search forward
 bindkey '^f' history-beginning-search-forward #use the current input

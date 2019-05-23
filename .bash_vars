@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 export HOME=/Users/seth.silesky
-LESSOPEN="|$HOME/scripts/lesspipe/lesspipe.sh %s"; export LESSOPEN  #(sh like shells)
+export LESSOPEN="|$HOME/scripts/lesspipe/lesspipe.sh %s"
 export VISUAL=code
 export EDITOR="$VISUAL"
 export EVENT_NOKQUEUE=1 #fix for broken kqueue message in tmux`
@@ -20,6 +20,14 @@ export HISTSIZE=100000
 export HELM_HOME="$HOME/.helm"
 export KUBE_EDITOR=vim # for kubectl edit
 export NVM_DIR="$HOME/.nvm"
+export GREP_OPTIONS="\
+  --color=auto \
+  --exclude=*.pyc \
+  --exclude=package-lock.json \
+  --exclude-dir=.git \
+  --exclude-dir=node_modules \
+  --exclude-dir=build \
+  --exclude-dir=dist"
 
 # It seems placing the $PATH at the end of the statement (export PATH=/usr/local/git/bin:$PATH)
 # assures that the system looks in this custom place **before** searching default places
@@ -40,7 +48,6 @@ export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/share/dotnet
 export PATH=$PATH:$HOME/.rvm/bin
-
 
 # tmuxinator thing
 DISABLE_AUTO_TITLE=true

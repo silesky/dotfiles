@@ -40,7 +40,6 @@ cask "sourcetree"
 cask "amazon-music"
 cask "skitch"
 cask "mongodb-compass"
-cask "mandrake" # for man pages
 
 # App store
 mas "Magnet", id: 441258766

@@ -5,7 +5,6 @@
 setopt append_history
 
 # keep history in chronological order (zsh)
-
 setopt inc_append_history
 setopt share_history
 
@@ -25,6 +24,9 @@ setopt hist_verify
 
 # don't show errors on command not found
  zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+
+# when using tab completion, show hidden files and folders (such as dotfiles)
+setopt globdots
 
 # ______________ ZSH CONFIG _________________
 # Path to your oh-my-zsh installation.
