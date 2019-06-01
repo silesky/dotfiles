@@ -26,6 +26,7 @@ bindkey -v # enable vim mode
 
 export KEYTIMEOUT=5 #if I set it too low, can't switch with j j
 
+
 # history search forward
 bindkey '^f' history-beginning-search-forward #use the current input
 bindkey -M viins '^f' history-beginning-search-forward
@@ -36,10 +37,20 @@ bindkey '^b' history-beginning-search-backward
 bindkey -M viins '^b' history-beginning-search-backward
 bindkey -M vicmd '^b' history-beginning-search-backward
 
+# backward k char (standard behavior_
+bindkey 'x' backward-delete-char
+bindkey -M viins '^x' backward-delete-char
+bindkey -M vicmd '^x' backward-delete-char
+
+# kill whole line
+bindkey '^d' kill-whole-line
+bindkey -M viins '^d' kill-whole-line
+bindkey -M vicmd '^d' kill-whole-line
+
 # clear line (standard bash)
-bindkey '^u' kill-whole-line
-bindkey -M viins '^u' kill-whole-line
-bindkey -M vicmd '^u' kill-whole-line
+bindkey '^u' backward-kill-line
+bindkey -M viins '^u' backward-kill-line
+bindkey -M vicmd '^u' backward-kill-line
 
 # clear screen (ctrl-l replacement)
 bindkey '^y' clear-screen
@@ -47,8 +58,11 @@ bindkey -M viins '^y' clear-screen
 bindkey -M vicmd '^y' clear-screen
 
 # ctrl-left and right arrow (like emacs mode)
+bindkey "^[[1;5C" forward-word
 bindkey -M viins "^[[1;5C" forward-word
 bindkey -M vicmd "^[[1;5C" forward-word
+
+bindkey "^[[1;5D" backward-word
 bindkey -M vicmd "^[[1;5D" backward-word
 bindkey -M viins "^[[1;5D" backward-word
 
@@ -73,12 +87,17 @@ bindkey '^w' backward-kill-word
 bindkey -M viins '^w' backward-kill-word
 bindkey -M vicmd '^w' backward-kill-word
 
+
 # allow ctrl-r to perform backward search in history
 bindkey '^r' history-incremental-search-backward
 bindkey -M viins '^r' history-incremental-search-backward
 bindkey -M vicmd '^r' history-incremental-search-backward
 #
-# allow ctrl-a and ctrl-e to move to beginning/end of line
+# allow ctrl-a and ctrl-q to move to beginning/end of line
+bindkey '^q' beginning-of-line
+bindkey -M viins '^e' beginning-of-line
+bindkey -M vicmd '^q' beginning-of-line
+
 bindkey '^e' end-of-line
 bindkey -M viins '^e' end-of-line
 bindkey -M vicmd '^e' end-of-line

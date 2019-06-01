@@ -51,7 +51,6 @@ fi
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
-  composer
   npm
   helm
   docker
@@ -85,8 +84,6 @@ export LANG=en_US.UTF-8
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
 export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HH_CONFIG=hicolor        # get more colors
-
-
 
 . ~/partials/zsh_vi_settings.sh  # load vim specific settings.
 . ~/partials/google-cloud.sh # load google cloud completions

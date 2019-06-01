@@ -4,7 +4,6 @@ export LESSOPEN="|$HOME/scripts/lesspipe/lesspipe.sh %s"
 export VISUAL=code
 export EDITOR="$VISUAL"
 export EVENT_NOKQUEUE=1 #fix for broken kqueue message in tmux`
-export GREP_COLOR='00;38;5;226'
 export CLICOLOR=1
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_SDK=$ANDROID_HOME
@@ -20,6 +19,8 @@ export HISTSIZE=100000
 export HELM_HOME="$HOME/.helm"
 export KUBE_EDITOR=vim # for kubectl edit
 export NVM_DIR="$HOME/.nvm"
+
+export GREP_COLOR='00;38;5;226'
 export GREP_OPTIONS="\
   --color=auto \
   --exclude=*.pyc \
