@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
-bindkey -v # enable vim mode
 
+# change _cursor_ based on insert status
  function zle-keymap-select zle-line-init
  {
      # change cursor shape in iTerm2
@@ -23,7 +23,6 @@ bindkey -v # enable vim mode
   zle -N zle-line-finish
   zle -N zle-keymap-select
 
-
 export KEYTIMEOUT=5 #if I set it too low, can't switch with j j
 
 
@@ -38,7 +37,7 @@ bindkey -M viins '^b' history-beginning-search-backward
 bindkey -M vicmd '^b' history-beginning-search-backward
 
 # backward k char (standard behavior_
-bindkey 'x' backward-delete-char
+bindkey '^x' backward-delete-char
 bindkey -M viins '^x' backward-delete-char
 bindkey -M vicmd '^x' backward-delete-char
 
@@ -69,6 +68,9 @@ bindkey -M viins "^[[1;5D" backward-word
 #######################################################
 # stolen shamelessly from oh-my-zsh vi plugin ###
 # Updates editor information when the keymap changes.
+
+# enable vim mode
+bindkey -v
 
 # allow v to edit the command line (standard behaviour)
 autoload -Uz edit-command-line

@@ -2,8 +2,9 @@
 	name = Seth Silesky
 	email = seth.silesky@gmail.com
 [alias]
+	get-branches = "!sh -c ~/scripts/get-all-branches.sh"
 	# find the merge where a commit entered a branch
-  find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
+	find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"
 	# show which remote the current branch is tracking
 	show-tracking = rev-parse --symbolic-full-name --abbrev-ref @{u}
 	# list recent branches that we've switched to (old -> new)
@@ -67,7 +68,7 @@
 	prompt = 0
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
