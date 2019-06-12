@@ -39,7 +39,7 @@ if [ ! -e "$ZSH_CUSTOM/plugins/autoenv" ]; then
   git clone git://github.com/kennethreitz/autoenv.git
 else
   # is not a plugin
-  source "$ZSH_CUSTOM/plugins/autoenv/activate.sh"
+  # source "$ZSH_CUSTOM/plugins/autoenv/activate.sh"
 fi
 
 
