@@ -60,7 +60,6 @@ plugins=(
   yarn
   kubectl
   z
-  zsh-iterm-touchbar
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   zsh-autosuggestions
  )
