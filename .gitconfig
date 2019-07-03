@@ -1,6 +1,6 @@
 [user]
 	name = Seth Silesky
-	email = seth.silesky@gmail.com
+	email = seth.silesky@spreetail.com
 [alias]
 	get-branches = "!sh -c ~/scripts/get-all-branches.sh"
 	# find the merge where a commit entered a branch
