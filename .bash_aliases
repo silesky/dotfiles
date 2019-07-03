@@ -6,26 +6,26 @@ alias func="functions-emulator"
 ############################################
 ############### linux / osx #################
 #############################################
-if [[ "$(uname)" = "Darwin" ]]; then
-   alias cat="ccat"
-   export CLICOLOR=1
-   export LSCOLORS=GxFxCxDxBxegedabagaced
-   alias chrome="open -a 'Google Chrome.app'"
-   alias vim="/usr/local/bin/vim" # requires brew install vim for clipboard to work
-   alias vi="vim"
-   alias estest="eslint --debug ~/estest.js"
-   alias tree="tree -C"
+if [[ "$(uname)" == "Darwin" ]]; then
+  alias cat="ccat"
+  export CLICOLOR=1
+  export LSCOLORS=GxFxCxDxBxegedabagaced
+  alias chrome="open -a 'Google Chrome.app'"
+  alias vim="/usr/local/bin/vim" # requires brew install vim for clipboard to work
+  alias vi="vim"
+  alias estest="eslint --debug ~/estest.js"
+  alias tree="tree -C"
 else
-   alias tmux="tmux -2"
-   alias tm="tmux -2"
+  alias tmux="tmux -2"
+  alias tm="tmux -2"
 fi
 # ..........................................
 ############################################
 # kubernetes / kubectl
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/kubectl/kubectl.plugin.zsh
 getLog() {
-   POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
-   kubectl logs $POD_NAME -c flags
+  POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
+  kubectl logs $POD_NAME -c flags
 }
 
 # ... system
@@ -66,8 +66,8 @@ alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 alias google="sh ~/scripts/google.sh"
 alias autopush='sh ~/scripts/autopush.sh'
 # Misc Folders
-alias ..='cd ..'            # Go up one directory
-alias ...='cd ../..'        # Go up two directories
+alias ..='cd ..'     # Go up one directory
+alias ...='cd ../..' # Go up two directories
 
 alias l="ls"
 alias ls/='ls -ld */'
@@ -103,7 +103,7 @@ alias gl="git l"
 alias tmA="tmux attach -d || tmux new"
 alias tma="tmux attach -d -t"
 alias tmd="tmux detach-client"
-alias tmns="tmux new-session -s  `date '+%H%M%S'`"
+alias tmns="tmux new-session -s  $(date '+%H%M%S')"
 alias mux="tmuxinator"
 alias tmsw="tmux splitw"
 alias tmks="tmux kill-session -t"
@@ -117,7 +117,6 @@ alias tmkp="tmux kill-pane -t ."
 alias tmx="tmux kill-session -t ."
 alias tmX="killall tmux"
 
-
 # ... misc
 alias bs="browser-sync"
 alias bstart='browser-sync start --server --proxy --files . &'
@@ -128,10 +127,10 @@ alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read
 
 # display image names of all running containers
 k.all-containers() {
-  kubectl get pods --all-namespaces -o jsonpath="{..image}" |\
-  tr -s '[[:space:]]' '\n' |\
-  sort |\
-  uniq -c
+  kubectl get pods --all-namespaces -o jsonpath="{..image}" |
+    tr -s '[[:space:]]' '\n' |
+    sort |
+    uniq -c
 }
 
 # functions
@@ -141,22 +140,20 @@ k.all-containers() {
 #      branch feature/foo uat // branches foo from uat
 branch() {
   local BASE=${2-uat}
-  git checkout $BASE;
-  git pull origin $BASE --ff-only;
-  git checkout -b $1;
+  git checkout $BASE
+  git pull origin $BASE --ff-only
+  git checkout -b $1
 }
 ##########################
-
 
 mergecheck() {
   let current_branch=git rev-parse --abbrev-ref HEAD | tr -d '\n'
   git format-patch $(git merge-base $current_branch $1)..$1 --stdout | git apply --check -
 }
 
-
 # easily create a script and make it executable
 #   e.g. touchsh myscript
-vimsh() { echo '#!/bin/sh' > $1.sh && chmod +x $1.sh && vim $1.sh; }
+vimsh() { echo '#!/bin/sh' >$1.sh && chmod +x $1.sh && vim $1.sh; }
 
 # easily bookmark current path,
 #   e.g. a mybookmark
@@ -164,30 +161,31 @@ a() { alias $1="cd $PWD"; }
 
 getpath() {
   (
-  cd $(dirname $1)         # or  cd ${1%/*}
-  echo $PWD/$(basename $1) # or  echo $PWD/${1##*/}
+    cd $(dirname $1)         # or  cd ${1%/*}
+    echo $PWD/$(basename $1) # or  echo $PWD/${1##*/}
   )
 }
 
 alarm() {
-  (let secs=$((${1:-5}*60))
-  let extrasecs=${2:-0}
-  let total=$(($secs+extrasecs))
-  echo "Alarm set for "$total" secs..."
-  sleep $total && terminal-notifier -title "Alarm" -message "$1 minute alarm up!")&
+  (
+    let secs=$((${1:-5} * 60))
+    let extrasecs=${2:-0}
+    let total=$(($secs + extrasecs))
+    echo "Alarm set for "$total" secs..."
+    sleep $total && terminal-notifier -title "Alarm" -message "$1 minute alarm up!"
+  ) &
 }
 
 # colorized man pages
 # https://gist.github.com/cocoalabs/2fb7dc2199b0d4bf160364b8e557eb66
 man() {
-    LESS_TERMCAP_mb=$'\e'"[1;31m" \
-        LESS_TERMCAP_md=$'\e'"[1;31m" \
-        LESS_TERMCAP_me=$'\e'"[0m" \
-        LESS_TERMCAP_se=$'\e'"[0m" \
-        LESS_TERMCAP_so=$'\e'"[1;44;33m" \
-        LESS_TERMCAP_ue=$'\e'"[0m" \
-        LESS_TERMCAP_us=$'\e'"[1;32m" \
-        command man "$@"
+  LESS_TERMCAP_mb=$'\e'"[1;31m" \
+    LESS_TERMCAP_md=$'\e'"[1;31m" \
+    LESS_TERMCAP_me=$'\e'"[0m" \
+    LESS_TERMCAP_se=$'\e'"[0m" \
+    LESS_TERMCAP_so=$'\e'"[1;44;33m" \
+    LESS_TERMCAP_ue=$'\e'"[0m" \
+    LESS_TERMCAP_us=$'\e'"[1;32m" \
+    command man "$@"
 
 }
-
