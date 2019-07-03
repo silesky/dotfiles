@@ -48,6 +48,10 @@ if [ ! -e "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions
 fi
 
+# cd into projects from any directory
+setopt auto_cd
+cdpath=($HOME/projects $HOME/projects/core)
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
@@ -60,6 +64,7 @@ plugins=(
   yarn
   kubectl
   z
+  last-working-dir
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   zsh-autosuggestions
  )
