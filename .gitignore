@@ -33,5 +33,7 @@
 .DS_Store
 tmp.*
 tmp*
-.env
+foo.*
+foobar.*
 tmuxinator.yml
+.env
