@@ -38,7 +38,7 @@ alias chrome.pande='open -a "Google Chrome" --args --new-window --profile-direct
 alias chrome.spr='open -a "Google Chrome" --args --new-window --profile-directory="Profile 3"'
 
 # spreetail
-alias git-log-spreetail="git log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' origin/prod..HEAD | perl -pe 's/([0-9a-z]{9}) - (.*)\b\[?([A-Z]{2,15}-[0-9]{2,5})\]?\b(.*)/\1 - \2\3\4 https:\/\/spreetail.atlassian.net\/browse\/\3/'"
+alias git-log-spreetail="git log --pretty=format:'%h -%d %s (%cr) <%an>' origin/prod..HEAD | perl -pe 's/([0-9a-z]{9}) - (.*)\b\[?([A-Z]{2,15}-[0-9]{2,5})\]?\b(.*)/\1 - \2\3\4 https:\/\/spreetail.atlassian.net\/browse\/\3/'"
 alias kubefwd.dev="gcloud container clusters get-credentials dev-1604 --zone us-central1-a --project delta-album-220413 && sudo kubefwd -n dev services"
 alias kubefwd.uat="gcloud container clusters get-credentials uat-2504 --zone us-central1-a --project delta-album-220413 && sudo kubefwd -n uat services"
 
