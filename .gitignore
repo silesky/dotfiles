@@ -28,8 +28,9 @@
 !/scripts/*
 !scripts
 !/.tmuxinator/default*
-
+!.quokka
 # ignore these no matter where they are
+node_modules
 .DS_Store
 tmp.*
 tmp*
@@ -38,3 +39,4 @@ foobar.*
 tmuxinator.yml
 .env
 vandelay-js.js
+
