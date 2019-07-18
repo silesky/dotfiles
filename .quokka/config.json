@@ -1,5 +1,9 @@
 {
   "pro": true,
   "babel": true,
-  "plugins": ["babel-alias-quokka-plugin"]
+  "env": {
+    "params": {
+      "env": "NODE_PATH=./src"
+    }
+  }
 }
