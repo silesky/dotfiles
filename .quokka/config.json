@@ -1,6 +1,5 @@
 {
   "pro": true,
-  "babel": true,
   "env": {
     "params": {
       "env": "NODE_PATH=./src"
