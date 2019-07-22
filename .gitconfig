@@ -28,6 +28,7 @@
 	b = branch
 	c = commit
 	d = diff
+	dc = diff --cached
 	co = checkout
 	clear = reset -- . && git checkout -- .
 	back = checkout HEAD~1
