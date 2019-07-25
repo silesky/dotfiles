@@ -5,7 +5,7 @@ module.exports = {
     chrome: true,
   },
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 8,
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
@@ -21,6 +21,7 @@ module.exports = {
   },
   rules: {
     'arrow-body-style': 0, // makes debugging easier
+    'no-console': 0,
     'no-unused-expressions': 0, // allowing ternary function calls makes calling action methods nicer
     'no-plusplus': ['error', { 'allowForLoopAfterthoughts': true }],
     'import/no-extraneous-dependencies': 0, // shared error

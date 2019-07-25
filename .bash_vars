@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-export HOME=/Users/seth.silesky
+export HOME=~
 export LESSOPEN="|$HOME/scripts/lesspipe/lesspipe.sh %s"
 export VISUAL=code
 export EDITOR="$VISUAL"
@@ -21,14 +21,14 @@ export KUBE_EDITOR=vim # for kubectl edit
 export NVM_DIR="$HOME/.nvm"
 
 export GREP_COLOR='00;38;5;226'
-export GREP_OPTIONS="\
-  --color=auto \
-  --exclude=*.pyc \
-  --exclude=package-lock.json \
-  --exclude-dir=.git \
-  --exclude-dir=node_modules \
-  --exclude-dir=build \
-  --exclude-dir=dist"
+# export GREP_OPTIONS="\
+#  --color=auto \
+#  --exclude=*.pyc \
+#  --exclude=package-lock.json \
+#  --exclude-dir=.git \
+#  --exclude-dir=node_modules \
+#  --exclude-dir=build \
+#  --exclude-dir=dist"
 
 # It seems placing the $PATH at the end of the statement (export PATH=/usr/local/git/bin:$PATH)
 # assures that the system looks in this custom place **before** searching default places
@@ -40,15 +40,9 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH=/opt/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/mysql/bin:$PATH
-export PATH=$PATH:$HOME
 export PATH=$HOME/scripts:$PATH
 export PATH=$PATH:$HOME/scripts
-export PATH=$PATH:$HOME/Library/Android/sdk/tools
-export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
-export PATH=$PATH:$HOME/.composer/vendor/bin
 export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:/usr/local/share/dotnet
-export PATH=$PATH:$HOME/.rvm/bin
 
 # tmuxinator thing
 DISABLE_AUTO_TITLE=true

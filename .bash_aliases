@@ -16,6 +16,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   alias estest="eslint --debug ~/estest.js"
   alias tree="tree -C"
 else
+  alias pbcopy='xclip -selection clipboard'
   alias tmux="tmux -2"
   alias tm="tmux -2"
 fi
@@ -37,10 +38,6 @@ alias chrome.def='open -a "Google Chrome" --args --new-window --profile-director
 alias chrome.pande='open -a "Google Chrome" --args --new-window --profile-directory="Profile 2"'
 alias chrome.spr='open -a "Google Chrome" --args --new-window --profile-directory="Profile 3"'
 
-# spreetail
-alias git-log-spreetail="git log --pretty=format:'%h -%d %s (%cr) <%an>' origin/prod..HEAD | perl -pe 's/([0-9a-z]{9}) - (.*)\b\[?([A-Z]{2,15}-[0-9]{2,5})\]?\b(.*)/\1 - \2\3\4 https:\/\/spreetail.atlassian.net\/browse\/\3/'"
-alias kubefwd.dev="gcloud container clusters get-credentials dev-1604 --zone us-central1-a --project delta-album-220413 && sudo kubefwd -n dev services"
-alias kubefwd.uat="gcloud container clusters get-credentials dev-1006 --zone us-central1-a --project delta-album-220413 && sudo kubefwd -n uat services"
 
 # misc
 alias dc="docker-compose"
@@ -54,12 +51,10 @@ curlb() {
 ## Docker alias
 k9bp() { kill -9 "$(lsof -t -i:"$1")"; } # kill by port
 k9p() { kill -9 "$(pgrep -f "$1")"; }
-alias code="'/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code'"
 alias co="code -r"
 alias c="clear"
 alias k9="k9p"
 alias ka="killall"
-alias dockerq="source /Applications/Docker/Docker\ Quickstart\ Terminal.app/Contents/Resources/Scripts/start.sh"
 alias bang="echo '#!/usr/bin/env bash'"
 
 # scripts

@@ -16,14 +16,10 @@ endif
 " other fonts = Fira\ Mono
 """""""""""""""""""""""""""""""""""
 
-""""""PATHOGEN""""""""""
-execute pathogen#infect()
-"..........................
 
 """"""VIM PLUG""""""""""""""""""""""""
 if empty(glob("~/.vim/autoload/plug.vim"))
   execute '!mkdir -p ~/.vim/ ~/.vim/autoload ~/.vim/bundle'
-  execute '!curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim'
   execute '!curl -fLo ~/.vim/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
 call plug#begin('~/.vim/plugged')

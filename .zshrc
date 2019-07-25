@@ -17,57 +17,56 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
 
 # Remove the history (fc -l) command from the history list when invoked. Note that the command lingers in the internal history until the next command is entered before it vanishes, allowing you to briefly reuse or edit the line.
-setopt hist_no_store
+  setopt hist_no_store
 
 # Whenever the user enters a line with history expansion, don’t execute the line directly; instead,erform history expansion and reload the line into the editing buffer.
 setopt hist_verify
 
 # don't show errors on command not found
- zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
 # when using tab completion, show hidden files and folders (such as dotfiles)
 setopt globdots
 
 # ______________ ZSH CONFIG _________________
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
-ZSH_CUSTOM=$HOME/.oh-my-zsh/custom # any themes/* or plugins/* will override the default themes/plugins
+
+export ZSH=~/.oh-my-zsh
+ZSH_CUSTOM=~/.oh-my-zsh/custom # any themes/* or plugins/* will override the default themes/plugins
 ZSH_THEME="amuse" # full line with time
 
-if [ ! -e "$ZSH_CUSTOM/plugins/autoenv" ]; then
-  cd "$ZSH_CUSTOM/plugins"
-  git clone git://github.com/kennethreitz/autoenv.git
-else
-  # is not a plugin
-  # source "$ZSH_CUSTOM/plugins/autoenv/activate.sh"
-fi
 
-
-if [ ! -e "$ZSH_CUSTOM/plugins/zsh-autosuggestions" ]; then
-  cd "$ZSH_CUSTOM/plugins"
-  git clone https://github.com/zsh-users/zsh-autosuggestions
-fi
+function get_plugins() {
+  local dir=$(pwd)
+  ZSH_PLUGINS="$ZSH_CUSTOM/plugins"
+  [ ! -d $ZSH_PLUGINS ] && mkdir -p $ZSH_PLUGINS
+  cd $ZSH_PLUGINS
+  [ ! -d "./autoenv" ] && git clone git://github.com/kennethreitz/autoenv.git
+  [ ! -d "./zsh-autosuggestions" ] && git clone https://github.com/zsh-users/zsh-autosuggestions
+  cd $dir
+}
+get_plugins
 
 # cd into projects from any directory
 setopt auto_cd
-cdpath=($HOME/projects $HOME/projects/core)
+cdpath=(~/projects ~/projects/core)
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
-  npm
-  helm
-  docker
-  docker-compose
-  history
-  tmuxinator
-  yarn
-  kubectl
-  z
-  last-working-dir
-  #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
-  zsh-autosuggestions
- )
+npm
+helm
+docker
+docker-compose
+history
+tmuxinator
+yarn
+kubectl
+z
+last-working-dir
+#__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
+zsh-autosuggestions
+)
 TOUCHBAR_GIT_ENABLED=true
 source $ZSH/oh-my-zsh.sh
 
@@ -90,7 +89,6 @@ export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HH_CONFIG=hicolor        # get more colors
 
 . ~/partials/zsh_vi_settings.sh  # load vim specific settings.
-. ~/partials/google-cloud.sh # load google cloud completions
 
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
 bindkey '^ ' autosuggest-accept
@@ -99,16 +97,3 @@ bindkey '^ ' autosuggest-accept
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
-
-
-###################
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/seth.silesky/projects/core/devops/cicd-notifications/node_modules/tabtab/.completions/slss.zsh
