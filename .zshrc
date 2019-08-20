@@ -47,6 +47,12 @@ function get_plugins() {
 }
 get_plugins
 
+# get tpm
+function get_tpm() {
+  [ ! -d ".tmux/plugins/tpm" ] && mkdir -p .tmux/plugins/tpm && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+get_tpm
+
 # cd into projects from any directory
 setopt auto_cd
 cdpath=(~/projects ~/projects/core)
