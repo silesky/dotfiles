@@ -29,6 +29,9 @@
 !scripts
 !/.tmuxinator/default*
 !.quokka
+
+!/.hushlogin
+
 # ignore these no matter where they are
 node_modules
 .DS_Store
