@@ -17,7 +17,7 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
 
 # Remove the history (fc -l) command from the history list when invoked. Note that the command lingers in the internal history until the next command is entered before it vanishes, allowing you to briefly reuse or edit the line.
-  setopt hist_no_store
+setopt hist_no_store
 
 # Whenever the user enters a line with history expansion, don’t execute the line directly; instead,erform history expansion and reload the line into the editing buffer.
 setopt hist_verify
@@ -32,9 +32,8 @@ setopt globdots
 # Path to your oh-my-zsh installation.
 
 export ZSH=~/.oh-my-zsh
-ZSH_CUSTOM=~/scripts/custom-zsh-themes # any themes/* or plugins/* will override the default themes/plugins
+ZSH_CUSTOM=~/.oh-my-zsh-custom
 ZSH_THEME="amuse-custom" # full line with time
-
 
 function get_plugins() {
   local dir=$(pwd)
