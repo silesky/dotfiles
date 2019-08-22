@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 export HOME=~
 export LESSOPEN="|$HOME/scripts/lesspipe/lesspipe.sh %s"
-export VISUAL=code
-export EDITOR="$VISUAL"
+
+export EDITOR="code" # don't need visual
+export KUBE_EDITOR="vim" # for kubectl edit
+
 export EVENT_NOKQUEUE=1 #fix for broken kqueue message in tmux`
 export CLICOLOR=1
 export ANDROID_HOME=$HOME/Library/Android/sdk
@@ -17,7 +19,6 @@ export HISTCONTROL="erasedups:ignoreboth"
 export HISTFILESIZE=500000
 export HISTSIZE=100000
 export HELM_HOME="$HOME/.helm"
-export KUBE_EDITOR=vim # for kubectl edit
 
 export GREP_COLOR='00;38;5;226'
 # export GREP_OPTIONS="\

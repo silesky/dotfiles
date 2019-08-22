@@ -32,8 +32,8 @@ setopt globdots
 # Path to your oh-my-zsh installation.
 
 export ZSH=~/.oh-my-zsh
-ZSH_CUSTOM=~/.oh-my-zsh/custom # any themes/* or plugins/* will override the default themes/plugins
-ZSH_THEME="amuse" # full line with time
+ZSH_CUSTOM=~/scripts/custom-zsh-themes # any themes/* or plugins/* will override the default themes/plugins
+ZSH_THEME="amuse-custom" # full line with time
 
 
 function get_plugins() {
