@@ -48,7 +48,7 @@ get_plugins
 
 # get tpm
 function get_tpm() {
-  [ ! -d "~/.tmux/plugins" ] && echo "installing tpm" && mkdir -p ~/.tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+ # [ ! -d "~/.tmux/plugins" ] && echo "installing tpm" && mkdir -p ~/.tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 get_tpm
 
