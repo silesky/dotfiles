@@ -1,5 +1,11 @@
 {
   "devDependencies": {
-    "babel-core": "^6.26.3"
+    "babel-core": "^6.26.3",
+    "ts-node": "^8.3.0",
+    "tsconfig-paths": "^3.8.0"
+  },
+  "dependencies": {
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4"
   }
 }
