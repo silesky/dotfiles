@@ -15,6 +15,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   alias vi="vim"
   alias estest="eslint --debug ~/estest.js"
   alias tree="tree -C"
+  export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home/
 else
   alias pbcopy='xclip -selection clipboard'
   alias tmux="tmux -2"
