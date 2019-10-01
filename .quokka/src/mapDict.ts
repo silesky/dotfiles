@@ -9,3 +9,12 @@ const mapDict: MapDict = (obj, fn) => {
 
 // const f = mapDict({ name: 123, 1: '123' }, x => x.split(''));
 // console.log(f);
+class QuoteError extends Error {
+  public type: 'Inventory' | 'Promo';
+  constructor(message, type) {
+    super(message);
+    this.type = type;
+  }
+}
+JSON.stringify(new QuoteError('foo', 'inventory'));
+/*?*/
