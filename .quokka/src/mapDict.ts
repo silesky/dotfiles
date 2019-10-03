@@ -1,3 +1,11 @@
+import { compose } from 'rambda';
+
+compose(
+  (x: string): string => `${x}foo`,
+  (x: number): string => `${x}`,
+  (x: number): number => x * 2,
+);
+
 type MapDict = <Key extends string, V, V2>(
   obj: Record<Key, V>,
   exp: (arg: V) => V2,

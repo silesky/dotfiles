@@ -5,6 +5,7 @@
     "tsconfig-paths": "^3.8.0"
   },
   "dependencies": {
+    "rambda": "^3.2.0",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4"
   }
