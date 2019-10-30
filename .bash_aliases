@@ -39,7 +39,6 @@ alias chrome.def='open -a "Google Chrome" --args --new-window --profile-director
 alias chrome.pande='open -a "Google Chrome" --args --new-window --profile-directory="Profile 2"'
 alias chrome.spr='open -a "Google Chrome" --args --new-window --profile-directory="Profile 3"'
 
-
 # misc
 alias dc="docker-compose"
 alias ch="chokidar"
@@ -136,7 +135,7 @@ k.all-containers() {
 # e.g. branch feature/foo // branches foo from dev
 #      branch feature/foo uat // branches foo from uat
 branch() {
-  local BASE=${2-uat}
+  local BASE=${2-master}
   git checkout $BASE
   git pull origin $BASE --ff-only
   git checkout -b $1
