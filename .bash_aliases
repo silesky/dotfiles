@@ -43,6 +43,10 @@ alias chrome.spr='open -a "Google Chrome" --args --new-window --profile-director
 alias dc="docker-compose"
 alias ch="chokidar"
 
+# npm
+alias dev="npm run dev"
+alias t="npm t"
+alias tw="npm t -- --watch"
 # curl - with response time
 curlb() {
   curl -s -o /dev/null -w '%{time_starttransfer}\n' "$@"
