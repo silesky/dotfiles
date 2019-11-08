@@ -8,7 +8,7 @@
 		# show which remote the current branch is tracking
 	show-tracking = rev-parse --symbolic-full-name --abbrev-ref @{u}
 	# list recent branches that we've switched to (old -> new)
-	recent = !git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n15 | tail -r
+	recent = !git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | head -n15 | tail
 	# list files that changed in the last 10 commits of the branch
 	changed = !git whatchanged -n 100 | grep -v 'Seth Silesky <seth.silesky@gmail.com>'| grep -v date | grep -v commit | grep -o '[M\\|A][[:space:]].*' | awk '{print $NF}' | uniq | head
 	# list all conflicted files in diff
@@ -34,6 +34,7 @@
 	back = checkout HEAD~1
 	fwd = "!sh -c git checkout $(git rev-list --topo-order HEAD..\"$*\" | tail -1)"
 	l = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	me=!git l --author='Seth Silesky'
 	m = merge
 	r = reset
 	rb = rebase
@@ -66,7 +67,7 @@
 	prompt = 0
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

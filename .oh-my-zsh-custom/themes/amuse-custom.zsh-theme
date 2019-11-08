@@ -8,5 +8,5 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 PROMPT='
-%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info) at%{$fg_bold[red]%}%t%{$reset_color%}
+%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info) @ %{$fg_bold[red]%}%t%{$reset_color%}
 '
