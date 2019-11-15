@@ -70,8 +70,8 @@ alias ..='cd ..'     # Go up one directory
 alias ...='cd ../..' # Go up two directories
 
 alias l="ls"
-alias ls/='ls -ld */'
-alias ls.='ls -ld .*' #List dotfiles only
+alias lsd='ls -d */'
+alias ls.='ls -d *' #List dotfiles only
 
 # ...  dotfiles
 alias eslintrc="$EDITOR ~/.eslintrc"
