@@ -1,6 +1,6 @@
 ### .bashrc
 # bash-specific variables -- a lot of this overlaps with ~/.bash_paths
-tmux attach -d | tmux
+# tmux attach -d | tmux
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
