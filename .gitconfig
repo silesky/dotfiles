@@ -14,7 +14,7 @@
 	# list all conflicted files in diff
 	conflict = grep '<<<<<<< HEAD'
 	# list my latest commits
-	stat = log --graph --author='Seth Silesky' --oneline
+	standup = log --graph --author='Seth Silesky' --no-merges
 	# search commit message, file
 	grep = log --all --oneline --name-status --grep
 	# skip files in  worktree
@@ -67,7 +67,7 @@
 	prompt = 0
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
