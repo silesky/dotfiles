@@ -17,11 +17,11 @@ const isSorted = (arr = []) => arr.reduce((acc, n, idx) => {
   return true;
 }, true)
 
-const map = (arr) => {
+const bubbleSort = (arr) => {
   if (isSorted(arr)) {
     return arr
   }
   return bubbleSort(sort(arr))
 }
 
-// bubbleSort([4,2])/*?*/
+bubbleSort([4,2,1,4,6,6])/*?*/

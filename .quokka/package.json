@@ -1,11 +1,15 @@
 {
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^2.14.0",
+    "@typescript-eslint/parser": "^2.14.0",
     "babel-core": "^6.26.3",
+    "eslint": "^6.8.0",
     "ts-node": "^8.3.0",
     "tsconfig-paths": "^3.8.0"
   },
   "dependencies": {
     "rambda": "^3.2.0",
+    "ramda": "^0.26.1",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4"
   }
