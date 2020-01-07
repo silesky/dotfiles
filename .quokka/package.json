@@ -5,7 +5,8 @@
     "babel-core": "^6.26.3",
     "eslint": "^6.8.0",
     "ts-node": "^8.3.0",
-    "tsconfig-paths": "^3.8.0"
+    "tsconfig-paths": "^3.8.0",
+    "typescript": "^3.7.4"
   },
   "dependencies": {
     "rambda": "^3.2.0",
