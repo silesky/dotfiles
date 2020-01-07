@@ -1,17 +1,24 @@
-// assert
-const o = {
-  name: 'john'
-}
+// traditional typeguard
+const isString = (input: unknown): input is string => {
+  return typeof input === "string";
+};
 
-const assert = (expr: unknown): asserts expr => {
-  if (!expr) {
-    throw Error('assertion error')
+const doSomethingWithTraditionalGuard = (input: string | number) => {
+  if (isString(input)) {
+    console.log(input);
   }
-}
-const getName = (prop: unknown) => {
-  assert(typeof prop !== 'string')
-  return prop.join('')
+};
+
+// must be declared with the function keyword
+// can throw errors
+function assertString(input: unknown): asserts input is string {
+  if (typeof input === "string") return;
+  throw new Error("Input must be a string!");
 }
 
-const f = getName('names')
-console.log(f)
+const doSomething = (input: unknown) => {
+  assertString(input);
+  console.log(input);
+};
+
+// better

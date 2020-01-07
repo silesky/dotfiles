@@ -1,14 +1,13 @@
-
 // null coalescing
 
 type User = {
   address?: {
-    lineOne: string,
-    lineTwo?: string,
-  }
-}
+    lineOne: string;
+    lineTwo?: string;
+  };
+};
 
-const user: User = {}
+const user: User = {};
 const res = user?.address?.lineTwo;
-console.log(res)
 
+console.log(res);
