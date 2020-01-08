@@ -1,5 +1,6 @@
 /***************************************************************** */
-// optional chaning
+
+// optional-chaining https://github.com/tc39/proposal-optional-chaining
 type User = {
   address?: {
     lineOne: string;
@@ -13,17 +14,16 @@ const res = user?.address?.lineTwo;
 console.log(res);
 
 /***************************************************************** */
-// null coalescing
+// null(ish) coalescing - https://github.com/tc39/proposal-nullish-coalescing
+let firstResult: string | null | undefined
+const bar = firstResult ?? 'hello'
+console.log(bar) // string
 
 
-let firstResult: string | null | undefined = null
-const bar = firstResult ?? 'hello' // will be 'hello'
 
-
-
-let firstResult1: boolean | null | undefined = false
-const bar1 = firstResult1 ?? 'hello'
-console.log(bar1) // false
+let firstResult1: boolean | null | undefined
+const bar1 = firstResult1 ?? true
+console.log(bar1) // boolean
 
 /***************************************************************** */
 // traditional typeguard
