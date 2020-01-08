@@ -1,13 +1,19 @@
 {
-    "compilerOptions": {
-      "module": "commonjs",
-      // "noImplicitAny": false,
-      "outDir": "built",
-      "baseUrl": ".",
-      "rootDir": ".",
-      "sourceMap": false,
-      "strict": true,
-    },
-    "lib": ["es2015", "es2017", "dom"],
-    "exclude": ["node_modules"]
-  }
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "outDir": "built",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "sourceMap": false,
+    "strict": true
+  },
+  "lib": ["es2015", "es2017", "dom", "node"],
+  "exclude": ["node_modules"]
+}
