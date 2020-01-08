@@ -1,18 +1,18 @@
 /***************************************************************** */
-
-// optional-chaining https://github.com/tc39/proposal-optional-chaining
-type User = {
-  address?: {
-    lineOne: string;
-    lineTwo?: string;
+{
+  // optional-chaining https://github.com/tc39/proposal-optional-chaining
+  type User = {
+    address?: {
+      lineOne: string;
+      lineTwo?: string;
+    };
   };
-};
 
-const user: User = {};
-const res = user?.address?.lineTwo;
+  const user: User = {};
+  const res = user?.address?.lineTwo;
 
-console.log(res);
-
+  console.log(res);
+}
 /***************************************************************** */
 {
   // null(ish) coalescing - https://github.com/tc39/proposal-nullish-coalescing
@@ -26,16 +26,16 @@ console.log(res);
 }
 /***************************************************************** */
 {
-// traditional typeguard
-const isString = (input: unknown): input is string => {
-  return typeof input === 'string';
-};
+  // traditional typeguard
+  const isString = (input: unknown): input is string => {
+    return typeof input === 'string';
+  };
 
-const doSomethingWithTraditionalGuard = (input: string | number) => {
-  if (isString(input)) {
-    console.log(input);
-  }
-};
+  const doSomethingWithTraditionalGuard = (input: string | number) => {
+    if (isString(input)) {
+      console.log(input);
+    }
+  };
 
   // must be declared with the function keyword
   // can throw errors
