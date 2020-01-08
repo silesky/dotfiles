@@ -37,6 +37,7 @@
     }
   };
 
+
   // must be declared with the function keyword
   // can throw errors
   function assertString(input: unknown): asserts input is string {
