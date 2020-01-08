@@ -3,44 +3,42 @@
   // optional-chaining https://github.com/tc39/proposal-optional-chaining
   type User = {
     address?: {
-      lineOne: string;
-      lineTwo?: string;
-    };
-  };
-
-  const user: User = {};
-  const res = user?.address?.lineTwo;
-
-  console.log(res);
+      lineOne: string
+    }
+  }
+  const user: User = {
+    address: {
+      lineOne: 'foo'
+    }
+  }
+  if (user.address !== undefined) {
+    console.log(user.address.lineOne);
+  }
 }
 /***************************************************************** */
 {
   // null(ish) coalescing - https://github.com/tc39/proposal-nullish-coalescing
   let firstResult: string | null | undefined;
-  const bar = firstResult ?? 'hello';
+  const bar = firstResult ?? 'foo'
   console.log(bar); // string
 
-  let firstResult1: boolean | null | undefined;
+  let firstResult1: boolean | null | undefined = false;
   const bar1 = firstResult1 ?? true;
   console.log(bar1); // boolean
 }
 /***************************************************************** */
 {
   // traditional typeguard
-  const isString = (input: unknown): input is string => {
-    return typeof input === 'string';
-  };
 
-  const doSomethingWithTraditionalGuard = (input: string | number) => {
-    if (isString(input)) {
-      console.log(input);
-    }
-  };
+
+  const isString = (f: unknown): f is string => typeof f === 'string'
+
+  let x: unknown
 
 
   // must be declared with the function keyword
   // can throw errors
-  function assertString(input: unknown): asserts input is string {
+const assertString = (input: unknown): asserts input is string => {
     if (typeof input === 'string') return;
     throw new Error('Input must be a string!');
   }
