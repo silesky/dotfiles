@@ -141,7 +141,7 @@ k.all-containers() {
 branch() {
   local BASE=${2-master}
   git checkout $BASE
-  git pull origin $BASE --ff-only
+  git pull --ff-only
   git checkout -b $1
 }
 ##########################
