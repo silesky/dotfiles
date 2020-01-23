@@ -8,3 +8,4 @@ include ~/.bashrc
 include ~/.bash_private
 include ~/.bash_aliases
 include ~/.iterm2_shell_integration.`basename $SHELL`
+tmux attach -d || tmux

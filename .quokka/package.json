@@ -1,6 +1,7 @@
 {
   "devDependencies": {
     "@types/node": "^13.1.4",
+    "@types/ramda": "^0.26.40",
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
     "babel-core": "^6.26.3",
@@ -10,6 +11,8 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
+    "@types/json-rules-engine": "^4.1.0",
+    "json-rules-engine": "^5.0.2",
     "rambda": "^3.2.0",
     "ramda": "^0.26.1",
     "react-redux": "^7.1.0",
