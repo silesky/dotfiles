@@ -4,17 +4,24 @@ import _ from 'lodash';
 const validRules = {
   flower: false,
   vapes: false,
-  bed_bath: true,
+  alwaysAllowed: true,
 };
 const activeRuleKeys = Object.keys(_.pickBy(validRules, val => val === false));
 const inactiveRuleKeys = Object.keys(_.pickBy(validRules, val => val === true));
 import R from 'ramda';
 const rulesData = [
-  {
+  new Rule({
     event: {
-      type: 'Alabama:state',
+      type: 'state',
     },
     conditions: {
+      any: [
+        {
+          fact: 'legalCategory',
+          operator: 'notIn',
+          value: inactiveRuleKeys,
+        },
+      ],
       all: [
         {
           fact: 'state',
@@ -28,7 +35,33 @@ const rulesData = [
         },
       ],
     },
-  },
+  }),
+  new Rule({
+    event: {
+      type: 'state',
+    },
+    conditions: {
+      any: [
+        {
+          fact: 'legalCategory',
+          operator: 'notIn',
+          value: inactiveRuleKeys,
+        },
+      ],
+      all: [
+        {
+          fact: 'state',
+          operator: 'equal',
+          value: 'Illinois',
+        },
+        {
+          fact: 'legalCategory',
+          operator: 'in',
+          value: activeRuleKeys,
+        },
+      ],
+    },
+  }),
 ];
 
 export const getProductViolations = async (rules: Rule[], facts: any[]) => {
@@ -45,10 +78,7 @@ export const getProductViolations = async (rules: Rule[], facts: any[]) => {
 };
 
 const main = async () => {
-  const res = await getProductViolations(
-    rulesData.map(r => new Rule(r)),
-    [{ state: 'Alabama', legalCategory: 'vapes' }]
-  );
+  const res = await getProductViolations(rulesData, [{ state: 'Alabama', legalCategory: 'vapes' }]);
   console.log(res);
 };
 
