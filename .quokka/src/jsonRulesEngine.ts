@@ -1,4 +1,14 @@
 import { Engine, Rule } from 'json-rules-engine';
+import _ from 'lodash';
+
+const validRules = {
+  flower: false,
+  vapes: false,
+  bed_bath: true,
+};
+const activeRuleKeys = Object.keys(_.pickBy(validRules, val => val === false));
+const inactiveRuleKeys = Object.keys(_.pickBy(validRules, val => val === true));
+import R from 'ramda';
 const rulesData = [
   {
     event: {
@@ -14,12 +24,11 @@ const rulesData = [
         {
           fact: 'legalCategory',
           operator: 'in',
-          value: ['flower', 'vapes']
+          value: activeRuleKeys,
         },
       ],
     },
   },
-
 ];
 
 export const getProductViolations = async (rules: Rule[], facts: any[]) => {
