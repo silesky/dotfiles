@@ -1,4 +1,4 @@
 import R from 'ramda';
 
-R.intersection({ name: 'seth', age: 15 }, { name: 'foo' });
+R.intersection(['foo', 'bar'], ['foo', 'bar', 'baz']);
 /*?*/
