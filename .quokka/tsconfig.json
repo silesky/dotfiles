@@ -12,8 +12,15 @@
     "baseUrl": ".",
     "rootDir": ".",
     "sourceMap": false,
-    "strict": true
+    "strict": false
   },
-  "lib": ["es2015", "es2017", "dom", "node"],
-  "exclude": ["node_modules"]
+  "lib": [
+    "es2015",
+    "es2017",
+    "dom",
+    "node"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

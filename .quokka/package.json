@@ -1,5 +1,6 @@
 {
   "devDependencies": {
+    "@types/json-rules-engine": "^4.1.0",
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.1.4",
     "@types/ramda": "^0.26.40",
@@ -12,7 +13,6 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "@types/json-rules-engine": "^4.1.0",
     "json-rules-engine": "^5.0.2",
     "lodash": "^4.17.15",
     "rambda": "^3.2.0",
