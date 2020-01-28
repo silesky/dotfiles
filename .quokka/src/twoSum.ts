@@ -1,37 +1,17 @@
-/* function canTwoMoviesFillFlight(movieLengths = [], flightLength = 100) {
-  const arr = [];
-  let res = false;
-  movieLengths.forEach(eachMovieLength => {
-    const compliment = flightLength - eachMovieLength;
-    arr.push(compliment);
-    if (arr.includes(compliment)) {
-      res = true;
-    }
-  });
-  return res;
-} */
+import assertEquals from './assertEq';
 
 function canTwoMoviesFillFlight(movieLengths = [], flightLength = 100) {
-  const m = {};
-  let res = false;
-  movieLengths.forEach((eachMovieLength, idx) => {
+  const m = new Set();
+  let result = false;
+  movieLengths.forEach(eachMovieLength => {
     const compliment = flightLength - eachMovieLength;
-    if (eachMovieLength in m) {
-      res = true;
+    if (m.has(eachMovieLength)) {
+      result = true;
+      return; // can break here.
     }
-    m[compliment] = null;
+    m.add(compliment);
   });
-  return res;
-}
-
-// Tests
-function assertEquals(a, b, desc) {
-  if (a === b) {
-    console.log(`${desc} ... PASS`);
-  } else {
-    console.log(`${desc} ... FAIL: ${a} != ${b}`);
-    throw Error('fail');
-  }
+  return result;
 }
 
 let desc,
