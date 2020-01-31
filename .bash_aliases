@@ -34,6 +34,14 @@ getLog() {
 alias tm="tmux"
 alias top="top -o cpu"
 
+# gitkraken
+function gitkr() {
+  # usage: gitkr opens current
+  local repo_path=${1-$(pwd)}
+  open -na "GitKraken" --args -p "$repo_path"
+}
+alias kraken='gitkr'
+
 # chrome
 alias chrome.def='open -a "Google Chrome" --args --new-window --profile-directory="Default"'
 alias chrome.pande='open -a "Google Chrome" --args --new-window --profile-directory="Profile 2"'
