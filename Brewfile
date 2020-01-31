@@ -18,6 +18,7 @@ brew "golang"
 brew "tig"
 brew "vim"
 brew "git-open"
+brew "github/gh/gh"
 
 # Casks
 cask "font-hack-nerd-font"
