@@ -42,11 +42,11 @@ function get_plugins() {
   cd $ZSH_PLUGINS
   [ ! -d "./autoenv" ] && git clone git://github.com/kennethreitz/autoenv.git
   [ ! -d "./zsh-autosuggestions" ] && git clone https://github.com/zsh-users/zsh-autosuggestions
-  [ ! -d "./zsh-easy-motion" ] && git clone https://github.com/IngoHeimbach/zsh-easy-motion
+  [ ! -d "./zsh-z" ] && git clone https://github.com/agkozak/zsh-z
+  # [ ! -d "./zsh-easy-motion" ] && git clone https://github.com/IngoHeimbach/zsh-easy-motion
   cd $dir
 }
 get_plugins
-bindkey -M vicmd ' ' vi-easy-motion
 
 # get tpm
 function get_tpm() {
@@ -69,11 +69,11 @@ history
 tmuxinator
 yarn
 kubectl
-z
+zsh-z
 last-working-dir
 #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
 zsh-autosuggestions
-zsh-easy-motion
+# zsh-easy-motion
 )
 TOUCHBAR_GIT_ENABLED=true
 source $ZSH/oh-my-zsh.sh
@@ -92,7 +92,8 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # hstr config (brew install hstr) -- activate with hh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=245"
+# All Colors: https://coderwall.com/p/pb1uzq/z-shell-colors
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=237"
 export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HH_CONFIG=hicolor        # get more colors
 
