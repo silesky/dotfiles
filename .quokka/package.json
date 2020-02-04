@@ -2,6 +2,7 @@
   "dependencies": {
     "fp-ts": "^2.4.4",
     "io-ts": "^2.0.6",
+    "io-ts-promise": "^2.0.2",
     "json-rules-engine": "^5.0.2",
     "lodash": "^4.17.15",
     "rambda": "^3.2.0",
