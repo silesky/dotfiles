@@ -1,4 +1,14 @@
 {
+  "dependencies": {
+    "fp-ts": "^2.4.4",
+    "io-ts": "^2.0.6",
+    "json-rules-engine": "^5.0.2",
+    "lodash": "^4.17.15",
+    "rambda": "^3.2.0",
+    "ramda": "^0.26.1",
+    "react-redux": "^7.1.0",
+    "redux": "^4.0.4"
+  },
   "devDependencies": {
     "@types/json-rules-engine": "^4.1.0",
     "@types/lodash": "^4.14.149",
@@ -11,13 +21,5 @@
     "ts-node": "^8.3.0",
     "tsconfig-paths": "^3.8.0",
     "typescript": "^3.7.4"
-  },
-  "dependencies": {
-    "json-rules-engine": "^5.0.2",
-    "lodash": "^4.17.15",
-    "rambda": "^3.2.0",
-    "ramda": "^0.26.1",
-    "react-redux": "^7.1.0",
-    "redux": "^4.0.4"
   }
 }
