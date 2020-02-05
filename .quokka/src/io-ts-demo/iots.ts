@@ -1,6 +1,6 @@
 import * as t from 'io-ts';
 import { PathReporter } from 'io-ts/lib/PathReporter';
-import {isLeft, isRight } from 'fp-ts/lib/Either'
+import { isRight, map, either } from 'fp-ts/lib/Either';
 import * as tPromise from 'io-ts-promise';
 
 const states = {
@@ -57,6 +57,7 @@ const states = {
   WY: 'Wyoming',
 } as const;
 
+
 // Product is now a "codec" -- a runtime representation of the static type "Product"
 const Product = t.type({
   id: t.string,
@@ -65,35 +66,46 @@ const Product = t.type({
   location: t.type({
     state: t.keyof(states), // preferred way of creating a union type of literal strings
   }),
+  date: new t.Type<Date, string, unknown>(
+    'DateFromString',
+    (u): u is Date => u instanceof Date,
+    (maybeStr, c) =>
+      either.chain(t.string.validate(maybeStr, c), maybeDateStr => {
+        const d = new Date(maybeDateStr)
+        return isNaN(d.getTime()) ? t.failure(maybeStr, c) : t.success(d)
+      }),
+     // encode (convert from type back into base)
+    date => date.toISOString()
+  ),
 });
 
-
-// no namespace clashing -- typescript is in its own scope.
 type Product = t.TypeOf<typeof Product>;
 
-  const maybeProduct = t.array(Product).decode([
-    {foo: 123},
-    {bar: 456}
-  ]);
+const decodedProduct = Product.decode([{ foo: 123 }, { bar: 456 }]),
 
-  if (isRight(maybeProduct)) {
-    console.log(maybeProduct.right)
-  } else {
-    console.log(maybeProduct.left)
-  }
-// api will fetch the product -- but it changes!
+if (isRight(decodedProduct)) {
+  console.log(decodedProduct.right);
+} else {
+  console.error(decodedProduct.left);
+}
+
+
+/******************** */
+/***** PROMISES ******/
+/*********************/
+
 const fetchProduct = () => {
   return Promise.resolve({
     id: '123',
     name: '15mg cbd pen',
     category: 'vapes',
     location: {
-      state: 'PR',
+      state: 'IL',
     },
+    date: '2020-02-05T19:29:36.883Z'
   });
 };
 
-// this special t.typeOf operator gives us the vanilla
 const getProduct = async (): Promise<Product | void> => {
   try {
     const product = await fetchProduct().then(tPromise.decode(Product));
@@ -101,16 +113,18 @@ const getProduct = async (): Promise<Product | void> => {
   } catch (err) {
     if (tPromise.isDecodeError(err)) {
       console.log(err);
-      console.log('error due to decoding issue');
+      console.log('validation errr');
     } else {
       console.log('error due to network issue');
     }
-    return;
   }
 };
 
-const main = () => {
-  getProduct();
-};
 
-// main();
+const main = async() => {
+  const p = await getProduct();
+  if (p) {
+    console.log(p.date.getFullYear())
+  }
+}
+main()
