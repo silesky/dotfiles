@@ -81,12 +81,12 @@ const Product = t.type({
 
 type Product = t.TypeOf<typeof Product>;
 
-const decodedProduct = Product.decode([{ foo: 123 }, { bar: 456 }]),
+const decodedProduct = Product.decode([{ foo: 123 }, { bar: 456 }])
 
 if (isRight(decodedProduct)) {
   console.log(decodedProduct.right);
 } else {
-  console.error(decodedProduct.left);
+  console.log(decodedProduct.left);
 }
 
 
