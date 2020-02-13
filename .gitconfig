@@ -27,7 +27,7 @@ unignore = update-index --no-skip-worktree
 ignored = !git ls-files -t | grep '^S'
 b = branch
 c = commit
-d = diff
+d = diff --stat
 diffmaster = !git diff $(git merge-base --fork-point master) -- . ':(exclude)package-lock.json'
 dc = diff --cached
 co = checkout
@@ -39,7 +39,7 @@ me=!git l --author='Seth Silesky'
 m = merge
 r = reset
 rb = rebase
-s = status
+s = status --short
 st = stash
 stp = stash pop
 cp-last-commit = !git log -n 1 --pretty=format:"%H" | pbcopy
@@ -61,14 +61,14 @@ default = upstream
 [rebase]
 autosquash = true
 [log]
-decorate = full
+# decorate = full
 [commit]
 template = /Users/me/.stCommitMsg
 [difftool]
 prompt = 0
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
