@@ -70,6 +70,7 @@ alias ka="killall"
 alias bang="echo '#!/usr/bin/env bash'"
 
 # scripts
+alias sync-projects="bash ~/scripts/sync-projects-to-dropbox.sh"
 alias togglehidden="sudo sh ~/scripts/togglehidden.sh"
 alias google="sh ~/scripts/google.sh"
 alias autopush='sh ~/scripts/autopush.sh'
