@@ -64,14 +64,18 @@ autosquash = true
 # decorate = full
 [commit]
 template = /Users/me/.stCommitMsg
-[difftool]
-prompt = 0
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
+# https://medium.com/faun/using-vscode-as-git-mergetool-and-difftool-2e241123abe7
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+#####
+
 [url "git@github.com:"]
 insteadOf = https://github.com/
 [merge "npm-merge-driver"]
