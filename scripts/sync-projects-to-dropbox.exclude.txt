@@ -1,7 +1,12 @@
 */node_modules
+*/bin
 */dist
 */db
 */.git
 *.csv
 */coverage
 */envs
+*/cache
+*/.next
+package-lock.json
+*/no-sync
