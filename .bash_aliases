@@ -3,6 +3,11 @@
 # temp - for google cloud function emulator
 alias func="functions-emulator"
 
+emacs () {
+  # https://superuser.com/questions/303061/set-emacs-to-always-run-in-background
+  # always run in background
+  /usr/local/bin/emacs "$@" &
+}
 ############################################
 ############### linux / osx #################
 #############################################
