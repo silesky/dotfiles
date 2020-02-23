@@ -9,4 +9,5 @@
 */cache
 */.next
 package-lock.json
-*/no-sync
+no-sync/*
+*/no-sync/*
