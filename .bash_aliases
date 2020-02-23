@@ -40,7 +40,7 @@ alias tm="tmux"
 alias top="top -o cpu"
 
 function copytasks() {
-  cp ~/scripts/vscode/* .vscode/*
+   cp -r ~/scripts/vscode/ .vscode
 }
 # gitkraken
 function gitkr() {
