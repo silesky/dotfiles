@@ -39,6 +39,9 @@ getLog() {
 alias tm="tmux"
 alias top="top -o cpu"
 
+function copytasks() {
+  cp ~/scripts/vscode/* .vscode/*
+}
 # gitkraken
 function gitkr() {
   # usage: gitkr opens current

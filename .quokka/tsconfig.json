@@ -12,7 +12,8 @@
     "baseUrl": ".",
     "rootDir": ".",
     "sourceMap": false,
-    "strict": true
+    "strict": true,
+    "noImplicitAny": false,
   },
   "lib": [
     "es2015",

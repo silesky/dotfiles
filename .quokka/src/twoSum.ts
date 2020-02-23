@@ -1,6 +1,7 @@
 import assertEquals from './assertEq';
+import { number } from 'io-ts';
 
-function canTwoMoviesFillFlight(movieLengths = [], flightLength = 100) {
+function canTwoMoviesFillFlight(movieLengths: number[] = [], flightLength = 100) {
   const m = new Set();
   let result = false;
   movieLengths.forEach(eachMovieLength => {
@@ -16,7 +17,7 @@ function canTwoMoviesFillFlight(movieLengths = [], flightLength = 100) {
 
 let desc,
   expected,
-  actual = null;
+  actual: any;
 
 desc = 'long flight';
 actual = canTwoMoviesFillFlight([2, 4], 6);
@@ -58,4 +59,4 @@ actual = canTwoMoviesFillFlight([], 2);
 expected = false;
 assertEquals(actual, expected, desc);
 
-// e.g. twoSum([1,6,3,5,2], 7) // [0,1]
+canTwoMoviesFillFlight([1,6,3,5,2], 7) // [0,1]
