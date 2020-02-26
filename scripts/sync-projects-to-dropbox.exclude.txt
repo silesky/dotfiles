@@ -1,3 +1,6 @@
+.DS_Store
+.vscode/.favorites
+public/*
 */node_modules
 */bin
 */dist
