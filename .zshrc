@@ -93,7 +93,7 @@ export LANG=en_US.UTF-8
 
 # hstr config (brew install hstr) -- activate with hh
 # All Colors: https://coderwall.com/p/pb1uzq/z-shell-colors
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=237"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=220"
 export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HH_CONFIG=hicolor        # get more colors
 
