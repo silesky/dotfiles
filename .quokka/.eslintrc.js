@@ -3,16 +3,15 @@ module.exports = {
     browser: true,
     commonjs: true,
     es6: true,
-    node: true
+    node: true,
   },
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: "module"
+    sourceType: 'module',
   },
-  plugins: ["@typescript-eslint"],
+  plugins: ['@typescript-eslint'],
   rules: {
-    "no-unused-vars": 0,
-    quotes: ["error", "single", { avoidEscape: true }]
-  }
+    'no-unused-vars': 0
+    quotes: ['error', 'single', { avoidEscape: true }],
+  },
 };

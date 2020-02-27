@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "ESNext",
+    "target": "ESNext",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es6",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "experimentalDecorators": true,
