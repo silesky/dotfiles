@@ -1,26 +1,26 @@
 {
   "dependencies": {
-    "fp-ts": "^2.4.4",
-    "io-ts": "^2.0.6",
+    "fp-ts": "^2.5.1",
+    "io-ts": "^2.1.2",
     "io-ts-promise": "^2.0.2",
-    "json-rules-engine": "^5.0.2",
+    "json-rules-engine": "^5.0.3",
     "lodash": "^4.17.15",
-    "rambda": "^3.2.0",
-    "ramda": "^0.26.1",
-    "react-redux": "^7.1.0",
-    "redux": "^4.0.4"
+    "rambda": "^4.5.0",
+    "ramda": "^0.27.0",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "@types/json-rules-engine": "^4.1.0",
     "@types/lodash": "^4.14.149",
-    "@types/node": "^13.1.4",
-    "@types/ramda": "^0.26.40",
-    "@typescript-eslint/eslint-plugin": "^2.14.0",
-    "@typescript-eslint/parser": "^2.14.0",
+    "@types/node": "^13.7.6",
+    "@types/ramda": "^0.26.42",
+    "@typescript-eslint/eslint-plugin": "^2.21.0",
+    "@typescript-eslint/parser": "^2.21.0",
     "babel-core": "^6.26.3",
     "eslint": "^6.8.0",
-    "ts-node": "^8.3.0",
-    "tsconfig-paths": "^3.8.0",
-    "typescript": "^3.7.4"
+    "ts-node": "^8.6.2",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.8.2"
   }
 }
