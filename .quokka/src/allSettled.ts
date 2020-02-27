@@ -1,15 +1,15 @@
-const arr = [1, 2, 'hello'];
+import { o } from 'ramda';
 
-// go
-type ToUnion<T extends readonly any[] | any[]> = T extends Promise<any>
-  ? Promise<T[number] | MyError<any>>
-  : T[number] | MyError<any>;
-type A = Promise<string | number>;
-type B = Promise<string> | Promise<number>;
-type C = B extends A ? B : never;
 
-const allSettled = <T>(promises: Promise<T>[]): Promise<T | Error> => {
-  return Promise.all(promises.map(p => p.catch(el => new Error(el))));
+type ExtractTuple<T> = T extends [infer a, ...T[]] ? a : never;
+type First<T> = T extends [infer A] ? A : never
+const r = [1,2,3] as const
+type B = First<(typeof [1,2,3])>
+
+type F = ExtractTuple<typeof r>
+const allSettled = <T, U extends Promise<T>[]>(promises: U): Promise<T[]> => {
+  const mapped = promises.map(p => p.catch(el => el));
+  return Promise.all(mapped);
 };
 
 const getFoo = () => Promise.resolve(123 as const);
@@ -22,7 +22,6 @@ const getFooError = (shouldThrow = true) => {
 };
 const main = async () => {
   const promises = [getFoo(), getFooError(), getFooAgain()];
-  type F = ToUnion<typeof promises>;
   const res = await allSettled(promises);
   console.log(res[1].message);
 };
