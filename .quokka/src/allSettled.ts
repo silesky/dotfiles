@@ -1,12 +1,12 @@
 import { o } from 'ramda';
 
-
 type ExtractTuple<T> = T extends [infer a, ...T[]] ? a : never;
-type First<T> = T extends [infer A] ? A : never
-const r = [1,2,3] as const
-type B = First<(typeof [1,2,3])>
+export type Head<L extends readonly any[]> = L extends [infer I, ...any[]] ? I : never;
+const r = [1, 2, 3] as const;
 
-type F = ExtractTuple<typeof r>
+type B = Head<typeof r>;
+
+type F = ExtractTuple<typeof r>;
 const allSettled = <T, U extends Promise<T>[]>(promises: U): Promise<T[]> => {
   const mapped = promises.map(p => p.catch(el => el));
   return Promise.all(mapped);
