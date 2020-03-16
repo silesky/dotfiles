@@ -1,60 +1,71 @@
+import { lastIndexOf } from 'ramda';
+
 const range = num => [...Array(num)].map((_, idx) => idx + 1);
 var spiralOrder = function(matrix: number[][]): number[] {
-  const lastRowIdx = matrix.length - 1;
-  const lastColIdx = matrix[0].length - 1;
+  if (!matrix.length) return [];
+  let lastRowIdx = matrix.length - 1;
+  let lastColIdx = matrix[0].length - 1;
+  let firstColIdx = 0;
+  let firstRowIdx = 0;
   const totalLength = matrix.reduce((p, n) => p.concat(n)).length;
   const arr: number[] = [];
   let colIdx = 0;
   let rowIdx = 0;
   while (arr.length < totalLength) {
     while (true) {
-      arr.push(matrix[rowIdx][colIdx]);
-      if (colIdx === lastColIdx) {
-        break;
-      } else {
+      if (colIdx !== lastColIdx) {
+        arr.push(matrix[rowIdx][colIdx]);
         colIdx++;
-      }
-    }
-
-    while (true) {
-      console.log(rowIdx);
-      arr.push(matrix[rowIdx][colIdx]);
-      if (rowIdx !== lastRowIdx) {
-        rowIdx++;
       } else {
         break;
       }
     }
 
     while (true) {
-      console.log(rowIdx);
-      arr.push(matrix[rowIdx][colIdx]);
       if (rowIdx !== lastRowIdx) {
+        arr.push(matrix[rowIdx][colIdx]);
         rowIdx++;
       } else {
         break;
       }
     }
 
+    lastRowIdx--;
+    lastColIdx--;
+
+    // bottom right
     while (true) {
-      arr.push(matrix[rowIdx][colIdx]);
-      if (colIdx !== colIdx) {
+      if (colIdx !== firstColIdx) {
+        arr.push(matrix[rowIdx][colIdx]);
         colIdx--;
-        console.log(colIdx);
       } else {
+        firstColIdx++;
+        break;
+      }
+    }
+
+    while (true) {
+      if (rowIdx !== firstRowIdx) {
+        arr.push(matrix[rowIdx][colIdx]);
+        rowIdx--;
+      } else {
+        console.log('finished', rowIdx);
+        firstRowIdx++;
         break;
       }
     }
   }
-  return arr;
+  return arr.slice(0, totalLength);
 };
 
 const result = spiralOrder([
-  [1, 2, 3],
-  [4, 5, 6],
-  [7, 8, 9],
+  [1, 2, 3, 4],
+  [5, 6, 7, 8],
+  [9, 10, 11, 12],
+  [13, 14, 15, 16],
 ]);
-// [1,2,3,6,9,8,7,4,1,2,5]
+//
+// [1,2,3,6,9,8,7,4,5]
 
 console.log(result);
 /*?*/
