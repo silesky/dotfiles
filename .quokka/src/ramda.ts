@@ -5,8 +5,6 @@ var spiralOrder = function(matrix: number[][]): number[] {
   if (!matrix.length) return [];
   let lastRowIdx = matrix.length - 1;
   let lastColIdx = matrix[0].length - 1;
-  let firstColIdx = 0;
-  let firstRowIdx = 0;
   const totalLength = matrix.reduce((p, n) => p.concat(n)).length;
   const arr: number[] = [];
   let colIdx = 0;
@@ -17,6 +15,7 @@ var spiralOrder = function(matrix: number[][]): number[] {
         arr.push(matrix[rowIdx][colIdx]);
         colIdx++;
       } else {
+        lastColIdx--;
         break;
       }
     }
@@ -30,27 +29,24 @@ var spiralOrder = function(matrix: number[][]): number[] {
       }
     }
 
-    lastRowIdx--;
-    lastColIdx--;
-
     // bottom right
     while (true) {
-      if (colIdx !== firstColIdx) {
+      if (colIdx !== 0) {
         arr.push(matrix[rowIdx][colIdx]);
         colIdx--;
       } else {
-        firstColIdx++;
         break;
       }
     }
 
     while (true) {
-      if (rowIdx !== firstRowIdx) {
+      if (rowIdx !== 0) {
         arr.push(matrix[rowIdx][colIdx]);
         rowIdx--;
       } else {
         console.log('finished', rowIdx);
-        firstRowIdx++;
+        rowIdx++;
+        colIdx++;
         break;
       }
     }
@@ -64,8 +60,15 @@ const result = spiralOrder([
   [9, 10, 11, 12],
   [13, 14, 15, 16],
 ]);
-//
+console.log(result);
+// [1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10]
+
+const result2 = spiralOrder([
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
+]);
+console.log(result2);
 // [1,2,3,6,9,8,7,4,5]
 
-console.log(result);
 /*?*/
