@@ -3,7 +3,7 @@
 # temp - for google cloud function emulator
 alias func="functions-emulator"
 
-emacs () {
+emacs() {
   # https://superuser.com/questions/303061/set-emacs-to-always-run-in-background
   # always run in background
   /usr/local/bin/emacs "$@" &
@@ -34,13 +34,16 @@ getLog() {
   POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
   kubectl logs $POD_NAME -c flags
 }
+# leafly
+alias npm-update-lnu="npm update @leafly-com/lm-node-utils --save"
+alias npm-update-types="npm update @leafly-com/types --save"
 
 # ... system
 alias tm="tmux"
 alias top="top -o cpu"
 
 function copytasks() {
-   cp -r ~/scripts/vscode/ .vscode
+  cp -r ~/scripts/vscode/ .vscode
 }
 # gitkraken
 function gitkr() {
