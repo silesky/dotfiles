@@ -1,38 +1,41 @@
-import deepMap from 'deep-map';
-
+import {default as deepMap} from 'deep-map';
+​
 type Compute<T> = T extends Function ? T : {} & { [K in keyof T]: T[K] };
-
+​
 export type DeepExclude<T, U> = Compute<
   T extends (...args: any[]) => any
     ? T
     : T extends any[]
-    ? _DeepExcludeFromArray<T[number], U>
+    ? DeepExcludeFromArray<T[number], U>
     : T extends object
-    ? _DeepExcludeFromObject<T, U>
+    ? DeepExcludeFromObject<T, U>
     : T
 >;
-
-interface _DeepExcludeFromArray<T, U> extends Array<DeepExclude<Exclude<T, U>, U>> {}
-
-type _DeepExcludeFromObject<T, U> = {
+​
+export type DeepExcludeFromArray<T, U> = Array<DeepExclude<Exclude<T, U>, U>>
+​
+export type DeepExcludeFromObject<T, U> = {
   [P in keyof T]: DeepExclude<Exclude<T[P], U>, U>;
 };
-
-type MyObject = {
+​
+type MyType = {
   a?: {
     b?: string | undefined | null;
     c?: string | undefined | null;
-  };
-  d: number;
-};
-
-const obj: MyObject = {
-  a: {
-    b: 'B',
-    c: undefined
   },
-  d: 5,
+  d?: string | undefined | null;
 };
+​
+const obj: MyType = {
+  a: {
+    b: 'hello',
+    c: null,
+  },
+  d: null,
+}
 
-const result: DeepExclude<MyObject, null> = deepMap(obj, v => (v !== null ? undefined : v));
-console.log(result)
+
+
+const resultWithoutNull: DeepExclude<MyType, null> = deepMap('abc', 'avc')
+type f = typeof deepMap
+console.log(resultWithoutNull)
