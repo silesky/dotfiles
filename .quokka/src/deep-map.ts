@@ -12,9 +12,9 @@ export type DeepExclude<T, U> = Compute<
     : T
 >;
 
-export interface _DeepExcludeFromArray<T, U> extends Array<DeepExclude<Exclude<T, U>, U>> {}
+interface _DeepExcludeFromArray<T, U> extends Array<DeepExclude<Exclude<T, U>, U>> {}
 
-export type _DeepExcludeFromObject<T, U> = {
+type _DeepExcludeFromObject<T, U> = {
   [P in keyof T]: DeepExclude<Exclude<T[P], U>, U>;
 };
 
