@@ -13,7 +13,7 @@
     "rootDir": ".",
     "sourceMap": false,
     "strict": true,
-    "noImplicitAny": false,
+    "noImplicitAny": true,
   },
   "lib": [
     "es2015",
