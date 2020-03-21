@@ -1,25 +1,41 @@
+interface ISerializable {
+  toJSON: () => Error;
+}
 class CustomError extends Error {
-  meta = '' // implicit constructor
+  protected meta = '__CUSTOM_ERROR'; // implicit constructor
 }
 
 class MyError extends CustomError {
-  private meta = '_CUSTOM_ERROR'
   name = 'MyError';
-  message = '';
-  constructor(message: MyError['message']) {
-    super(message)
-    this.message = message;
+  toJSON = () => {
+    return {
+      stringified: true,
+      name: this.name,
+      message: this.message
+    }
   }
+}
+
+class Employee {
+  public name: string
+  constructor() {
+     this.name = "Leonardo Lima";
+  }
+}
+// same as
+class Employee2 {
+  name = "Leanardo Lima"
 }
 
 const main = () => {
   try {
     const f = new MyError('a message');
+    f.
     throw f;
   } catch (err) {
     if (err instanceof MyError) {
-      console.log(err.message)
-      console.log(err.meta)
+      console.log(err)
+      console.log(JSON.stringify(err)) // toJSON changes what JSON.stringify does so it doesn't output a protected class.
     }
   }
 };
