@@ -31,16 +31,8 @@ const bubbleSort = arr => {
 
 // bubbleSort([4,2,1,4,6,6])/*?*/
 
-const count = (num: number) => {
-  if (num === 0) return 0;
-  console.log(num);
-  const newNumber = count(num - 1);
-  return [num, ...(Array.isArray(newNumber) ? newNumber : [newNumber])];
-};
-
-const fibonacci = (x) => {
-  if (x === 0) return x
-  return fibonacci(x - 1) * fibonacci(x + 1)
+const fib = num => {
+  if (num <= 1) return 1
+  return fib(num - 1) + fib(num - 2)
 }
-console.log(fibonacci(5))
-/*?*/
+console.log(fib(10))
