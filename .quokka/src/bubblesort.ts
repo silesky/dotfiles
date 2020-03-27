@@ -1,27 +1,46 @@
-const sort = (arr) => {
-  const [first, sec, ...rest] = arr
-  if (arr.length === 1) return [first]
-  if (first < sec) {
-    return [first, ...sort([sec, ...rest])]
+// go through the array and swap adjacent elements if they are in the wrong order
+const sort = arr => {
+  const [first, sec, ...rest] = arr;
+  if (arr.length === 1) {
+    console.log(first);
+    return [first];
   }
-  return [sec, ...sort([first, ...rest])]
-}
-sort([3,1,2,0,9])
+  if (first < sec) {
+    return [first, ...sort([sec, ...rest])];
+  }
+  return [sec, ...sort([first, ...rest])];
+};
+sort([3, 1, 2, 0, 9]);
 /*?*/
 
-const isSorted = (arr = []) => arr.reduce((acc, n, idx) => {
-  if (acc === false) return false
-  if (n < arr[idx - 1]) {
-    return false
-  }
-  return true;
-}, true)
+const isSorted = (arr = []) =>
+  arr.reduce((acc, n, idx) => {
+    if (acc === false) return false;
+    if (n < arr[idx - 1]) {
+      return false;
+    }
+    return true;
+  }, true);
 
-const bubbleSort = (arr) => {
+const bubbleSort = arr => {
   if (isSorted(arr)) {
-    return arr
+    return arr;
   }
-  return bubbleSort(sort(arr))
-}
+  return bubbleSort(sort(arr));
+};
 
-bubbleSort([4,2,1,4,6,6])/*?*/
+// bubbleSort([4,2,1,4,6,6])/*?*/
+
+const count = (num: number) => {
+  if (num === 0) return 0;
+  console.log(num);
+  const newNumber = count(num - 1);
+  return [num, ...(Array.isArray(newNumber) ? newNumber : [newNumber])];
+};
+
+const fibonacci = (x) => {
+  if (x === 0) return x
+  return fibonacci(x - 1) * fibonacci(x + 1)
+}
+console.log(fibonacci(5))
+/*?*/
