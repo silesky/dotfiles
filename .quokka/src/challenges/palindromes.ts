@@ -1,6 +1,13 @@
+const reverseStr = (v: string): string => {
+  const first = v[0]
+  const rest = v.slice(1)
+  if (!rest.length) return first;
+  return reverseStr(rest) + first
+};
+
+const palindromes = (v: string) => {
+  return v === reverseStr(v)
+}
 
 
-
-console.assert(palindromes("hello", false))
-console.assert(palindromes("suppus", true))
-console.assert(palindromes("sup pus", true))
+console.log(palindromes('hello olleh'))
