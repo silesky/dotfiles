@@ -1,27 +1,67 @@
 #!/usr/bin/zsh
 
-# change _cursor_ based on insert status
- function zle-keymap-select zle-line-init
- {
-     # change cursor shape in iTerm2
-     case $KEYMAP in
-         vicmd)      print -n -- "\E]50;CursorShape=0\C-G";;  # block cursor
-         viins|main) print -n -- "\E]50;CursorShape=1\C-G";;  # line cursor
-     esac
+####################################
+# VIM INSERT MODE CHANGE CURSOR SHAPE
+# https://github.com/jcorbin/home/edit/master/.zsh/rc.d/vi-mode-cursor
+####################################
+function print_dcs
+{
+  print -n -- "\EP$1;\E$2\E\\"
+}
 
-     zle reset-prompt
-     zle -R
- }
+function set_cursor_shape
+{
+  if [ -n "$TMUX" ]; then
+    # tmux will only forward escape sequences to the terminal if surrounded by
+    # a DCS sequence
+    print_dcs tmux "\E]50;CursorShape=$1\C-G"
+  else
+    print -n -- "\E]50;CursorShape=$1\C-G"
+  fi
+}
 
- function zle-line-finish
- {
-     print -n -- "\E]50;CursorShape=0\C-G"  # block cursor
- }
+function zle-keymap-select zle-line-init
+{
+  case $KEYMAP in
+    vicmd)
+      set_cursor_shape 0 # block cursor
+      ;;
+    viins|main)
+      set_cursor_shape 1 # line cursor
+      ;;
+  esac
+  zle reset-prompt
+  zle -R
+}
 
- # Disable different lines bc slow and only works without tmux
-  zle -N zle-line-init
-  zle -N zle-line-finish
-  zle -N zle-keymap-select
+function zle-line-finish
+{
+  set_cursor_shape 0 # block cursor
+}
+
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
+###################################### end script.
+##############################################################
+
+##############################################################
+# VIM INSERT MODE INDICATOR "<<<<"
+##############################################################
+# if [[ "$MODE_INDICATOR" == "" ]]; then
+#   MODE_INDICATOR="%{$fg_bold[green]%}<==<==<==<==<==%{$reset_color%}"
+# fi
+#
+# function vi_mode_prompt_info() {
+#   echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
+# }
+#
+# # define right prompt, if it wasn't defined by a theme
+# if [[ "$RPS1" == "" && "$RPROMPT" == "" ]]; then
+#   RPS1='$(vi_mode_prompt_info)'
+# fi
+###################################### end script.
+##############################################################
 
 export KEYTIMEOUT=5 #if I set it too low, can't switch with j j
 
@@ -104,17 +144,3 @@ bindkey '^e' end-of-line
 bindkey -M viins '^e' end-of-line
 bindkey -M vicmd '^e' end-of-line
 
-# if mode indicator wasn't setup by theme, define default
-if [[ "$MODE_INDICATOR" == "" ]]; then
-  MODE_INDICATOR="%{$fg_bold[green]%}<==<==<==<==<==%{$reset_color%}"
-fi
-
-function vi_mode_prompt_info() {
-  echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
-}
-
-# define right prompt, if it wasn't defined by a theme
-if [[ "$RPS1" == "" && "$RPROMPT" == "" ]]; then
-  RPS1='$(vi_mode_prompt_info)'
-fi
-### ---------------------------------------------- ###

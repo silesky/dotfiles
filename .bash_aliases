@@ -93,7 +93,7 @@ alias ...='cd ../..' # Go up two directories
 
 alias l="ls"
 alias lsd='ls -d */'
-alias ls.='ls -d *' #List dotfiles only
+alias lsf="ls -al | grep '^[-l]'" # List files only
 
 # ...  dotfiles
 alias eslintrc="$EDITOR ~/.eslintrc"
