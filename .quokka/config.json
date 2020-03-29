@@ -1,1 +1,15 @@
-{"pro":true,"env":{"params":{"env":"NODE_PATH=./src"}}}
+{
+  "pro": true,
+  "env": {
+    "params": {
+      "env": "NODE_PATH=./src"
+    }
+  },
+  "babel": {
+    "env": "dev",
+    "presets": [
+        "@babel/preset-react",
+        "@babel/env"
+    ]
+  }
+}
