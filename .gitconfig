@@ -1,6 +1,6 @@
 [user]
 name = Seth Silesky
-	email = seth.silesky@gmail.com
+email = seth.silesky@gmail.com
 [alias]
 get-branches = "!sh -c ~/scripts/get-all-branches.sh"
 # find the merge where a commit entered a branch
@@ -83,7 +83,7 @@ name = automatically merge npm lockfiles
 driver = npx npm-merge-driver merge %A %O %B %P
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true

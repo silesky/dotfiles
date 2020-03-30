@@ -3,6 +3,8 @@
 # temp - for google cloud function emulator
 alias func="functions-emulator"
 
+alias gitwatch="watch --color git -c color.status=always"
+
 emacs() {
   # https://superuser.com/questions/303061/set-emacs-to-always-run-in-background
   # always run in background
