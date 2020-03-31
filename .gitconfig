@@ -32,6 +32,7 @@ diffmaster = !git diff $(git merge-base --fork-point master) -- . ':(exclude)pac
 ds = diff --staged
 dt = difftool
 dts = difftool --staged
+dd = !git diff && echo "________________STAGED_______________________" && git diff --staged
 co = checkout
 clear = reset -- . && git checkout -- .
 back = checkout HEAD~1
