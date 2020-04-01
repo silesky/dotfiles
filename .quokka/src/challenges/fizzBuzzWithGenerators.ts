@@ -12,6 +12,4 @@ const fizzBuzz = () => {
   });
 };
 
-const res = fizzBuzz()
-  .map((gen) => [...gen].join(''))
-console.log(res)
+const res = fizzBuzz().map(gen => [...gen].join(''));
