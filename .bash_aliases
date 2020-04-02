@@ -140,6 +140,11 @@ alias tmkpa="tmux kill-pane -a -t . && clear"
 alias tmkp="tmux kill-pane -t ."
 alias tmx="tmux kill-session -t ."
 alias tmX="killall tmux"
+function tmnw() {
+  local name=${1:-zsh}
+  tmux new-window -n "$name"
+}
+
 
 # ... misc
 alias bs="browser-sync"
