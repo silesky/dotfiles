@@ -1,4 +1,5 @@
 {
+  "node": "~/.nvm/versions/node/v12.16.0/bin/node",
   "pro": true,
   "env": {
     "params": {
@@ -8,8 +9,8 @@
   "babel": {
     "env": "dev",
     "presets": [
-        "@babel/preset-react",
-        "@babel/env"
+      "@babel/preset-react",
+      "@babel/env"
     ]
   }
 }
