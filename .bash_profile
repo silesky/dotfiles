@@ -1,7 +1,6 @@
 include() {
    [[ -f "$1" ]] && source "$1"
 }
-
 # also sources from zshrc
 include ~/.bash_vars # also includes paths
 include ~/.bashrc

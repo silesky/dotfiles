@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 export HOME=~
-export LESSOPEN="|$HOME/scripts/lesspipe/lesspipe.sh %s"
+#export LESSOPEN="|$HOME/scripts/lesspipe/lesspipe.sh %s"
 
 export EDITOR="code" # don't need visual
 export KUBE_EDITOR="vim" # for kubectl edit
@@ -43,6 +43,8 @@ export PATH=/usr/local/mysql/bin:$PATH
 export PATH=$HOME/scripts:$PATH
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.local/bin
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # tmuxinator thing
 DISABLE_AUTO_TITLE=true

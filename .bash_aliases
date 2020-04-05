@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# temp - for google cloud function emulator
-alias func="functions-emulator"
-
 alias gitwatch="watch --color git -c color.status=always"
 
 emacs() {
@@ -33,8 +30,8 @@ fi
 # kubernetes / kubectl
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/kubectl/kubectl.plugin.zsh
 
-alias qc="git add .; git commit -m "a commit""
-getLog() {
+alias qc="git add .; git commit -am --no-verify"
+kubectl-get-log-from-pod-name() {
   POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
   kubectl logs $POD_NAME -c flags
 }
@@ -76,11 +73,11 @@ curlb() {
 }
 
 ## Docker alias
-k9bp() { kill -9 "$(lsof -t -i:"$1")"; } # kill by port
-k9p() { kill -9 "$(pgrep -f "$1")"; }
+k9() { kill -9 "$(lsof -t -i:"$1")"; } # kill by port
+k9p() { kill -9 "$(pgrep -f "$1")"; }  # kill by process name
+
 alias co="code -r"
 alias c="clear"
-alias k9="k9p"
 alias ka="killall"
 alias bang="echo '#!/usr/bin/env bash'"
 
@@ -111,7 +108,7 @@ alias gitconfig="$EDITOR ~/.gitconfig"
 alias gitignore="$EDITOR ~/.gitignore"
 
 # .... dotfiles
-alias reprof=". ~/.bash_profile && . ~/.zshrc && echo 'reloaded.'"
+alias reprof=". ~/.zshrc"
 alias blame="git blame-colored.sh"
 alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 
@@ -144,7 +141,6 @@ function tmnw() {
   local name=${1:-zsh}
   tmux new-window -n "$name"
 }
-
 
 # ... misc
 alias bs="browser-sync"
