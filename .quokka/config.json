@@ -6,5 +6,10 @@
       "env": "NODE_PATH=./src"
     }
   },
-  "babel": true
+  "babel": {
+    "ts": true,
+    "plugins": [
+      "@babel/plugin-transform-typescript"
+    ]
+  }
 }
