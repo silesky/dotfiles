@@ -13,8 +13,7 @@
     "rootDir": ".",
     "sourceMap": false,
     "strict": true,
-    "noImplicitAny": true,
-    "jsx": "react"
+    "noImplicitAny": false
   },
   "lib": [
     "es2015",

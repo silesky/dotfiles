@@ -7,9 +7,9 @@
     }
   },
   "babel": {
-    "ts": true,
-    "plugins": [
-      "@babel/plugin-transform-typescript"
+    "presets": [
+      "@babel/preset-react",
+      "@babel/env"
     ]
   }
 }
