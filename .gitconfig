@@ -56,9 +56,12 @@ autocrlf = input
 editor = vim
 pager = less -F -X
 [color]
-branch = auto
-status = auto
-ui = auto
+branch = always
+status = always
+ui = always
+diff = always
+[diff "color"]
+old = red strike
 [push]
 default = upstream
 [rebase]
@@ -85,4 +88,4 @@ insteadOf = https://github.com/
 name = automatically merge npm lockfiles
 driver = npx npm-merge-driver merge %A %O %B %P
 [difftool]
-	prompt = false
+prompt = false
