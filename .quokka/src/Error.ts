@@ -30,7 +30,6 @@ class Employee2 {
 const main = () => {
   try {
     const f = new MyError('a message');
-    f.
     throw f;
   } catch (err) {
     if (err instanceof MyError) {
