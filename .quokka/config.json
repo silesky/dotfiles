@@ -5,11 +5,5 @@
     "params": {
       "env": "NODE_PATH=./src"
     }
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-react",
-      "@babel/env"
-    ]
   }
 }
