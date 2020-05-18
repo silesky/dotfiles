@@ -138,7 +138,7 @@ filetype plugin indent on
 " o goes down and then matches the indentation of the prev line
 set autoindent
 
-map <F8> gg=G``:echoerr 'Auto indented.'<CR>
+nnoremap <F8> gg=G``:echoerr 'Auto indented.'<CR>
 
 " edit vimrc in pane below
 nnoremap <leader>erc :sp<CR>:e $MYVIMRC<CR>

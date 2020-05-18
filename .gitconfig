@@ -27,6 +27,7 @@ unignore = update-index --no-skip-worktree
 ignored = !git ls-files -t | grep '^S'
 b = branch
 c = commit
+cnv = commit --no-verify
 d = diff --stat
 diffmaster = !git diff $(git merge-base --fork-point master) -- . ':(exclude)package-lock.json'
 ds = diff --staged
