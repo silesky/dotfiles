@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# alias cd="z" # ALIAS CD to z
 alias gitwatch="watch --color git -c color.status=always"
 
 emacs() {
