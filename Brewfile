@@ -6,6 +6,8 @@ tap "homebrew/core"
 tap "caskroom/fonts"
 
 brew "exercism"
+brew "fzf"
+brew "fd"
 brew "tmux"
 brew "docker-compose"
 brew "hh"

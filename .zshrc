@@ -35,11 +35,15 @@ export ZSH=~/.oh-my-zsh
 ZSH_CUSTOM=~/.oh-my-zsh-custom
 ZSH_THEME="amuse-custom" # full line with time
 
+function in_path {
+  builtin type -P "$1" &> /dev/null
+}
 function get_plugins() {
   local dir=$(pwd)
   ZSH_PLUGINS="$ZSH_CUSTOM/plugins"
   [ ! -d $ZSH_PLUGINS ] && mkdir -p $ZSH_PLUGINS
   cd $ZSH_PLUGINS
+  [ ! -d "./autoenv" ] && git clone git://github.com/kennethreitz/autoenv.git
   [ ! -d "./autoenv" ] && git clone git://github.com/kennethreitz/autoenv.git
   [ ! -d "./zsh-autosuggestions" ] && git clone https://github.com/zsh-users/zsh-autosuggestions
   [ ! -d "./zsh-z" ] && git clone https://github.com/agkozak/zsh-z
@@ -62,7 +66,7 @@ cdpath=(~/projects ~/projects/lm-core)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
 npm
-helm
+# helm
 docker
 docker-compose
 history
