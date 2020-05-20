@@ -62,7 +62,7 @@ status = always
 ui = always
 diff = always
 [diff "color"]
-old = red strike
+	old = red strike
 [push]
 default = upstream
 [rebase]
