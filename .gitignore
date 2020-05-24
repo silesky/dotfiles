@@ -34,6 +34,7 @@
 !.quokka
 
 !/.hushlogin
+!/.nvm/default-packages
 
 # ignore these no matter where they are
 node_modules
