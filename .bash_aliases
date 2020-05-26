@@ -127,7 +127,6 @@ alias tma="tmux attach -d -t"
 alias tmd="tmux detach-client"
 alias tmns="tmux new-session -s  $(date '+%H%M%S')"
 alias mux="tmuxinator"
-alias tmsw="tmux splitw"
 alias tmks="tmux kill-session -t"
 alias tmkw="tmux kill-window -t"
 alias tmux.conf="$EDITOR ~/.tmux.conf"
@@ -138,6 +137,7 @@ alias tmkpa="tmux kill-pane -a -t . && clear"
 alias tmkp="tmux kill-pane -t ."
 alias tmx="tmux kill-session -t ."
 alias tmX="killall tmux"
+
 function tmnw() {
   local name=${1:-zsh}
   tmux new-window -n "$name"
@@ -200,18 +200,4 @@ alarm() {
     echo "Alarm set for "$total" secs..."
     sleep $total && terminal-notifier -title "Alarm" -message "$1 minute alarm up!"
   ) &
-}
-
-# colorized man pages
-# https://gist.github.com/cocoalabs/2fb7dc2199b0d4bf160364b8e557eb66
-man() {
-  LESS_TERMCAP_mb=$'\e'"[1;31m" \
-    LESS_TERMCAP_md=$'\e'"[1;31m" \
-    LESS_TERMCAP_me=$'\e'"[0m" \
-    LESS_TERMCAP_se=$'\e'"[0m" \
-    LESS_TERMCAP_so=$'\e'"[1;44;33m" \
-    LESS_TERMCAP_ue=$'\e'"[0m" \
-    LESS_TERMCAP_us=$'\e'"[1;32m" \
-    command man "$@"
-
 }
