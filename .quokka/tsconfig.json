@@ -6,6 +6,7 @@
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
+    "jsx": "react",
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "outDir": "built",

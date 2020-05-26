@@ -1,1 +1,10 @@
-{"node":"~/.nvm/versions/node/v12.16.0/bin/node","pro":true,"env":{"params":{"env":"NODE_PATH=./src"}}}
+{
+  "babel": true,
+  "node": "~/.nvm/versions/node/v14.3.0/bin/node",
+  "pro": true,
+  "env": {
+    "params": {
+      "env": "NODE_PATH=./src"
+    }
+  }
+}
