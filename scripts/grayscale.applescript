@@ -1,16 +1,36 @@
-# for osx mojave
+# nice
+
+set os_ver to do shell script "sw_vers -productVersion | cut -d '.' -f1-2"
+
 tell application "System Preferences"
-	activate
-	set the current pane to pane id "com.apple.preference.universalaccess"
-	delay 1 # needs time to open universal access
-	tell application "System Events" to tell process "System Preferences" to tell window "Accessibility"
-		tell scroll area 1 to tell table 1 to tell row 5 #open display preferences
-			select
-		end tell
-		tell group 1
-			click checkbox "Use grayscale"
-		end tell
-	end tell
+	launch
+	if os_ver < "10.15" then
+		reveal anchor "Seeing_Display" of pane id "com.apple.preference.universalaccess"
+	else
+		reveal anchor "Seeing_ColorFilters" of pane "Accessibility"
+	end if
 end tell
 
-tell application "System Preferences" to quit
+tell application "System Events"
+	tell application process "System Preferences"
+		set frontmost to true
+		delay 1
+		if os_ver = "10.15" then
+			tell window "Accessibility"
+				repeat until exists checkbox "Enable Color Filters" of tab group 1 of group 1
+					delay 0.01
+				end repeat
+				click first checkbox of tab group 1 of group 1
+			end tell
+		else if os_ver = "10.14" then
+			tell group 1 of window "Accessibility"
+				click checkbox "Use grayscale"
+			end tell
+		else if os_ver < "10.14" then
+			tell window "Accessibility"
+				click checkbox "Use grayscale"
+			end tell
+		end if
+	end tell
+end tell
+tell application "System Preferences" to if it is running then quit
