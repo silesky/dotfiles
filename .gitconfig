@@ -86,7 +86,7 @@ template = /Users/me/.stCommitMsg
 #####
 
 [url "git@github.com:"]
-insteadOf = https://github.com/
+	insteadOf = https://github.com/
 [merge "npm-merge-driver"]
 name = automatically merge npm lockfiles
 driver = npx npm-merge-driver merge %A %O %B %P
