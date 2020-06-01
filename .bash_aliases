@@ -41,6 +41,7 @@ kubectl-get-log-from-pod-name() {
 alias kaliases="cat ~/.oh-my-zsh/plugins/kubectl/README.md"
 alias kgn="kubectl get namespaces"
 alias klmp="kubectl -n lm-production"
+alias ki="kubectl -n integration"
 alias klmplogs="kubectl -n lm-production logs --follow"
 
 alias npm-update-lnu="npm update @leafly-com/lm-node-utils --save"
