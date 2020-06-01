@@ -36,7 +36,13 @@ kubectl-get-log-from-pod-name() {
   POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
   kubectl logs $POD_NAME -c flags
 }
+
 # leafly
+alias kaliases="cat ~/.oh-my-zsh/plugins/kubectl/README.md"
+alias kgn="kubectl get namespaces"
+alias klmp="kubectl -n lm-production"
+alias klmplogs="kubectl -n lm-production logs --follow"
+
 alias npm-update-lnu="npm update @leafly-com/lm-node-utils --save"
 alias npm-update-types="npm update @leafly-com/types --save"
 
@@ -109,6 +115,7 @@ alias gitconfig="$EDITOR ~/.gitconfig"
 alias gitignore="$EDITOR ~/.gitignore"
 
 # .... dotfiles
+alias realias=". ~/.bash_aliases"
 alias reprof=". ~/.zshrc"
 alias blame="git blame-colored.sh"
 alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
