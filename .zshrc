@@ -75,7 +75,7 @@ kubectl
 zsh-z
 last-working-dir
 #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
-zsh-autosuggestions
+# zsh-autosuggestions
 # zsh-easy-motion
 )
 TOUCHBAR_GIT_ENABLED=true
