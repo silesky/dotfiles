@@ -38,6 +38,8 @@ kubectl-get-log-from-pod-name() {
 }
 
 # leafly
+alias yarn-update-fec="yarn upgrade @leafly-com/frontend-components --latest"
+alias yarn-update-webutils="yarn upgrade @leafly-com/web-utils --latest"
 alias kaliases="cat ~/.oh-my-zsh/plugins/kubectl/README.md"
 alias kgn="kubectl get namespaces"
 alias klmp="kubectl -n lm-production"
