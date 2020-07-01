@@ -31,16 +31,25 @@ fi
 # kubernetes / kubectl
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/kubectl/kubectl.plugin.zsh
 
-alias qc="git add .; git commit -am --no-verify"
+# display image names of all running containers
+k.all-containers() {
+  kubectl get pods --all-namespaces -o jsonpath="{..image}" |
+    tr -s '[[:space:]]' '\n' |
+    sort |
+    uniq -c
+}
+
 kubectl-get-log-from-pod-name() {
   POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
   kubectl logs $POD_NAME -c flags
 }
+alias k=kubectl
+alias kaliases="cat ~/.oh-my-zsh/plugins/kubectl/README.md"
+#########################################################################
 
 # leafly
-alias yarn-update-fec="yarn upgrade @leafly-com/frontend-components --latest"
-alias yarn-update-webutils="yarn upgrade @leafly-com/web-utils --latest"
-alias kaliases="cat ~/.oh-my-zsh/plugins/kubectl/README.md"
+alias yarn-upgrade-fec="yarn upgrade @leafly-com/frontend-components --latest"
+alias yarn-upgrade-webutils="yarn upgrade @leafly-com/web-utils --latest"
 alias kgn="kubectl get namespaces"
 alias klmp="kubectl -n lm-production"
 alias ki="kubectl -n integration"
@@ -158,16 +167,6 @@ alias bs="browser-sync"
 alias bstart='browser-sync start --server --proxy --files . &'
 alias srv="live-server"
 alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
-
-#!/bin/sh
-
-# display image names of all running containers
-k.all-containers() {
-  kubectl get pods --all-namespaces -o jsonpath="{..image}" |
-    tr -s '[[:space:]]' '\n' |
-    sort |
-    uniq -c
-}
 
 # functions
 

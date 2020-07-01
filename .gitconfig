@@ -26,13 +26,14 @@ unignore = update-index --no-skip-worktree
 # list skip-worktree files
 ignored = !git ls-files -t | grep '^S'
 b = branch
+bm = branch -m
 c = commit
 cm = commit -m
 cnv = commit --no-verify
 cnvm = commit --no-verify -m
-d = diff --stat
-diffmaster = !git diff $(git merge-base --fork-point master) -- . ':(exclude)package-lock.json'
+d = diff
 ds = diff --staged
+diffmaster = !git diff $(git merge-base --fork-point master) -- . ':(exclude)*lock.json'
 dt = difftool
 dts = difftool --staged
 dd = !git diff && echo "________________STAGED_______________________" && git diff --staged
@@ -64,7 +65,7 @@ status = always
 ui = always
 diff = always
 [diff "color"]
-	old = red strike
+old = red strike
 [push]
 default = upstream
 [rebase]
@@ -76,17 +77,17 @@ template = /Users/me/.stCommitMsg
 
 # https://medium.com/faun/using-vscode-as-git-mergetool-and-difftool-2e241123abe7
 [merge]
-    tool = vscode
+tool = vscode
 [mergetool "vscode"]
-    cmd = code --wait $MERGED
+cmd = code --wait $MERGED
 [diff]
-    tool = vscode
+tool = vscode
 [difftool "vscode"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+cmd = code --wait --diff $LOCAL $REMOTE
 #####
 
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+insteadOf = https://github.com/
 [merge "npm-merge-driver"]
 name = automatically merge npm lockfiles
 driver = npx npm-merge-driver merge %A %O %B %P
