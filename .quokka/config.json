@@ -4,6 +4,7 @@
   "pro": true,
   "env": {
     "params": {
+      "runner": "--experimental-modules",
       "env": "NODE_PATH=./src"
     }
   }
