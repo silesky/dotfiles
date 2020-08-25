@@ -24,51 +24,53 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
-if v:version >=800
-  Plug 'w0rp/ale'
-endif
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-unimpaired' "quickfix ]a and [b and move down and up is [e ]e
-Plug 'mxw/vim-jsx'
-Plug 'slashmili/alchemist.vim'
-Plug 'elixir-lang/vim-elixir'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'tpope/vim-repeat' "let's you use the dot command with vim surround
-Plug 'tpope/vim-surround' "cst
-Plug 'avakhov/vim-yaml'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript' "syntax hl
-Plug 'maksimr/vim-jsbeautify' "f3
-Plug 'gregsexton/gitv'
-Plug 'tpope/vim-fugitive'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-sleuth'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'haya14busa/incsearch.vim'
-" colorschemes
-Plug 'flazz/vim-colorschemes'
-Plug 'jacoborus/tender.vim' "sort of like firwatch but works with mvim
-Plug 'hhsnopek/vim-firewatch' "doesn't work with mvim
-Plug 'dikiaap/minimalist'
-Plug 'lifepillar/vim-solarized8'
-Plug 'trevordmiller/nova-vim'
-Plug 'wincent/terminus'
-Plug 'machakann/vim-highlightedyank'
-"
-"detect indent
-" sudo npm -g install instant-markdown-d
-Plug 'scrooloose/nerdtree'
-Plug 'suan/vim-instant-markdown'
-Plug 'epmatsw/ag.vim'
-Plug 'gcorne/vim-sass-lint'
-Plug 'luochen1990/rainbow'
-let g:rainbow_active = 1 " rainbow matching braces
+if !exists('g:vscode')
+  if v:version >=800
+    Plug 'w0rp/ale'
+  endif
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-unimpaired' "quickfix ]a and [b and move down and up is [e ]e
+  Plug 'mxw/vim-jsx'
+  Plug 'slashmili/alchemist.vim'
+  Plug 'elixir-lang/vim-elixir'
+  Plug 'cakebaker/scss-syntax.vim'
+  Plug 'tpope/vim-repeat' "let's you use the dot command with vim surround
+  Plug 'tpope/vim-surround' "cst
+  Plug 'avakhov/vim-yaml'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'leafgarland/typescript-vim'
+  Plug 'pangloss/vim-javascript' "syntax hl
+  Plug 'maksimr/vim-jsbeautify' "f3
+  Plug 'gregsexton/gitv'
+  Plug 'tpope/vim-fugitive'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'tpope/vim-sleuth'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'haya14busa/incsearch.vim'
+  " colorschemes
+  Plug 'flazz/vim-colorschemes'
+  Plug 'jacoborus/tender.vim' "sort of like firwatch but works with mvim
+  Plug 'hhsnopek/vim-firewatch' "doesn't work with mvim
+  Plug 'dikiaap/minimalist'
+  Plug 'lifepillar/vim-solarized8'
+  Plug 'trevordmiller/nova-vim'
+  Plug 'wincent/terminus'
+  Plug 'machakann/vim-highlightedyank'
+  "
+  "detect indent
+  " sudo npm -g install instant-markdown-d
+  Plug 'scrooloose/nerdtree'
+  Plug 'suan/vim-instant-markdown'
+  Plug 'epmatsw/ag.vim'
+  Plug 'gcorne/vim-sass-lint'
+  Plug 'luochen1990/rainbow'
+  let g:rainbow_active = 1 " rainbow matching braces
 
-Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
-Plug 'tpope/vim-eunuch' "\:MOVE etc
-Plug 'terryma/vim-expand-region'
+  Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
+  Plug 'tpope/vim-eunuch' "\:MOVE etc
+  Plug 'terryma/vim-expand-region'
+endif
 
 " iTerm: fix extra [200] chars when pasting
 set t_BE=
@@ -97,32 +99,14 @@ function! BuildCompletor(info)
   endif
 endfunction
 
-if v:version >= 800
+if v:version >= 800 && !exists('g:vscode')
   Plug 'maralla/completor.vim', { 'do': function('BuildCompletor') }
 endif
 
-" YouCompleteMe: PostInstall hook
-function! BuildYCM(info)
-  if a:info.status == 'installed' || 'updated' || a:info.force
-    !./install.sh
-  endif
-endfunction
 
-if v:version > 703 && v:version < 800
-  Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
-endif
 
 call plug#end()
 " DIRECTIONS:
-" Misc--
-" npm install -g eslint sass-lint csslint instant-markdown-d
-" YouCompleteMe--
-" cd /YouCompleteMe/third_party/ycmd/third_party/
-"     git submodule update --init --recursive
-"  cd ~/YouCompleteMe/ && ./install.py
-" Tern--
-" cd /tern_for_vim/ && npm install
-" ............................................
 " for airline:
 set laststatus=2
 "allows you to use left or right to nav through completion:
@@ -234,8 +218,8 @@ if v:version >= 800
   let g:ale_set_loclist = 1 " navigate localist with <leader>l and [l and ]l
   " let g:ale_set_quickfix = 1 " makes grep quickfix buggy
   augroup FiletypeGroup
-      autocmd!
-      au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+    autocmd!
+    au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   augroup END
   let g:ale_linters = { 'javascript': ['eslint'], 'jsx': ['eslint'] }
 endif
@@ -399,8 +383,9 @@ nmap <silent> <leader>q :call ToggleList("Quickfix List", 'c')<CR>
 
 autocmd FileType javascript set formatprg=prettier-eslint\ --stdin
 
-
-let g:NERDTreeQuitOnOpen=0 "don't close sidebar when opening a file
+if !exists('g:vscode')
+  let g:NERDTreeQuitOnOpen=0 "don't close sidebar when opening a file
+endif
 " when I vim to a new file, change the working directory as well (you can
 " check in nerdtree
 set autochdir
