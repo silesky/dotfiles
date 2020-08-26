@@ -24,7 +24,6 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
-if !exists('g:vscode')
   if v:version >=800
     Plug 'w0rp/ale'
   endif
@@ -70,7 +69,6 @@ if !exists('g:vscode')
   Plug 'sjl/vitality.vim' "make vim play nicely with iterm and tmux
   Plug 'tpope/vim-eunuch' "\:MOVE etc
   Plug 'terryma/vim-expand-region'
-endif
 
 " iTerm: fix extra [200] chars when pasting
 set t_BE=
