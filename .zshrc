@@ -32,7 +32,7 @@ setopt globdots
 
 export ZSH=~/.oh-my-zsh
 ZSH_CUSTOM=~/.oh-my-zsh-custom
-ZSH_THEME="amuse-custom" # full line with time
+ZSH_THEME=powerlevel10k/powerlevel10k # "amuse-custom" # full line with time
 ENABLE_CORRECTION="true"
 function in_path {
   builtin type -P "$1" &> /dev/null
