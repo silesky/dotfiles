@@ -1,3 +1,4 @@
+
 #!/usr/bin/env zsh
 # If this is set, zsh sessions will append their history list to the history file, rather than replace it. Thus, multiple parallel zsh sessions will all have the new entries from their history lists added to the history file, in the order that they exit. The file will still be periodically re-written to trim it when the number of lines grows 20% beyond the value specified by $SAVEHIST (see also the HIST_SAVE_BY_COPY option).
 
@@ -32,7 +33,7 @@ setopt globdots
 
 export ZSH=~/.oh-my-zsh
 ZSH_CUSTOM=~/.oh-my-zsh-custom
-ZSH_THEME=powerlevel10k/powerlevel10k # "amuse-custom" # full line with time
+ZSH_THEME="amuse-custom"
 ENABLE_CORRECTION="true"
 function in_path {
   builtin type -P "$1" &> /dev/null
@@ -104,5 +105,4 @@ bindkey '^ ' autosuggest-accept
 ENABLE_CORRECTION="true"
 # iterm integration auto
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 
