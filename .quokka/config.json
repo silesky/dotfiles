@@ -1,12 +1,1 @@
-{
-  "babel": true,
-  "node": "~/.nvm/versions/node/v12.14.0/bin/node",
-  "pro": true,
-  "stdEsm": false,
-  "nativeEsm": true,
-  "env": {
-    "params": {
-      "env": "NODE_PATH=./src"
-    }
-  }
-}
+{"babel":true,"node":"~/.nvm/current/bin/node","pro":true,"stdEsm":false,"nativeEsm":true,"env":{"params":{"env":"NODE_PATH=./src"}},"community":true}

@@ -38,7 +38,6 @@ k.all-containers() {
     sort |
     uniq -c
 }
-
 kubectl-get-log-from-pod-name() {
   POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
   kubectl logs $POD_NAME -c flags
@@ -81,7 +80,7 @@ alias chrome.spr='open -a "Google Chrome" --args --new-window --profile-director
 # misc
 alias dc="docker-compose"
 alias ch="chokidar"
-
+alias fd="fd --no-ignore"
 # npm
 alias dev="npm run dev"
 alias t="npm t"
@@ -133,6 +132,7 @@ alias blame="git blame-colored.sh"
 alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 
 # misc
+alias wip="git commit -m --no-verify wip"
 alias gitb="git checkout HEAD~"
 alias gitf="git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout"
 alias gshowhidden="git ls-files -v | grep '^[^H]'"

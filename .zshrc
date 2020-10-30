@@ -1,5 +1,9 @@
 
 #!/usr/bin/env zsh
+export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink at ~/.node/current/bin/node
+export NVM_DIR="$HOME/.nvm"
+export NVM_LAZY_LOAD=true
+#
 # If this is set, zsh sessions will append their history list to the history file, rather than replace it. Thus, multiple parallel zsh sessions will all have the new entries from their history lists added to the history file, in the order that they exit. The file will still be periodically re-written to trim it when the number of lines grows 20% beyond the value specified by $SAVEHIST (see also the HIST_SAVE_BY_COPY option).
 
 setopt append_history
@@ -34,7 +38,7 @@ setopt globdots
 export ZSH=~/.oh-my-zsh
 ZSH_CUSTOM=~/.oh-my-zsh-custom
 ZSH_THEME="amuse-custom"
-ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 function in_path {
   builtin type -P "$1" &> /dev/null
 }
@@ -54,33 +58,39 @@ get_plugins
 
 # get tpm
 function get_tpm() {
- # [ ! -d "~/.tmux/plugins" ] && echo "installing tpm" && mkdir -p ~/.tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  # [ ! -d "~/.tmux/plugins" ] && echo "installing tpm" && mkdir -p ~/.tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
 get_tpm
 
 # cd into projects from any directory
 setopt auto_cd
-cdpath=(~/projects ~/projects/lm-core)
+cdpath=(~/projects ~/projects/shipengine)
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
-npm
-# helm
-docker
-docker-compose
-history
-tmuxinator
-yarn
-kubectl
-zsh-z
-last-working-dir
+  # helm
+  # yarn
+  # kubectl
+  npm
+  docker
+  docker-compose
+  history
+  tmuxinator
+  zsh-z
+  last-working-dir
+
 #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
 zsh-autosuggestions
-# zsh-easy-motion
+
 )
 TOUCHBAR_GIT_ENABLED=true
 source $ZSH/oh-my-zsh.sh
+
+# https://stackoverflow.com/a/58862453 -- backwards kill word
+autoload -Uz select-word-style
+select-word-style shell
+
 
 # source everything
 . ~/.bash_profile
@@ -96,11 +106,15 @@ export LANG=en_US.UTF-8
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=220"
 export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HH_CONFIG=hicolor        # get more colors
+export HISTFILESIZE=10000
+export HISTSIZE=${HISTFILESIZE}
 
 . ~/partials/zsh_vi_settings.sh  # load vim specific settings.
 
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
 bindkey '^ ' autosuggest-accept
+
+# https://stackoverflow.com/a/58862453 -- backwards kill word
 
 ENABLE_CORRECTION="true"
 # iterm integration auto

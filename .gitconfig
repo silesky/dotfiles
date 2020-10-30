@@ -31,8 +31,9 @@ c = commit
 cm = commit -m
 cnv = commit --no-verify
 cnvm = commit --no-verify -m
-d = diff
+d = !git diff --staged && git diff
 ds = diff --staged
+dc = diff --cached # alias for staged
 diffmaster = !git diff $(git merge-base --fork-point master) -- . ':(exclude)*lock.json'
 dt = difftool
 dts = difftool --staged
@@ -93,3 +94,5 @@ name = automatically merge npm lockfiles
 driver = npx npm-merge-driver merge %A %O %B %P
 [difftool]
 prompt = false
+[init]
+	defaultBranch = ""
