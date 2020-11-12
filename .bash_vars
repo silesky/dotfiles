@@ -18,7 +18,6 @@ export HISTCONTROL="erasedups:ignoreboth"
 export HISTFILESIZE=500000
 export HISTSIZE=100000
 export HELM_HOME="$HOME/.helm"
-
 export GREP_COLOR='00;38;5;226'
 # export GREP_OPTIONS="\
 #  --color=auto \
@@ -43,7 +42,7 @@ export PATH=$HOME/scripts:$PATH
 export PATH=$PATH:$HOME/scripts
 export PATH=$PATH:$HOME/.local/bin
 export PATH="$PATH:$HOME/.rvm/bin"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$PATH:/Applications/Racket v7.8/bin"
 
 # tmuxinator thing
 DISABLE_AUTO_TITLE=true

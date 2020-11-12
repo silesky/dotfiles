@@ -31,6 +31,9 @@ fi
 # kubernetes / kubectl
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/kubectl/kubectl.plugin.zsh
 
+
+alias pr="gh pr"
+
 # display image names of all running containers
 k.all-containers() {
   kubectl get pods --all-namespaces -o jsonpath="{..image}" |
@@ -46,16 +49,6 @@ alias k=kubectl
 alias kaliases="cat ~/.oh-my-zsh/plugins/kubectl/README.md"
 #########################################################################
 
-# leafly
-alias yarn-upgrade-fec="yarn upgrade @leafly-com/frontend-components --latest"
-alias yarn-upgrade-webutils="yarn upgrade @leafly-com/web-utils --latest"
-alias kgn="kubectl get namespaces"
-alias klmp="kubectl -n lm-production"
-alias ki="kubectl -n integration"
-alias klmplogs="kubectl -n lm-production logs --follow"
-
-alias npm-update-lnu="npm update @leafly-com/lm-node-utils --save"
-alias npm-update-types="npm update @leafly-com/types --save"
 
 # ... system
 alias tm="tmux"
@@ -64,6 +57,7 @@ alias top="top -o cpu"
 function copytasks() {
   cp -r ~/scripts/vscode/ .vscode
 }
+
 # gitkraken
 function gitkr() {
   # usage: gitkr opens current
@@ -74,13 +68,12 @@ alias kraken='gitkr'
 
 # chrome
 alias chrome.def='open -a "Google Chrome" --args --new-window --profile-directory="Default"'
-alias chrome.pande='open -a "Google Chrome" --args --new-window --profile-directory="Profile 2"'
-alias chrome.spr='open -a "Google Chrome" --args --new-window --profile-directory="Profile 3"'
 
 # misc
 alias dc="docker-compose"
 alias ch="chokidar"
 alias fd="fd --no-ignore"
+
 # npm
 alias dev="npm run dev"
 alias t="npm t"
@@ -132,6 +125,7 @@ alias blame="git blame-colored.sh"
 alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 
 # misc
+alias pr="gh pr create --base develop"
 alias wip="git commit -m --no-verify wip"
 alias gitb="git checkout HEAD~"
 alias gitf="git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout"
@@ -171,10 +165,11 @@ alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read
 # functions
 
 #=========================
-# e.g. branch feature/foo // branches foo from dev
+# e.g. branch feature/foo // branches foo from development
 #      branch feature/foo uat // branches foo from uat
 branch() {
-  local BASE=${2-master}
+  local BASE=${2-development}
+  git stash
   git checkout $BASE
   git pull --ff-only
   git checkout -b $1

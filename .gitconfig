@@ -15,6 +15,8 @@ changed = !git whatchanged -n 100 | grep -v 'Seth Silesky <seth.silesky@gmail.co
 conflict = grep '<<<<<<< HEAD'
 # list my latest commits
 standup = log --graph --author='Seth Silesky' --no-merges
+# delete remote branch
+del-branch = "!git push --no-verify --delete origin $1 && git branch -D $1"
 # search commit message, file
 grep = log --all --oneline --name-status --grep
 # skip files in  worktree

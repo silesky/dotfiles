@@ -106,6 +106,7 @@ export LANG=en_US.UTF-8
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=220"
 export HISTFILE=~/.zsh_history  # ensure history file visibility
 export HH_CONFIG=hicolor        # get more colors
+export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 export HISTFILESIZE=10000
 export HISTSIZE=${HISTFILESIZE}
 
