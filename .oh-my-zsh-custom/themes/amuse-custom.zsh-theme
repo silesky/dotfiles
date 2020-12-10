@@ -10,6 +10,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 # PROMPT='
 # %{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info) @ %{$fg_bold[red]%}%t%{$reset_color%}
 # '
-
-PROMPT='%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)
+if [[ -n "$INSIDE_EMACS" ]]; then
+    PROMPT='-> '
+else
+    PROMPT='%{$fg_bold[green]%}%~%{$reset_color%}$(git_prompt_info)
 '
+fi

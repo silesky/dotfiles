@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'mxw/vim-jsx'
   Plug 'slashmili/alchemist.vim'
   Plug 'elixir-lang/vim-elixir'
+  Plug 'zyedidia/literate.vim'
   Plug 'cakebaker/scss-syntax.vim'
   Plug 'tpope/vim-repeat' "let's you use the dot command with vim surround
   Plug 'tpope/vim-surround' "cst

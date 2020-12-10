@@ -3,11 +3,6 @@
 # alias cd="z" # ALIAS CD to z
 alias gitwatch="watch --color git -c color.status=always"
 
-emacs() {
-  # https://superuser.com/questions/303061/set-emacs-to-always-run-in-background
-  # always run in background
-  /usr/local/bin/emacs "$@" &
-}
 ############################################
 ############### linux / osx #################
 #############################################
@@ -71,6 +66,7 @@ alias chrome.def='open -a "Google Chrome" --args --new-window --profile-director
 
 # misc
 alias dc="docker-compose"
+alias dps="docker ps --no-trunc"
 alias ch="chokidar"
 alias fd="fd --no-ignore"
 
@@ -111,6 +107,7 @@ alias bash_profile="$EDITOR ~/.bash_profile"
 alias bashrc="$EDITOR ~/.bashrc"
 alias bash_vars="$EDITOR ~/.bash_vars"
 alias bash_aliases="$EDITOR ~/.bash_aliases"
+alias als="bash_aliases"
 alias bash_paths="$EDITOR ~/.bash_paths"
 alias zshrc="$EDITOR ~/.zshrc"
 alias inputrc="$EDITOR ~/.inputrc"
@@ -119,14 +116,14 @@ alias gitconfig="$EDITOR ~/.gitconfig"
 alias gitignore="$EDITOR ~/.gitignore"
 
 # .... dotfiles
-alias realias=". ~/.bash_aliases"
+alias reals=". ~/.bash_aliases"
 alias reprof=". ~/.zshrc"
 alias blame="git blame-colored.sh"
 alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 
 # misc
 alias pr="gh pr create --base develop"
-alias wip="git commit -m --no-verify wip"
+alias wip="git commit -m 'wip' --no-verify"
 alias gitb="git checkout HEAD~"
 alias gitf="git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout"
 alias gshowhidden="git ls-files -v | grep '^[^H]'"
@@ -160,7 +157,7 @@ function tmnw() {
 alias bs="browser-sync"
 alias bstart='browser-sync start --server --proxy --files . &'
 alias srv="live-server"
-alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
+alias haltall="vagrant glOBal-status | grep virtualbox | cut -c 1-9 | while read line; do echo $line; vagrant halt $line; done;"
 
 # functions
 
@@ -168,6 +165,11 @@ alias haltall="vagrant global-status | grep virtualbox | cut -c 1-9 | while read
 # e.g. branch feature/foo // branches foo from development
 #      branch feature/foo uat // branches foo from uat
 branch() {
+  # usage `branch foo
+  # check existance of argument
+  if [ "$#" = 0 ]; then
+    echo expression kevaluated as true
+  fi
   local BASE=${2-development}
   git stash
   git checkout $BASE
