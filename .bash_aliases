@@ -53,13 +53,8 @@ function copytasks() {
   cp -r ~/scripts/vscode/ .vscode
 }
 
-# gitkraken
-function gitkr() {
-  # usage: gitkr opens current
-  local repo_path=${1-$(pwd)}
-  open -na "GitKraken" --args -p "$repo_path"
-}
-alias kraken='gitkr'
+alias gitkr='open gitkraken://repo/$PWD'
+alias kraken=gitkr
 
 # chrome
 alias chrome.def='open -a "Google Chrome" --args --new-window --profile-directory="Default"'
@@ -123,13 +118,12 @@ alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 
 # misc
 alias pr="gh pr create --base develop"
-alias wip="git commit -m 'wip' --no-verify"
-alias gitb="git checkout HEAD~"
-alias gitf="git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout"
+alias wip="git add . && git commit -m 'wip' --no-verify"
 alias gshowhidden="git ls-files -v | grep '^[^H]'"
 alias gshow="git show --color --pretty=format:%b"
 alias gs="git status -sb"
-alias gl="git l"
+alias gl="git l | head -3"
+alias gc="git commit -m"
 
 # ... tmux
 alias tmA="tmux attach -d || tmux new"
@@ -167,11 +161,12 @@ alias haltall="vagrant glOBal-status | grep virtualbox | cut -c 1-9 | while read
 branch() {
   # usage `branch foo
   # check existance of argument
+  local BASE=${2-main}
   if [ "$#" = 0 ]; then
-    echo expression kevaluated as true
+    echo "usage: branch feature/new-branch [$BASE]"
+    return 1
   fi
-  local BASE=${2-development}
-  git stash
+  git stash save "tmp-$1"
   git checkout $BASE
   git pull --ff-only
   git checkout -b $1

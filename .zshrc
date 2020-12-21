@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+
 # iterm integration auto
 export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink at ~/.node/current/bin/node
 export NVM_DIR="$HOME/.nvm"
@@ -116,3 +117,8 @@ export LANG=en_US.UTF-8
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
 bindkey '^ ' autosuggest-accept
 if [ -e /Users/me/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/me/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# install direnv -- basically, just for nix
+# need to nix-env -i direnv
+# https://nixos.wiki/wiki/Development_environment_with_nix-shell
+eval "$(direnv hook zsh)"
