@@ -26,8 +26,8 @@ fi
 # kubernetes / kubectl
 # https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/kubectl/kubectl.plugin.zsh
 
-
-alias pr="gh pr"
+# https://askubuntu.com/questions/23645/how-do-i-download-the-command-line-emacs-instead-of-the-gui-one
+alias emacs="emacs -nw"
 
 # display image names of all running containers
 k.all-containers() {
