@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# https://unix.stackexchange.com/questions/103898/how-to-start-tmux-with-attach-if-a-session-exists
+tmux attach || tmux new
+
 # iterm integration auto
 export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink at ~/.node/current/bin/node
 export NVM_DIR="$HOME/.nvm"
