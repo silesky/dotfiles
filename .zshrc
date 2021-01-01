@@ -1,12 +1,14 @@
 #!/usr/bin/env zsh
 
+ZSH_DISABLE_COMPFIX=true
 # https://unix.stackexchange.com/questions/103898/how-to-start-tmux-with-attach-if-a-session-exists
- tmux attach || tmux new
+# tmux attach || tmux new
+
 
 # iterm integration auto
-export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink at ~/.node/current/bin/node
-export NVM_DIR="$HOME/.nvm"
-export NVM_LAZY_LOAD=true
+# export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink at ~/.node/current/bin/node
+# export NVM_DIR="$HOME/.nvm"
+# export NVM_LAZY_LOAD=true
 
 # If this is set, zsh sessions will append their history list to the history file, rather than replace it. Thus, multiple parallel zsh sessions will all have the new entries from their history lists added to the history file, in the order that they exit. The file will still be periodically re-written to trim it when the number of lines grows 20% beyond the value specified by $SAVEHIST (see also the HIST_SAVE_BY_COPY option).
 setopt append_history
@@ -87,10 +89,11 @@ plugins=(
   docker-compose
   history
   tmuxinator
+  asdf
   zsh-z
   emacs
   last-working-dir
-  direnv
+  direnv # may need to run "asdf reshim"
 
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   zsh-vim-mode
@@ -124,4 +127,4 @@ if [ -e /Users/me/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/me/.nix-pro
 # install direnv -- basically, just for nix
 # need to nix-env -i direnv
 # https://nixos.wiki/wiki/Development_environment_with_nix-shell
-eval "$(direnv hook zsh)"
+if [ -e /Users/me/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/me/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

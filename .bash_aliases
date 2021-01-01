@@ -11,7 +11,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
   export CLICOLOR=1
   export LSCOLORS=GxFxCxDxBxegedabagaced
   alias chrome="open -a 'Google Chrome.app'"
-  alias vim="/usr/local/bin/vim" # requires brew install vim for clipboard to work
+  # alias vim="/usr/local/bin/vim" # requires brew install vim for clipboard to work
   alias vi="vim"
   alias estest="eslint --debug ~/estest.js"
   alias tree="tree -C"
