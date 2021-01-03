@@ -25,29 +25,29 @@ brew "gh"
 
 # Casks
 cask "docker"
-cask "virtualbox"
+cask "gitkraken"
 cask "visual-studio-code"
 cask "postman"
+cask "alt-tab" #https://alt-tab-macos.netlify.app/
+cask "virtualbox"
+cask "alfred"
+cask "iterm2"
+cask "dropbox"
+cask "skitch"
+cask "racket"
+cask "google-chrome"
+
+mas "Magnet", id: 441258766
 
 # fonts
 cask "font-hack-nerd-font"
 
-# misc
 # mas "Xcode", id: 497799835
-cask "alfred"
-# cask "google-chrome"
-cask "dropbox"
 # cask "notion"
-cask "iterm2"
 # cask "slack"
 # cask "sourcetree"
-# cask "amazon-music"
-cask "skitch"
 # cask "mongodb-compass"
-cask "racket"
 
-# App store
-mas "Magnet", id: 441258766
 
 # Getting a list of globally installed npm packages
 # npm install -g chokidar git-open live-server

@@ -1,6 +1,7 @@
 [user]
 name = Seth Silesky
 email = seth.silesky@gmail.com
+	signingKey = ""
 [alias]
 movetag = "!GIT_TAG_MESSAGE=$(git tag-message $1) && GIT_COMMITTER_DATE=$(git tag-date $1) && git tag-message $1 && git tag -d $1 && git tag -a $1 $2 -m \"$GIT_TAG_MESSAGE\" #"
 
@@ -79,6 +80,7 @@ autosquash = true
 # decorate = full
 [commit]
 template = /Users/me/.stCommitMsg
+	gpgSign = false
 
 # https://medium.com/faun/using-vscode-as-git-mergetool-and-difftool-2e241123abe7
 [merge]
@@ -100,3 +102,7 @@ driver = npx npm-merge-driver merge %A %O %B %P
 prompt = false
 [init]
 	defaultBranch = ""
+[gpg]
+	program = gpg
+[tag]
+	forceSignAnnotated = false

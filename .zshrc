@@ -1,9 +1,7 @@
 #!/usr/bin/env zsh
 
-ZSH_DISABLE_COMPFIX=true
 # https://unix.stackexchange.com/questions/103898/how-to-start-tmux-with-attach-if-a-session-exists
 # tmux attach || tmux new
-
 
 # iterm integration auto
 # export NVM_SYMLINK_CURRENT="true" # nvm use should make a symlink at ~/.node/current/bin/node
@@ -35,6 +33,8 @@ export HISTFILESIZE=10000
 export HISTSIZE=${HISTFILESIZE}
 export HISTFILE=~/.zsh_history # ensure history file visibility
 export HH_CONFIG=hicolor       # get more colors
+export HSTR_CONFIG=hicolor     # get more colors
+ZSH_DISABLE_COMPFIX=true
 # export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 
 # when using tab completion, show hidden files and folders (such as dotfiles)
@@ -89,11 +89,11 @@ plugins=(
   docker-compose
   history
   tmuxinator
-  asdf
+  # asdf
   zsh-z
   emacs
   last-working-dir
-  direnv # may need to run "asdf reshim"
+  # direnv # may need to run "asdf reshim"
 
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   zsh-vim-mode
@@ -122,9 +122,7 @@ export LANG=en_US.UTF-8
 
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
 bindkey '^ ' autosuggest-accept
-if [ -e /Users/me/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/me/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # install direnv -- basically, just for nix
 # need to nix-env -i direnv
 # https://nixos.wiki/wiki/Development_environment_with_nix-shell
-if [ -e /Users/me/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/me/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

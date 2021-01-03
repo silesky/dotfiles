@@ -48,7 +48,7 @@ alias kaliases="cat ~/.oh-my-zsh/plugins/kubectl/README.md"
 # ... system
 alias tm="tmux"
 alias top="top -o cpu"
-
+alias hh=hstr                  # hh to be alias for hstr
 function copytasks() {
   cp -r ~/scripts/vscode/ .vscode
 }
