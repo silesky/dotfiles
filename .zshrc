@@ -1,5 +1,4 @@
 #!/usr/bin/env zsh
-
 # https://unix.stackexchange.com/questions/103898/how-to-start-tmux-with-attach-if-a-session-exists
 # tmux attach || tmux new
 
@@ -81,20 +80,20 @@ cdpath=(~/projects ~/projects/shipengine ~/projects/scratch)
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 plugins=(
-  # helm
-  # yarn
-  # kubectl
   npm
   docker
   docker-compose
   history
   tmuxinator
-  # asdf
   zsh-z
-  emacs
   last-working-dir
-  # direnv # may need to run "asdf reshim"
-
+  direnv # auto-load .envrc in directories (replaces eval) -- not strictly needed for asdf
+  asdf
+  # dotnet
+  # helm
+  # yarn
+  # kubectl
+  # emacs
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   zsh-vim-mode
   zsh-autosuggestions
@@ -126,3 +125,7 @@ bindkey '^ ' autosuggest-accept
 # install direnv -- basically, just for nix
 # need to nix-env -i direnv
 # https://nixos.wiki/wiki/Development_environment_with_nix-shell
+if [ -e /Users/me/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/me/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# Silent direnv message
+export DIRENV_LOG_FORMAT=""

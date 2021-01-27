@@ -31,14 +31,14 @@ alias emacs="emacs -nw"
 
 # display image names of all running containers
 k.all-containers() {
-  kubectl get pods --all-namespaces -o jsonpath="{..image}" |
-    tr -s '[[:space:]]' '\n' |
-    sort |
-    uniq -c
+kubectl get pods --all-namespaces -o jsonpath="{..image}" |
+  tr -s '[[:space:]]' '\n' |
+  sort |
+  uniq -c
 }
 kubectl-get-log-from-pod-name() {
-  POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
-  kubectl logs $POD_NAME -c flags
+POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
+kubectl logs $POD_NAME -c flags
 }
 alias k=kubectl
 alias kaliases="cat ~/.oh-my-zsh/plugins/kubectl/README.md"
@@ -62,8 +62,8 @@ alias chrome.def='open -a "Google Chrome" --args --new-window --profile-director
 # misc
 alias dc="docker-compose"
 alias dps="docker ps --no-trunc"
-alias ch="chokidar"
 alias fd="fd --no-ignore"
+alias ch="chokidar"
 
 # npm
 alias dev="npm run dev"
@@ -75,8 +75,8 @@ curlb() {
 }
 
 ## Docker alias
-k9() { kill -9 "$(lsof -t -i:"$1")"; } # kill by port
-k9p() { kill -9 "$(pgrep -f "$1")"; }  # kill by process name
+k9() { kill -9 "$(lsof -t -i:"$1")"; } # kill
+k9p() { kill -9 "$(pgrep -f "$1")"; }  # kill by port
 
 alias co="code -r"
 alias c="clear"
@@ -118,7 +118,7 @@ alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 
 # misc
 alias pr="gh pr create --base develop"
-alias wip="git add . && git commit -m 'wip' --no-verify"
+alias wip="git add -A && git commit -m 'wip' --no-verify"
 alias gshowhidden="git ls-files -v | grep '^[^H]'"
 alias gshow="git show --color --pretty=format:%b"
 alias gs="git status -sb"
@@ -161,15 +161,20 @@ alias haltall="vagrant glOBal-status | grep virtualbox | cut -c 1-9 | while read
 branch() {
   # usage `branch foo
   # check existance of argument
-  local BASE=${2-main}
+  BASE=${2-master}
+  if [ `git branch --list main` ]
+  then
+    BASE=main
+  fi
+
   if [ "$#" = 0 ]; then
     echo "usage: branch feature/new-branch [$BASE]"
     return 1
   fi
   git stash save "tmp-$1"
-  git checkout $BASE
+  git checkout $BASE || echo "on master"
   git pull --ff-only
-  git checkout -b $1
+  git checkout -b $1 || echo "$1 exists!"
 }
 ##########################
 
@@ -188,17 +193,17 @@ a() { alias $1="cd $PWD"; }
 
 getpath() {
   (
-    cd $(dirname $1)         # or  cd ${1%/*}
-    echo $PWD/$(basename $1) # or  echo $PWD/${1##*/}
-  )
+  cd $(dirname $1)         # or  cd ${1%/*}
+  echo $PWD/$(basename $1) # or  echo $PWD/${1##*/}
+)
 }
 
 alarm() {
   (
-    let secs=$((${1:-5} * 60))
-    let extrasecs=${2:-0}
-    let total=$(($secs + extrasecs))
-    echo "Alarm set for "$total" secs..."
-    sleep $total && terminal-notifier -title "Alarm" -message "$1 minute alarm up!"
+  let secs=$((${1:-5} * 60))
+  let extrasecs=${2:-0}
+  let total=$(($secs + extrasecs))
+  echo "Alarm set for "$total" secs..."
+  sleep $total && terminal-notifier -title "Alarm" -message "$1 minute alarm up!"
   ) &
 }

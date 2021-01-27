@@ -15,7 +15,7 @@ tell application "System Events"
 	tell application process "System Preferences"
 		set frontmost to true
 		delay 1
-		if os_ver = "10.15" then
+		if os_ver > "10.15" then
 			tell window "Accessibility"
 				repeat until exists checkbox "Enable Color Filters" of tab group 1 of group 1
 					delay 0.01

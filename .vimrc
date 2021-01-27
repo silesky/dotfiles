@@ -40,7 +40,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'christoomey/vim-tmux-navigator'
   Plug 'leafgarland/typescript-vim'
   Plug 'pangloss/vim-javascript' "syntax hl
-  Plug 'maksimr/vim-jsbeautify' "f3
   Plug 'gregsexton/gitv'
   Plug 'tpope/vim-fugitive'
   Plug 'ctrlpvim/ctrlp.vim'
