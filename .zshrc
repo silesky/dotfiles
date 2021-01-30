@@ -96,7 +96,7 @@ plugins=(
   # emacs
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   zsh-vim-mode
-  zsh-autosuggestions
+  # zsh-autosuggestions
 
 )
 source $ZSH/oh-my-zsh.sh
