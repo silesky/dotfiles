@@ -70,6 +70,10 @@ bindkey '^b' history-beginning-search-backward
 bindkey -M viins '^b' history-beginning-search-backward
 bindkey -M vicmd '^b' history-beginning-search-backward
 
+# allow ctrl-p, ctrl-n for navigate history (standard behaviour)
+bindkey '^P' up-history
+bindkey '^N' down-history
+
 # backward k char (standard behavior_
 bindkey '^x' backward-delete-char
 bindkey -M viins '^x' backward-delete-char
@@ -85,10 +89,6 @@ bindkey '^u' backward-kill-line
 bindkey -M viins '^u' backward-kill-line
 bindkey -M vicmd '^u' backward-kill-line
 
-# clear screen (ctrl-l replacement)
-bindkey '^y' clear-screen
-bindkey -M viins '^y' clear-screen
-bindkey -M vicmd '^y' clear-screen
 
 # ctrl-left and right arrow (like emacs mode)
 bindkey "^[[1;5C" forward-word
@@ -110,9 +110,6 @@ bindkey -v
 autoload -Uz edit-command-line
 bindkey -M vicmd 'v' edit-command-line
 
-# allow ctrl-p, ctrl-n for navigate history (standard behaviour)
-bindkey '^P' up-history
-bindkey '^N' down-history
 
 # allow ctrl-h, ctrl-w, ctrl-? for char and word deletion (standard behaviour)
 bindkey '^?' backward-delete-char
