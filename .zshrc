@@ -67,14 +67,18 @@ function get_plugins() {
 }
 get_plugins
 
+function _clone_create_dir() {
+  local remote_repo_url=$1
+  local local_repo_path=$2
+  local args=$3
+  if [ ! -d "$local_repo_path" ]; then
+    mkdir -p $local_repo_path
+    git clone $remote_repo_url $local_repo_path $args
+  fi
+}
 function install_tpm() {
   local TPM_PATH="$HOME/.tmux/plugins/tpm"
-  if [ ! -d "$TPM_PATH" ]; then
-    mkdir -p $TPM_PATH
-    echo "installing into: $TPM_PATH" && git -C "$TPM_PATH" clone https://github.com/tmux-plugins/tpm
-   else
-    echo "$TPM_PATH exists."
-  fi
+   _clone_create_dir https://github.com/tmux-plugins/tpm $TPM_PATH
 }
 install_tpm
 
