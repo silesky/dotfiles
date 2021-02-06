@@ -18,8 +18,7 @@ function set_cursor_shape() {
   fi
 }
 
-function zle-keymap-select() zle-line-init
-{
+ function zle-keymap-select zle-line-init {
   case $KEYMAP in
   vicmd)
     set_cursor_shape 0 # block cursor
