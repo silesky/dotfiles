@@ -64,14 +64,11 @@ function get_plugins() {
   [ ! -d "./zsh-vim-mode" ] && git clone https://github.com/softmoth/zsh-vim-mode.git
   # [ ! -d "./zsh-easy-motion" ] && git clone https://github.com/IngoHeimbach/zsh-easy-motion
   cd $dir
+  TMUX_PLUGIN_PATH="~/.tmux/plugins"
+  if [ ! -d "$TMUX_PLUGIN_PATH/tpm" ] && echo "installing tpm" && git clone https://github.com/tmux-plugins/tpm $TMUX_PLUGIN_PATH
 }
 get_plugins
 
-# get tpm
-# function get_tpm() {
-#   [ ! -d "~/.tmux/plugins" ] && echo "installing tpm" && mkdir -p ~/.tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-#}
-# get_tpm
 
 # change directory without using 'cd'
 setopt auto_cd
