@@ -121,10 +121,10 @@ bindkey -M viins '^w' backward-kill-word
 bindkey -M vicmd '^w' backward-kill-word
 
 
-# allow ctrl-i to move to beginning  (ctrl-a is stolen by tmux)
-bindkey '^i' beginning-of-line
-bindkey -M viins '^i' beginning-of-line
-bindkey -M vicmd '^i' beginning-of-line
+# allow ctrl-q to move to beginning  (ctrl-a is stolen by tmux)
+bindkey '^q' beginning-of-line
+bindkey -M viins '^q' beginning-of-line
+bindkey -M vicmd '^q' beginning-of-line
 
 # allow ctrl-e to move to end (standard behavior)
 bindkey '^e' end-of-line
