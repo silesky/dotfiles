@@ -1,5 +1,4 @@
-#!/usr/bin/zsh
-
+#!/usr/bin/env zsh
 ####################################
 # VIM INSERT MODE CHANGE CURSOR SHAPE
 # https://github.com/jcorbin/home/edit/master/.zsh/rc.d/vi-mode-cursor

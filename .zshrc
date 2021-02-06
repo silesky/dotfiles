@@ -117,7 +117,7 @@ export LANG=en_US.UTF-8
 # All Colors: https://coderwall.com/p/pb1uzq/z-shell-colors
 # ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=220"
 #
-. ~/partials/zsh_vi_settings.sh # load vim specific settings.
+. ~/partials/zsh_vi_settings.zsh # load vim specific settings.
 
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
 bindkey '^ ' autosuggest-accept
