@@ -115,21 +115,18 @@ bindkey -M vicmd 'v' edit-command-line
 bindkey '^?' backward-delete-char
 bindkey '^h' backward-delete-char
 
-# backward kill word (standard behavior_
+# backward kill word (standard behavior)
 bindkey '^w' backward-kill-word
 bindkey -M viins '^w' backward-kill-word
 bindkey -M vicmd '^w' backward-kill-word
 
-# allow ctrl-r to perform backward search in history
-bindkey '^r' history-incremental-search-backward
-bindkey -M viins '^r' history-incremental-search-backward
-bindkey -M vicmd '^r' history-incremental-search-backward
-#
-# allow ctrl-a and ctrl-q to move to beginning/end of line
-bindkey '^q' beginning-of-line
-bindkey -M viins '^e' beginning-of-line
-bindkey -M vicmd '^q' beginning-of-line
 
+# allow ctrl-i to move to beginning  (ctrl-a is stolen by tmux)
+bindkey '^i' beginning-of-line
+bindkey -M viins '^i' beginning-of-line
+bindkey -M vicmd '^i' beginning-of-line
+
+# allow ctrl-e to move to end (standard behavior)
 bindkey '^e' end-of-line
 bindkey -M viins '^e' end-of-line
 bindkey -M vicmd '^e' end-of-line

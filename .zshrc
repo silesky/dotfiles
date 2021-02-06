@@ -59,6 +59,8 @@ function get_plugins() {
   [ ! -d "./autoenv" ] && git clone git://github.com/kennethreitz/autoenv.git
   [ ! -d "./zsh-autosuggestions" ] && git clone https://github.com/zsh-users/zsh-autosuggestions
   [ ! -d "./zsh-z" ] && git clone https://github.com/agkozak/zsh-z
+
+   # adds emacs bindings
   [ ! -d "./zsh-vim-mode" ] && git clone https://github.com/softmoth/zsh-vim-mode.git
   # [ ! -d "./zsh-easy-motion" ] && git clone https://github.com/IngoHeimbach/zsh-easy-motion
   cd $dir
@@ -97,6 +99,7 @@ plugins=(
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   zsh-autosuggestions
   zsh-vim-mode
+
 
 )
 source $ZSH/oh-my-zsh.sh
