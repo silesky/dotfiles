@@ -4,13 +4,11 @@
 # VIM INSERT MODE CHANGE CURSOR SHAPE
 # https://github.com/jcorbin/home/edit/master/.zsh/rc.d/vi-mode-cursor
 ####################################
-function print_dcs
-{
+function print_dcs() {
   print -n -- "\EP$1;\E$2\E\\"
 }
 
-function set_cursor_shape
-{
+function set_cursor_shape() {
   if [ -n "$TMUX" ]; then
     # tmux will only forward escape sequences to the terminal if surrounded by
     # a DCS sequence
@@ -20,22 +18,21 @@ function set_cursor_shape
   fi
 }
 
-function zle-keymap-select zle-line-init
+function zle-keymap-select() zle-line-init
 {
   case $KEYMAP in
-    vicmd)
-      set_cursor_shape 0 # block cursor
-      ;;
-    viins|main)
-      set_cursor_shape 1 # line cursor
-      ;;
+  vicmd)
+    set_cursor_shape 0 # block cursor
+    ;;
+  viins | main)
+    set_cursor_shape 1 # line cursor
+    ;;
   esac
   zle reset-prompt
   zle -R
 }
 
-function zle-line-finish
-{
+function zle-line-finish() {
   set_cursor_shape 0 # block cursor
 }
 
@@ -64,7 +61,6 @@ zle -N zle-keymap-select
 ##############################################################
 
 export KEYTIMEOUT=5 #if I set it too low, can't switch with j j
-
 
 # history search forward
 bindkey '^f' history-beginning-search-forward #use the current input
@@ -129,7 +125,6 @@ bindkey '^w' backward-kill-word
 bindkey -M viins '^w' backward-kill-word
 bindkey -M vicmd '^w' backward-kill-word
 
-
 # allow ctrl-r to perform backward search in history
 bindkey '^r' history-incremental-search-backward
 bindkey -M viins '^r' history-incremental-search-backward
@@ -144,15 +139,13 @@ bindkey '^e' end-of-line
 bindkey -M viins '^e' end-of-line
 bindkey -M vicmd '^e' end-of-line
 
-
-
 # https://stackoverflow.com/questions/61466461/yank-in-visual-vim-mode-in-zsh-does-not-copy-to-clipboard-in-ordert-to-paste-w
 # vi mode
 
 # Yank to the system clipboard
-function vi-yank-xclip {
-    zle vi-yank
-   echo "$CUTBUFFER" | pbcopy -i
+function vi-yank-xclip() {
+  zle vi-yank
+  echo "$CUTBUFFER" | pbcopy -i
 }
 
 zle -N vi-yank-xclip

@@ -31,24 +31,23 @@ alias emacs="emacs -nw"
 
 # display image names of all running containers
 k.all-containers() {
-kubectl get pods --all-namespaces -o jsonpath="{..image}" |
-  tr -s '[[:space:]]' '\n' |
-  sort |
-  uniq -c
+  kubectl get pods --all-namespaces -o jsonpath="{..image}" |
+    tr -s '[[:space:]]' '\n' |
+    sort |
+    uniq -c
 }
 kubectl-get-log-from-pod-name() {
-POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
-kubectl logs $POD_NAME -c flags
+  POD_NAME=$(kubectl get pods -l "app.kubernetes.io/name=flags-service,app.kubernetes.io/instance=flags-service" -o jsonpath="{.items[0].metadata.name}")
+  kubectl logs $POD_NAME -c flags
 }
 alias k=kubectl
 alias kaliases="cat ~/.oh-my-zsh/plugins/kubectl/README.md"
 #########################################################################
 
-
 # ... system
 alias tm="tmux"
 alias top="top -o cpu"
-alias hh=hstr                  # hh to be alias for hstr
+alias hh=hstr # hh to be alias for hstr
 function copytasks() {
   cp -r ~/scripts/vscode/ .vscode
 }
@@ -98,6 +97,7 @@ alias lsf="ls -al | grep '^[-l]'" # List files only
 
 # ...  dotfiles
 alias eslintrc="$EDITOR ~/.eslintrc"
+alias zsh_vi_settings="$EDITOR ~/partials/zsh_vi_settings.sh"
 alias bash_profile="$EDITOR ~/.bash_profile"
 alias bashrc="$EDITOR ~/.bashrc"
 alias bash_vars="$EDITOR ~/.bash_vars"
@@ -162,8 +162,7 @@ branch() {
   # usage `branch foo
   # check existance of argument
   BASE=${2-master}
-  if [ `git branch --list main` ]
-  then
+  if [ $(git branch --list main) ]; then
     BASE=main
   fi
 
@@ -193,17 +192,17 @@ a() { alias $1="cd $PWD"; }
 
 getpath() {
   (
-  cd $(dirname $1)         # or  cd ${1%/*}
-  echo $PWD/$(basename $1) # or  echo $PWD/${1##*/}
-)
+    cd $(dirname $1)         # or  cd ${1%/*}
+    echo $PWD/$(basename $1) # or  echo $PWD/${1##*/}
+  )
 }
 
 alarm() {
   (
-  let secs=$((${1:-5} * 60))
-  let extrasecs=${2:-0}
-  let total=$(($secs + extrasecs))
-  echo "Alarm set for "$total" secs..."
-  sleep $total && terminal-notifier -title "Alarm" -message "$1 minute alarm up!"
+    let secs=$((${1:-5} * 60))
+    let extrasecs=${2:-0}
+    let total=$(($secs + extrasecs))
+    echo "Alarm set for "$total" secs..."
+    sleep $total && terminal-notifier -title "Alarm" -message "$1 minute alarm up!"
   ) &
 }
