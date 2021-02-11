@@ -25,7 +25,7 @@ endif
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
   if v:version >=800
-    Plug 'w0rp/ale'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
   endif
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-unimpaired' "quickfix ]a and [b and move down and up is [e ]e
@@ -210,19 +210,12 @@ set smarttab      " Enabling this will make the tab key (in insert mode) insert 
 set timeoutlen=1000 ttimeoutlen=0
 " ale uses timers which only work om vim 8
 if v:version >= 800
-  nmap <leader>n <Plug>(ale_next_wrap)
-  let g:ale_sign_error = '++'
-  let g:ale_sign_warning = '+'
-  let g:ale_set_loclist = 1 " navigate localist with <leader>l and [l and ]l
   " let g:ale_set_quickfix = 1 " makes grep quickfix buggy
   augroup FiletypeGroup
     autocmd!
     au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
   augroup END
-  let g:ale_linters = { 'javascript': ['eslint'], 'jsx': ['eslint'] }
 endif
-"gutter column
-:highlight clear SignColumn
 
 " wrap toggle
 function! ToggleWrap()
