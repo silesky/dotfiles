@@ -66,6 +66,7 @@ alias ch="chokidar"
 
 # npm
 alias dev="npm run dev"
+alias lint="npm run lint"
 alias t="npm t"
 alias tw="npm t -- --watch"
 # curl - with response time
