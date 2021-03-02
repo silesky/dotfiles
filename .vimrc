@@ -24,9 +24,9 @@ if empty(glob("~/.vim/autoload/plug.vim"))
 endif
 call plug#begin('~/.vim/plugged')
 " YOUR LIST OF PLUGINS GOES HERE LIKE THIS:
-  if v:version >=800
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  endif
+"  if v:version >=800
+"    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"  endif
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-unimpaired' "quickfix ]a and [b and move down and up is [e ]e
   Plug 'mxw/vim-jsx'
