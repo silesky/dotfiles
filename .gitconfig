@@ -5,6 +5,8 @@ email = seth.silesky@gmail.com
 [alias]
 movetag = "!GIT_TAG_MESSAGE=$(git tag-message $1) && GIT_COMMITTER_DATE=$(git tag-date $1) && git tag-message $1 && git tag -d $1 && git tag -a $1 $2 -m \"$GIT_TAG_MESSAGE\" #"
 
+update-sub = !git submodule update --remote --merge
+
 get-branches = "!sh -c ~/scripts/get-all-branches.sh"
 # find the merge where a commit entered a branch
 find-merge = "!sh -c 'commit=$0 && branch=${1:-HEAD} && (git rev-list $commit..$branch --ancestry-path | cat -n; git rev-list $commit..$branch --first-parent | cat -n) | sort -k2 -s | uniq -f1 -d | sort -n | tail -1 | cut -f2'"

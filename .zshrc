@@ -33,11 +33,11 @@ export HISTSIZE=${HISTFILESIZE}
 export HISTFILE=~/.zsh_history # ensure history file visibility
 export HH_CONFIG=hicolor       # get more colors
 export HSTR_CONFIG=hicolor     # get more colors
-ZSH_DISABLE_COMPFIX=true
+
+ZSH_DISABLE_COMPFIX=true # fix zsh error message about completion permissions
 # export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 
-# when using tab completion, show hidden files and folders (such as dotfiles)
-setopt globdots
+setopt globdots # when using tab completion, show hidden files and folders (such as dotfiles)
 
 # ______________ ZSH CONFIG _________________
 # Path to your oh-my-zsh installation.
@@ -47,9 +47,6 @@ ZSH_CUSTOM=~/.oh-my-zsh-custom
 ZSH_THEME="amuse-custom"
 ENABLE_CORRECTION="false"
 
-# function in_path {
-#   builtin type -P "$1" &> /dev/null
-# }
 
 function get_plugins() {
   local dir=$(pwd)
@@ -60,9 +57,9 @@ function get_plugins() {
   [ ! -d "./zsh-autosuggestions" ] && git clone https://github.com/zsh-users/zsh-autosuggestions
   [ ! -d "./zsh-z" ] && git clone https://github.com/agkozak/zsh-z
 
-   # adds emacs bindings
   [ ! -d "./zsh-vim-mode" ] && git clone https://github.com/softmoth/zsh-vim-mode.git
   # [ ! -d "./zsh-easy-motion" ] && git clone https://github.com/IngoHeimbach/zsh-easy-motion
+   [ ! -d "./zsh-syntax-highlighting" ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
   cd $dir
 }
 get_plugins
@@ -86,7 +83,7 @@ install_tpm
 setopt auto_cd
 
 # cd into projects from any directory
-cdpath=(~/projects ~/projects/shipengine ~/projects/scratch)
+cdpath=(~/projects ~/projects/shipengine)
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -99,6 +96,7 @@ plugins=(
   zsh-z
   last-working-dir
   direnv # auto-load .envrc in directories (replaces eval) -- not strictly needed for asdf
+  mix
   asdf
   # dotnet
   # helm
@@ -106,9 +104,9 @@ plugins=(
   # kubectl
   # emacs
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
-  # zsh-autosuggestions
+  zsh-autosuggestions
   zsh-vim-mode
-
+  zsh-syntax-highlighting
 
 )
 source $ZSH/oh-my-zsh.sh
@@ -138,6 +136,10 @@ bindkey '^ ' autosuggest-accept
 # need to nix-env -i direnv
 # https://nixos.wiki/wiki/Development_environment_with_nix-shell
 if [ -e /Users/me/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/me/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
 # Silent direnv message
-export DIRENV_LOG_FORMAT=""
+# export DIRENV_LOG_FORMAT=""
+
+
+# This requires the asdf plugin
+# https://github.com/asdf-community/asdf-direnv#setup
+eval "$(asdf exec direnv hook bash)"
