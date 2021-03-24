@@ -41,7 +41,7 @@ setopt globdots # when using tab completion, show hidden files and folders (such
 
 # All Colors: https://coderwall.com/p/pb1uzq/z-shell-colors
 # Colors
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=214,bg=none,bold,underline"
 
 
 #############
@@ -65,7 +65,7 @@ function get_plugins() {
 
   [ ! -d "./zsh-vim-mode" ] && git clone https://github.com/softmoth/zsh-vim-mode.git
   # [ ! -d "./zsh-easy-motion" ] && git clone https://github.com/IngoHeimbach/zsh-easy-motion
-   # [ ! -d "./zsh-syntax-highlighting" ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+   [ ! -d "./zsh-syntax-highlighting" ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
   cd $dir
 }
 get_plugins
@@ -110,9 +110,9 @@ plugins=(
   # kubectl
   # emacs
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
-  zsh-autosuggestions
   zsh-vim-mode
-  zsh-syntax-highlighting
+  # zsh-syntax-highlighting
+  zsh-autosuggestions
 
 )
 source $ZSH/oh-my-zsh.sh
