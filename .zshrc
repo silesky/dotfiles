@@ -39,6 +39,12 @@ ZSH_DISABLE_COMPFIX=true # fix zsh error message about completion permissions
 
 setopt globdots # when using tab completion, show hidden files and folders (such as dotfiles)
 
+# All Colors: https://coderwall.com/p/pb1uzq/z-shell-colors
+# Colors
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+
+
+#############
 # ______________ ZSH CONFIG _________________
 # Path to your oh-my-zsh installation.
 
@@ -59,7 +65,7 @@ function get_plugins() {
 
   [ ! -d "./zsh-vim-mode" ] && git clone https://github.com/softmoth/zsh-vim-mode.git
   # [ ! -d "./zsh-easy-motion" ] && git clone https://github.com/IngoHeimbach/zsh-easy-motion
-   [ ! -d "./zsh-syntax-highlighting" ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+   # [ ! -d "./zsh-syntax-highlighting" ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
   cd $dir
 }
 get_plugins
@@ -124,8 +130,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # hstr config (brew install hstr) -- activate with hh
-# All Colors: https://coderwall.com/p/pb1uzq/z-shell-colors
-# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=220"
 #
 . ~/partials/zsh_vi_settings.zsh # load vim specific settings.
 
