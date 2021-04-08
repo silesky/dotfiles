@@ -63,7 +63,7 @@ alias dc="docker-compose"
 alias dps="docker ps --no-trunc"
 alias fd="fd --no-ignore"
 alias ch="chokidar"
-
+alias view="code - &"
 # npm
 alias dev="npm run dev"
 alias lint="npm run lint"
