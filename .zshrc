@@ -101,7 +101,7 @@ plugins=(
   tmuxinator
   zsh-z
   last-working-dir
-  direnv # auto-load .envrc in directories (replaces eval) -- not strictly needed for asdf
+  # direnv # auto-load .envrc in directories (replaces eval) -- not strictly needed for asdf
   mix
   asdf
   # dotnet
@@ -138,7 +138,7 @@ bindkey '^ ' autosuggest-accept
 
 # install direnv -- basically, just for nix
 # need to nix-env -i direnv
-# https://nixos.wiki/wiki/Development_environment_with_nix-shell
+
 if [ -e /Users/me/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/me/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 # Silent direnv message
 # export DIRENV_LOG_FORMAT=""
