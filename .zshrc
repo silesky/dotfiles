@@ -101,7 +101,6 @@ plugins=(
   tmuxinator
   zsh-z
   last-working-dir
-  # direnv # auto-load .envrc in directories (replaces eval) -- not strictly needed for asdf
   mix
   asdf
   # dotnet
@@ -136,13 +135,7 @@ export LANG=en_US.UTF-8
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
 bindkey '^ ' autosuggest-accept
 
-# install direnv -- basically, just for nix
-# need to nix-env -i direnv
-
-if [ -e /Users/me/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/me/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-# Silent direnv message
-# export DIRENV_LOG_FORMAT=""
-
+eval "$(direnv hook zsh)"
 
 # This requires the asdf plugin
 # https://github.com/asdf-community/asdf-direnv#setup
