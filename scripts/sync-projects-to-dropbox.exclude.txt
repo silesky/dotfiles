@@ -310,3 +310,5 @@ erl_crash.dump
 /priv/static/
 *.dump
 */postgres/data/*
+*/_build/*
+*/.elixir_ls/*
