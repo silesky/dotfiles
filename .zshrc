@@ -66,7 +66,8 @@ function get_plugins() {
   [ ! -d "./zsh-vim-mode" ] && git clone https://github.com/softmoth/zsh-vim-mode.git
   # [ ! -d "./zsh-easy-motion" ] && git clone https://github.com/IngoHeimbach/zsh-easy-motion
    [ ! -d "./zsh-syntax-highlighting" ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-  cd $dir
+   # [ ! -d "./elixir" ] && git clone https://github.com/gusaiani/elixir-oh-my-zsh.git elixir
+   cd $dir
 }
 get_plugins
 
@@ -103,6 +104,7 @@ plugins=(
   last-working-dir
   mix
   asdf
+  elixir
   # dotnet
   # helm
   # yarn
