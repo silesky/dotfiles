@@ -20,7 +20,6 @@ brew "htop"
 
 brew "coreutils" # asdf
 brew "gpg"       # asdf
-
 brew "git-open"
 brew "gh"
 
@@ -30,23 +29,17 @@ cask "docker"
 cask "iterm2"
 cask "visual-studio-code"
 cask "gitkraken"
-
-# Casks (less important)
 cask "postman"
 cask "alt-tab"
 cask "alfred"
 cask "dropbox"
-cask "racket"
-cask "virtualbox"
+mas "Xcode", id: 497799835
 
+# App Store
 # mas "Magnet", id: 441258766
-# fonts
+
+# Fonts
 # cask "font-hack-nerd-font"
-# mas "Xcode", id: 497799835
-# cask "notion"
-# cask "slack"
-# cask "sourcetree"
-# cask "mongodb-compass"
 
 
 # Getting a list of globally installed npm packages
