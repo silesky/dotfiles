@@ -16,6 +16,7 @@ brew "shellcheck"
 brew "ccat"
 brew "tree"
 brew "tig"
+brew "htop"
 
 brew "coreutils" # asdf
 brew "gpg"       # asdf
@@ -24,24 +25,23 @@ brew "git-open"
 brew "gh"
 
 # Casks
-cask "docker"
-cask "gitkraken"
-cask "visual-studio-code"
-cask "postman"
-cask "alt-tab" #https://alt-tab-macos.netlify.app/
-cask "virtualbox"
-cask "alfred"
-cask "iterm2"
-cask "dropbox"
-cask "skitch"
-cask "racket"
 cask "google-chrome"
+cask "docker"
+cask "iterm2"
+cask "visual-studio-code"
+cask "gitkraken"
 
-mas "Magnet", id: 441258766
+# Casks (less important)
+cask "postman"
+cask "alt-tab"
+cask "alfred"
+cask "dropbox"
+cask "racket"
+cask "virtualbox"
 
+# mas "Magnet", id: 441258766
 # fonts
-cask "font-hack-nerd-font"
-
+# cask "font-hack-nerd-font"
 # mas "Xcode", id: 497799835
 # cask "notion"
 # cask "slack"

@@ -13,8 +13,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
   alias chrome="open -a 'Google Chrome.app'"
   # alias vim="/usr/local/bin/vim" # requires brew install vim for clipboard to work
   alias vi="vim"
-  alias estest="eslint --debug ~/estest.js"
-  alias tree="tree -C"
   export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-12.0.2.jdk/Contents/Home/
 else
   alias pbcopy='xclip -selection clipboard'
@@ -51,7 +49,7 @@ alias hh=hstr # hh to be alias for hstr
 function copytasks() {
   cp -r ~/scripts/vscode/ .vscode
 }
-
+alias tree="tree -C"
 alias gitkr='open gitkraken://repo/$PWD'
 alias kraken=gitkr
 
