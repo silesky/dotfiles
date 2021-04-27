@@ -97,6 +97,7 @@ cdpath=(~/projects ~/projects/shipengine)
 plugins=(
   npm
   docker
+  bundler
   docker-compose
   history
   tmuxinator
