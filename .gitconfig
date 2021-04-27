@@ -103,7 +103,7 @@ driver = npx npm-merge-driver merge %A %O %B %P
 [difftool]
 prompt = false
 [init]
-	defaultBranch = ""
+	defaultBranch = main
 [gpg]
 	program = gpg
 [tag]
