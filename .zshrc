@@ -138,6 +138,9 @@ export LANG=en_US.UTF-8
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
 bindkey '^ ' autosuggest-accept
 
+# HSTR ... use ctrl+r to pipe current prompt to history
+bindkey -s "\C-r" "\C-a hstr -- \C-j"
+
 eval "$(direnv hook zsh)"
 
 # This requires the asdf plugin
