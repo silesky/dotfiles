@@ -142,10 +142,6 @@ bindkey '^ ' autosuggest-accept
 bindkey -s "\C-r" "\C-a hstr -- \C-j"
 
 eval "$(direnv hook zsh)"
-
-# This requires the asdf plugin
-# https://github.com/asdf-community/asdf-direnv#setup
-eval "$(asdf exec direnv hook bash)"
 #
 # Enable history in IEX through Erlang(OTP)
 export ERL_AFLAGS="-kernel shell_history enabled"
