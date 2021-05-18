@@ -60,8 +60,8 @@ function get_plugins() {
   [ ! -d $ZSH_PLUGINS ] && mkdir -p $ZSH_PLUGINS
   cd $ZSH_PLUGINS
   [ ! -d "./autoenv" ] && git clone git://github.com/kennethreitz/autoenv.git
-  # [ ! -d "./zsh-autosuggestions" ] && git clone https://github.com/zsh-users/zsh-autosuggestions
-  [ ! -d "./zsh-autocomplete" ] && git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git # autocomplete is better
+   [ ! -d "./zsh-autosuggestions" ] && git clone https://github.com/zsh-users/zsh-autosuggestions
+  # [ ! -d "./zsh-autocomplete" ] && git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git # autocomplete is better
   [ ! -d "./zsh-z" ] && git clone https://github.com/agkozak/zsh-z
 
   [ ! -d "./zsh-vi-mode" ] && git clone https://github.com/jeffreytse/zsh-vi-mode.git
@@ -113,10 +113,10 @@ plugins=(
   # kubectl
   # emacs
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
-  zsh-vi-mode
+  zsh-vim-mode
   # zsh-syntax-highlighting
-#  zsh-autosuggestions
-  zsh-autocomplete
+  zsh-autosuggestions
+  # zsh-autocomplete
 
 )
 source $ZSH/oh-my-zsh.sh
@@ -134,10 +134,10 @@ export LANG=en_US.UTF-8
 . ~/partials/zsh_vi_settings.zsh # load vim specific settings.
 
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
-# bindkey '^ ' autosuggest-accept
+bindkey '^ ' autosuggest-accept
 
 # HSTR ... use ctrl+r to pipe current prompt to history
- bindkey -s "\C-r" "\C-a hstr -- \C-j"
+bindkey -s "\C-r" "\C-a hstr -- \C-j"
 
 eval "$(direnv hook zsh)"
 #
