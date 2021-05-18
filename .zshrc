@@ -41,7 +41,7 @@ setopt globdots # when using tab completion, show hidden files and folders (such
 
 # All Colors: https://coderwall.com/p/pb1uzq/z-shell-colors
 # Colors
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=214,bg=none,bold,underline"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=214,bg=none,bold,underline" # works for zsh-autosuggest and autocomplete
 
 
 #############
@@ -60,10 +60,10 @@ function get_plugins() {
   [ ! -d $ZSH_PLUGINS ] && mkdir -p $ZSH_PLUGINS
   cd $ZSH_PLUGINS
   [ ! -d "./autoenv" ] && git clone git://github.com/kennethreitz/autoenv.git
-  [ ! -d "./zsh-autosuggestions" ] && git clone https://github.com/zsh-users/zsh-autosuggestions
+  # [ ! -d "./zsh-autosuggestions" ] && git clone https://github.com/zsh-users/zsh-autosuggestions
+  [ ! -d "./zsh-autocomplete" ] && git clone --depth 1 -- https://github.com/marlonrichert/zsh-autocomplete.git # autocomplete is better
   [ ! -d "./zsh-z" ] && git clone https://github.com/agkozak/zsh-z
 
-  [ ! -d "./zsh-vim-mode" ] && git clone https://github.com/softmoth/zsh-vim-mode.git
   [ ! -d "./zsh-vi-mode" ] && git clone https://github.com/jeffreytse/zsh-vi-mode.git
   # [ ! -d "./zsh-easy-motion" ] && git clone https://github.com/IngoHeimbach/zsh-easy-motion
    [ ! -d "./zsh-syntax-highlighting" ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
@@ -115,7 +115,8 @@ plugins=(
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   zsh-vi-mode
   # zsh-syntax-highlighting
-  zsh-autosuggestions
+  # zsh-autosuggestions
+  zsh-autocomplete
 
 )
 source $ZSH/oh-my-zsh.sh
