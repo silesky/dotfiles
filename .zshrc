@@ -42,7 +42,7 @@ setopt globdots # when using tab completion, show hidden files and folders (such
 
 # All Colors: https://coderwall.com/p/pb1uzq/z-shell-colors
 # Colors
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=214,bg=none,bold,underline" # works for zsh-autosuggest and autocomplete
+# ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=214,bg=none,bold,underline"
 
 #############
 # ______________ ZSH CONFIG _________________
@@ -115,15 +115,12 @@ plugins=(
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   zsh-vi-mode
   # zsh-syntax-highlighting
-  # zsh-autosuggestions
+  zsh-autosuggestions
   zsh-autocomplete
 
 )
 source $ZSH/oh-my-zsh.sh
 
-# https://stackoverflow.com/a/58862453 -- backwards kill word - ctrl+w works!
-autoload -Uz select-word-style
-select-word-style shell
 
 # source everything
 . ~/.bash_profile
@@ -138,7 +135,7 @@ export LANG=en_US.UTF-8
 . ~/partials/zsh_vi_settings.zsh # load vim specific settings.
 
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
-# bindkey '^ ' autosuggest-accept
+bindkey '^ ' autosuggest-accept
 
 # HSTR ... use ctrl+r to pipe current prompt to history
 # bindkey -s "\C-r" "\C-a hstr -- \C-j"

@@ -142,3 +142,7 @@ function vi-yank-xclip() {
 
 zle -N vi-yank-xclip
 bindkey -M vicmd 'y' vi-yank-xclip
+
+# https://stackoverflow.com/a/58862453 -- backwards kill word - ctrl+w works!
+autoload -Uz select-word-style
+select-word-style shell

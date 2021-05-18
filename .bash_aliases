@@ -111,7 +111,7 @@ alias gitignore="$EDITOR ~/.gitignore"
 
 # .... dotfiles
 alias reals=". ~/.bash_aliases"
-alias reprof=". ~/.zshrc"
+alias reprof="zsh"
 alias blame="git blame-colored.sh"
 alias plugins="ls ~/.oh-my-zsh/plugins ~/.oh-my-zsh/custom/plugins"
 
