@@ -115,7 +115,7 @@ plugins=(
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
   zsh-vi-mode
   # zsh-syntax-highlighting
-  zsh-autosuggestions
+#  zsh-autosuggestions
   zsh-autocomplete
 
 )
@@ -123,7 +123,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 # source everything
-. ~/.bash_profile
 
 #_______________END ZSH CONFIG____________________________
 # space in front of terminal during ssh bug
@@ -135,12 +134,14 @@ export LANG=en_US.UTF-8
 . ~/partials/zsh_vi_settings.zsh # load vim specific settings.
 
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
-bindkey '^ ' autosuggest-accept
+# bindkey '^ ' autosuggest-accept
 
 # HSTR ... use ctrl+r to pipe current prompt to history
-# bindkey -s "\C-r" "\C-a hstr -- \C-j"
+ bindkey -s "\C-r" "\C-a hstr -- \C-j"
 
 eval "$(direnv hook zsh)"
 #
 # Enable history in IEX through Erlang(OTP)
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+. ~/.bash_profile # last thing
