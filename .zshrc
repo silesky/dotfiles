@@ -39,10 +39,10 @@ ZSH_DISABLE_COMPFIX=true # fix zsh error message about completion permissions
 
 setopt globdots # when using tab completion, show hidden files and folders (such as dotfiles)
 
+
 # All Colors: https://coderwall.com/p/pb1uzq/z-shell-colors
 # Colors
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=214,bg=none,bold,underline" # works for zsh-autosuggest and autocomplete
-
 
 #############
 # ______________ ZSH CONFIG _________________
@@ -138,10 +138,10 @@ export LANG=en_US.UTF-8
 . ~/partials/zsh_vi_settings.zsh # load vim specific settings.
 
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
-bindkey '^ ' autosuggest-accept
+# bindkey '^ ' autosuggest-accept
 
 # HSTR ... use ctrl+r to pipe current prompt to history
-bindkey -s "\C-r" "\C-a hstr -- \C-j"
+# bindkey -s "\C-r" "\C-a hstr -- \C-j"
 
 eval "$(direnv hook zsh)"
 #
