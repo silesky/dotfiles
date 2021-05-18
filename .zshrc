@@ -64,6 +64,7 @@ function get_plugins() {
   [ ! -d "./zsh-z" ] && git clone https://github.com/agkozak/zsh-z
 
   [ ! -d "./zsh-vim-mode" ] && git clone https://github.com/softmoth/zsh-vim-mode.git
+  [ ! -d "./zsh-vi-mode" ] && git clone https://github.com/jeffreytse/zsh-vi-mode.git
   # [ ! -d "./zsh-easy-motion" ] && git clone https://github.com/IngoHeimbach/zsh-easy-motion
    [ ! -d "./zsh-syntax-highlighting" ] && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
    # [ ! -d "./elixir" ] && git clone https://github.com/gusaiani/elixir-oh-my-zsh.git elixir
@@ -112,7 +113,7 @@ plugins=(
   # kubectl
   # emacs
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
-  zsh-vim-mode
+  zsh-vi-mode
   # zsh-syntax-highlighting
   zsh-autosuggestions
 
