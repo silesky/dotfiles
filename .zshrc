@@ -141,3 +141,4 @@ if [ -e /Users/me/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/me/.nix-pro
 
 # Silent direnv message
 export DIRENV_LOG_FORMAT=""
+
