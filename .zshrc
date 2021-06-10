@@ -106,7 +106,7 @@ plugins=(
   # kubectl
   # emacs
   #__ Custom - clone in  ~/.oh-my-zsh/custom/plugins
-  # zsh-autosuggestions
+  zsh-autosuggestions
   zsh-vim-mode
 
 
