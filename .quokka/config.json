@@ -1,1 +1,12 @@
-{"babel":true,"node":"~/.asdf/shims/node","pro":false,"stdEsm":false,"nativeEsm":true,"env":{"params":{"env":"NODE_PATH=./src"}}}
+{
+    "babel": true,
+    "node": "~/.asdf/shims/node",
+    "pro": true,
+    "stdEsm": false,
+    "nativeEsm": true,
+    "env": {
+        "params": {
+            "env": "NODE_PATH=./src"
+        }
+    }
+}
