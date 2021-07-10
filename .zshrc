@@ -131,6 +131,9 @@ export LANG=en_US.UTF-8
 #
 . ~/partials/zsh_vi_settings.zsh # load vim specific settings.
 
+# bind ctrl-r to hh https://github.com/dvorka/hstr/blob/master/CONFIGURATION.md#zsh-emacs-keymap
+bindkey -s "\C-r" "\C-a hstr -- \C-j"
+
 # use ctrl-space when using the zsh-autosuggest plugin. Needs to go after bindkey -v.
 bindkey '^ ' autosuggest-accept
 
@@ -141,4 +144,5 @@ if [ -e /Users/me/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/me/.nix-pro
 
 # Silent direnv message
 export DIRENV_LOG_FORMAT=""
+
 
