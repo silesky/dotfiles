@@ -17,7 +17,8 @@ setopt share_history
 # cmd in shell 1 becomes last command in shell two (zsh)
 setopt hist_ignore_all_dups
 setopt hist_ignore_dups
-setopt hist_ignore_space
+setopt hist_ignore_space  # skip cmds w/ leading space from history
+
 
 # Remove superfluous blanks from each command line being added to the history list.
 setopt hist_reduce_blanks
