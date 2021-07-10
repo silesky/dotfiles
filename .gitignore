@@ -29,7 +29,7 @@
 
 !/scripts/*
 !scripts
-!/.tmuxinator/default*
+!*/.tmuxinator/default*
 !.quokka
 
 !/.hushlogin
